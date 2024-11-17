@@ -1,0 +1,406 @@
+//Primative Components/Circuits
+metaitem.circuit.electronic.name=Electronic Circuit
+metaitem.circuit.good_electronic.name=Electronic Assembly
+
+//Integrated Logic Components
+metaitem.circuit.basic_integrated.name=Integrated Logic Circuit
+metaitem.circuit.good_integrated.name=Integrated Logic Assembly
+metaitem.circuit.advanced_integrated.name=Integrated Logic Supercomputer
+
+//Integrated Components/Circuits
+metaitem.component.smd.diode.name=Integrated SMD Diode
+metaitem.component.smd.capacitor.name=Integrated SMD Capacitor
+metaitem.component.smd.transistor.name=Integrated SMD Transistor
+metaitem.component.smd.resistor.name=Integrated SMD Resistor
+metaitem.component.smd.inductor.name=Integrated SMD Inductor
+metaitem.circuit.processor.name=Integrated Processor
+metaitem.circuit.assembly.name=Integrated Assembly
+metaitem.circuit.workstation.name=Integrated Supercomputer
+metaitem.circuit.mainframe.name=Integrated Mainframe
+
+//Nano Components/Circuits
+metaitem.component.nano.smd.transistor.name=Nano SMD Transistor
+metaitem.component.nano.smd.resistor.name=Nano SMD Resistor
+metaitem.component.nano.smd.capacitor.name=Nano SMD Capacitor
+metaitem.component.nano.smd.diode.name=Nano SMD Diode
+metaitem.component.nano.smd.inductor.name=Nano SMD Inductor
+metaitem.component.nano.smd.transistor.tooltip=Nano Electronic Component
+metaitem.component.nano.smd.resistor.tooltip=Nano Electronic Component
+metaitem.component.nano.smd.capacitor.tooltip=Nano Electronic Component
+metaitem.component.nano.smd.diode.tooltip=Nano Electronic Component
+metaitem.component.nano.smd.inductor.tooltip=Nano Electronic Component
+metaitem.circuit.nano_processor.name=Nano Processor
+metaitem.circuit.nano_assembly.name=Nano Assembly
+metaitem.circuit.nano_computer.name=Nano Supercomputer
+metaitem.circuit.nano_mainframe.name=Nano Mainframe
+
+//Quantum Components/Circuits
+metaitem.component.quantum.smd.transistor.name=Quantum SMD Transistor
+metaitem.component.quantum.smd.resistor.name=Quantum SMD Resistor
+metaitem.component.quantum.smd.capacitor.name=Quantum SMD Capacitor
+metaitem.component.quantum.smd.diode.name=Quantum SMD Diode
+metaitem.component.quantum.smd.inductor.name=Quantum SMD Inductor
+metaitem.component.quantum.smd.transistor.tooltip=Quantum Electronic Component
+metaitem.component.quantum.smd.resistor.tooltip=Quantum Electronic Component
+metaitem.component.quantum.smd.capacitor.tooltip=Quantum Electronic Component
+metaitem.component.quantum.smd.diode.tooltip=Quantum Electronic Component
+metaitem.component.quantum.smd.inductor.tooltip=Quantum Electronic Component
+metaitem.circuit.quantum_processor.name=Quantum Processor
+metaitem.circuit.quantum_assembly.name=Quantum Assembly
+metaitem.circuit.quantum_computer.name=Quantum Supercomputer
+metaitem.circuit.quantum_mainframe.name=Quantum Mainframe
+
+//Crystal Components/Circuits
+metaitem.component.crystalline.smd.transistor.name=Crystalline SMD Transistor
+metaitem.component.crystalline.smd.resistor.name=Crystalline SMD Resistor
+metaitem.component.crystalline.smd.capacitor.name=Crystalline SMD Capacitor
+metaitem.component.crystalline.smd.diode.name=Crystalline SMD Diode
+metaitem.component.crystalline.smd.inductor.name=Crystalline SMD Inductor
+metaitem.component.crystalline.smd.transistor.tooltip=Crystalline Electronic Component
+metaitem.component.crystalline.smd.resistor.tooltip=Crystalline Electronic Component
+metaitem.component.crystalline.smd.capacitor.tooltip=Crystalline Electronic Component
+metaitem.component.crystalline.smd.diode.tooltip=Crystalline Electronic Component
+metaitem.component.crystalline.smd.inductor.tooltip=Crystalline Electronic Component
+metaitem.engraved.crystal_chip.name=Engraved Crystal Chip
+metaitem.engraved.crystal_chip.tooltip=Future Of Crystal Computing
+metaitem.crystal.raw.name=Raw Green Crystal Chip
+metaitem.crystal.raw.tooltip=Raw Crystal Chips, Yummy
+metaitem.crystal.raw_chip.name=Raw Green Crystal Chip Parts
+metaitem.crystal.raw_chip.tooltip=Base Crystal For Growing Crystal Chips
+metaitem.crystal.central_processing_unit.name=Green Crystal CPU
+metaitem.crystal.central_processing_unit.tooltip=Where Crystal Computing Comes To Life
+metaitem.crystal.system_on_chip.name=Green Crystal SoC
+metaitem.crystal.system_on_chip.tooltip=A Full System Grown From A Crystal
+metaitem.circuit.crystal_processor.name=Crystal Processor
+metaitem.circuit.crystal_assembly.name=Crystal Assembly
+metaitem.circuit.crystal_computer.name=Crystal Supercomputer
+metaitem.circuit.crystal_mainframe.name=Crystal Mainframe
+
+//Wetware Components/Circuits
+metaitem.component.advanced_smd.diode.name=Wetware SMD Diode
+metaitem.component.advanced_smd.capacitor.name=Wetware SMD Capacitor
+metaitem.component.advanced_smd.transistor.name=Wetware SMD Transistor
+metaitem.component.advanced_smd.resistor.name=Wetware SMD Resistor
+metaitem.component.advanced_smd.inductor.name=Wetware SMD Inductor
+metaitem.component.advanced_smd.smd.transistor.tooltip=Wetware Electronic Component
+metaitem.component.advanced_smd.smd.resistor.tooltip=Wetware Electronic Component
+metaitem.component.advanced_smd.smd.capacitor.tooltip=Wetware Electronic Component
+metaitem.component.advanced_smd.smd.diode.tooltip=Wetware Electronic Component
+metaitem.component.advanced_smd.smd.inductor.tooltip=Wetware Electronic Component
+metaitem.circuit.wetware_processor.name=Wetware Processor
+metaitem.circuit.wetware_assembly.name=Wetware Assembly
+metaitem.circuit.wetware_computer.name=Wetware Supercomputer
+metaitem.circuit.wetware_mainframe.name=Wetware Mainframe
+
+//Slimeware Components|Circuits|Circuit Boards|Boards
+metaitem.component.slimeware.smd.transistor.name=Slimeware SMD Tranistor
+metaitem.component.slimeware.smd.resistor.name=Slimeware SMD Resistor
+metaitem.component.slimeware.smd.capacitor.name=Slimeware SMD Capacitor
+metaitem.component.slimeware.smd.diode.name=Slimeware SMD Diode
+metaitem.component.slimeware.smd.inductor.name=Slimeware SMD Inductor
+metaitem.component.slimeware.smd.transistor.tooltip=Slimeware Electronic Component
+metaitem.component.slimeware.smd.resistor.tooltip=Slimeware Electronic Component
+metaitem.component.slimeware.smd.capacitor.tooltip=Slimeware Electronic Component
+metaitem.component.slimeware.smd.diode.tooltip=Slimeware Electronic Component
+metaitem.component.slimeware.smd.inductor.tooltip=Slimeware Electronic Component
+metaitem.board.slimeware.name=Slimeware Lifesupport Circuit Board
+metaitem.circuit_board.slimeware.name=Ultimate Circuit Board
+metaitem.circuit.slimeware_processor.name=Slimeware Processor
+metaitem.circuit.slimeware_assembly.name=Slimeware Assembly
+metaitem.circuit.slimeware_computer.name=Slimeware Supercomputer
+metaitem.circuit.slimeware_mainframe.name=Slimeware Mainframe
+metaitem.circuit.slimeware_processor.tooltip=Its trying to become symbiotic with you/n§2ZPM-Tier Circuit
+metaitem.circuit.slimeware_assembly.tooltip=Can run GregTech/n§2UV-Tier Circuit
+metaitem.circuit.slimeware_computer.tooltip=Where Slime and Machinery merge/n§2UHV-Tier Circuit
+metaitem.circuit.slimeware_mainframe.tooltip=Be careful, Its always thinking/n§2UEV-Tier Circuit
+
+//Lasertronic Components|Circuits|Circuit Boards|Boards
+metaitem.component.lasertronic.smd.transistor.name=Lasertronic SMD Tranistor
+metaitem.component.lasertronic.smd.resistor.name=Lasertronic SMD Resistor
+metaitem.component.lasertronic.smd.capacitor.name=Lasertronic SMD Capacitor
+metaitem.component.lasertronic.smd.diode.name=Lasertronic SMD Diode
+metaitem.component.lasertronic.smd.inductor.name=Lasertronic SMD Inductor
+metaitem.component.lasertronic.smd.transistor.tooltip=Lasertronic Electronic Component
+metaitem.component.lasertronic.smd.resistor.tooltip=Lasertronic Electronic Component
+metaitem.component.lasertronic.smd.capacitor.tooltip=Lasertronic Electronic Component
+metaitem.component.lasertronic.smd.diode.tooltip=Lasertronic Electronic Component
+metaitem.component.lasertronic.smd.inductor.tooltip=Lasertronic Electronic Component
+metaitem.board.lasertronic.name=Lasertronic Circuit Board
+metaitem.circuit_board.lasertronic.name=Psychotic Circuit Board
+metaitem.circuit.lasertronic_processor.name=Lasertronic Processor
+metaitem.circuit.lasertronic_assembly.name=Lasertronic Assembly
+metaitem.circuit.lasertronic_computer.name=Lasertronic Supercomputer
+metaitem.circuit.lasertronic_mainframe.name=Lasertronic Mainframe
+metaitem.circuit.lasertronic_processor.tooltip=Extreme Lasers, Computer Phazing/n§5UV-Tier Circuit 
+metaitem.circuit.lasertronic_assembly.tooltip=Laser, Laser, Laser!/n§5UHV-Tier Circuit
+metaitem.circuit.lasertronic_computer.tooltip=More Lasers! Soo many Lasers!/n§5UEV-Tier Circuit
+metaitem.circuit.lasertronic_mainframe.tooltip=May cause temporary blindness/n§5UIV-Tier Circuit
+
+//Bohemian Components|Circuits|Circuit Boards|Boards
+metaitem.component.bohemian.smd.transistor.name=Bohemian SMD Transistor
+metaitem.component.bohemian.smd.resistor.name=Bohemian SMD Resistor
+metaitem.component.bohemian.smd.capacitor.name=Bohemian SMD Capacitor
+metaitem.component.bohemian.smd.diode.name=Bohemian SMD Diode
+metaitem.component.bohemian.smd.inductor.name=Bohemian SMD Inductor
+metaitem.component.bohemian.smd.transistor.tooltip=Bohemian Electronic Component
+metaitem.component.bohemian.smd.resistor.tooltip=Bohemian Electronic Component
+metaitem.component.bohemian.smd.capacitor.tooltip=Bohemian Electronic Component
+metaitem.component.bohemian.smd.diode.tooltip=Bohemian Electronic Component
+metaitem.component.bohemian.smd.inductor.tooltip=Lasertronic Electronic Component
+metaitem.board.bohemian.name=Bohemian Circuit Board
+metaitem.circuit_board.bohemian.name=Insane Circuit Board
+metaitem.circuit.bohemian_processor.name=Bohemian Processor
+metaitem.circuit.bohemian_assembly.name=Bohemian Assembly
+metaitem.circuit.bohemian_computer.name=Bohemian Supercomputer
+metaitem.circuit.bohemian_mainframe.name=Bohemian Mainframe
+metaitem.circuit.bohemian_processor.tooltip=Abnormally, Abnormal, ABNORMAL!/n§3UHV-Tier Circuit
+metaitem.circuit.bohemian_assembly.tooltip=Testing, Testing, is this thing on?/n§3UEV-Tier Circuit
+metaitem.circuit.bohemian_computer.tooltip=1, 2, 3, 4, 5.../n§3UIV-Tier Circuit
+metaitem.circuit.bohemian_mainframe.tooltip=The number Sixus, I mean Six xD/n§3UXV-Tier Circuit
+
+//Meta Items
+metaitem.component.quick_and_dirty_portal_generator.name=Quick and Dirty Portal Generator
+metaitem.component.quick_and_dirty_portal_generator.tooltip=Use this to travel to the Twilight Forest!
+metaitem.component.borosilicate_glass.tube.name=Borosilicate Glass Tube
+
+//Logistic Pipes
+metaitem.boule.sand_compound.name=Sand Compound Boule
+metaitem.wafer.sand_compound.name=Sand Compound Wafer
+metaitem.wafer.basic_chip.name=Basic Chip Wafer
+metaitem.wafer.advanced_chip.name=Advanced Chip Wafer
+metaitem.wafer.fpga.name=FPGA Wafer
+
+//Mica
+metaitem.component.mica_based_pulp.name=Mica Based Pulp
+metaitem.component.mica_based_sheet.name=Mica Based Sheet
+metaitem.component.mica_insulator_sheet.name=Mica Insulator Sheet
+metaitem.component.mica_insulator_foil.name=Mica Insulator Foil
+
+//Coolant Cells
+metaitem.component.10k_coolant_cell.name=10k Coolant Cell
+metaitem.component.10k_nak_coolant_cell.name=10k NaK Coolant Cell
+metaitem.component.10k_space_coolant_cell.name=10k Space Coolant Cell
+metaitem.component.30k_coolant_cell.name=30k Coolant Cell
+metaitem.component.30k_nak_coolant_cell.name=30K Nak Coolant Cell
+metaitem.component.30k_space_coolant_cell.name=30k Space Coolant Cell
+metaitem.component.60k_coolant_cell.name=60k Coolant Cell
+metaitem.component.60k_nak_coolant_cell.name=60k NaK Coolant Cell
+metaitem.component.60k_space_coolant_cell.name=60k Space Coolant Cell
+metaitem.component.empty_10k_coolant_cell.name=Empty 10k Coolant Cell
+metaitem.component.empty_30k_coolant_cell.name=Empty 30k Coolant Cell
+metaitem.component.empty_60k_coolant_cell.name=Empty 60k Coolant Cell
+
+//Pam's Harvest Craft
+metaitem.unfired.juicer.name=Unfired Juicer
+metaitem.unfired.bakeware.name=Unfired Bakeware
+
+//Raw Elements
+metaitem.raw.aluminium.name=Raw Aluminium
+metaitem.raw.gallium_arsenide.name=Raw Gallium Arsenide
+
+//Ores
+item.material.oreprefix.oreMoon=Moon %s Ore
+item.material.oreprefix.oreMars=Mars %s Ore
+item.material.oreprefix.oreAsteroid=Asteroid %s Ore
+item.material.oreprefix.oreVenus=Venus %s Ore
+item.material.oreprefix.oreMercury=Mercury %s Ore
+item.material.oreprefix.oreCeres=Ceres %s Ore
+item.material.oreprefix.oreJupiter=Jupiter %s Ore
+item.material.oreprefix.oreSaturn=Saturn %s Ore
+item.material.oreprefix.oreUranus=Uranus %s Ore
+item.material.oreprefix.oreNeptune=Neptune %s Ore
+item.material.oreprefix.orePluto=Pluto %s Ore
+item.material.oreprefix.oreEris=Eris %s Ore
+item.material.oreprefix.oreKepler22B=Kepler 22B %s Ore
+item.material.oreprefix.oreEuropa=Europa %s Ore
+item.material.oreprefix.oreIo=Io %s Ore
+item.material.oreprefix.oreDeimos=Deimos %s Ore
+item.material.oreprefix.orePhobos=Phobos %s Ore
+item.material.oreprefix.oreTriton=Triton %s Ore
+item.material.oreprefix.oreCallisto=Callisto %s Ore
+item.material.oreprefix.oreGanymede=Ganymede %s Ore
+item.material.oreprefix.oreRhea=Rhea %s Ore
+item.material.oreprefix.oreTitan=Titan %s Ore
+item.material.oreprefix.oreOberon=Oberon %s Ore
+item.material.oreprefix.oreTitania=Titania %s Ore
+item.material.oreprefix.oreIapetus=Iapetus %s Ore
+
+//Ore Veins
+gregtech.veins.ore.precious_metals=Precious Metals
+gregtech.veins.ore.cryolite=Cryolite
+gregtech.veins.ore.infenorite=Infenorite
+gregtech.veins.ore.cosmic_carbon=Cosmic Carbon
+gregtech.veins.ore.bauxite=Bauxite
+gregtech.veins.ore.ilmenite=Ilmenite
+gregtech.veins.ore.aluminium=Aluminium
+
+//Fantasy Materials
+gregtech.material.cosmic_neutronium=Cosmic Neutronium
+gregtech.material.infinity_catalyst=Infinity Catalyst
+gregtech.material.infinity=Infinity
+gregtech.material.multiversium=Multiversium
+gregtech.material.infernorite=Infernorite
+gregtech.material.crynorium=Crynorium
+
+//Fluid Materials
+gregtech.material.dirty_precious_metal_solution=Dirty Precious Metal Solution
+gregtech.material.dilte_precious_metal_solution=Dilute Precious Metal Solution
+gregtech.material.clean_precious_metal_solution=Clean Precious Metal Solution
+gregtech.material.concentrated_precious_metal_solution=Concentrated Precious Metal Solution
+gregtech.material.coal_slurry=Coal Slurry
+gregtech.material.coolant=Coolant
+gregtech.material.nak_coolant=NaK Coolant
+gregtech.material.space_coolant=Space Coolant
+gregtech.material.photovoltaic_composite=Photovoltaic Composite
+
+//Ore Materials
+gregtech.material.albite=Albite
+gregtech.material.anorthite=Anorthite
+gregtech.material.plagioclase=Plagioclase
+gregtech.material.pyroxene=Pyroxene
+gregtech.material.moon=Moon
+gregtech.material.carbonate=Carbonate
+gregtech.material.ammoniated_silicate=Ammoniated Silicate
+gregtech.material.ceres=Ceres
+gregtech.material.pluto=Pluto
+gregtech.material.precious_metals=Precious Metals
+gregtech.material.cryolite=Cryolite
+gregtech.material.solar_grade_silicon=Poly(Si) Solar Grade Silicon
+
+//Second Degree Materials
+gregtech.material.electrical_steel=Electrical Steel
+gregtech.material.energetic_alloy=Energetic Alloy
+gregtech.material.vibrant_alloy=Vibrant Alloy
+gregtech.material.redstone_alloy=Redstone Alloy
+gregtech.material.conductive_iron=Conductive Iron
+gregtech.material.pulsating_iron=Pulsating Iron
+gregtech.material.dark_steel=Dark Steel
+gregtech.material.soularium=Soularium
+gregtech.material.end_steel=End Steel
+gregtech.material.crude_steel=Crude Steel
+gregtech.material.crystalline_alloy=Crystalline Alloy
+gregtech.material.melodic_alloy=Melodic Alloy
+gregtech.material.crystalline_pink_slime=Crystalline Pink Slime
+gregtech.material.energetic_silver=Energetic Silver
+gregtech.material.vivid_alloy=Vivid Alloy
+gregtech.material.stellar_alloy=Stellar Alloy
+gregtech.material.weather_crystal=Weather Crystal
+gregtech.material.sand_compound=Sand Compound
+gregtech.material.pyrotheum=Pyrotheum
+gregtech.material.cryotheum=Cryotheum
+gregtech.material.moon_stone=Moon Stone
+gregtech.material.mars_stone=Mars Stone
+gregtech.material.asteroid_stone=Asteroid Stone
+gregtech.material.venus_stone=Venus Stone
+gregtech.material.mercury_stone=Mercury Stone
+gregtech.material.ceres_stone=Ceres Stone
+gregtech.material.jupiter_stone=Jupiter Stone
+gregtech.material.saturn_stone=Saturn Stone
+gregtech.material.uranus_stone=Uranus Stone
+gregtech.material.neptune_stone=Neptune Stone
+gregtech.material.pluto_stone=Pluto Stone
+gregtech.material.eris_stone=Eris Stone
+gregtech.material.kepler_twotwob_stone=Kepler 22B Stone
+gregtech.material.europa_stone=Europa Stone
+gregtech.material.io_stone=Io Stone
+gregtech.material.deimos_stone=Deimos Stone
+gregtech.material.phobos_stone=Phobos Stone
+gregtech.material.triton_stone=Triton Stone
+gregtech.material.callisto_stone=Callisto Stone
+gregtech.material.ganymede_stone=Ganymede Stone
+gregtech.material.rhea_stone=Rhea Stone
+gregtech.material.titan_stone=Titan Stone
+gregtech.material.oberon_stone=Oberon Stone
+gregtech.material.titania_stone=Titania Stone
+gregtech.material.iapetus_stone=Iapetus Stone
+
+//Third Degree Materials
+gregtech.material.sand=Sand
+gregtech.material.rtm_alloy=Ruthubdenum
+gregtech.material.silver_gallium=Silver Gallium
+gregtech.material.tantaloper=Tantaloper
+gregtech.material.zinvar=Zinvar
+gregtech.material.sterling_platinum=Sterling Platinum
+gregtech.material.mytryl=Mytryl
+gregtech.material.tetrapech=Tetrapech
+gregtech.material.cosmic_carbon=Cosmic Carbon
+
+//Wire Coils
+tile.wire_coil.rtm_alloy.name=Ruthubdenum Coil Block
+
+//Multiblocks
+gregtech.machine.steam_smasher.name=Steam Smasher
+gregtech.multiblock.steam_smasher.description=A better more Multi Steam Forge Hammer 
+gregtech.machine.steam_squasher.name=Steam Squasher
+gregtech.multiblock.steam_squasher.description=A better more Multi Steam Compressor
+gregtech.machine.gthh_electric_blast_furnace.name=Electric Blast Furnace
+gregtech.machine.gthh_electric_blast_furnace.tooltip=I can't believe its not a Smoker
+gregtech.multiblock.gthh_electric_blast_furnace.description=The Electric Blast Furnace (EBF) is a multiblock structure used for smelting alloys, cooking metals and refining ores. It is required for obtaining high-tier alloys and metals, such as aluminium, stainless steel, titanium and naquadah alloy.
+gregtech.machine.gthh_vacuum_freezer.name=Vacuum Freezer
+gregtech.machine.gthh_vacuum_freezer.tooltip=Blue means cold doesn't it?
+gregtech.multiblock.gthh_vacuum_freezer.description=The Vacuum Freezer is a multiblock structure mainly used for freezing Hot Ingots into regular Ingots. However, it can also freeze other substances, such as Water.
+gregtech.machine.gthh_precise_assembler.name=Precise Assembler
+gregtech.multiblock.gthh_precise_assembler.description=The Precise Assembler is a multiblock structure that is mainly used for crafting more advanced components such as Nano and Quantum SMD Components.
+
+//Multiblock Info
+gregtech.multiblock.maceration_stack.tier=Casing Tier: %s
+//Deprication Tooltips
+gregtech.machine.vacuum_freezer.tooltip=§cDeprecated §fPlease Craft into GTHH Variant in crafting grid§7
+gregtech.machine.electric_blast_furnace.tooltip=§cDeprecated §fPlease Craft into GTHH Variant in crafting grid§7
+
+//Machines
+gregtech.machine.zombie_engine.lv.name=Zombie Engine I
+gregtech.machine.zombie_engine.mv.name=Zombie Engine II
+gregtech.machine.zombie_engine.hv.name=Zombie Engine III
+gregtech.machine.zombie_engine.lv.description=A GregTech Generator that runs on Nutreint Distillation
+gregtech.machine.zombie_engine.mv.description=A GregTech Generator that runs on Nutreint Distillation
+gregtech.machine.zombie_engine.hv.description=A GregTech Generator that runs on Nutreint Distillation
+gregtech.machine.ender_engine.lv.name=Ender Engine I
+gregtech.machine.ender_engine.mv.name=Ender Engine II
+gregtech.machine.ender_engine.hv.name=Ender Engine III
+gregtech.machine.ender_engine.lv.description=A GregTech Generator that runs on Dew of the Void
+gregtech.machine.ender_engine.mv.description=A GregTech Generator that runs on Dew of the Void
+gregtech.machine.ender_engine.hv.description=A GregTech Generator that runs on Dew of the Void
+gregtech.machine.precise_assembler.lv.name=Precise Assembler I
+gregtech.machine.precise_assembler.mv.name=Precise Assembler II
+gregtech.machine.precise_assembler.hv.name=Precise Assembler III
+gregtech.machine.precise_assembler.ev.name=Precise Assembler IV
+gregtech.machine.precise_assembler.iv.name=Precise Assembler V
+gregtech.machine.precise_assembler.luv.name=Precise Assembler VI
+gregtech.machine.precise_assembler.zpm.name=Precise Assembler VII
+gregtech.machine.precise_assembler.uv.name=Precise Assembler VIII
+gregtech.machine.precise_assembler.uhv.name=Precise Assembler IX
+gregtech.machine.precise_assembler.uev.name=Precise Assembler X
+gregtech.machine.precise_assembler.uiv.name=Precise Assembler XI
+gregtech.machine.precise_assembler.uxv.name=Precise Assembler XII
+gregtech.machine.precise_assembler.opv.name=Precise Assembler XIII
+gregtech.machine.precise_assembler.lv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.mv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.hv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.ev.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.iv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.luv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.zpm.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.uv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.uhv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.uev.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.uiv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.uxv.tooltip=Flame on, I mean Avengers Assemble!
+gregtech.machine.precise_assembler.opv.tooltip=Flame on, I mean Avengers Assemble!
+
+//Recipemaps
+recipemap.zombie_engine_fuels.name=Zombie Generator
+recipemap.ender_engine_fuels.name=Ender Generator
+recipemap.gthh_blast_recipes.name=Blast Furnace
+recipemap.gthh_vacuum_recipes.name=Vacuum Freezing
+recipemap.gthh_precise_recipes.name=Precise Assembly
+
+//Ore Prefix Names, %s is a material name
+item.material.oreprefix.cluster=Native %s
+item.material.oreprefix.glob=%s Glob
+item.material.oreprefix.fragment=%s Fragment
+item.material.oreprefix.murky=Murky %s
+item.material.oreprefix.raw=Raw %s
+
+//Superconductor Bases
+metaitem.base.manganese_phosphide.name=Base Manganese Phosphide wire

@@ -1,0 +1,6 @@
+{
+  "parent": "gregtech:item/material_sets/dull/ring",
+  "textures": {
+    "layer0": "gregtech:items/material_sets/multiversium/ring"
+  }
+}

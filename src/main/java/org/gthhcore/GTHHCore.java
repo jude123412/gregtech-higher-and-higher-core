@@ -1,6 +1,6 @@
 package org.gthhcore;
 
-import com.myname.mymodid.Tags;
+import codechicken.lib.texture.TextureUtils;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
@@ -15,18 +15,27 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.gthhcore.common.items.GTHHMetaItems;
+import org.gthhcore.init.GTHHTextures;
 
-@Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")
+import java.util.Iterator;
+
+@Mod(modid = Tags.MODID,
+        version = Tags.VERSION,
+        name = Tags.MODNAME,
+        acceptedMinecraftVersions = "[1.12.2]")
 public class GTHHCore {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
-
     @EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc. (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
         // register to the event bus so that we can listen to events
         MinecraftForge.EVENT_BUS.register(this);
         LOGGER.info("I am " + Tags.MODNAME + " + at version " + Tags.VERSION);
+
+        GTHHMetaItems.init();
+        TextureUtils.addIconRegister(new GTHHTextures());
     }
 
     @SubscribeEvent
@@ -38,7 +47,6 @@ public class GTHHCore {
     @SubscribeEvent
     // Register items here (Remove if not needed)
     public void registerItems(RegistryEvent.Register<Item> event) {
-
     }
 
     @SubscribeEvent
@@ -50,6 +58,7 @@ public class GTHHCore {
     @EventHandler
     // load "Do your mod setup. Build whatever data structures you care about." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
+
     }
 
     @EventHandler
