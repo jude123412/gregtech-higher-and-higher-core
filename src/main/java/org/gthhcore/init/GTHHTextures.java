@@ -15,6 +15,10 @@ public class GTHHTextures implements TextureUtils.IIconRegister {
     public static TextureAtlasSprite BOARD;
     public static TextureAtlasSprite CIRCUIT_BOARD;
     public static TextureAtlasSprite SMD;
+    public static TextureAtlasSprite SMALL_BATTERY;
+    public static TextureAtlasSprite MEDIUM_BATTERY;
+    public static TextureAtlasSprite LARGE_BATTERY;
+
 
 
     public GTHHTextures() {
@@ -32,6 +36,9 @@ public class GTHHTextures implements TextureUtils.IIconRegister {
         BOARD = register("gthhcore:items/cosmic/mask/board");
         CIRCUIT_BOARD = register("gthhcore:items/cosmic/mask/circuit_board");
         SMD = register("gthhcore:items/cosmic/mask/smd");
+        SMALL_BATTERY = register("gthhcore:items/cosmic/mask/small_battery");
+        MEDIUM_BATTERY = register("gthhcore:items/cosmic/mask/medium_battery");
+        LARGE_BATTERY = register("gthhcore:items/cosmic/mask/large_battery");
     }
 
     private static TextureAtlasSprite register(String sprite) {

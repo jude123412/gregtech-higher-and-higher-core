@@ -106,8 +106,29 @@ public class GTHHMetaItems {
     public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalSmdCapacitor;
     public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalSmdDiode;
     public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalSmdInductor;
+
     //Superconductor Bases
     public static GTHHMetaItem<?>.GTHHMetaValueItem ManganesePhosphideBase;
+
+    //Higher Tier Batteries
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullSmallNaqudria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMediumNaqudria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullLargeNaqudria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullSmallCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMediumCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullLargeCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullSmallMultiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMediumMultiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullLargeMultiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullZPMNaquadria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUVNaquadria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUHVNaquadria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUEVCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUIVCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUXVCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullOPVMultiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMAX0Multiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMAX1Multiversium;
 
     public static void init() {
         GTHHMetaItem1 metaItem1 = new GTHHMetaItem1();

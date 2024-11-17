@@ -214,3 +214,10 @@ gregtech.veins.ore.aluminium=Aluminium
 
 //Superconductor Bases
 gthhmetaitem.base.manganese_phosphide.name=Base Manganese Phosphide wire
+
+//Batteries
+gthhmetaitem.battery.charge_time=§aHolds %,d%s of Power
+gthhmetaitem.battery.charge_detailed=%,d/%,d EU - Tier %s §7(§%c%,d%s remaining§7)
+gthhmetaitem.battery.charge_unit.second=sec
+gthhmetaitem.battery.charge_unit.minute=min
+gthhmetaitem.battery.charge_unit.hour=hr

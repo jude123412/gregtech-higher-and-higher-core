@@ -113,9 +113,6 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
 
     private String translationKey = "gthhmetaitem";
 
-    private static TextureMap map;
-
-
     public GTHHMetaItem(short GTHHMetaItemOffset) {
         setHasSubtypes(true);
         this.GTHHMetaItemOffset = GTHHMetaItemOffset;
@@ -131,13 +128,18 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
         for (short itemMetaKey : metaItems.keySet()) {
             T metaValueItem = metaItems.get(itemMetaKey);
             int numberOfModels = metaValueItem.getModelAmount();
+            ModelResourceLocation[] resourceLocations = new ModelResourceLocation[numberOfModels];
             if (numberOfModels > 1) {
-                ModelResourceLocation[] resourceLocations = new ModelResourceLocation[numberOfModels];
+
                 for (int i = 0; i <resourceLocations.length; i++){
                     ResourceLocation resourceLocation = createItemModelPath(metaValueItem, "/" + (i + 1));
                     ModelBakery.registerItemVariants(this, resourceLocation);
                     resourceLocations[i] = new ModelResourceLocation(resourceLocation, "inventory");
+                    ModelResourceLocation location = new ModelResourceLocation(resourceLocation, "inventory");
+                    IBakedModel wrapped = new GTHHCosmicItemRender(TransformUtils.DEFAULT_ITEM, (modelRegistry) -> modelRegistry.getObject(location));
+                    ModelRegistryHelper.register(location, wrapped);
                 }
+
                 specialItemsModels.put((short) (GTHHMetaItemOffset + itemMetaKey), resourceLocations);
                 continue;
             }
@@ -548,7 +550,7 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
             if (fluidHandlerItem != null) {
                 FluidStack fluidInside = fluidHandlerItem.drain(Integer.MAX_VALUE, false);
                 return LocalizationUtils.format(unlocalizedName, fluidInside == null ?
-                        LocalizationUtils.format("GTHHMetaItem.fluid_cell.empty") :
+                        LocalizationUtils.format("gthhmetaitem.fluid_cell.empty") :
                         fluidInside.getLocalizedName());
             }
             return LocalizationUtils.format(unlocalizedName);
@@ -573,7 +575,7 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
                 addDischargeItemTooltip(lines, electricItem.getMaxCharge(), electricItem.getCharge(),
                         electricItem.getTier());
             } else {
-                lines.add(I18n.format("GTHHMetaItem.generic.electric_item.tooltip",
+                lines.add(I18n.format("gthhmetaitem.generic.electric_item.tooltip",
                         electricItem.getCharge(),
                         electricItem.getMaxCharge(),
                         GTValues.VNF[electricItem.getTier()]));
@@ -586,7 +588,7 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
             IFluidTankProperties fluidTankProperties = fluidHandler.getTankProperties()[0];
             FluidStack fluid = fluidTankProperties.getContents();
 
-            lines.add(I18n.format("GTHHMetaItem.generic.fluid_container.tooltip",
+            lines.add(I18n.format("gthhmetaitem.generic.fluid_container.tooltip",
                     fluid == null ? 0 : fluid.amount,
                     fluidTankProperties.getCapacity(),
                     fluid == null ? "" : fluid.getLocalizedName()));
@@ -602,13 +604,13 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
         }
 
         if (ConfigHolder.misc.debug) {
-            lines.add("GTHHMetaItem Id: " + item.unlocalizedName);
+            lines.add("gthhmetaitem Id: " + item.unlocalizedName);
         }
     }
 
     private static void addDischargeItemTooltip(List<String> tooltip, long maxCharge, long currentCharge, int tier) {
         if (currentCharge == 0) { // do not display when empty
-            tooltip.add(I18n.format("GTHHMetaItem.generic.electric_item.tooltip", currentCharge, maxCharge,
+            tooltip.add(I18n.format("gthhmetaitem.generic.electric_item.tooltip", currentCharge, maxCharge,
                     GTValues.VNF[tier]));
             return;
         }
@@ -621,15 +623,15 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
         String unit;
         if (duration.getSeconds() <= 180) {
             timeRemaining = duration.getSeconds();
-            unit = I18n.format("GTHHMetaItem.battery.charge_unit.second");
+            unit = I18n.format("gthhmetaitem.battery.charge_unit.second");
         } else if (duration.toMinutes() <= 180) {
             timeRemaining = duration.toMinutes();
-            unit = I18n.format("GTHHMetaItem.battery.charge_unit.minute");
+            unit = I18n.format("gthhmetaitem.battery.charge_unit.minute");
         } else {
             timeRemaining = duration.toHours();
-            unit = I18n.format("GTHHMetaItem.battery.charge_unit.hour");
+            unit = I18n.format("gthhmetaitem.battery.charge_unit.hour");
         }
-        tooltip.add(I18n.format("GTHHMetaItem.battery.charge_detailed", currentCharge, maxCharge, GTValues.VNF[tier],
+        tooltip.add(I18n.format("gthhmetaitem.battery.charge_detailed", currentCharge, maxCharge, GTValues.VNF[tier],
                 percentRemaining < 30 ? 'c' : percentRemaining < 60 ? 'e' : 'a',
                 timeRemaining, unit));
     }
@@ -776,6 +778,12 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
             return GTHHTextures.CIRCUIT_BOARD;
         } else if (metaValueItem.registerMaskTexture(stack) == 7){
             return GTHHTextures.SMD;
+        } else if (metaValueItem.registerMaskTexture(stack) == 8){
+            return GTHHTextures.SMALL_BATTERY;
+        } else if (metaValueItem.registerMaskTexture(stack) == 9){
+            return GTHHTextures.MEDIUM_BATTERY;
+        } else if (metaValueItem.registerMaskTexture(stack) == 10){
+            return GTHHTextures.LARGE_BATTERY;
         }
         return AvaritiaTextures.INFINITY_SWORD_MASK;
     }
