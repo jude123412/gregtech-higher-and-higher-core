@@ -1,6 +1,7 @@
 package org.gthhcore;
 
 import codechicken.lib.texture.TextureUtils;
+import gregtech.api.unification.material.event.MaterialEvent;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
@@ -16,9 +17,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.gthhcore.common.items.GTHHMetaItems;
-import org.gthhcore.init.GTHHTextures;
-
-import java.util.Iterator;
+import org.gthhcore.common.items.metaitem.GTHHMetaItem;
 
 @Mod(modid = Tags.MODID,
         version = Tags.VERSION,
@@ -35,7 +34,7 @@ public class GTHHCore {
         LOGGER.info("I am " + Tags.MODNAME + " + at version " + Tags.VERSION);
 
         GTHHMetaItems.init();
-        TextureUtils.addIconRegister(new GTHHTextures());
+        TextureUtils.addIconRegister(new GTHHMetaItem.GTHHCosmicTextures());
     }
 
     @SubscribeEvent
@@ -69,5 +68,10 @@ public class GTHHCore {
     @EventHandler
     // register server commands in this event handler (Remove if not needed)
     public void serverStarting(FMLServerStartingEvent event) {
+    }
+
+    @EventHandler
+    public void materialEvent(MaterialEvent event) {
+
     }
 }

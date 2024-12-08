@@ -1,11 +1,10 @@
 package org.gthhcore.common.items.metaitem;
-import org.gthhcore.common.items.metaitem.GTHHMetaItem;
 
-public class StandardMetaItem extends GTHHMetaItem<GTHHMetaItem<?>.GTHHMetaValueItem> {
-    public StandardMetaItem() {
+public class GTHHStandardMetaItem extends GTHHMetaItem<GTHHMetaItem<?>.GTHHMetaValueItem> {
+    public GTHHStandardMetaItem() {
         super((short) 0);
     }
-    public StandardMetaItem(short GTHHMetaItemOffset) {
+    public GTHHStandardMetaItem(short GTHHMetaItemOffset) {
         super(GTHHMetaItemOffset);
     }
     @Override

@@ -1,6 +1,6 @@
 package org.gthhcore.common.items;
 
-import static gregtech.api.util.DyeUtil.getOredictColorName;
+
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
 import gregtech.api.GTValues;
@@ -8,10 +8,15 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
-import org.gthhcore.common.items.metaitem.StandardMetaItem;
+import org.gthhcore.common.items.metaitem.GTHHStandardMetaItem;
 
 
-public class GTHHMetaItem1 extends StandardMetaItem {
+public class GTHHMetaItem1 extends GTHHStandardMetaItem {
+
+    static String COSMIC_NEUTRONIUM = "cosmic_neutronium";
+    static String Infinity = "infinity";
+    static String Multiversium = "multiversium";
+
     public GTHHMetaItem1() {
         super();
     }
@@ -121,58 +126,81 @@ public class GTHHMetaItem1 extends StandardMetaItem {
         ManganesePhosphideBase = addItem(3000, "base.manganese_phosphide");
 
         //Higher Tier Batteries ID's 3200-3399
-        BatteryHullSmallNaqudria = addItem(3200, "hull.battery.zpm");
-        BatteryHullMediumNaqudria = addItem(3201, "hull.battery.uv");
-        BatteryHullLargeNaqudria = addItem(3202, "hull.battery.uhv");
-        BatteryHullSmallCosmicNeutronium = addItem(3203, "hull.battery.uev");
-        BatteryHullMediumCosmicNeutronium = addItem(3204, "hull.battery.uiv");
-        BatteryHullLargeCosmicNeutronium = addItem(3205, "hull.battery.uxv");
-        BatteryHullSmallMultiversium = addItem(3206, "hull.battery.opv");
-        BatteryHullMediumMultiversium = addItem(3207, "hull.battery.max");
-        BatteryHullLargeMultiversium = addItem(3208, "hull.battery.maximum");
-        BatteryHullZPMNaquadria = addItem(3209, "battery.zpm.naquadria")
+        BatteryHullZPMSmall = addItem(3200, "hull.battery.zpm");
+        BatteryHullUVMedium = addItem(3201, "hull.battery.uv");
+        BatteryHullUHVLarge = addItem(3202, "hull.battery.uhv");
+        BatteryHullUEVSmall = addItem(3203, "hull.battery.uev");
+        BatteryHullUIVMedium = addItem(3204, "hull.battery.uiv");
+        BatteryHullUXVLarge = addItem(3205, "hull.battery.uxv");
+        BatteryHullOPVSmall = addItem(3206, "hull.battery.opv");
+        BatteryHullMAXMedium = addItem(3207, "hull.battery.max");
+        BatteryHullMAXIMUMLarge = addItem(3208, "hull.battery.maximum");
+        BatteryZPMNaquadah = addItem(3209, "battery.zpm.naquadah")
+                .addComponents(ElectricStats.createRechargeableBattery(436906666L , GTValues.ZPM))
+                .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.ZPM).setModelAmount(8)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BatteryUVNaquadah = addItem(3210, "battery.uv.naquadah")
+                .addComponents(ElectricStats.createRechargeableBattery(1747626666L, GTValues.UV))
+                .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UV).setModelAmount(8)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BatteryUHVNaquadah = addItem(3211, "battery.uhv.naquadah")
+                .addComponents(ElectricStats.createRechargeableBattery(6710886400L, GTValues.UHV))
+                .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV).setModelAmount(8)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BatteryZPMNaquadahEnriched = addItem(3212, "battery.zpm.enriched_naquadah")
+                .addComponents(ElectricStats.createRechargeableBattery(546133333L , GTValues.ZPM))
+                .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.ZPM).setModelAmount(8)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BatteryUVNaquadahEnriched = addItem(3213, "battery.uv.enriched_naquadah")
+                .addComponents(ElectricStats.createRechargeableBattery(2184533333L, GTValues.UV))
+                .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UV).setModelAmount(8)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BatteryUHVNaquadahEnriched = addItem(3214, "battery.uhv.enriched_naquadah")
+                .addComponents(ElectricStats.createRechargeableBattery(8388608000L, GTValues.UHV))
+                .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV).setModelAmount(8)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BatteryZPMNaquadria = addItem(3215, "battery.zpm.naquadria")
                 .addComponents(ElectricStats.createRechargeableBattery(655360000L , GTValues.ZPM))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.ZPM).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        BatteryHullUVNaquadria = addItem(3210, "battery.uv.naquadria")
+        BatteryUVNaquadria = addItem(3216, "battery.uv.naquadria")
                 .addComponents(ElectricStats.createRechargeableBattery(2621440000L, GTValues.UV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        BatteryHullUHVNaquadria = addItem(3211, "battery.uhv.naquadria")
+        BatteryUHVNaquadria = addItem(3217, "battery.uhv.naquadria")
                 .addComponents(ElectricStats.createRechargeableBattery(10066329600L, GTValues.UHV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        BatteryHullUEVCosmicNeutronium = addItem(3212, "battery.uev.cosmic_neutronium")
+        BatteryUEVCosmicNeutronium = addItem(3218, "battery.uev.cosmic_neutronium")
                 .addComponents(ElectricStats.createRechargeableBattery(40265318400L, GTValues.UEV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
                 .cosmicProperties(true, 2, -1711276033, 10, false);
-        BatteryHullUIVCosmicNeutronium = addItem(3213, "battery.uiv.cosmic_neutronium")
+        BatteryUIVCosmicNeutronium = addItem(3219, "battery.uiv.cosmic_neutronium")
                 .addComponents(ElectricStats.createRechargeableBattery(161061273600L, GTValues.UIV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
                 .cosmicProperties(true, 2, -1711276033, 10, false);
-        BatteryHullUXVCosmicNeutronium = addItem(3214, "battery.uxv.cosmic_neutronium")
+        BatteryUXVCosmicNeutronium = addItem(3220, "battery.uxv.cosmic_neutronium")
                 .addComponents(ElectricStats.createRechargeableBattery(644245094400L, GTValues.UXV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
                 .cosmicProperties(true, 2, -1711276033, 10, false);
-        BatteryHullOPVMultiversium = addItem(3215, "battery.opv.multiversium")
+        BatteryOPVMultiversium = addItem(3221, "battery.opv.multiversium")
                 .addComponents(ElectricStats.createRechargeableBattery(2576980377600L, GTValues.OpV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
                 .cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f);
-        BatteryHullMAX0Multiversium = addItem(3216, "battery.max.multiversium")
+        BatteryMAX0Multiversium = addItem(3222, "battery.max.multiversium")
                 .addComponents(ElectricStats.createRechargeableBattery(10307921510400L, GTValues.MAX))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
                 .cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f);
-        BatteryHullMAX1Multiversium = addItem(3217, "battery.maximum.multiversium")
+        BatteryMAX1Multiversium = addItem(3223, "battery.maximum.multiversium")
                 .addComponents(ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.MAX))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
                 .cosmicProperties(true, 1, -16777216, 10, true, 10, 1.0f);
-
 
     }
 

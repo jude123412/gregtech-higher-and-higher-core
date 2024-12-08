@@ -1,13 +1,21 @@
 package org.gthhcore.common.items;
 
+import com.google.common.base.CaseFormat;
+import gregtech.api.GregTechAPI;
+import gregtech.api.items.materialitem.MetaPrefixItem;
+import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.registry.MaterialRegistry;
+import gregtech.api.unification.ore.OrePrefix;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
 import org.gthhcore.common.items.metaitem.GTHHMetaItem;
 
+import java.lang.reflect.Field;
 import java.util.*;
 
-public class GTHHMetaItems {
+public final class GTHHMetaItems {
     private GTHHMetaItems() {
     }
 
@@ -111,28 +119,42 @@ public class GTHHMetaItems {
     public static GTHHMetaItem<?>.GTHHMetaValueItem ManganesePhosphideBase;
 
     //Higher Tier Batteries
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullSmallNaqudria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMediumNaqudria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullLargeNaqudria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullSmallCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMediumCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullLargeCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullSmallMultiversium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMediumMultiversium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullLargeMultiversium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullZPMNaquadria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUVNaquadria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUHVNaquadria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUEVCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUIVCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUXVCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullOPVMultiversium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMAX0Multiversium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMAX1Multiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullZPMSmall;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUVMedium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUHVLarge;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUEVSmall;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUIVMedium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUXVLarge;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullOPVSmall;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMAXMedium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMAXIMUMLarge;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryZPMNaquadah;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUVNaquadah;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUHVNaquadah;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryZPMNaquadahEnriched;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUVNaquadahEnriched;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUHVNaquadahEnriched;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryZPMNaquadria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUVNaquadria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUHVNaquadria;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUEVCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUIVCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUXVCosmicNeutronium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryOPVMultiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryMAX0Multiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryMAX1Multiversium;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem EnergyPile;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem EnergySwarm;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem EnergyPlatoon;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem EnergyArray;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem ConcentratedEnergyPlatoon;
+    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalEnergyArray;
+
 
     public static void init() {
         GTHHMetaItem1 metaItem1 = new GTHHMetaItem1();
         metaItem1.setRegistryName("meta_item_1");
+
     }
 
     @SideOnly(Side.CLIENT)

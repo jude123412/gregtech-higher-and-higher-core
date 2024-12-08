@@ -1,6 +1,7 @@
 package org.gthhcore.common.items.metaitem;
 
 import codechicken.lib.model.ModelRegistryHelper;
+import codechicken.lib.texture.TextureUtils;
 import codechicken.lib.util.TransformUtils;
 import com.enderio.core.common.interfaces.IOverlayRenderAware;
 import com.google.common.collect.HashMultimap;
@@ -78,7 +79,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.gthhcore.api.util.GTHHUtility;
 import org.gthhcore.client.render.item.GTHHCosmicItemRender;
 import org.gthhcore.client.utils.ToolChargeBarRenderer;
-import org.gthhcore.init.GTHHTextures;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -91,7 +91,7 @@ import java.util.*;
         modid = Mods.Names.ENDER_CORE,
         iface = "com.enderio.core.common.interfaces.IOverlayRenderAware")
 public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> extends Item
-        implements ItemUIFactory, IOverlayRenderAware, IHaloRenderItem, ICosmicRenderItem, IModelRegister {
+        implements ItemUIFactory, IOverlayRenderAware, IHaloRenderItem, ICosmicRenderItem, IModelRegister{
 
     private static final List<GTHHMetaItem<?>> META_ITEMS = new ArrayList<>();
 
@@ -765,28 +765,29 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
         T metaValueItem = getItem(stack);
         assert metaValueItem != null;
         if (metaValueItem.registerMaskTexture(stack) == 1){
-            return GTHHTextures.PROCESSOR;
+            return GTHHCosmicTextures.PROCESSOR;
         } else if (metaValueItem.registerMaskTexture(stack) == 2){
-            return GTHHTextures.ASSEMBLY;
+            return GTHHCosmicTextures.ASSEMBLY;
         } else if (metaValueItem.registerMaskTexture(stack) == 3){
-            return GTHHTextures.COMPUTER;
+            return GTHHCosmicTextures.COMPUTER;
         } else if (metaValueItem.registerMaskTexture(stack) == 4){
-            return GTHHTextures.MAINFRAME;
+            return GTHHCosmicTextures.MAINFRAME;
         } else if (metaValueItem.registerMaskTexture(stack) == 5){
-            return GTHHTextures.BOARD;
+            return GTHHCosmicTextures.BOARD;
         } else if (metaValueItem.registerMaskTexture(stack) == 6){
-            return GTHHTextures.CIRCUIT_BOARD;
+            return GTHHCosmicTextures.CIRCUIT_BOARD;
         } else if (metaValueItem.registerMaskTexture(stack) == 7){
-            return GTHHTextures.SMD;
+            return GTHHCosmicTextures.SMD;
         } else if (metaValueItem.registerMaskTexture(stack) == 8){
-            return GTHHTextures.SMALL_BATTERY;
+            return GTHHCosmicTextures.SMALL_BATTERY;
         } else if (metaValueItem.registerMaskTexture(stack) == 9){
-            return GTHHTextures.MEDIUM_BATTERY;
+            return GTHHCosmicTextures.MEDIUM_BATTERY;
         } else if (metaValueItem.registerMaskTexture(stack) == 10){
-            return GTHHTextures.LARGE_BATTERY;
-        }
+            return GTHHCosmicTextures.LARGE_BATTERY;
+        } else
         return AvaritiaTextures.INFINITY_SWORD_MASK;
     }
+
 
     @SideOnly(Side.CLIENT)
     public float getMaskOpacity(ItemStack stack, EntityLivingBase player) {
@@ -796,6 +797,42 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
         }
         return metaValueItem.registerMaskOpacity(stack);
     }
+
+    public static class GTHHCosmicTextures implements TextureUtils.IIconRegister {
+        private static TextureMap map;
+        public static TextureAtlasSprite PROCESSOR;
+        public static TextureAtlasSprite ASSEMBLY;
+        public static TextureAtlasSprite COMPUTER;
+        public static TextureAtlasSprite MAINFRAME;
+        public static TextureAtlasSprite BOARD;
+        public static TextureAtlasSprite CIRCUIT_BOARD;
+        public static TextureAtlasSprite SMD;
+        public static TextureAtlasSprite SMALL_BATTERY;
+        public static TextureAtlasSprite MEDIUM_BATTERY;
+        public static TextureAtlasSprite LARGE_BATTERY;
+
+        public GTHHCosmicTextures() {
+        }
+
+        public void registerIcons(TextureMap textureMap) {
+            map = textureMap;
+            PROCESSOR = register("gthhcore:items/cosmic/mask/processor");
+            ASSEMBLY = register("gthhcore:items/cosmic/mask/assembly");
+            COMPUTER = register("gthhcore:items/cosmic/mask/computer");
+            MAINFRAME = register("gthhcore:items/cosmic/mask/mainframe");
+            BOARD = register("gthhcore:items/cosmic/mask/board");
+            CIRCUIT_BOARD = register("gthhcore:items/cosmic/mask/circuit_board");
+            SMD = register("gthhcore:items/cosmic/mask/smd");
+            SMALL_BATTERY = register("gthhcore:items/cosmic/mask/small_battery");
+            MEDIUM_BATTERY = register("gthhcore:items/cosmic/mask/medium_battery");
+            LARGE_BATTERY = register("gthhcore:items/cosmic/mask/large_battery");
+
+        }
+        private static TextureAtlasSprite register(String sprite) {
+            return map.registerSprite(new ResourceLocation(sprite));
+        }
+    }
+
     public class GTHHMetaValueItem {
 
         public GTHHMetaItem<T> getMetaItem() {
@@ -944,13 +981,13 @@ public abstract class GTHHMetaItem<T extends GTHHMetaItem<?>.GTHHMetaValueItem> 
             this.haloPulse = shouldDrawHaloPulse;
             return this;
         }
-        public GTHHMetaValueItem cosmicProperties(boolean shouldDrawHalo, int haloTexturePath, int haloColourInt, int haloSizeInt, boolean shouldDrawHaloPulse, int maskTextureInt, float maskOpacityFloat) {
+        public GTHHMetaValueItem cosmicProperties(boolean shouldDrawHalo, int haloTexturePath, int haloColourInt, int haloSizeInt, boolean shouldDrawHaloPulse, int maskTextureString, float maskOpacityFloat) {
             this.drawHalo = shouldDrawHalo;
             this.haloTexture = haloTexturePath;
             this.haloColour = haloColourInt;
             this.haloSize = haloSizeInt;
             this.haloPulse = shouldDrawHaloPulse;
-            this.maskTexture = maskTextureInt;
+            this.maskTexture = maskTextureString;
             this.maskOpacity = maskOpacityFloat;
             return this;
         }

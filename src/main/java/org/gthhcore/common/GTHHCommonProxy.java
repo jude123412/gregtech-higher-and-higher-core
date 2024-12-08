@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.gthhcore.Tags;
 import org.gthhcore.api.unification.materials.material.GTHHMaterials;
+
 import org.gthhcore.common.items.GTHHMetaItems;
 import org.gthhcore.common.items.metaitem.GTHHMetaItem;
 
