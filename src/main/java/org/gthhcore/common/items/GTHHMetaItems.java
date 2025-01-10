@@ -1,175 +1,221 @@
 package org.gthhcore.common.items;
 
-import com.google.common.base.CaseFormat;
-import gregtech.api.GregTechAPI;
-import gregtech.api.items.materialitem.MetaPrefixItem;
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.registry.MaterialRegistry;
-import gregtech.api.unification.ore.OrePrefix;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import gregtech.api.items.metaitem.MetaItem;
+import org.gthhcore.Tags;
 
-import org.gthhcore.common.items.metaitem.GTHHMetaItem;
-
-import java.lang.reflect.Field;
-import java.util.*;
+import java.util.List;
 
 public final class GTHHMetaItems {
     private GTHHMetaItems() {
     }
 
-    public static final List<GTHHMetaItem<?>> ITEMS = GTHHMetaItem.getMetaItems();
+    public static final List<MetaItem<?>> ITEMS = MetaItem.getMetaItems();
 
-    //GregTech Components
-    public static GTHHMetaItem<?>.GTHHMetaValueItem MicaBasedPulp;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem MicaBasedSheet;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem MicaInsulatorSheet;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem MicaInsulatorFoil;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellTenK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellTenKNaK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellTenKSpace;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellThirtyK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellThirtyKNaK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellThirtyKSpace;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellSixtyK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellSixtyKNaK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellSixtyKSpace;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellEmptyTenK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellEmptyThirtyK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CoolantCellEmptySixtyK;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BorosilicateGlassTube;
+    // Components
+    public static MetaItem<?>.MetaValueItem MICA_BASED_SHEET;
+    public static MetaItem<?>.MetaValueItem MICA_INSULATOR_SHEET;
+    public static MetaItem<?>.MetaValueItem MICA_INSULATOR_FOIL;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_TEN_K;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_TEN_K_NAK;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_TEN_K_SPACE;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_THIRTY_K;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_THIRTY_K_NAK;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_THIRTY_KSPACE;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_SIXTY_K;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_SIXTY_K_NAK;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_SIXTY_KSPACE;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_EMPTY_TEN_K;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_EMPTY_THIRTY_K;
+    public static MetaItem<?>.MetaValueItem COOLANT_CELL_EMPTY_SIXTY_K;
+    public static MetaItem<?>.MetaValueItem FUEL_ROD_SINGLE_THORIUM;
+    public static MetaItem<?>.MetaValueItem FUEL_ROD_DUAL_THORIUM;
+    public static MetaItem<?>.MetaValueItem FUEL_ROD_QUAD_THORIUM;
 
-    //Mod Integration
-    public static GTHHMetaItem<?>.GTHHMetaValueItem UnfiredJuicer;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem UnfiredBakeware;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SandCompoundWafer;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BasicChipWafer;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AdvancedChipWafer;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem FpgaWafer;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SandCompoundBoule;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem QuickAndDirtyPortalGenerator;
+    // Pam's Integration
+    public static MetaItem<?>.MetaValueItem UNFIRED_JUICER;
+    public static MetaItem<?>.MetaValueItem UNFIRED_BAKEWARE;
 
-    //GregTech Circuit Components
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareProcessorZPM;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareAssemblyUV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareComputerUHV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareMainframeUEV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicProcessorUV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicAssemblyUHV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicComputerUEV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicMainframeUIV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianProcessorUHV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianAssemblyUEV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianComputerUIV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianMainframeUXV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AntimatterProcessorUEV;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AntimatterBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareCircuitBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicCircuitBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianCircuitBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AntimatterCircuitBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalCircuitBoard;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem NanoSmdTransistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem NanoSmdResistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem NanoSmdCapacitor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem NanoSmdDiode;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem NanoSmdInductor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem QuantumSmdTransistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem QuantumSmdResistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem QuantumSmdCapacitor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem QuantumSmdDiode;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem QuantumSmdInductor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CrystalSmdTransistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CrystalSmdResistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CrystalSmdCapacitor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CrystalSmdDiode;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem CrystalSmdInductor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareSmdTransistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareSmdResistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareSmdCapacitor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareSmdDiode;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem SlimewareSmdInductor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicSmdTransistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicSmdResistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicSmdCapacitor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicSmdDiode;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem LasertronicSmdInductor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianSmdTransistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianSmdResistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianSmdCapacitor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianSmdDiode;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BohemianSmdInductor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AntimatterSmdTransistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AntimatterSmdResistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AntimatterSmdCapacitor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AntimatterSmdDiode;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem AntimatterSmdInductor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalSmdTransistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalSmdResistor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalSmdCapacitor;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalSmdDiode;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalSmdInductor;
+    // Twilight Integration
+    public static MetaItem<?>.MetaValueItem QUICK_AND_DIRTY_PORTAL_GENERATOR;
 
-    //Superconductor Bases
-    public static GTHHMetaItem<?>.GTHHMetaValueItem ManganesePhosphideBase;
+    // Boule
+    public static MetaItem<?>.MetaValueItem SAND_COMPOUND_BOULE;
 
-    //Higher Tier Batteries
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullZPMSmall;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUVMedium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUHVLarge;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUEVSmall;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUIVMedium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullUXVLarge;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullOPVSmall;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMAXMedium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryHullMAXIMUMLarge;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryZPMNaquadah;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUVNaquadah;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUHVNaquadah;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryZPMNaquadahEnriched;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUVNaquadahEnriched;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUHVNaquadahEnriched;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryZPMNaquadria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUVNaquadria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUHVNaquadria;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUEVCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUIVCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryUXVCosmicNeutronium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryOPVMultiversium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryMAX0Multiversium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem BatteryMAX1Multiversium;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem EnergyPile;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem EnergySwarm;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem EnergyPlatoon;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem EnergyArray;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem ConcentratedEnergyPlatoon;
-    public static GTHHMetaItem<?>.GTHHMetaValueItem TemporalEnergyArray;
+    // Boule-Direct Wafer
+    public static MetaItem<?>.MetaValueItem SAND_COMPOUND_WAFER;
 
+    // Unfinished Circuit Boards
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_BOARD;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_BOARD;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_BOARD;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_BOARD;
+
+    // Finished Circuit Boards
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_CIRCUIT_BOARD;
+
+    // Circuit Components
+    public static MetaItem<?>.MetaValueItem NANO_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem NANO_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem NANO_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem NANO_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem NANO_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem QUANTUM_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem QUANTUM_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem QUANTUM_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem QUANTUM_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem QUANTUM_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem BOROSILICATE_GLASS_TUBE;
+    public static MetaItem<?>.MetaValueItem SALT_CRYSTAL_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem SALT_CRYSTAL_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem SALT_CRYSTAL_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem SALT_CRYSTAL_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem SALT_CRYSTAL_SMD_INDUCTOR;
+
+    // Complex Wafers
+    public static MetaItem<?>.MetaValueItem BASIC_CHIP_WAFER;
+    public static MetaItem<?>.MetaValueItem ADVANCED_CHIP_WAFER;
+    public static MetaItem<?>.MetaValueItem FPGA_WAFER;
+
+    // Complex Cut Wafers
+
+
+    // Circuits
+    // T8: Slimeware
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_PROCESSOR_ZPM;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_ASSEMBLY_UV;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_COMPUTER_UHV;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_MAINFRAME_UEV;
+
+    // T9: Lasertronic
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_PROCESSOR_UV;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_ASSEMBLY_UHV;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_COMPUTER_UEV;
+    public static MetaItem<?>.MetaValueItem LASERTRONIC_MAINFRAME_UIV;
+
+    // T10: Bohemian
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_PROCESSOR_UHV;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_ASSEMBLY_UEV;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_COMPUTER_UIV;
+    public static MetaItem<?>.MetaValueItem BOHEMIAN_MAINFRAME_UXV;
+
+    // T11: Antimatter
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_PROCESSOR_UEV;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_ASSEMBLY_UIV;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_COMPUTER_UXV;
+    public static MetaItem<?>.MetaValueItem ANTIMATTER_MAINFRAME_OPV;
+
+    // T12: Temporal
+    public static MetaItem<?>.MetaValueItem TEMPORAL_PROCESSOR_UIV;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_ASSEMBLY_UXV;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_COMPUTER_OPV;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_MAINFRAME_MAX;
+
+    // T13: ???
+
+    // Misc Circuit Components
+    public static MetaItem<?>.MetaValueItem WETWARE_CENTRAL_PROCESSING_UNIT;
+
+    // Slimeware Circuit Components
+    public static MetaItem<?>.MetaValueItem SLIME_PROCESSOR;
+    public static MetaItem<?>.MetaValueItem SLIME_CELL;
+    public static MetaItem<?>.MetaValueItem RAW_SALT_CRYSTAL_CHIP;
+    public static MetaItem<?>.MetaValueItem RAW_SALT_CRYSTAL_CHIP_PART;
+    public static MetaItem<?>.MetaValueItem ENGRAVED_SALT_CRYSTAL_CHIP;
+    public static MetaItem<?>.MetaValueItem SLIMEWARE_CENTRAL_PROCESSING_UNIT;
+
+    // Battery Hulls
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_ZPM_SMALL;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_UV_MEDIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_UHV_LARGE;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_UEV_SMALL;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_UIV_MEDIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_UXV_LARGE;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_OPV_SMALL;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_MAX_MEDIUM;
+
+    // Batteries
+    public static MetaItem<?>.MetaValueItem BATTERY_EV_SUNNARIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_IV_SUNNARIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_LUV_SUNNARIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_EV_ENRICHED_SUNNARIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_IV_ENRICHED_SUNNARIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_LUV_ENRICHED_SUNNARIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_ZPM_NAQUADAH;
+    public static MetaItem<?>.MetaValueItem BATTERY_UV_NAQUADAH;
+    public static MetaItem<?>.MetaValueItem BATTERY_UHV_NAQUADAH;
+    public static MetaItem<?>.MetaValueItem BATTERY_ZPM_ENRICHED_NAQUADAH;
+    public static MetaItem<?>.MetaValueItem BATTERY_UV_ENRICHED_NAQUADAH;
+    public static MetaItem<?>.MetaValueItem BATTERY_UHV_ENRICHED_NAQUADAH;
+    public static MetaItem<?>.MetaValueItem BATTERY_ZPM_NAQUADRIA;
+    public static MetaItem<?>.MetaValueItem BATTERY_UV_NAQUADRIA;
+    public static MetaItem<?>.MetaValueItem BATTERY_UHV_NAQUADRIA;
+    public static MetaItem<?>.MetaValueItem BATTERY_UEV_COSMIC_NEUTRONIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_UIV_COSMIC_NEUTRONIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_UXV_COSMIC_NEUTRONIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_UEV_INFINITY;
+    public static MetaItem<?>.MetaValueItem BATTERY_UIV_INFINITY;
+    public static MetaItem<?>.MetaValueItem BATTERY_UXV_INFINITY;
+    public static MetaItem<?>.MetaValueItem BATTERY_UEV_EMPOWERED_INFINITY;
+    public static MetaItem<?>.MetaValueItem BATTERY_UIV_EMPOWERED_INFINITY;
+    public static MetaItem<?>.MetaValueItem BATTERY_UXV_EMPOWERED_INFINITY;
+    public static MetaItem<?>.MetaValueItem BATTERY_OPV_MULTIPHASE_COSMIC_NEUTRONIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_MAX_MULTIPHASE_COSMIC_NEUTRONIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_OPV_ANTIMATTER;
+    public static MetaItem<?>.MetaValueItem BATTERY_MAX_ANTIMATTER;
+    public static MetaItem<?>.MetaValueItem BATTERY_OPV_MULTIVERSIUM;
+    public static MetaItem<?>.MetaValueItem BATTERY_MAX_MULTIVERSIUM;
+    public static MetaItem<?>.MetaValueItem ENERGY_PILE;
+    public static MetaItem<?>.MetaValueItem ENERGY_SWARM;
+    public static MetaItem<?>.MetaValueItem ENERGY_PLATOON;
+    public static MetaItem<?>.MetaValueItem ENERGY_ARRAY;
+    public static MetaItem<?>.MetaValueItem ENERGY_MOUNTAIN;
+    public static MetaItem<?>.MetaValueItem TEMPORAL_ENERGY_ARRAY;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_UEV;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_UIV;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_UXV;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_OPV;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MAX;
 
     public static void init() {
-        GTHHMetaItem1 metaItem1 = new GTHHMetaItem1();
-        metaItem1.setRegistryName("meta_item_1");
 
-    }
+        //GTHH MetaItem Registry : Registers under GregTech Tab with a registry name of meta_item_2
+        GTHHMetaItem2 metaItem2 = new GTHHMetaItem2();
+        metaItem2.setRegistryName(Tags.MODID, "meta_item_0");
 
-    @SideOnly(Side.CLIENT)
-    public static void registerModels() {
-        MinecraftForge.EVENT_BUS.register(GTHHMetaItems.class);
-        for (GTHHMetaItem<?> item : ITEMS) {
-            item.registerModels();
-            item.registerTextureMesh();
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void registerColors() {
-        for (GTHHMetaItem<?> item : ITEMS) {
-            item.registerColor();
-        }
     }
 }

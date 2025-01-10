@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "gthhcore:items/metaitems/component.quick_and_dirty_portal_generator"
-  }
-}

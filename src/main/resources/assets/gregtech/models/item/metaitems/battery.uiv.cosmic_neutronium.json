@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gthhcore:items/metaitems/bettery.uiv.cosmic_neutronium"
+    "layer0": "gregtech:items/metaitems/bettery.uiv.cosmic_neutronium"
   }
 }

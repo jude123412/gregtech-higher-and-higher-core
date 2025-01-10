@@ -1,12 +1,14 @@
 [{
     "modid": "${modid}",
     "name": "${modname}",
-    "description": "An example mod for Minecraft 1.12.2 with Forge",
+    "description": "A mod to help intergrate other mod with GregTech ",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "logoFile": "",
-    "url": "",
-    "authorList": [],
-    "credits": "",
-    "dependencies": []
+    "logoFile": "assets/gthhcore/textures/gthh_core_icon.png",
+    "url": "https://github.com/jude123412/gregtech-higher-and-higher-core",
+    "authorList": [
+        "xXjudeXx"
+    ],
+    "credits": "The GregTech CEU Authors for providing the buildscript for this mod",
+    "dependencies": ["groovyscript"]
 }]

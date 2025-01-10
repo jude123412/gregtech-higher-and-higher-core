@@ -3,18 +3,17 @@ package org.gthhcore.api.unification.materials.material.info;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.BlastProperty;
+import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty.GasTier;
 import gregtech.api.unification.material.properties.ToolProperty;
-import gregtech.api.GTValues;
 import org.gthhcore.api.unification.GTHHElements;
 import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
 
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.SHINY;
 import static gregtech.api.util.GTUtility.*;
 import static gregtech.api.GTValues.*;
 
-import static gregtech.integration.groovy.GroovyMaterialBuilderExpansion.iconSet;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 
 public class GTHHElementMaterials {
@@ -26,7 +25,8 @@ public class GTHHElementMaterials {
             CosmicNeutronium = new Material.Builder(getMetaItemId(), gregtechId("cosmic_neutronium"))
                     .dust()
                     .ingot()
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND, GENERATE_LENS)
+                    .ore()
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
                     .blast(b -> b
                             .temp(10000, GasTier.LOW)
                             .blastStats(VA[UEV], 8000)
@@ -50,9 +50,10 @@ public class GTHHElementMaterials {
                             .temp(10000, GasTier.LOW)
                             .blastStats(VA[UIV], 16000)
                             .vacuumStats(VA[UEV]))
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND, GENERATE_LENS)
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
                     .iconSet(GTHHMaterialIconSet.INFINITY)
                     .element(GTHHElements.Infinity)
+                    .cableProperties(V[MAX], 8192, (int) V[ZPM])
                     .build();
 
             Multiversium = new Material.Builder(getMetaItemId(), gregtechId("multiversium"))
@@ -62,18 +63,18 @@ public class GTHHElementMaterials {
                             .temp(10000, GasTier.LOW)
                             .blastStats(VA[UXV], 32000)
                             .vacuumStats(VA[UIV]))
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND, GENERATE_LENS)
-                    .iconSet(GTHHMaterialIconSet.MULTIVERSIUM)
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
                     .element(GTHHElements.Multiversium)
+                    .color(0x000084)
                     .build();
 
             //Found on Mercury T3 (IV Tier)
             Infernorite = new Material.Builder(getMetaItemId(), gregtechId("infernorite"))
                     .dust()
                     .ingot()
-                    .ore()
+                    .ore(true)
                     .liquid(new FluidBuilder().temperature(5299))
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND, GENERATE_LENS)
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
                     .blast(b -> b
                             .temp(5299, GasTier.LOW)
                             .blastStats(VA[IV], 3320)
@@ -84,22 +85,87 @@ public class GTHHElementMaterials {
                             .durabilityMultiplier(1).build())
                     .iconSet(GTHHMaterialIconSet.INFERNORITE)
                     .element(GTHHElements.Infernorite)
+                    .color(0xFF9100)
                     .build();
 
             //Found on Asteroids T3 (IV Tier)
             Crynorium = new Material.Builder(getMetaItemId(), gregtechId("crynorium"))
                     .dust()
                     .ingot()
-                    .ore()
+                    .ore(true)
                     .liquid(new FluidBuilder().temperature(103))
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND, GENERATE_LENS)
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
                     .blast(b -> b
                             .temp(7015, GasTier.LOW)
                             .blastStats(VA[LuV], 2560)
                             .vacuumStats(VA[MV]))
-                    .iconSet(GTHHMaterialIconSet.CRYNORIUM)
+                    .iconSet(GTHHMaterialIconSet.INFERNORITE)
                     .element(GTHHElements.Crynorium)
+                    .color(0x0046FF)
                     .build();
+
+            Draconium = new Material.Builder(getMetaItemId(), gregtechId("draconium"))
+                    .dust()
+                    .ingot()
+                    .ore()
+                    .liquid(new FluidBuilder().temperature(5555))
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
+                    .blast(b -> b
+                            .temp(5555, GasTier.LOW)
+                            .blastStats(VA[LuV], 2560)
+                            .vacuumStats(VA[MV]))
+                    .iconSet(MaterialIconSet.SHINY)
+                    .element(GTHHElements.Draconium)
+                    .cableProperties(V[UEV], 4, (int) V[IV])
+                    .color(0x9500D6)
+                    .build();
+
+            AwakenedDraconium = new Material.Builder(getMetaItemId(), gregtechId("awakened_draconium"))
+                    .dust()
+                    .ingot()
+                    .ore()
+                    .liquid(new FluidBuilder().temperature(7777))
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
+                    .blast(b -> b
+                            .temp(7777, GasTier.LOW)
+                            .blastStats(VA[LuV], 2560)
+                            .vacuumStats(VA[MV]))
+                    .iconSet(MaterialIconSet.SHINY)
+                    .element(GTHHElements.AwakenedDraconium)
+                    .cableProperties(V[UIV], 4,(int) V[LuV])
+                    .color(0xFF5D00)
+                    .build();
+
+            ElectroMatter = new Material.Builder(getMetaItemId(), gregtechId("electro_matter"))
+                    .dust()
+                    .ingot()
+                    .liquid(new FluidBuilder().temperature(8000))
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
+                    .blast(b -> b
+                            .temp(11550, GasTier.LOW)
+                            .blastStats(VA[UEV], 9950)
+                            .vacuumStats(VA[UHV]))
+                    .iconSet(GTHHMaterialIconSet.INFERNORITE)
+                    .element(GTHHElements.ElectroMatter)
+                    .cableProperties(V[UXV], 4,(int) V[ZPM])
+                    .color(0xFF99F6)
+                    .build();
+
+            MissingError = new Material.Builder(getMetaItemId(), gregtechId("missing_error"))
+                    .dust()
+                    .ingot()
+                    .liquid(new FluidBuilder().temperature(8751))
+                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
+                    .blast(b -> b
+                            .temp(8751, GasTier.LOW)
+                            .blastStats(VA[UEV], 9950)
+                            .vacuumStats(VA[UHV]))
+                    .iconSet(GTHHMaterialIconSet.MISSINGERROR)
+                    .element(GTHHElements.MissingError)
+                    .cableProperties(V[UXV], 4,(int) V[ZPM])
+                    .color(0xFF00C7)
+                    .build();
+
 
         }
 

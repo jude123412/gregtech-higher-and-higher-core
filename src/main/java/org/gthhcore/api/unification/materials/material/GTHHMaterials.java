@@ -1,19 +1,28 @@
 package org.gthhcore.api.unification.materials.material;
 
 import gregtech.api.unification.material.Material;
-import org.gthhcore.api.unification.GTHHElements;
+import net.minecraft.block.BlockEndPortal;
+import net.minecraft.client.renderer.tileentity.TileEntityEndPortalRenderer;
+import org.gthhcore.api.unification.material.materials.GTHHMaterialFlagAddition;
 import org.gthhcore.api.unification.materials.material.info.GTHHElementMaterials;
+import org.gthhcore.api.unification.ore.GTHHOrePrefix;
 
 public class GTHHMaterials {
-    //Fantasy Materials
+
+
+    // Element Materials
     public static Material CosmicNeutronium;
     public static Material InfinityCatalyst;
     public static Material Infinity;
     public static Material Multiversium;
     public static Material Infernorite;
     public static Material Crynorium;
+    public static Material Draconium;
+    public static Material AwakenedDraconium;
+    public static Material ElectroMatter;
+    public static Material MissingError;
 
-    //Fluid Materials
+    // Fluid Materials
     public static Material DirtyPreciousMetalSolution;
     public static Material DilutePreciousMetalSolution;
     public static Material CleanPreciousMetalSolution;
@@ -22,8 +31,13 @@ public class GTHHMaterials {
     public static Material Coolant;
     public static Material SpaceCoolant;
     public static Material PhotovoltaicComposite;
+    public static Material RawSlimeGrowthMedium;
+    public static Material SterileSlimeGrowthMedium;
+    public static Material SlimeCulture;
+    public static Material SlimeSolder;
+    public static Material SaltsSolution;
 
-    //Ore Materials
+    // Ore Materials
     public static Material Albite;
     public static Material Anorthite;
     public static Material Plagioclase;
@@ -34,7 +48,9 @@ public class GTHHMaterials {
     public static Material Cryolite;
     public static Material SolarGradeSilicon;
 
-    //Second Degree Materials
+    // Second Degree Materials
+    public static Material SaltsCatalyst;
+    public static Material MicaInsulator;
     public static Material VividAlloy;
     public static Material VibrantAlloy;
     public static Material StellarAlloy;
@@ -81,7 +97,7 @@ public class GTHHMaterials {
     public static Material TitaniaStone;
     public static Material IapetusStone;
 
-    //Third Degree Materials
+    // Third Degree Materials
     public static Material Sand;
     public static Material SilverGallium;
     public static Material Tantaloper;
@@ -91,12 +107,23 @@ public class GTHHMaterials {
     public static Material CosmicCarbon;
     public static Material Tetrapech;
 
+    // Mod Integration Materials
+    public static Material ChargedCertusQuartz;
+    public static Material Fluix;
+    public static Material Fluixilized;
+    public static Material FluixPearl;
+    public static Material SkyStone;
+
+
     public static void init() {
         GTHHElementMaterials.register();
         GTHHFantasyMaterials.register();
         GTHHFirstDegreeMaterials.register();
-        GTHHFluidMaterials.register();
         GTHHSecondDegreeMaterials.register();
         GTHHThirdDegreeMaterials.register();
+        GTHHFluidMaterials.register();
+        GTHHModIntegrationMaterials.register();
+        GTHHMaterialFlagAddition.init();
+        GTHHOrePrefix.init();
     }
 }

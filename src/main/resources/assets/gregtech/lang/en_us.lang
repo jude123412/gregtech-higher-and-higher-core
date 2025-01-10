@@ -1,13 +1,13 @@
-//Primative Components/Circuits
+# Primative Components/Circuits
 metaitem.circuit.electronic.name=Electronic Circuit
 metaitem.circuit.good_electronic.name=Electronic Assembly
 
-//Integrated Logic Components
+# Integrated Logic Components
 metaitem.circuit.basic_integrated.name=Integrated Logic Circuit
 metaitem.circuit.good_integrated.name=Integrated Logic Assembly
 metaitem.circuit.advanced_integrated.name=Integrated Logic Supercomputer
 
-//Integrated Components/Circuits
+# Integrated Components/Circuits
 metaitem.component.smd.diode.name=Integrated SMD Diode
 metaitem.component.smd.capacitor.name=Integrated SMD Capacitor
 metaitem.component.smd.transistor.name=Integrated SMD Transistor
@@ -18,7 +18,7 @@ metaitem.circuit.assembly.name=Integrated Assembly
 metaitem.circuit.workstation.name=Integrated Supercomputer
 metaitem.circuit.mainframe.name=Integrated Mainframe
 
-//Nano Components/Circuits
+# Nano Components/Circuits
 metaitem.component.nano.smd.transistor.name=Nano SMD Transistor
 metaitem.component.nano.smd.resistor.name=Nano SMD Resistor
 metaitem.component.nano.smd.capacitor.name=Nano SMD Capacitor
@@ -34,7 +34,7 @@ metaitem.circuit.nano_assembly.name=Nano Assembly
 metaitem.circuit.nano_computer.name=Nano Supercomputer
 metaitem.circuit.nano_mainframe.name=Nano Mainframe
 
-//Quantum Components/Circuits
+# Quantum Components/Circuits
 metaitem.component.quantum.smd.transistor.name=Quantum SMD Transistor
 metaitem.component.quantum.smd.resistor.name=Quantum SMD Resistor
 metaitem.component.quantum.smd.capacitor.name=Quantum SMD Capacitor
@@ -50,7 +50,7 @@ metaitem.circuit.quantum_assembly.name=Quantum Assembly
 metaitem.circuit.quantum_computer.name=Quantum Supercomputer
 metaitem.circuit.quantum_mainframe.name=Quantum Mainframe
 
-//Crystal Components/Circuits
+# Crystal Components/Circuits
 metaitem.component.crystalline.smd.transistor.name=Crystalline SMD Transistor
 metaitem.component.crystalline.smd.resistor.name=Crystalline SMD Resistor
 metaitem.component.crystalline.smd.capacitor.name=Crystalline SMD Capacitor
@@ -76,7 +76,7 @@ metaitem.circuit.crystal_assembly.name=Crystal Assembly
 metaitem.circuit.crystal_computer.name=Crystal Supercomputer
 metaitem.circuit.crystal_mainframe.name=Crystal Mainframe
 
-//Wetware Components/Circuits
+# Wetware Components/Circuits
 metaitem.component.advanced_smd.diode.name=Wetware SMD Diode
 metaitem.component.advanced_smd.capacitor.name=Wetware SMD Capacitor
 metaitem.component.advanced_smd.transistor.name=Wetware SMD Transistor
@@ -91,8 +91,9 @@ metaitem.circuit.wetware_processor.name=Wetware Processor
 metaitem.circuit.wetware_assembly.name=Wetware Assembly
 metaitem.circuit.wetware_computer.name=Wetware Supercomputer
 metaitem.circuit.wetware_mainframe.name=Wetware Mainframe
+metaitem.wetware.central_processing_unit.name=Wetware CPU
 
-//Slimeware Components|Circuits|Circuit Boards|Boards
+# Slimeware Components|Circuits|Circuit Boards|Boards
 metaitem.component.slimeware.smd.transistor.name=Slimeware SMD Tranistor
 metaitem.component.slimeware.smd.resistor.name=Slimeware SMD Resistor
 metaitem.component.slimeware.smd.capacitor.name=Slimeware SMD Capacitor
@@ -113,8 +114,25 @@ metaitem.circuit.slimeware_processor.tooltip=Its trying to become symbiotic with
 metaitem.circuit.slimeware_assembly.tooltip=Can run GregTech/n§2UV-Tier Circuit
 metaitem.circuit.slimeware_computer.tooltip=Where Slime and Machinery merge/n§2UHV-Tier Circuit
 metaitem.circuit.slimeware_mainframe.tooltip=Be careful, Its always thinking/n§2UEV-Tier Circuit
+metaitem.processor.slime.name=Slime Processing Unit
+metaitem.slime_cell.name=Slime Cells
+metaitem.crystal.raw_salt.name=Raw Salt Crystal
+metaitem.crystal.raw_salt_chip.name=Raw Salt Crystal Chip
+metaitem.engraved.salt_crystal_chip.name=Engraved Salt Crystal Chip
+metaitem.engraved.salt_crystal_chip.tooltip=Time to Soak with something Organic!
+metaitem.slimeware.central_processing_unit.name=Slimeware CPU
+metaitem.component.salt_crystal.smd.transistor.name=Salt Crystal SMD Tranistor
+metaitem.component.salt_crystal.smd.resistor.name=Salt Crystal SMD Resistor
+metaitem.component.salt_crystal.smd.capacitor.name=Salt Crystal SMD Capacitor
+metaitem.component.salt_crystal.smd.diode.name=Salt Crystal SMD Diode
+metaitem.component.salt_crystal.smd.inductor.name=Salt Crystal SMD Inductor
+metaitem.component.salt_crystal.smd.transistor.tooltip=Ready For Valid Host!
+metaitem.component.salt_crystal.smd.resistor.tooltip=Ready For Valid Host!
+metaitem.component.salt_crystal.smd.capacitor.tooltip=Ready For Valid Host!
+metaitem.component.salt_crystal.smd.diode.tooltip=Ready For Valid Host!
+metaitem.component.salt_crystal.smd.inductor.tooltip=Ready For Valid Host!
 
-//Lasertronic Components|Circuits|Circuit Boards|Boards
+# Lasertronic Components|Circuits|Circuit Boards|Boards
 metaitem.component.lasertronic.smd.transistor.name=Lasertronic SMD Tranistor
 metaitem.component.lasertronic.smd.resistor.name=Lasertronic SMD Resistor
 metaitem.component.lasertronic.smd.capacitor.name=Lasertronic SMD Capacitor
@@ -136,7 +154,7 @@ metaitem.circuit.lasertronic_assembly.tooltip=Laser, Laser, Laser!/n§5UHV-Tier 
 metaitem.circuit.lasertronic_computer.tooltip=More Lasers! Soo many Lasers!/n§5UEV-Tier Circuit
 metaitem.circuit.lasertronic_mainframe.tooltip=May cause temporary blindness/n§5UIV-Tier Circuit
 
-//Bohemian Components|Circuits|Circuit Boards|Boards
+# Bohemian Components|Circuits|Circuit Boards|Boards
 metaitem.component.bohemian.smd.transistor.name=Bohemian SMD Transistor
 metaitem.component.bohemian.smd.resistor.name=Bohemian SMD Resistor
 metaitem.component.bohemian.smd.capacitor.name=Bohemian SMD Capacitor
@@ -158,25 +176,69 @@ metaitem.circuit.bohemian_assembly.tooltip=Testing, Testing, is this thing on?/n
 metaitem.circuit.bohemian_computer.tooltip=1, 2, 3, 4, 5.../n§3UIV-Tier Circuit
 metaitem.circuit.bohemian_mainframe.tooltip=The number Sixus, I mean Six xD/n§3UXV-Tier Circuit
 
-//Meta Items
+# Anti Components|Circuits|Circuit Boards|Boards
+metaitem.component.antimatter.smd.transistor.name=Antimatter SMD Tranistor
+metaitem.component.antimatter.smd.resistor.name=Antimatter SMD Resistor
+metaitem.component.antimatter.smd.capacitor.name=Antimatter SMD Capacitor
+metaitem.component.antimatter.smd.diode.name=Antimatter SMD Diode
+metaitem.component.antimatter.smd.inductor.name=Antimatter SMD Inductor
+metaitem.component.antimatter.smd.transistor.tooltip=Antimatter Electronic Component
+metaitem.component.antimatter.smd.resistor.tooltip=Antimatter Electronic Component
+metaitem.component.antimatter.smd.capacitor.tooltip=Antimatter Electronic Component
+metaitem.component.antimatter.smd.diode.tooltip=Antimatter Electronic Component
+metaitem.component.antimatter.smd.inductor.tooltip=Antimatter Electronic Component
+metaitem.board.antimatter.name=Antimatter Circuit Board
+metaitem.circuit_board.antimatter.name=Reverse Circuit Board
+metaitem.circuit.antimatter_processor.name=Antimatter Processor
+metaitem.circuit.antimatter_assembly.name=Antimatter Assembly
+metaitem.circuit.antimatter_computer.name=Antimatter Supercomputer
+metaitem.circuit.antimatter_mainframe.name=Antimatter Mainframe
+metaitem.circuit.antimatter_processor.tooltip=A Circuit made of pure Antimatter/n§8UEV-Tier Circuit
+metaitem.circuit.antimatter_assembly.tooltip=Just dont touch it on anything/n§8UIV-Tier Circuit
+metaitem.circuit.antimatter_computer.tooltip=How is this even possible?/n§8UXV-Tier Circuit
+metaitem.circuit.antimatter_mainframe.tooltip=Cosmic, Computation, Calculation/n§8OPV-Tier Circuit
+
+# Temporally Woven Components|Circuits|Circuit Boards|Boards
+metaitem.component.temporal.smd.transistor.name=Temporal SMD Transistor
+metaitem.component.temporal.smd.resistor.name=Temporal SMD Resistor
+metaitem.component.temporal.smd.capacitor.name=Temporal SMD Capacitor
+metaitem.component.temporal.smd.diode.name=Temporal SMD Diode
+metaitem.component.temporal.smd.inductor.name=Temporal SMD Inductor
+metaitem.component.temporal.smd.transistor.tooltip=Temporal Electronic Component
+metaitem.component.temporal.smd.resistor.tooltip=Temporal Electronic Component
+metaitem.component.temporal.smd.capacitor.tooltip=Temporal Electronic Component
+metaitem.component.temporal.smd.diode.tooltip=Temporal Electronic Component
+metaitem.component.temporal.smd.inductor.tooltip=Temporal Electronic Component
+metaitem.board.temporal.name=Temporal Circuit Board
+metaitem.circuit_board.temporal.name=Temporal Circuit Board
+metaitem.circuit.temporal_processor.name=Temporal Processor
+metaitem.circuit.temporal_assembly.name=Temporal Assembly
+metaitem.circuit.temporal_computer.name=Temporal Supercomputer
+metaitem.circuit.temporal_mainframe.name=Temporal Mainframe
+metaitem.circuit.temporal_processor.tooltip=Universe Simulation Device/n§fUIV-Tier Circuit
+metaitem.circuit.temporal_assembly.tooltip=Multiverse Simulation Device/n§fUXV-Tier Circuit
+metaitem.circuit.temporal_computer.tooltip=Temporal Simulation Device/n§fOPV-Tier Circuit
+metaitem.circuit.temporal_mainframe.tooltip=All is one and one is all/n§fMAX-Tier Circuit
+
+# Meta Items
 metaitem.component.quick_and_dirty_portal_generator.name=Quick and Dirty Portal Generator
 metaitem.component.quick_and_dirty_portal_generator.tooltip=Use this to travel to the Twilight Forest!
 metaitem.component.borosilicate_glass.tube.name=Borosilicate Glass Tube
 
-//Logistic Pipes
+# Logistic Pipes
 metaitem.boule.sand_compound.name=Sand Compound Boule
 metaitem.wafer.sand_compound.name=Sand Compound Wafer
 metaitem.wafer.basic_chip.name=Basic Chip Wafer
 metaitem.wafer.advanced_chip.name=Advanced Chip Wafer
 metaitem.wafer.fpga.name=FPGA Wafer
 
-//Mica
-metaitem.component.mica_based_pulp.name=Mica Based Pulp
+# Mica
+
 metaitem.component.mica_based_sheet.name=Mica Based Sheet
 metaitem.component.mica_insulator_sheet.name=Mica Insulator Sheet
 metaitem.component.mica_insulator_foil.name=Mica Insulator Foil
 
-//Coolant Cells
+# Coolant Cells
 metaitem.component.10k_coolant_cell.name=10k Coolant Cell
 metaitem.component.10k_nak_coolant_cell.name=10k NaK Coolant Cell
 metaitem.component.10k_space_coolant_cell.name=10k Space Coolant Cell
@@ -190,15 +252,11 @@ metaitem.component.empty_10k_coolant_cell.name=Empty 10k Coolant Cell
 metaitem.component.empty_30k_coolant_cell.name=Empty 30k Coolant Cell
 metaitem.component.empty_60k_coolant_cell.name=Empty 60k Coolant Cell
 
-//Pam's Harvest Craft
+# Pam's Harvest Craft
 metaitem.unfired.juicer.name=Unfired Juicer
 metaitem.unfired.bakeware.name=Unfired Bakeware
 
-//Raw Elements
-metaitem.raw.aluminium.name=Raw Aluminium
-metaitem.raw.gallium_arsenide.name=Raw Gallium Arsenide
-
-//Ores
+# Ores
 item.material.oreprefix.oreMoon=Moon %s Ore
 item.material.oreprefix.oreMars=Mars %s Ore
 item.material.oreprefix.oreAsteroid=Asteroid %s Ore
@@ -225,7 +283,7 @@ item.material.oreprefix.oreOberon=Oberon %s Ore
 item.material.oreprefix.oreTitania=Titania %s Ore
 item.material.oreprefix.oreIapetus=Iapetus %s Ore
 
-//Ore Veins
+# Ore Veins
 gregtech.veins.ore.precious_metals=Precious Metals
 gregtech.veins.ore.cryolite=Cryolite
 gregtech.veins.ore.infenorite=Infenorite
@@ -234,15 +292,18 @@ gregtech.veins.ore.bauxite=Bauxite
 gregtech.veins.ore.ilmenite=Ilmenite
 gregtech.veins.ore.aluminium=Aluminium
 
-//Fantasy Materials
+# Element Materials
 gregtech.material.cosmic_neutronium=Cosmic Neutronium
 gregtech.material.infinity_catalyst=Infinity Catalyst
 gregtech.material.infinity=Infinity
 gregtech.material.multiversium=Multiversium
 gregtech.material.infernorite=Infernorite
 gregtech.material.crynorium=Crynorium
+gregtech.material.draconium=Draconium
+gregtech.material.awakened_draconium=Awakened Draconium
+gregtech.material.electro_matter=Electro-Matter
 
-//Fluid Materials
+# Fluid Materials
 gregtech.material.dirty_precious_metal_solution=Dirty Precious Metal Solution
 gregtech.material.dilte_precious_metal_solution=Dilute Precious Metal Solution
 gregtech.material.clean_precious_metal_solution=Clean Precious Metal Solution
@@ -252,8 +313,13 @@ gregtech.material.coolant=Coolant
 gregtech.material.nak_coolant=NaK Coolant
 gregtech.material.space_coolant=Space Coolant
 gregtech.material.photovoltaic_composite=Photovoltaic Composite
+gregtech.material.raw_slime_growth_medium=Raw Slime Growth Medium
+gregtech.material.sterile_slime_growth_medium=Sterile Slime Growth Medium
+gregtech.material.slime_culture=Slime Culture
+gregtech.material.slime_solder=Slime Solder
+gregtech.material.salts_solution=Salts Solution
 
-//Ore Materials
+# Ore Materials
 gregtech.material.albite=Albite
 gregtech.material.anorthite=Anorthite
 gregtech.material.plagioclase=Plagioclase
@@ -267,7 +333,9 @@ gregtech.material.precious_metals=Precious Metals
 gregtech.material.cryolite=Cryolite
 gregtech.material.solar_grade_silicon=Poly(Si) Solar Grade Silicon
 
-//Second Degree Materials
+# Second Degree Materials
+gregtech.material.salts_catalyst=Salts Catalyst
+gregtech.material.mica_insulator=Mica Insulator
 gregtech.material.electrical_steel=Electrical Steel
 gregtech.material.energetic_alloy=Energetic Alloy
 gregtech.material.vibrant_alloy=Vibrant Alloy
@@ -314,7 +382,7 @@ gregtech.material.oberon_stone=Oberon Stone
 gregtech.material.titania_stone=Titania Stone
 gregtech.material.iapetus_stone=Iapetus Stone
 
-//Third Degree Materials
+# Third Degree Materials
 gregtech.material.sand=Sand
 gregtech.material.rtm_alloy=Ruthubdenum
 gregtech.material.silver_gallium=Silver Gallium
@@ -325,10 +393,22 @@ gregtech.material.mytryl=Mytryl
 gregtech.material.tetrapech=Tetrapech
 gregtech.material.cosmic_carbon=Cosmic Carbon
 
-//Wire Coils
+# Mod Integration Materials
+# AE2
+gregtech.material.certus=Certus Quartz Crystal
+gregtech.material.charged_certus_quartz=Charged Certus Quartz Crystal
+gregtech.material.fluix=Fluix Crystal
+gregtech.material.fluix_pearl=Fluix Pearl
+gregtech.material.sky_stone=Sky Stone
+# AE2
+# Crazy AE
+gregtech.material.fluixilized=Fluixilized Crystal
+# Crazy AE
+
+# Wire Coils
 tile.wire_coil.rtm_alloy.name=Ruthubdenum Coil Block
 
-//Multiblocks
+# Multiblocks
 gregtech.machine.steam_smasher.name=Steam Smasher
 gregtech.multiblock.steam_smasher.description=A better more Multi Steam Forge Hammer 
 gregtech.machine.steam_squasher.name=Steam Squasher
@@ -342,13 +422,10 @@ gregtech.multiblock.gthh_vacuum_freezer.description=The Vacuum Freezer is a mult
 gregtech.machine.gthh_precise_assembler.name=Precise Assembler
 gregtech.multiblock.gthh_precise_assembler.description=The Precise Assembler is a multiblock structure that is mainly used for crafting more advanced components such as Nano and Quantum SMD Components.
 
-//Multiblock Info
+# Multiblock Info
 gregtech.multiblock.maceration_stack.tier=Casing Tier: %s
-//Deprication Tooltips
-gregtech.machine.vacuum_freezer.tooltip=§cDeprecated §fPlease Craft into GTHH Variant in crafting grid§7
-gregtech.machine.electric_blast_furnace.tooltip=§cDeprecated §fPlease Craft into GTHH Variant in crafting grid§7
 
-//Machines
+# Machines
 gregtech.machine.zombie_engine.lv.name=Zombie Engine I
 gregtech.machine.zombie_engine.mv.name=Zombie Engine II
 gregtech.machine.zombie_engine.hv.name=Zombie Engine III
@@ -388,19 +465,118 @@ gregtech.machine.precise_assembler.uiv.tooltip=Flame on, I mean Avengers Assembl
 gregtech.machine.precise_assembler.uxv.tooltip=Flame on, I mean Avengers Assemble!
 gregtech.machine.precise_assembler.opv.tooltip=Flame on, I mean Avengers Assemble!
 
-//Recipemaps
+# Recipemaps
 recipemap.zombie_engine_fuels.name=Zombie Generator
 recipemap.ender_engine_fuels.name=Ender Generator
 recipemap.gthh_blast_recipes.name=Blast Furnace
 recipemap.gthh_vacuum_recipes.name=Vacuum Freezing
 recipemap.gthh_precise_recipes.name=Precise Assembly
 
-//Ore Prefix Names, %s is a material name
-item.material.oreprefix.cluster=Native %s
+# Ore Prefix Names, %s is a material name
+item.material.oreprefix.cluster=Native %s Cluster
 item.material.oreprefix.glob=%s Glob
 item.material.oreprefix.fragment=%s Fragment
 item.material.oreprefix.murky=Murky %s
 item.material.oreprefix.raw=Raw %s
 
-//Superconductor Bases
+# Superconductor Bases
 metaitem.base.manganese_phosphide.name=Base Manganese Phosphide wire
+
+# Batteries
+metaitem.battery.charge_time=§aHolds %,d%s of Power
+metaitem.battery.charge_detailed=%,d/%,d EU - Tier %s §7(§%c%,d%s remaining§7)
+metaitem.battery.charge_unit.second=sec
+metaitem.battery.charge_unit.minute=min
+metaitem.battery.charge_unit.hour=hr
+
+metaitem.hull.battery.zpm.name=Small ZPM Battery Hull
+metaitem.hull.battery.uv.name=Medium UV Battery Hull
+metaitem.hull.battery.uhv.name=Large UHV Battery Hull
+metaitem.hull.battery.uev.name=Small UEV Battery Hull
+metaitem.hull.battery.uiv.name=Medium UIV Battery Hull
+metaitem.hull.battery.uxv.name=Medium UXV Battery Hull
+metaitem.hull.battery.opv.name=Small OPV Battery Hull
+metaitem.hull.battery.max.name=Medium MAX Battery Hull
+metaitem.hull.battery.maximum.name=Large MAXIMUM Battery Hull
+metaitem.battery.ev.sunnarium.name=Small Sunnarium Battery
+metaitem.battery.iv.sunnarium.name=Medium Sunnarium Battery
+metaitem.battery.luv.sunnarium.name=Large Sunnarium Battery
+metaitem.battery.ev.enriched_sunnarium.name=Small Enriched Sunnarium Battery
+metaitem.battery.iv.enriched_sunnarium.name=Medium Enriched Sunnarium Battery
+metaitem.battery.luv.enriched_sunnarium.name=Large Enriched Sunnarium Battery
+metaitem.battery.zpm.naquadah.name=Small Naquadah Battery
+metaitem.battery.uv.naquadah.name=Medium Naquadah Battery
+metaitem.battery.uhv.naquadah.name=Large Naquadah Battery
+metaitem.battery.zpm.enriched_naquadah.name=Small Enriched Naquadah Battery
+metaitem.battery.uv.enriched_naquadah.name=Medium Enriched Naquadah Battery
+metaitem.battery.uhv.enriched_naquadah.name=Large Enriched Naquadah Battery
+metaitem.battery.zpm.naquadria1.name=Small Naquadria Battery
+metaitem.battery.uv.naquadria1.name=Medium Naquadria Battery
+metaitem.battery.uhv.naquadria1.name=Large Naquadria Battery
+metaitem.battery.uev.cosmic_neutronium.name=Small Cosmic Neutronium Battery
+metaitem.battery.uiv.cosmic_neutronium.name=Medium Cosmic Neutronium Battery
+metaitem.battery.uxv.cosmic_neutronium.name=Large Cosmic Neutronium Battery
+metaitem.battery.uev.infinity.name=Small Infinity Battery
+metaitem.battery.uiv.infinity.name=Medium Infinity Battery
+metaitem.battery.uxv.infinity.name=Large Infinity Battery
+metaitem.battery.uev.empowered_infinity.name=Small Empowered Infinity Battery
+metaitem.battery.uiv.empowered_infinity.name=Medium Empowered Infinity Battery
+metaitem.battery.uxv.empowered_infinity.name=Large Empowered Infinity Battery
+metaitem.battery.opv.multiphase_cosmic_neutronium.name=Small Multiphase Cosmic Neutronium Battery
+metaitem.battery.max.multiphase_cosmic_neutronium.name=Medium Multiphase Cosmic Neutronium Battery
+metaitem.battery.opv.antimatter.name=Small Antimatter Battery
+metaitem.battery.max.antimatter.name=Medium Antimatter Battery
+metaitem.battery.opv.multiversium.name=Small Multiversium Battery
+metaitem.battery.max.multiversium.name=Medium Multiversium Battery
+metaitem.battery.energy_pile.name=Energy Pile
+metaitem.battery.energy_swarm.name=Energy Swarm
+metaitem.battery.energy_platoon.name=Energy Platoon
+metaitem.battery.energy_array.name=Energy Array
+metaitem.battery.energy_mountain.name=Energy Mountain
+metaitem.battery.energy_universe.name=Energy Universe
+metaitem.max.battery.uev.name=Ultimate Battery UEV
+metaitem.max.battery.uiv.name=Ultimate Battery UIV
+metaitem.max.battery.uxv.name=Ultimate Battery UXV
+metaitem.max.battery.opv.name=Ultimate Battery OpV
+metaitem.max.battery.max.name=Ultimate Battery MAX
+
+metaitem.hull.battery.zpm.tooltip=An empty §fZPM §7Battery Hull
+metaitem.hull.battery.uv.tooltip=An empty §3UV §7Battery Hull
+metaitem.hull.battery.uhv.tooltip=An empty §4UHV §7Battery Hull
+metaitem.hull.battery.uev.tooltip=An empty §aUEV §7Battery Hull
+metaitem.hull.battery.uiv.tooltip=An empty §2UIV §7Battery Hull
+metaitem.hull.battery.uxv.tooltip=An empty §eUXV §7Battery Hull
+metaitem.hull.battery.opv.tooltip=An empty §9OPV §7Battery Hull
+metaitem.hull.battery.max.tooltip=An empty §cMAX §7Battery Hull
+metaitem.hull.battery.maximum.tooltip=An empty §cMAX §7Battery Hull
+
+# Casing
+tile.multiblock_casing_0.maceration_stack.name=Maceration Stack Casing
+
+# Wire Coil
+tile.wire_coil.hss_s.name=HSS-S Coil Block
+tile.wire_coil.naquadah_alloy.name=Naquadah Alloy Coil Block
+tile.wire_coil.awakened_draconium.name=Awakened Draconium Coil Block
+tile.wire_coil.infinity.name=Infinity Coil Block
+tile.wire_coil.eternal.name=Eternal Coil Block
+tile.wire_coil.temporal.name=Temporal Coil Block
+
+# Planetary Blocks
+tile.surface_soil.mercury.name=Mercury Soil
+tile.surface_soil.venus.name=Venus Soil
+tile.surface_soil.moon.name=Moon Soil
+tile.surface_soil.mars.name=Mars Soil
+tile.surface_soil.deimos.name=Deimos Soil
+tile.surface_soil.phobos.name=Phobos Soil
+tile.sub_surface_soil.mercury.name=Mercury Sub-Surface Soil
+tile.sub_surface_soil.venus.name=Venus Sub-Surface Soil
+tile.sub_surface_soil.moon.name=Moon Sub-Surface Soil
+tile.sub_surface_soil.mars.name=Mars Sub-Surface Soil
+tile.sub_surface_soil.deimos.name=Deimos Sub-Surface Soil
+tile.sub_surface_soil.phobos.name=Phobos Sub-Surface Soil
+tile.sub_surface_rock.mercury.name=Mercury Rock
+tile.sub_surface_rock.venus.name=Venus Rock
+tile.sub_surface_rock.moon.name=Moon Rock
+tile.sub_surface_rock.mars.name=Mars Rock
+tile.sub_surface_rock.deimos.name=Deimos Rock
+tile.sub_surface_rock.phobos.name=Phobos Rock

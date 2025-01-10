@@ -10,7 +10,8 @@ public class GTHHMaterialIconSet {
     public static final MaterialIconSet ALBITE = new MaterialIconSet("albite", MaterialIconSet.EMERALD);
     public static final MaterialIconSet PLAGIOCLASE = new MaterialIconSet("plagioclase", MaterialIconSet.EMERALD);
     public static final MaterialIconSet SANDCOMPOUND = new MaterialIconSet("sand_compound", MaterialIconSet.DULL);
-    public static final MaterialIconSet MULTIVERSIUM = new MaterialIconSet("multiversium", MaterialIconSet.SHINY);
     public static final MaterialIconSet INFERNORITE = new MaterialIconSet("infernorite", MaterialIconSet.SHINY);
-    public static final MaterialIconSet CRYNORIUM = new MaterialIconSet("crynorium", MaterialIconSet.SHINY);
+    public static final MaterialIconSet MISSINGERROR = new MaterialIconSet("missing_error", MaterialIconSet.SHINY);
+    public static final MaterialIconSet PEARL = new MaterialIconSet("pearl", MaterialIconSet.SHINY);
+
 }
