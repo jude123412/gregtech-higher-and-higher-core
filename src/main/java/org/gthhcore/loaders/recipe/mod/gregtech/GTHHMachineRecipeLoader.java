@@ -7,6 +7,7 @@ public class GTHHMachineRecipeLoader {
     public static void register() {
         GTHHCircuitRecipes.init();
         GTHHSlimeMediumRecipes.init();
+        GTHHFissionRecipes.init();
         GTHHFusionRecipes.init();
         GTHHMicaRecipes.init();
         GTHHHeatingCoilRecipes.init();

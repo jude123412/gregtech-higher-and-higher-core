@@ -8,11 +8,12 @@ public class GTHHRecipeManager {
 
     public static void preLoad() {
         GTHHMachineRecipeLoader.register();
-        GTHHModRecipeLoader.register();
+        GTHHModRecipeLoader.registerEarly();
         GTHHRecipeHandlerList.registerEarly();
     }
 
     public static void load(){
         GTHHRecipeHandlerList.register();
+        GTHHModRecipeLoader.register();
     }
 }

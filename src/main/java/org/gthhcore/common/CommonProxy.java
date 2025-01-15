@@ -1,7 +1,10 @@
 package org.gthhcore.common;
 
+import com.cleanroommc.groovyscript.api.IIngredient;
+import com.cleanroommc.groovyscript.helper.ingredient.IngredientHelper;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 import gregtech.api.unification.stack.ItemMaterialInfo;
@@ -9,6 +12,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,6 +30,7 @@ import org.gthhcore.common.blocks.GTHHBlockWireCoil;
 import org.gthhcore.common.blocks.GTHHMetaBlocks;
 import org.gthhcore.common.blocks.GTHHPlanetaryBlocks;
 import org.gthhcore.common.items.GTHHMetaItems;
+import org.gthhcore.common.metatileentities.GTHHMetaTileEntities;
 import org.gthhcore.loaders.GTHHOreDictionaryLoader;
 import org.gthhcore.loaders.recipe.mod.gregtech.GTHHRecipeManager;
 
@@ -77,7 +82,6 @@ public class CommonProxy {
 
     @SubscribeEvent
     public void preInit(FMLPreInitializationEvent event) {
-
     }
 
     @SubscribeEvent
@@ -89,6 +93,7 @@ public class CommonProxy {
     public void postInit(FMLPostInitializationEvent event) {
 
     }
+
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void registerMaterials(MaterialEvent event) {
         GTHHLog.logger.info("Registering Materials...");
@@ -121,16 +126,23 @@ public class CommonProxy {
         GTHHRecipeManager.load();
     }
 
-
     // Some Pre-Init Registry needs to happen Here
     public static void onPreInit() {
         GTHHLog.logger.info("Registering MetaItems...");
         GTHHMetaItems.init();
+
+
     }
 
     public static void onInit() {
+        GTHHLog.logger.info("Registering MetaTileEntities...");
+        GTHHMetaTileEntities.init();
+    }
+
+    public static void onPostInit() {
 
     }
+
     public void onPreLoad() {}
 
     public void onLoad() {}

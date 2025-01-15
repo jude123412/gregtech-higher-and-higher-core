@@ -5,13 +5,15 @@ import org.gthhcore.loaders.recipe.mod.thaumcraft.CrucibleRecipes;
 
 public class GTHHModRecipeLoader {
 
-    public static void register() {
-
+    public static void registerEarly() {
         // Thaumcraft Recipes
         CrucibleRecipes.init();
 
         // Astral Sorcery Recipes
         StarlightInfuserRecipes.init();
+    }
+
+    public static void register() {
 
     }
 }

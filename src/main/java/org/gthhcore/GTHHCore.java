@@ -34,6 +34,6 @@ public class GTHHCore {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
+        CommonProxy.onPostInit();
     }
 }
