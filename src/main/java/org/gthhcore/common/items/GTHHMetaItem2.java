@@ -18,7 +18,7 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         super();
     }
     public void registerSubItems() {
-        // Components: ID 0-999
+        // Components: ID 0-899
         MICA_BASED_SHEET = addItem(1, "component.mica_based_sheet");
         MICA_INSULATOR_SHEET = addItem(2, "component.mica_insulator_sheet");
         MICA_INSULATOR_FOIL = addItem(3, "component.mica_insulator_foil");
@@ -34,9 +34,18 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         COOLANT_CELL_EMPTY_TEN_K = addItem(13, "component.empty_10k_coolant_cell");
         COOLANT_CELL_EMPTY_THIRTY_K = addItem(14, "component.empty_30k_coolant_cell");
         COOLANT_CELL_EMPTY_SIXTY_K = addItem(15, "component.empty_60k_coolant_cell");
-        FUEL_ROD_SINGLE_THORIUM = addItem(16, "component.thorium.fuel_rod.single");
-        FUEL_ROD_DUAL_THORIUM = addItem(17, "component.thorium.fuel_rod.dual");
-        FUEL_ROD_QUAD_THORIUM = addItem(18, "component.thorium.fuel_rod.quad");
+
+
+        // Fission Fuel Rods: ID 900-999
+        FUEL_ROD_SINGLE_THORIUM = addItem(900, "fuel_rod.thorium.single");
+        FUEL_ROD_DUAL_THORIUM = addItem(901, "fuel_rod.thorium.dual");
+        FUEL_ROD_QUAD_THORIUM = addItem(902, "fuel_rod.thorium.quad");
+
+        FUEL_ROD_DEPLETED_SINGLE_THORIUM = addItem(950, "fuel_rod.thorium.depleted.single");
+        FUEL_ROD_DEPLETED_DUAL_THORIUM = addItem(951, "fuel_rod.thorium.depleted.dual");
+        FUEL_ROD_DEPLETED_QUAD_THORIUM = addItem(952, "fuel_rod.thorium.depleted.quad");
+
+        FUEL_ROD = addItem(999, "fuel_rod.empty");
 
 
         // Pam's Integration: ID 1000-1049

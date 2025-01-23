@@ -1,10 +1,7 @@
 package org.gthhcore.common;
 
-import com.cleanroommc.groovyscript.api.IIngredient;
-import com.cleanroommc.groovyscript.helper.ingredient.IngredientHelper;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
-import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 import gregtech.api.unification.stack.ItemMaterialInfo;
@@ -12,9 +9,11 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -43,6 +42,14 @@ import static org.gthhcore.common.blocks.GTHHMetaBlocks.*;
 @Mod.EventBusSubscriber(modid = Tags.MODID)
 public class CommonProxy {
     public void preLoad() {}
+
+
+    @SubscribeEvent
+    public static void syncConfigValues(ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.getModID().equals(Tags.MODID)) {
+            ConfigManager.sync(Tags.MODID, Config.Type.INSTANCE);
+        }
+    }
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -82,6 +89,7 @@ public class CommonProxy {
 
     @SubscribeEvent
     public void preInit(FMLPreInitializationEvent event) {
+
     }
 
     @SubscribeEvent
@@ -130,8 +138,6 @@ public class CommonProxy {
     public static void onPreInit() {
         GTHHLog.logger.info("Registering MetaItems...");
         GTHHMetaItems.init();
-
-
     }
 
     public static void onInit() {

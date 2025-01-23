@@ -27,9 +27,15 @@ public final class GTHHMetaItems {
     public static MetaItem<?>.MetaValueItem COOLANT_CELL_EMPTY_TEN_K;
     public static MetaItem<?>.MetaValueItem COOLANT_CELL_EMPTY_THIRTY_K;
     public static MetaItem<?>.MetaValueItem COOLANT_CELL_EMPTY_SIXTY_K;
+
+    // Fuel Rods
+    public static MetaItem<?>.MetaValueItem FUEL_ROD;
     public static MetaItem<?>.MetaValueItem FUEL_ROD_SINGLE_THORIUM;
     public static MetaItem<?>.MetaValueItem FUEL_ROD_DUAL_THORIUM;
     public static MetaItem<?>.MetaValueItem FUEL_ROD_QUAD_THORIUM;
+    public static MetaItem<?>.MetaValueItem FUEL_ROD_DEPLETED_SINGLE_THORIUM;
+    public static MetaItem<?>.MetaValueItem FUEL_ROD_DEPLETED_DUAL_THORIUM;
+    public static MetaItem<?>.MetaValueItem FUEL_ROD_DEPLETED_QUAD_THORIUM;
 
     // Pam's Integration
     public static MetaItem<?>.MetaValueItem UNFIRED_JUICER;

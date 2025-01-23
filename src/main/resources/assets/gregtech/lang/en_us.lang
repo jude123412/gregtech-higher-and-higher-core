@@ -580,3 +580,15 @@ tile.sub_surface_rock.moon.name=Moon Rock
 tile.sub_surface_rock.mars.name=Mars Rock
 tile.sub_surface_rock.deimos.name=Deimos Rock
 tile.sub_surface_rock.phobos.name=Phobos Rock
+
+# Fuel Rods
+metaitem.fuel_rod.empty.name=Empty Fuel Rod
+
+metaitem.fuel_rod.thorium.single.name=Thorium Fuel Rod Single
+metaitem.fuel_rod.thorium.dual.name=Thorium Fuel Rod Dual
+metaitem.fuel_rod.thorium.quad.name=Thorium Fuel Rod Quad
+
+metaitem.fuel_rod.thorium.depleted.single.name=Depleted Thorium Fuel Rod Single
+metaitem.fuel_rod.thorium.depleted.dual.name=Depleted Thorium Fuel Rod Dual
+metaitem.fuel_rod.thorium.depleted.quad.name=Depleted Thorium Fuel Rod Quad
+

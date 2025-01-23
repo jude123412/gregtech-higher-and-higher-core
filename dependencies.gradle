@@ -45,7 +45,7 @@ dependencies {
 
 
     // Soft Dependencies, Compile Only, Optional Mods
-    compileOnly rfg.deobf("curse.maven:avaritia-1-1x-unofficial-1165010:6018998") // Avaritia 3.3.0.38
+    compileOnly rfg.deobf("curse.maven:avaritia-1-1x-unofficial-1165010:6108030") // Avaritia 3.3.0.38
     compileOnly rfg.deobf("curse.maven:eternal-singularity-1.0.7-253077:2922583") // Eternal Singularity 1.0.7
     compileOnly rfg.deobf("curse.maven:ae2-unofficial-extended-life-0.56.6-570458:5411078") // AE2 UEL 0.56.6
     compileOnly rfg.deobf("curse.maven:crazy-ae-0.3-1111042:5845065") // Crazy AE 0.56.6
@@ -60,7 +60,7 @@ dependencies {
     // Uncomment any of these to test in-game
 
     // Avaritia
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:avaritia-1.1x-unofficial-1165010:6065479") // Avaritia 3.3.0.40
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:avaritia-1.1x-unofficial-1165010:6108030") // Avaritia 3.3.0.42
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:eternal-singularity-1.0.7-253077:2922583") // Eternal Singularity 1.0.7
     // Avaritia
 
