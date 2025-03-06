@@ -12,5 +12,4 @@ public class GTHHMaterialFlags {
     public static final MaterialFlag GENERATE_HOT = new MaterialFlag.Builder("generate_hot")
             .requireProps(PropertyKey.INGOT)
             .build();
-
 }

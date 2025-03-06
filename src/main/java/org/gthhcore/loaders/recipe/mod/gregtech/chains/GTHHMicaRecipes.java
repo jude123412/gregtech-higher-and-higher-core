@@ -1,6 +1,4 @@
-package org.gthhcore.loaders.recipe.mod.gregtech;
-
-import gregtech.api.metatileentity.multiblock.CleanroomType;
+package org.gthhcore.loaders.recipe.mod.gregtech.chains;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -11,6 +9,7 @@ import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
 public class GTHHMicaRecipes {
+
     public static void init() {
         MIXER_RECIPES.recipeBuilder()
                 .duration(100).EUt(VA[LV])

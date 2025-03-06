@@ -1,16 +1,5 @@
 package org.gthhcore.loaders.recipe.mod.gregtech;
 
-
-import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.MarkerMaterials;
-import gregtech.common.blocks.BlockWireCoil.CoilType;
-import gregtech.common.blocks.MetaBlocks;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
-import org.gthhcore.common.blocks.GTHHBlockWireCoil.GTHHCoilType;
-import org.gthhcore.common.blocks.GTHHMetaBlocks;
-import singulariteam.eternalsingularity.item.EternalSingularityItem;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -18,65 +7,77 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+import static org.gthhcore.api.util.GTHHMods.EternalSingularity;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
+import org.gthhcore.api.util.GTHHUtility;
+import org.gthhcore.common.blocks.GTHHBlockWireCoil.GTHHCoilType;
+import org.gthhcore.common.blocks.GTHHMetaBlocks;
+
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.MarkerMaterials;
+import gregtech.common.blocks.BlockWireCoil.CoilType;
+import gregtech.common.blocks.MetaBlocks;
 
 public class GTHHHeatingCoilRecipes {
-    public static void init() {
 
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+    public static void init() {
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(wireGtDouble, Cupronickel, 8),
                 OreDictUnifier.get(foil, Bronze, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 TinAlloy.getFluid(L)
         });
 
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(wireGtDouble, Kanthal, 8),
                 OreDictUnifier.get(foil, Aluminium, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Copper.getFluid(L)
         });
 
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(wireGtDouble, Nichrome, 8),
                 OreDictUnifier.get(foil, StainlessSteel, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Aluminium.getFluid(L)
         });
 
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(wireGtDouble, RTMAlloy, 8),
                 OreDictUnifier.get(foil, VanadiumSteel, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Nichrome.getFluid(L)
         });
 
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(wireGtDouble, HSSG, 8),
                 OreDictUnifier.get(foil, TungstenCarbide, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tungsten.getFluid(L)
         });
 
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(wireGtDouble, Naquadah, 8),
                 OreDictUnifier.get(foil, Osmium, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 TungstenSteel.getFluid(L)
         });
 
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(wireGtDouble, Trinium, 8),
                 OreDictUnifier.get(foil, NaquadahEnriched, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Naquadah.getFluid(L)
         });
 
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(wireGtDouble, Tritanium, 8),
                 OreDictUnifier.get(foil, Naquadria, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Trinium.getFluid(L)
         });
 
@@ -202,53 +203,55 @@ public class GTHHHeatingCoilRecipes {
                 .EUt(VA[UHV]).duration(2000).buildAndRegister();
 
         // UEV Coil
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.UEV, 1)
-                .input(wireGtDouble, Infinity, 8)
-                .input(screw, Infinity, 8)
-                .input(plateDouble, Infinity, 8)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(EternalSingularityItem.instance, 1)
-                .fluidInputs(Neutronium.getFluid(L * 64))
-                .fluidInputs(ElectroMatter.getFluid(L * 16))
-                .fluidInputs(Polybenzimidazole.getFluid(L * 16))
-                .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.ETERNAL))
-                .stationResearch(b -> b
-                        .researchStack(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.INFINITY))
-                        .CWUt(2048)
-                        .EUt(VA[UV]))
-                .EUt(VA[UHV]).duration(2000).buildAndRegister();
+        if (EternalSingularity.isModLoaded()) {
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(circuit, MarkerMaterials.Tier.UEV, 1)
+                    .input(wireGtDouble, Infinity, 8)
+                    .input(screw, Infinity, 8)
+                    .input(plateDouble, Infinity, 8)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 1)
+                    .fluidInputs(Neutronium.getFluid(L * 64))
+                    .fluidInputs(ElectroMatter.getFluid(L * 16))
+                    .fluidInputs(Polybenzimidazole.getFluid(L * 16))
+                    .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.ETERNAL))
+                    .stationResearch(b -> b
+                            .researchStack(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.INFINITY))
+                            .CWUt(2048)
+                            .EUt(VA[UV]))
+                    .EUt(VA[UHV]).duration(2000).buildAndRegister();
 
-        // UIV Coil
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.UIV, 1)
-                .input(wireGtDouble, Infinity, 8)
-                .input(screw, Infinity, 8)
-                .input(plateDouble, Infinity, 8)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(MICA_INSULATOR_FOIL, 64)
-                .input(EternalSingularityItem.instance, 4)
-                .input(EternalSingularityItem.instance, 4)
-                .input(EternalSingularityItem.instance, 4)
-                .input(EternalSingularityItem.instance, 4)
-                .fluidInputs(Neutronium.getFluid(L * 128))
-                .fluidInputs(SolderingAlloy.getFluid(L * 64))
-                .fluidInputs(ElectroMatter.getFluid(L * 32))
-                .fluidInputs(Polybenzimidazole.getFluid(L * 32))
-                .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.TEMPORAL))
-                .stationResearch(b -> b
-                        .researchStack(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.ETERNAL))
-                        .CWUt(2048)
-                        .EUt(VA[UV]))
-                .EUt(VA[UHV]).duration(2000).buildAndRegister();
+            // UIV Coil
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(circuit, MarkerMaterials.Tier.UIV, 1)
+                    .input(wireGtDouble, Infinity, 8)
+                    .input(screw, Infinity, 8)
+                    .input(plateDouble, Infinity, 8)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(MICA_INSULATOR_FOIL, 64)
+                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
+                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
+                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
+                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
+                    .fluidInputs(Neutronium.getFluid(L * 128))
+                    .fluidInputs(SolderingAlloy.getFluid(L * 64))
+                    .fluidInputs(ElectroMatter.getFluid(L * 32))
+                    .fluidInputs(Polybenzimidazole.getFluid(L * 32))
+                    .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.TEMPORAL))
+                    .stationResearch(b -> b
+                            .researchStack(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.ETERNAL))
+                            .CWUt(2048)
+                            .EUt(VA[UV]))
+                    .EUt(VA[UHV]).duration(2000).buildAndRegister();
+        }
     }
 }

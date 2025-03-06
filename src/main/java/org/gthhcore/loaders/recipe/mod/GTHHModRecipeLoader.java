@@ -13,7 +13,5 @@ public class GTHHModRecipeLoader {
         StarlightInfuserRecipes.init();
     }
 
-    public static void register() {
-
-    }
+    public static void register() {}
 }

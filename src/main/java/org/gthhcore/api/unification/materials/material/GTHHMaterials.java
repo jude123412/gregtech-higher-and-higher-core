@@ -1,17 +1,18 @@
 package org.gthhcore.api.unification.materials.material;
 
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.info.MaterialFlag;
-import org.gthhcore.api.unification.material.materials.GTHHMaterialFlagAddition;
-import org.gthhcore.api.unification.materials.material.info.GTHHElementMaterials;
-import org.gthhcore.api.unification.ore.GTHHOrePrefix;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
+import org.gthhcore.api.unification.material.materials.GTHHMaterialFlagAddition;
+import org.gthhcore.api.unification.materials.material.info.GTHHElementMaterials;
+import org.gthhcore.api.unification.ore.GTHHOrePrefix;
+
+import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialFlag;
 
 public class GTHHMaterials {
 
@@ -21,8 +22,7 @@ public class GTHHMaterials {
     static {
         // Update These if new Material Items are added
         GENERATE_ALL_METAL.addAll(
-                EXT2_METAL
-        );
+                EXT2_METAL);
         GENERATE_ALL_METAL.addAll(Arrays.asList(
                 EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
                 GENERATE_SPRING,
@@ -35,8 +35,7 @@ public class GTHHMaterials {
                 GENERATE_FOIL,
                 GENERATE_GEAR,
                 GENERATE_DOUBLE_PLATE,
-                GENERATE_FINE_WIRE
-        ));
+                GENERATE_FINE_WIRE));
 
         GENERATE_ALL_GEM.addAll(Arrays.asList(
                 NO_SMASHING,
@@ -46,8 +45,7 @@ public class GTHHMaterials {
                 GENERATE_BOLT_SCREW,
                 GENERATE_SMALL_GEAR,
                 GENERATE_FRAME,
-                GENERATE_GEAR
-        ));
+                GENERATE_GEAR));
     }
 
     // Element Materials
@@ -83,7 +81,6 @@ public class GTHHMaterials {
     public static Material Cryolite;
     public static Material SolarGradeSilicon;
 
-
     // First Degree Materials
     public static Material Pyrotheum;
     public static Material Cryotheum;
@@ -91,7 +88,6 @@ public class GTHHMaterials {
     // Second Degree Materials
     public static Material SaltsCatalyst;
     public static Material MicaInsulator;
-
 
     // Third Degree Materials
     public static Material Sand;
@@ -148,7 +144,6 @@ public class GTHHMaterials {
 
     // Logistics Pipes
     public static Material SandCompound;
-
 
     // Advanced Rocketry
     public static Material MoonStone;

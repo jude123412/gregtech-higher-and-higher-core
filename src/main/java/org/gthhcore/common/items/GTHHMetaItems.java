@@ -1,13 +1,14 @@
 package org.gthhcore.common.items;
 
-import gregtech.api.items.metaitem.MetaItem;
-import org.gthhcore.Tags;
-
 import java.util.List;
 
+import org.gthhcore.Tags;
+
+import gregtech.api.items.metaitem.MetaItem;
+
 public final class GTHHMetaItems {
-    private GTHHMetaItems() {
-    }
+
+    private GTHHMetaItems() {}
 
     public static final List<MetaItem<?>> ITEMS = MetaItem.getMetaItems();
 
@@ -119,7 +120,6 @@ public final class GTHHMetaItems {
 
     // Complex Cut Wafers
 
-
     // Circuits
     // T8: Slimeware
     public static MetaItem<?>.MetaValueItem SLIMEWARE_PROCESSOR_ZPM;
@@ -218,10 +218,8 @@ public final class GTHHMetaItems {
     public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MAX;
 
     public static void init() {
-
-        //GTHH MetaItem Registry : Registers under GregTech Tab with a registry name of meta_item_2
+        // GTHH MetaItem Registry : Registers under GregTech Tab with a registry name of meta_item_2
         GTHHMetaItem2 metaItem2 = new GTHHMetaItem2();
         metaItem2.setRegistryName(Tags.MODID, "meta_item_0");
-
     }
 }

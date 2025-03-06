@@ -1,6 +1,5 @@
 package org.gthhcore.common.items;
 
-
 import static org.gthhcore.api.util.GTHHMods.*;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
@@ -11,12 +10,12 @@ import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 
-
 public class GTHHMetaItem2 extends StandardMetaItem {
 
     public GTHHMetaItem2() {
         super();
     }
+
     public void registerSubItems() {
         // Components: ID 0-899
         MICA_BASED_SHEET = addItem(1, "component.mica_based_sheet");
@@ -35,7 +34,6 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         COOLANT_CELL_EMPTY_THIRTY_K = addItem(14, "component.empty_30k_coolant_cell");
         COOLANT_CELL_EMPTY_SIXTY_K = addItem(15, "component.empty_60k_coolant_cell");
 
-
         // Fission Fuel Rods: ID 900-999
         FUEL_ROD_SINGLE_THORIUM = addItem(900, "fuel_rod.thorium.single");
         FUEL_ROD_DUAL_THORIUM = addItem(901, "fuel_rod.thorium.dual");
@@ -46,7 +44,6 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         FUEL_ROD_DEPLETED_QUAD_THORIUM = addItem(952, "fuel_rod.thorium.depleted.quad");
 
         FUEL_ROD = addItem(999, "fuel_rod.empty");
-
 
         // Pam's Integration: ID 1000-1049
         UNFIRED_JUICER = addItem(1000, "unfired.juicer");
@@ -69,15 +66,21 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         SLIMEWARE_BOARD = addItem(2100, "board.slimeware");
         LASERTRONIC_BOARD = addItem(2101, "board.lasertronic");
         BOHEMIAN_BOARD = addItem(2102, "board.bohemian");
-        ANTIMATTER_BOARD = addItem(2103, "board.antimatter")/*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
-        TEMPORAL_BOARD = addItem(2104, "board.temporal")/*.cosmicProperties(true, 1, -16777216, 10, true, 5, 1.0f)*/;
+        ANTIMATTER_BOARD = addItem(2103, "board.antimatter")/* .cosmicProperties(true, 2, -1711276033, 10, false) */;
+        TEMPORAL_BOARD = addItem(2104, "board.temporal")/* .cosmicProperties(true, 1, -16777216, 10, true, 5, 1.0f) */;
 
         // Finished Circuit Boards: ID 2125-2149
         SLIMEWARE_CIRCUIT_BOARD = addItem(2125, "circuit_board.slimeware");
         LASERTRONIC_CIRCUIT_BOARD = addItem(2126, "circuit_board.lasertronic");
         BOHEMIAN_CIRCUIT_BOARD = addItem(2127, "circuit_board.bohemian");
-        ANTIMATTER_CIRCUIT_BOARD = addItem(2128, "circuit_board.antimatter")/*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
-        TEMPORAL_CIRCUIT_BOARD = addItem(2129, "circuit_board.temporal")/*.cosmicProperties(true, 1, -16777216, 10, true, 6, 1.0f)*/;
+        ANTIMATTER_CIRCUIT_BOARD = addItem(2128, "circuit_board.antimatter")/*
+                                                                             * .cosmicProperties(true, 2, -1711276033,
+                                                                             * 10, false)
+                                                                             */;
+        TEMPORAL_CIRCUIT_BOARD = addItem(2129, "circuit_board.temporal")/*
+                                                                         * .cosmicProperties(true, 1, -16777216, 10,
+                                                                         * true, 6, 1.0f)
+                                                                         */;
 
         // Circuit Components ID's 2150-2299
         NANO_SMD_TRANSISTOR = addItem(2150, "component.nano.smd.transistor");
@@ -110,16 +113,46 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         BOHEMIAN_SMD_CAPACITOR = addItem(2177, "component.bohemian.smd.capacitor");
         BOHEMIAN_SMD_DIODE = addItem(2178, "component.bohemian.smd.diode");
         BOHEMIAN_SMD_INDUCTOR = addItem(2179, "component.bohemian.smd.inductor");
-        ANTIMATTER_SMD_TRANSISTOR = addItem(2180, "component.antimatter.smd.transistor")/*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
-        ANTIMATTER_SMD_RESISTOR = addItem(2181, "component.antimatter.smd.resistor")/*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
-        ANTIMATTER_SMD_CAPACITOR = addItem(2182, "component.antimatter.smd.capacitor")/*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
-        ANTIMATTER_SMD_DIODE = addItem(2183, "component.antimatter.smd.diode")/*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
-        ANTIMATTER_SMD_INDUCTOR = addItem(2184, "component.antimatter.smd.inductor")/*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
-        TEMPORAL_SMD_TRANSISTOR = addItem(2185, "component.temporal.smd.transistor")/*.cosmicProperties(true, 1, -16777216, 10, true, 7, 1.0f)*/;
-        TEMPORAL_SMD_RESISTOR = addItem(2186, "component.temporal.smd.resistor")/*.cosmicProperties(true, 1, -16777216, 10, true, 7, 1.0f)*/;
-        TEMPORAL_SMD_CAPACITOR = addItem(2187, "component.temporal.smd.capacitor")/*.cosmicProperties(true, 1, -16777216, 10, true, 7, 1.0f)*/;
-        TEMPORAL_SMD_DIODE = addItem(2188, "component.temporal.smd.diode")/*.cosmicProperties(true, 1, -16777216, 10, true, 7, 1.0f)*/;
-        TEMPORAL_SMD_INDUCTOR = addItem(2189, "component.temporal.smd.inductor")/*.cosmicProperties(true, 1, -16777216, 10, true, 7, 1.0f)*/;
+        ANTIMATTER_SMD_TRANSISTOR = addItem(2180, "component.antimatter.smd.transistor")/*
+                                                                                         * .cosmicProperties(true, 2,
+                                                                                         * -1711276033, 10, false)
+                                                                                         */;
+        ANTIMATTER_SMD_RESISTOR = addItem(2181, "component.antimatter.smd.resistor")/*
+                                                                                     * .cosmicProperties(true, 2,
+                                                                                     * -1711276033, 10, false)
+                                                                                     */;
+        ANTIMATTER_SMD_CAPACITOR = addItem(2182, "component.antimatter.smd.capacitor")/*
+                                                                                       * .cosmicProperties(true, 2,
+                                                                                       * -1711276033, 10, false)
+                                                                                       */;
+        ANTIMATTER_SMD_DIODE = addItem(2183, "component.antimatter.smd.diode")/*
+                                                                               * .cosmicProperties(true, 2, -1711276033,
+                                                                               * 10, false)
+                                                                               */;
+        ANTIMATTER_SMD_INDUCTOR = addItem(2184, "component.antimatter.smd.inductor")/*
+                                                                                     * .cosmicProperties(true, 2,
+                                                                                     * -1711276033, 10, false)
+                                                                                     */;
+        TEMPORAL_SMD_TRANSISTOR = addItem(2185, "component.temporal.smd.transistor")/*
+                                                                                     * .cosmicProperties(true, 1,
+                                                                                     * -16777216, 10, true, 7, 1.0f)
+                                                                                     */;
+        TEMPORAL_SMD_RESISTOR = addItem(2186, "component.temporal.smd.resistor")/*
+                                                                                 * .cosmicProperties(true, 1, -16777216,
+                                                                                 * 10, true, 7, 1.0f)
+                                                                                 */;
+        TEMPORAL_SMD_CAPACITOR = addItem(2187, "component.temporal.smd.capacitor")/*
+                                                                                   * .cosmicProperties(true, 1,
+                                                                                   * -16777216, 10, true, 7, 1.0f)
+                                                                                   */;
+        TEMPORAL_SMD_DIODE = addItem(2188, "component.temporal.smd.diode")/*
+                                                                           * .cosmicProperties(true, 1, -16777216, 10,
+                                                                           * true, 7, 1.0f)
+                                                                           */;
+        TEMPORAL_SMD_INDUCTOR = addItem(2189, "component.temporal.smd.inductor")/*
+                                                                                 * .cosmicProperties(true, 1, -16777216,
+                                                                                 * 10, true, 7, 1.0f)
+                                                                                 */;
         BOROSILICATE_GLASS_TUBE = addItem(2190, "component.borosilicate_glass.tube");
         SALT_CRYSTAL_SMD_TRANSISTOR = addItem(2191, "component.salt_crystal.smd.transistor");
         SALT_CRYSTAL_SMD_RESISTOR = addItem(2192, "component.salt_crystal.smd.resistor");
@@ -169,30 +202,30 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         // T11: Antimatter
         ANTIMATTER_PROCESSOR_UEV = addItem(2412, "circuit.antimatter_processor")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV)
-            /*.cosmicProperties(true, 2, "FFFFFF", 10, false)*/;
+        /* .cosmicProperties(true, 2, "FFFFFF", 10, false) */;
         ANTIMATTER_ASSEMBLY_UIV = addItem(2413, "circuit.antimatter_assembly")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV)
-            /*.cosmicProperties(true, 2, "FFFFFF", 10, false)*/;
+        /* .cosmicProperties(true, 2, "FFFFFF", 10, false) */;
         ANTIMATTER_COMPUTER_UXV = addItem(2414, "circuit.antimatter_computer")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV)
-            /*.cosmicProperties(true, 2, "FFFFFF", 10, false)*/;
+        /* .cosmicProperties(true, 2, "FFFFFF", 10, false) */;
         ANTIMATTER_MAINFRAME_OPV = addItem(2415, "circuit.antimatter_mainframe")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV)
-            /*.cosmicProperties(true, 2, "FFFFFF", 10, false)*/;
+        /* .cosmicProperties(true, 2, "FFFFFF", 10, false) */;
 
         // T12: Temporal
         TEMPORAL_PROCESSOR_UIV = addItem(2416, "circuit.temporal_processor")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV)
-            /*.cosmicProperties(true, 1, "000000", 10, true, 1, 1.0f)*/;
+        /* .cosmicProperties(true, 1, "000000", 10, true, 1, 1.0f) */;
         TEMPORAL_ASSEMBLY_UXV = addItem(2417, "circuit.temporal_assembly")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV)
-            /*.cosmicProperties(true, 1, "000000", 10, true, 2, 1.0f)*/;
+        /* .cosmicProperties(true, 1, "000000", 10, true, 2, 1.0f) */;
         TEMPORAL_COMPUTER_OPV = addItem(2418, "circuit.temporal_computer")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV)
-            /*.cosmicProperties(true, 1, "000000", 10, true, 3, 1.0f)*/;
+        /* .cosmicProperties(true, 1, "000000", 10, true, 3, 1.0f) */;
         TEMPORAL_MAINFRAME_MAX = addItem(2419, "circuit.temporal_mainframe")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX)
-            /*.cosmicProperties(true, 1, "000000", 10, true, 4, 1.0f)*/;
+        /* .cosmicProperties(true, 1, "000000", 10, true, 4, 1.0f) */;
 
         // T13: ???
 
@@ -209,15 +242,11 @@ public class GTHHMetaItem2 extends StandardMetaItem {
 
         // Lasertronic Circuit ComponentsL ID 2475-2499
 
-
         // Bohemian Circuit ComponentsL ID 2500-2524
-
 
         // Antimatter Circuit ComponentsL ID 2525-2549
 
-
         // Temporal Circuit ComponentsL ID 2550-2599
-
 
         // Battery Hulls: ID 3000-3049
         BATTERY_HULL_ZPM_SMALL = addItem(3200, "hull.battery.zpm");
@@ -276,7 +305,7 @@ public class GTHHMetaItem2 extends StandardMetaItem {
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
         BATTERY_ZPM_ENRICHED_NAQUADAH = addItem(3059, "battery.zpm.enriched_naquadah")
-                .addComponents(ElectricStats.createRechargeableBattery(943718400L , GTValues.ZPM))
+                .addComponents(ElectricStats.createRechargeableBattery(943718400L, GTValues.ZPM))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.ZPM).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
@@ -291,7 +320,7 @@ public class GTHHMetaItem2 extends StandardMetaItem {
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
         BATTERY_ZPM_NAQUADRIA = addItem(3062, "battery.zpm.naquadria1")
-                .addComponents(ElectricStats.createRechargeableBattery(1101004800L , GTValues.ZPM))
+                .addComponents(ElectricStats.createRechargeableBattery(1101004800L, GTValues.ZPM))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.ZPM).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
@@ -309,91 +338,91 @@ public class GTHHMetaItem2 extends StandardMetaItem {
                 .addComponents(ElectricStats.createRechargeableBattery(60397977600L, GTValues.UEV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-                /*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
+        /* .cosmicProperties(true, 2, -1711276033, 10, false) */;
 
         BATTERY_UIV_COSMIC_NEUTRONIUM = addItem(3066, "battery.uiv.cosmic_neutronium")
                 .addComponents(ElectricStats.createRechargeableBattery(241591910400L, GTValues.UIV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-                /*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
+        /* .cosmicProperties(true, 2, -1711276033, 10, false) */;
 
         BATTERY_UXV_COSMIC_NEUTRONIUM = addItem(3067, "battery.uxv.cosmic_neutronium")
                 .addComponents(ElectricStats.createRechargeableBattery(966367641600L, GTValues.UXV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-                /*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
+        /* .cosmicProperties(true, 2, -1711276033, 10, false) */;
 
         BATTERY_UEV_INFINITY = addItem(3068, "battery.uev.infinity")
                 .addComponents(ElectricStats.createRechargeableBattery(72477573120L, GTValues.UEV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-                /*.cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f) */;
 
         BATTERY_UIV_INFINITY = addItem(3069, "battery.uiv.infinity")
                 .addComponents(ElectricStats.createRechargeableBattery(289910292480L, GTValues.UIV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-                /*.cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f) */;
 
         BATTERY_UXV_INFINITY = addItem(3070, "battery.uxv.infinity")
                 .addComponents(ElectricStats.createRechargeableBattery(1159641169920L, GTValues.UXV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-                /*.cosmicProperties(true, 1, -16777216, 10, true, 10, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 10, 1.0f) */;
 
         BATTERY_UEV_EMPOWERED_INFINITY = addItem(3071, "battery.uev.empowered_infinity")
                 .addComponents(ElectricStats.createRechargeableBattery(84557168640L, GTValues.UEV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f) */;
 
         BATTERY_UIV_EMPOWERED_INFINITY = addItem(3072, "battery.uiv.empowered_infinity")
                 .addComponents(ElectricStats.createRechargeableBattery(338228674560L, GTValues.UIV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f) */;
 
         BATTERY_UXV_EMPOWERED_INFINITY = addItem(3073, "battery.uxv.empowered_infinity")
                 .addComponents(ElectricStats.createRechargeableBattery(1352914698240L, GTValues.UXV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 1, -16777216, 10, true, 10, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 10, 1.0f) */;
 
         BATTERY_OPV_MULTIPHASE_COSMIC_NEUTRONIUM = addItem(3074, "battery.opv.multiphase_cosmic_neutronium")
                 .addComponents(ElectricStats.createRechargeableBattery(4509715660800L, GTValues.OpV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
+        /* .cosmicProperties(true, 2, -1711276033, 10, false) */;
 
         BATTERY_MAX_MULTIPHASE_COSMIC_NEUTRONIUM = addItem(3075, "battery.max.multiphase_cosmic_neutronium")
                 .addComponents(ElectricStats.createRechargeableBattery(18038862643200L, GTValues.MAX))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 2, -1711276033, 10, false)*/;
+        /* .cosmicProperties(true, 2, -1711276033, 10, false) */;
 
         BATTERY_OPV_ANTIMATTER = addItem(3076, "battery.opv.antimatter")
                 .addComponents(ElectricStats.createRechargeableBattery(5411658792960L, GTValues.OpV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f) */;
 
         BATTERY_MAX_ANTIMATTER = addItem(3077, "battery.max.antimatter")
                 .addComponents(ElectricStats.createRechargeableBattery(21646635171840L, GTValues.MAX))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f) */;
 
         BATTERY_OPV_MULTIVERSIUM = addItem(3078, "battery.opv.multiversium")
                 .addComponents(ElectricStats.createRechargeableBattery(6313601925120L, GTValues.OpV))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 8, 1.0f) */;
 
         BATTERY_MAX_MULTIVERSIUM = addItem(3079, "battery.max.multiversium")
                 .addComponents(ElectricStats.createRechargeableBattery(25254407700480L, GTValues.MAX))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        /*.cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f)*/;
+        /* .cosmicProperties(true, 1, -16777216, 10, true, 9, 1.0f) */;
 
         ENERGY_PILE = addItem(3080, "battery.energy_pile")
                 .addComponents(ElectricStats.createRechargeableBattery(78014054400L, GTValues.UHV))
@@ -450,5 +479,4 @@ public class GTHHMetaItem2 extends StandardMetaItem {
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
     }
-
 }

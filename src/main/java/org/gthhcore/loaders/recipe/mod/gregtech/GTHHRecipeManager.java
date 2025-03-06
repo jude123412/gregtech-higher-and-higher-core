@@ -4,6 +4,7 @@ import org.gthhcore.loaders.recipe.handlers.GTHHRecipeHandlerList;
 import org.gthhcore.loaders.recipe.mod.GTHHModRecipeLoader;
 
 public class GTHHRecipeManager {
+
     private GTHHRecipeManager() {}
 
     public static void preLoad() {
@@ -12,7 +13,7 @@ public class GTHHRecipeManager {
         GTHHRecipeHandlerList.registerEarly();
     }
 
-    public static void load(){
+    public static void load() {
         GTHHRecipeHandlerList.register();
         GTHHModRecipeLoader.register();
     }

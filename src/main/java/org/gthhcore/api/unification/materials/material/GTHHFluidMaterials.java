@@ -1,13 +1,13 @@
 package org.gthhcore.api.unification.materials.material;
 
-import gregtech.api.fluids.FluidBuilder;
-import gregtech.api.unification.material.Material;
-
 import static gregtech.api.fluids.attribute.FluidAttributes.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+
+import gregtech.api.fluids.FluidBuilder;
+import gregtech.api.unification.material.Material;
 
 public class GTHHFluidMaterials {
 
@@ -15,7 +15,6 @@ public class GTHHFluidMaterials {
     private static int endId = 10999;
 
     public static void register() {
-
         // Anything that is a fluid : Liquid, Plasma or gas Only
 
         RawSlimeGrowthMedium = new Material.Builder(getMetaItemId(), gregtechId("raw_slime_growth_medium"))
@@ -39,7 +38,7 @@ public class GTHHFluidMaterials {
         SlimeSolder = new Material.Builder(getMetaItemId(), gregtechId("slime_solder"))
                 .liquid(new FluidBuilder())
                 .color(0x5D995D)
-                .components(MissingError, 72,InfinityCatalyst, 2,Crynorium, 64, Bismuth, 128, Tin, 128)
+                .components(MissingError, 72, InfinityCatalyst, 2, Crynorium, 64, Bismuth, 128, Tin, 128)
                 .iconSet(DULL)
                 .build();
 
@@ -74,13 +73,14 @@ public class GTHHFluidMaterials {
                 .iconSet(FLUID)
                 .build();
 
-        ConcentratedPreciousMetalSolution = new Material.Builder(getMetaItemId(), gregtechId("concentrated_precious_metal_solution"))
-                .liquid(new FluidBuilder()
-                        .attribute(ACID)
-                        .temperature(293))
-                .color(0xFFB619)
-                .iconSet(FLUID)
-                .build();
+        ConcentratedPreciousMetalSolution = new Material.Builder(getMetaItemId(),
+                gregtechId("concentrated_precious_metal_solution"))
+                        .liquid(new FluidBuilder()
+                                .attribute(ACID)
+                                .temperature(293))
+                        .color(0xFFB619)
+                        .iconSet(FLUID)
+                        .build();
 
         CoalSlurry = new Material.Builder(getMetaItemId(), gregtechId("coal_slurry"))
                 .liquid(new FluidBuilder()
@@ -112,7 +112,7 @@ public class GTHHFluidMaterials {
     }
 
     private static int getMetaItemId() {
-        if (startId < endId){
+        if (startId < endId) {
             return startId++;
         }
         throw new ArrayIndexOutOfBoundsException();

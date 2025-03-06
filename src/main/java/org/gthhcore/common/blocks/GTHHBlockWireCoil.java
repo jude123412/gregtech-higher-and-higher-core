@@ -1,15 +1,9 @@
 package org.gthhcore.common.blocks;
 
-import gregtech.api.block.IHeatingCoilBlockStats;
-import gregtech.api.block.VariantActiveBlock;
-import gregtech.api.block.VariantItemBlock;
-import gregtech.api.items.toolitem.ToolClasses;
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.Materials;
-import gregtech.client.utils.TooltipHelper;
-import gregtech.common.ConfigHolder;
+import static net.minecraft.block.material.Material.IRON;
 
-import gregtech.common.metatileentities.multi.electric.MetaTileEntityMultiSmelter;
+import java.util.List;
+
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
@@ -18,21 +12,28 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.IStringSerializable;
-
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
 import org.gthhcore.api.unification.materials.material.GTHHMaterials;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
-import static net.minecraft.block.material.Material.IRON;
+import gregtech.api.block.IHeatingCoilBlockStats;
+import gregtech.api.block.VariantActiveBlock;
+import gregtech.api.block.VariantItemBlock;
+import gregtech.api.items.toolitem.ToolClasses;
+import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.Materials;
+import gregtech.client.utils.TooltipHelper;
+import gregtech.common.ConfigHolder;
+import gregtech.common.metatileentities.multi.electric.MetaTileEntityMultiSmelter;
 
 public class GTHHBlockWireCoil extends VariantActiveBlock<GTHHBlockWireCoil.GTHHCoilType> {
+
     public GTHHBlockWireCoil() {
         super(IRON);
         setTranslationKey("wire_coil");

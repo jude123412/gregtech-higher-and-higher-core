@@ -5,12 +5,10 @@ public class GTHHThirdDegreeMaterials {
     private static int startId = 11500;
     private static int endId = 11999;
 
-    public static void register() {
-
-    }
+    public static void register() {}
 
     private static int getMetaItemId() {
-        if (startId < endId){
+        if (startId < endId) {
             return startId++;
         }
         throw new ArrayIndexOutOfBoundsException();

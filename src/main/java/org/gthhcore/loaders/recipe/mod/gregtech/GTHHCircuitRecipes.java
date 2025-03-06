@@ -1,14 +1,5 @@
 package org.gthhcore.loaders.recipe.mod.gregtech;
 
-import gregtech.api.metatileentity.multiblock.CleanroomType;
-import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.MarkerMaterials;
-import gregtech.api.unification.material.MarkerMaterials.Component;
-import gregtech.api.unification.material.MarkerMaterials.Tier;
-
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.GTRecipeHandler.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -18,6 +9,15 @@ import static gregtech.common.items.MetaItems.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
+import gregtech.api.metatileentity.multiblock.CleanroomType;
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.MarkerMaterials;
+import gregtech.api.unification.material.MarkerMaterials.Component;
+import gregtech.api.unification.material.MarkerMaterials.Tier;
+
 public class GTHHCircuitRecipes {
 
     public static void init() {
@@ -26,12 +26,10 @@ public class GTHHCircuitRecipes {
         boardRecipes();
         circuitRecipes();
     }
-    private static void waferRecipes() {
 
-    }
+    private static void waferRecipes() {}
 
     private static void componentRecipes() {
-
         // Wetware CPU
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .duration(600).EUt(VA[IV])
@@ -212,10 +210,10 @@ public class GTHHCircuitRecipes {
                 .duration(900).EUt(VA[IV]).buildAndRegister();
 
         // Salt Crystal Resistor
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(dust, Graphene),
                 OreDictUnifier.get(wireFine, Platinum, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Polybenzimidazole.getFluid(L * 2)
         });
 
@@ -227,10 +225,10 @@ public class GTHHCircuitRecipes {
                 .EUt(3840).duration(160).buildAndRegister();
 
         // Salt Crystal Diode
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(dust, IndiumGalliumPhosphide),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Polybenzimidazole.getFluid(L * 2)
         });
 
@@ -242,10 +240,10 @@ public class GTHHCircuitRecipes {
                 .EUt(3840).duration(640).buildAndRegister();
 
         // Salt Crystal Transistor
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(foil, VanadiumGallium),
                 OreDictUnifier.get(wireFine, HSSG, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Polybenzimidazole.getFluid(L)
         });
 
@@ -257,10 +255,10 @@ public class GTHHCircuitRecipes {
                 .EUt(3840).duration(160).buildAndRegister();
 
         // Salt Crystal Capacitor
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(foil, Polybenzimidazole, 2),
                 OreDictUnifier.get(foil, HSSS)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Polybenzimidazole.getFluid(L / 4)
         });
 
@@ -272,10 +270,10 @@ public class GTHHCircuitRecipes {
                 .EUt(3840).duration(80).buildAndRegister();
 
         // Salt Crystal SMD Inductor
-        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(ring, HSSE),
                 OreDictUnifier.get(wireFine, Palladium, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Polybenzimidazole.getFluid(L)
         });
 
@@ -319,13 +317,11 @@ public class GTHHCircuitRecipes {
                 .fluidInputs(Crynorium.getFluid(L * 64))
                 .fluidOutputs(SlimeSolder.getFluid(L * 320))
                 .duration(1800).EUt(VA[UEV] / 2).buildAndRegister();
-
     }
 
     private static void boardRecipes() {
-
         // SLIMEWARE BOARD
-        
+
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .duration(1200).EUt(VA[ZPM])
                 .input(WETWARE_BOARD, 16)
@@ -359,27 +355,27 @@ public class GTHHCircuitRecipes {
     private static void circuitRecipes() {
         // T1: Electronic ==============================================================================================
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 BASIC_CIRCUIT_BOARD.getStackForm(1),
                 OreDictUnifier.get(component, Component.Resistor, 2),
                 OreDictUnifier.get(wireGtSingle, RedAlloy, 8),
                 OreDictUnifier.get(circuit, Tier.ULV, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 BASIC_CIRCUIT_BOARD.getStackForm(1),
                 OreDictUnifier.get(component, Component.Resistor, 2),
                 OreDictUnifier.get(wireGtSingle, RedAlloy, 8),
                 OreDictUnifier.get(circuit, Tier.ULV, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
         // LV
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(16).duration(200)
-                .input(BASIC_CIRCUIT_BOARD,1)
+                .input(BASIC_CIRCUIT_BOARD, 1)
                 .input(component, Component.Resistor, 2)
                 .input(wireGtSingle, RedAlloy, 2)
                 .input(circuit, Tier.ULV, 2)
@@ -388,47 +384,47 @@ public class GTHHCircuitRecipes {
 
         // T2: Integrated ==============================================================================================
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 BASIC_CIRCUIT_BOARD.getStackForm(1),
                 INTEGRATED_LOGIC_CIRCUIT.getStackForm(1),
                 OreDictUnifier.get(component, Component.Resistor, 2),
                 OreDictUnifier.get(component, Component.Diode, 2),
                 OreDictUnifier.get(wireFine, Copper, 2),
                 OreDictUnifier.get(bolt, Tin, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 BASIC_CIRCUIT_BOARD.getStackForm(1),
                 INTEGRATED_LOGIC_CIRCUIT.getStackForm(1),
                 OreDictUnifier.get(component, Component.Resistor, 2),
                 OreDictUnifier.get(component, Component.Diode, 2),
                 OreDictUnifier.get(wireFine, Copper, 2),
                 OreDictUnifier.get(bolt, Tin, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 GOOD_CIRCUIT_BOARD.getStackForm(1),
                 INTEGRATED_CIRCUIT_LV.getStackForm(2),
                 OreDictUnifier.get(component, Component.Resistor, 2),
                 OreDictUnifier.get(component, Component.Diode, 2),
                 OreDictUnifier.get(wireFine, Gold, 4),
                 OreDictUnifier.get(bolt, Silver, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 GOOD_CIRCUIT_BOARD.getStackForm(1),
                 INTEGRATED_CIRCUIT_LV.getStackForm(2),
                 OreDictUnifier.get(component, Component.Resistor, 2),
                 OreDictUnifier.get(component, Component.Diode, 2),
                 OreDictUnifier.get(wireFine, Gold, 4),
                 OreDictUnifier.get(bolt, Silver, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -456,42 +452,40 @@ public class GTHHCircuitRecipes {
 
         // T2.5: Misc ==================================================================================================
 
-
-
         // NAND Chip ULV
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 GOOD_CIRCUIT_BOARD.getStackForm(1),
                 SIMPLE_SYSTEM_ON_CHIP.getStackForm(2),
                 OreDictUnifier.get(bolt, RedAlloy, 2),
                 OreDictUnifier.get(wireFine, Tin, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 GOOD_CIRCUIT_BOARD.getStackForm(1),
                 SIMPLE_SYSTEM_ON_CHIP.getStackForm(2),
                 OreDictUnifier.get(bolt, RedAlloy, 2),
                 OreDictUnifier.get(wireFine, Tin, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(1),
                 SIMPLE_SYSTEM_ON_CHIP.getStackForm(2),
                 OreDictUnifier.get(bolt, RedAlloy, 2),
                 OreDictUnifier.get(wireFine, Tin, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(1),
                 SIMPLE_SYSTEM_ON_CHIP.getStackForm(2),
                 OreDictUnifier.get(bolt, RedAlloy, 2),
                 OreDictUnifier.get(wireFine, Tin, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -583,28 +577,27 @@ public class GTHHCircuitRecipes {
                 .output(NAND_CHIP_ULV, 64)
                 .buildAndRegister();
 
-
         // Microprocessor LV
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(1),
                 CENTRAL_PROCESSING_UNIT.getStackForm(2),
                 OreDictUnifier.get(component, Component.Resistor, 2),
                 OreDictUnifier.get(component, Component.Capacitor, 2),
                 OreDictUnifier.get(component, Component.Transistor, 2),
                 OreDictUnifier.get(wireFine, Copper, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(1),
                 CENTRAL_PROCESSING_UNIT.getStackForm(2),
                 OreDictUnifier.get(component, Component.Resistor, 2),
                 OreDictUnifier.get(component, Component.Capacitor, 2),
                 OreDictUnifier.get(component, Component.Transistor, 2),
                 OreDictUnifier.get(wireFine, Copper, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -615,7 +608,7 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,1)
+                .output(MICROPROCESSOR_LV, 1)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(60).duration(200)
@@ -625,7 +618,7 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,2)
+                .output(MICROPROCESSOR_LV, 2)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(60).duration(200)
@@ -635,7 +628,7 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,4)
+                .output(MICROPROCESSOR_LV, 4)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(60).duration(200)
@@ -645,7 +638,7 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,8)
+                .output(MICROPROCESSOR_LV, 8)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(60).duration(200)
@@ -655,7 +648,7 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,16)
+                .output(MICROPROCESSOR_LV, 16)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(60).duration(200)
@@ -665,7 +658,7 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,32)
+                .output(MICROPROCESSOR_LV, 32)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(60).duration(200)
@@ -675,7 +668,7 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,48)
+                .output(MICROPROCESSOR_LV, 48)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(60).duration(200)
@@ -685,7 +678,7 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,56)
+                .output(MICROPROCESSOR_LV, 56)
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(60).duration(200)
@@ -695,27 +688,26 @@ public class GTHHCircuitRecipes {
                 .input(component, Component.Capacitor, 2)
                 .input(component, Component.Transistor, 2)
                 .input(wireFine, Copper, 2)
-                .output(MICROPROCESSOR_LV,64)
+                .output(MICROPROCESSOR_LV, 64)
                 .buildAndRegister();
-
 
         // Microprocessor LV SoC
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(1),
                 SYSTEM_ON_CHIP.getStackForm(1),
                 OreDictUnifier.get(wireFine, Copper, 2),
                 OreDictUnifier.get(bolt, Tin, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(1),
                 SYSTEM_ON_CHIP.getStackForm(1),
                 OreDictUnifier.get(wireFine, Copper, 2),
                 OreDictUnifier.get(bolt, Tin, 2)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -765,7 +757,7 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(600).duration(50)
-                .input(LASERTRONIC_CIRCUIT_BOARD    , 1)
+                .input(LASERTRONIC_CIRCUIT_BOARD, 1)
                 .input(SYSTEM_ON_CHIP, 1)
                 .input(wireFine, Copper, 2)
                 .input(bolt, Tin, 2)
@@ -804,25 +796,25 @@ public class GTHHCircuitRecipes {
 
         // MV
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(),
                 CENTRAL_PROCESSING_UNIT.getStackForm(),
                 OreDictUnifier.get(component, Component.Resistor, 4),
                 OreDictUnifier.get(component, Component.Capacitor, 4),
                 OreDictUnifier.get(component, Component.Transistor, 4),
                 OreDictUnifier.get(wireFine, RedAlloy, 4),
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(),
                 CENTRAL_PROCESSING_UNIT.getStackForm(),
                 OreDictUnifier.get(component, Component.Resistor, 4),
                 OreDictUnifier.get(component, Component.Capacitor, 4),
                 OreDictUnifier.get(component, Component.Transistor, 4),
                 OreDictUnifier.get(wireFine, RedAlloy, 4),
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -838,21 +830,21 @@ public class GTHHCircuitRecipes {
 
         // MV SoC
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(1),
                 SYSTEM_ON_CHIP.getStackForm(1),
                 OreDictUnifier.get(wireFine, RedAlloy, 4),
                 OreDictUnifier.get(bolt, AnnealedCopper, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 PLASTIC_CIRCUIT_BOARD.getStackForm(1),
                 SYSTEM_ON_CHIP.getStackForm(1),
                 OreDictUnifier.get(wireFine, RedAlloy, 4),
                 OreDictUnifier.get(bolt, AnnealedCopper, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -867,72 +859,72 @@ public class GTHHCircuitRecipes {
 
         // IV
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, Aluminium, 2),
                 WORKSTATION_EV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(2),
                 ADVANCED_SMD_CAPACITOR.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(288)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, Aluminium, 2),
                 WORKSTATION_EV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(2),
                 ADVANCED_SMD_CAPACITOR.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(576)
         });
 
         // T4: Nano ====================================================================================================
 
         // HV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 SMD_RESISTOR.getStackForm(8),
                 SMD_CAPACITOR.getStackForm(8),
                 SMD_TRANSISTOR.getStackForm(8),
                 OreDictUnifier.get(wireFine, Electrum, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 SMD_RESISTOR.getStackForm(8),
                 SMD_CAPACITOR.getStackForm(8),
                 SMD_TRANSISTOR.getStackForm(8),
                 OreDictUnifier.get(wireFine, Electrum, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 ADVANCED_SMD_RESISTOR.getStackForm(2),
                 ADVANCED_SMD_CAPACITOR.getStackForm(2),
                 ADVANCED_SMD_TRANSISTOR.getStackForm(2),
                 OreDictUnifier.get(wireFine, Electrum, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 ADVANCED_SMD_RESISTOR.getStackForm(2),
                 ADVANCED_SMD_CAPACITOR.getStackForm(2),
                 ADVANCED_SMD_TRANSISTOR.getStackForm(2),
                 OreDictUnifier.get(wireFine, Electrum, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -960,21 +952,21 @@ public class GTHHCircuitRecipes {
 
         // HV SoC
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 ADVANCED_SYSTEM_ON_CHIP.getStackForm(1),
                 OreDictUnifier.get(wireFine, Electrum, 4),
                 OreDictUnifier.get(bolt, Platinum, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 ADVANCED_SYSTEM_ON_CHIP.getStackForm(1),
                 OreDictUnifier.get(wireFine, Electrum, 4),
                 OreDictUnifier.get(bolt, Platinum, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -987,47 +979,47 @@ public class GTHHCircuitRecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
         // EV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_PROCESSOR_HV.getStackForm(2),
                 SMD_INDUCTOR.getStackForm(4),
                 SMD_CAPACITOR.getStackForm(8),
                 RANDOM_ACCESS_MEMORY.getStackForm(8),
                 OreDictUnifier.get(wireFine, Electrum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_PROCESSOR_HV.getStackForm(2),
                 SMD_INDUCTOR.getStackForm(4),
                 SMD_CAPACITOR.getStackForm(8),
                 RANDOM_ACCESS_MEMORY.getStackForm(8),
                 OreDictUnifier.get(wireFine, Electrum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_PROCESSOR_HV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(1),
                 ADVANCED_SMD_CAPACITOR.getStackForm(2),
                 RANDOM_ACCESS_MEMORY.getStackForm(8),
                 OreDictUnifier.get(wireFine, Electrum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_PROCESSOR_HV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(1),
                 ADVANCED_SMD_CAPACITOR.getStackForm(2),
                 RANDOM_ACCESS_MEMORY.getStackForm(8),
                 OreDictUnifier.get(wireFine, Electrum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
@@ -1056,46 +1048,46 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // IV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_PROCESSOR_ASSEMBLY_EV.getStackForm(2),
                 SMD_DIODE.getStackForm(8),
                 NOR_MEMORY_CHIP.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireFine, Electrum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_PROCESSOR_ASSEMBLY_EV.getStackForm(2),
                 SMD_DIODE.getStackForm(8),
                 NOR_MEMORY_CHIP.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireFine, Electrum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_PROCESSOR_ASSEMBLY_EV.getStackForm(2),
                 ADVANCED_SMD_DIODE.getStackForm(2),
                 NOR_MEMORY_CHIP.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireFine, Electrum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ADVANCED_CIRCUIT_BOARD.getStackForm(1),
                 NANO_PROCESSOR_ASSEMBLY_EV.getStackForm(2),
                 ADVANCED_SMD_DIODE.getStackForm(2),
                 NOR_MEMORY_CHIP.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireFine, Electrum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
@@ -1124,47 +1116,47 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // LuV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, Aluminium, 2),
                 NANO_COMPUTER_IV.getStackForm(2),
                 SMD_INDUCTOR.getStackForm(16),
                 SMD_CAPACITOR.getStackForm(32),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(288)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, Aluminium, 2),
                 NANO_COMPUTER_IV.getStackForm(2),
                 SMD_INDUCTOR.getStackForm(16),
                 SMD_CAPACITOR.getStackForm(32),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(576)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, Aluminium, 2),
                 NANO_COMPUTER_IV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(4),
                 ADVANCED_SMD_CAPACITOR.getStackForm(8),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(288)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, Aluminium, 2),
                 NANO_COMPUTER_IV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(4),
                 ADVANCED_SMD_CAPACITOR.getStackForm(8),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(576)
         });
 
@@ -1195,46 +1187,46 @@ public class GTHHCircuitRecipes {
         // T5: Quantum =================================================================================================
 
         // EV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUBIT_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 SMD_CAPACITOR.getStackForm(12),
                 SMD_TRANSISTOR.getStackForm(12),
                 OreDictUnifier.get(wireFine, Platinum, 12)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUBIT_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 SMD_CAPACITOR.getStackForm(12),
                 SMD_TRANSISTOR.getStackForm(12),
                 OreDictUnifier.get(wireFine, Platinum, 12)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUBIT_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 ADVANCED_SMD_CAPACITOR.getStackForm(12),
                 ADVANCED_SMD_TRANSISTOR.getStackForm(12),
                 OreDictUnifier.get(wireFine, Platinum, 12)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUBIT_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 ADVANCED_SMD_CAPACITOR.getStackForm(12),
                 ADVANCED_SMD_TRANSISTOR.getStackForm(12),
                 OreDictUnifier.get(wireFine, Platinum, 12)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(2400).duration(200)
@@ -1260,23 +1252,23 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // EV SoC
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 ADVANCED_SYSTEM_ON_CHIP.getStackForm(),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 OreDictUnifier.get(wireFine, Platinum, 12),
                 OreDictUnifier.get(bolt, NiobiumTitanium, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 ADVANCED_SYSTEM_ON_CHIP.getStackForm(),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(),
                 OreDictUnifier.get(wireFine, Platinum, 12),
                 OreDictUnifier.get(bolt, NiobiumTitanium, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -1290,47 +1282,47 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // IV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUANTUM_PROCESSOR_EV.getStackForm(2),
                 SMD_INDUCTOR.getStackForm(8),
                 SMD_CAPACITOR.getStackForm(16),
                 RANDOM_ACCESS_MEMORY.getStackForm(4),
                 OreDictUnifier.get(wireFine, Platinum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUANTUM_PROCESSOR_EV.getStackForm(2),
                 SMD_INDUCTOR.getStackForm(8),
                 SMD_CAPACITOR.getStackForm(16),
                 RANDOM_ACCESS_MEMORY.getStackForm(4),
                 OreDictUnifier.get(wireFine, Platinum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUANTUM_PROCESSOR_EV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(2),
                 ADVANCED_SMD_CAPACITOR.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(4),
                 OreDictUnifier.get(wireFine, Platinum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUANTUM_PROCESSOR_EV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(2),
                 ADVANCED_SMD_CAPACITOR.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(4),
                 OreDictUnifier.get(wireFine, Platinum, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
@@ -1359,47 +1351,47 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // LuV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUANTUM_ASSEMBLY_IV.getStackForm(2),
                 SMD_DIODE.getStackForm(8),
                 NOR_MEMORY_CHIP.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireFine, Platinum, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUANTUM_ASSEMBLY_IV.getStackForm(2),
                 SMD_DIODE.getStackForm(8),
                 NOR_MEMORY_CHIP.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireFine, Platinum, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUANTUM_ASSEMBLY_IV.getStackForm(2),
                 ADVANCED_SMD_DIODE.getStackForm(2),
                 NOR_MEMORY_CHIP.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireFine, Platinum, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 EXTREME_CIRCUIT_BOARD.getStackForm(),
                 QUANTUM_ASSEMBLY_IV.getStackForm(2),
                 ADVANCED_SMD_DIODE.getStackForm(2),
                 NOR_MEMORY_CHIP.getStackForm(4),
                 RANDOM_ACCESS_MEMORY.getStackForm(16),
                 OreDictUnifier.get(wireFine, Platinum, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
@@ -1428,47 +1420,47 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // ZPM
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, HSSG, 2),
                 QUANTUM_COMPUTER_LUV.getStackForm(2),
                 SMD_INDUCTOR.getStackForm(24),
                 SMD_CAPACITOR.getStackForm(48),
                 RANDOM_ACCESS_MEMORY.getStackForm(24),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 48)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(288)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, HSSG, 2),
                 QUANTUM_COMPUTER_LUV.getStackForm(2),
                 SMD_INDUCTOR.getStackForm(24),
                 SMD_CAPACITOR.getStackForm(48),
                 RANDOM_ACCESS_MEMORY.getStackForm(24),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 48)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(576)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, HSSG, 2),
                 QUANTUM_COMPUTER_LUV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(6),
                 ADVANCED_SMD_CAPACITOR.getStackForm(12),
                 RANDOM_ACCESS_MEMORY.getStackForm(24),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 48)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(288)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, HSSG, 2),
                 QUANTUM_COMPUTER_LUV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(6),
                 ADVANCED_SMD_CAPACITOR.getStackForm(12),
                 RANDOM_ACCESS_MEMORY.getStackForm(24),
                 OreDictUnifier.get(wireGtSingle, AnnealedCopper, 48)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(576)
         });
 
@@ -1499,25 +1491,25 @@ public class GTHHCircuitRecipes {
         // T6: Crystal =================================================================================================
 
         // IV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ELITE_CIRCUIT_BOARD.getStackForm(1),
                 CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(2),
                 ADVANCED_SMD_CAPACITOR.getStackForm(6),
                 ADVANCED_SMD_TRANSISTOR.getStackForm(6),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ELITE_CIRCUIT_BOARD.getStackForm(1),
                 CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(2),
                 ADVANCED_SMD_CAPACITOR.getStackForm(6),
                 ADVANCED_SMD_TRANSISTOR.getStackForm(6),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -1544,21 +1536,21 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // IV SoC
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ELITE_CIRCUIT_BOARD.getStackForm(1),
                 CRYSTAL_SYSTEM_ON_CHIP.getStackForm(1),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 8),
                 OreDictUnifier.get(bolt, YttriumBariumCuprate, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ELITE_CIRCUIT_BOARD.getStackForm(1),
                 CRYSTAL_SYSTEM_ON_CHIP.getStackForm(1),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 8),
                 OreDictUnifier.get(bolt, YttriumBariumCuprate, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -1572,25 +1564,25 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // LuV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ELITE_CIRCUIT_BOARD.getStackForm(),
                 CRYSTAL_PROCESSOR_IV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(4),
                 ADVANCED_SMD_CAPACITOR.getStackForm(8),
                 RANDOM_ACCESS_MEMORY.getStackForm(24),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ELITE_CIRCUIT_BOARD.getStackForm(),
                 CRYSTAL_PROCESSOR_IV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(4),
                 ADVANCED_SMD_CAPACITOR.getStackForm(8),
                 RANDOM_ACCESS_MEMORY.getStackForm(24),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 16)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
@@ -1619,25 +1611,25 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // ZPM
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ELITE_CIRCUIT_BOARD.getStackForm(),
                 CRYSTAL_ASSEMBLY_LUV.getStackForm(2),
                 RANDOM_ACCESS_MEMORY.getStackForm(4),
                 NOR_MEMORY_CHIP.getStackForm(32),
                 NAND_MEMORY_CHIP.getStackForm(64),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 ELITE_CIRCUIT_BOARD.getStackForm(),
                 CRYSTAL_ASSEMBLY_LUV.getStackForm(2),
                 RANDOM_ACCESS_MEMORY.getStackForm(4),
                 NOR_MEMORY_CHIP.getStackForm(32),
                 NAND_MEMORY_CHIP.getStackForm(64),
                 OreDictUnifier.get(wireFine, NiobiumTitanium, 32)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(9600).duration(400)
@@ -1664,7 +1656,7 @@ public class GTHHCircuitRecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
         // UV
-        removeRecipesByInputs(ASSEMBLY_LINE_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLY_LINE_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, HSSE, 2),
                 CRYSTAL_COMPUTER_ZPM.getStackForm(2),
                 RANDOM_ACCESS_MEMORY.getStackForm(32),
@@ -1673,7 +1665,7 @@ public class GTHHCircuitRecipes {
                 ADVANCED_SMD_INDUCTOR.getStackForm(8),
                 ADVANCED_SMD_CAPACITOR.getStackForm(16),
                 ADVANCED_SMD_DIODE.getStackForm(8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(L * 10)
         });
 
@@ -1712,25 +1704,25 @@ public class GTHHCircuitRecipes {
         // T7: Wetware =================================================================================================
 
         // LuV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 NEURO_PROCESSOR.getStackForm(1),
                 CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 ADVANCED_SMD_CAPACITOR.getStackForm(8),
                 ADVANCED_SMD_TRANSISTOR.getStackForm(8),
                 OreDictUnifier.get(wireFine, YttriumBariumCuprate, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 NEURO_PROCESSOR.getStackForm(1),
                 CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 NANO_CENTRAL_PROCESSING_UNIT.getStackForm(1),
                 ADVANCED_SMD_CAPACITOR.getStackForm(8),
                 ADVANCED_SMD_TRANSISTOR.getStackForm(8),
                 OreDictUnifier.get(wireFine, YttriumBariumCuprate, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -1757,21 +1749,21 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // SoC LuV
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 NEURO_PROCESSOR.getStackForm(1),
                 HIGHLY_ADVANCED_SOC.getStackForm(1),
                 OreDictUnifier.get(wireFine, YttriumBariumCuprate, 8),
                 OreDictUnifier.get(bolt, Naquadah, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(72)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 NEURO_PROCESSOR.getStackForm(1),
                 HIGHLY_ADVANCED_SOC.getStackForm(1),
                 OreDictUnifier.get(wireFine, YttriumBariumCuprate, 8),
                 OreDictUnifier.get(bolt, Naquadah, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(144)
         });
 
@@ -1780,30 +1772,30 @@ public class GTHHCircuitRecipes {
                 .input(HIGHLY_ADVANCED_SOC, 1)
                 .input(wireFine, YttriumBariumCuprate, 8)
                 .input(bolt, Naquadah, 8)
-                .output(WETWARE_PROCESSOR_LUV,  1)
+                .output(WETWARE_PROCESSOR_LUV, 1)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         // ZPM
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 WETWARE_CIRCUIT_BOARD.getStackForm(1),
                 WETWARE_PROCESSOR_LUV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(6),
                 ADVANCED_SMD_CAPACITOR.getStackForm(12),
                 RANDOM_ACCESS_MEMORY.getStackForm(24),
                 OreDictUnifier.get(wireFine, YttriumBariumCuprate, 16),
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(144)
         });
 
-        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES, new ItemStack[] {
                 WETWARE_CIRCUIT_BOARD.getStackForm(1),
                 WETWARE_PROCESSOR_LUV.getStackForm(2),
                 ADVANCED_SMD_INDUCTOR.getStackForm(6),
                 ADVANCED_SMD_CAPACITOR.getStackForm(12),
                 RANDOM_ACCESS_MEMORY.getStackForm(24),
                 OreDictUnifier.get(wireFine, YttriumBariumCuprate, 16),
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 Tin.getFluid(288)
         });
 
@@ -1832,7 +1824,7 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // UV
-        removeRecipesByInputs(ASSEMBLY_LINE_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLY_LINE_RECIPES, new ItemStack[] {
                 WETWARE_CIRCUIT_BOARD.getStackForm(1),
                 WETWARE_PROCESSOR_ASSEMBLY_ZPM.getStackForm(2),
                 ADVANCED_SMD_DIODE.getStackForm(8),
@@ -1841,7 +1833,7 @@ public class GTHHCircuitRecipes {
                 OreDictUnifier.get(wireFine, YttriumBariumCuprate, 24),
                 OreDictUnifier.get(foil, Polybenzimidazole, 32),
                 OreDictUnifier.get(plate, Europium, 4)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(1152)
         });
 
@@ -1880,7 +1872,7 @@ public class GTHHCircuitRecipes {
                 .buildAndRegister();
 
         // UHV
-        removeRecipesByInputs(ASSEMBLY_LINE_RECIPES, new ItemStack[]{
+        removeRecipesByInputs(ASSEMBLY_LINE_RECIPES, new ItemStack[] {
                 OreDictUnifier.get(frameGt, Tritanium, 2),
                 WETWARE_SUPER_COMPUTER_UV.getStackForm(2),
                 ADVANCED_SMD_DIODE.getStackForm(32),
@@ -1892,7 +1884,7 @@ public class GTHHCircuitRecipes {
                 RANDOM_ACCESS_MEMORY.getStackForm(32),
                 OreDictUnifier.get(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 16),
                 OreDictUnifier.get(plate, Europium, 8)
-        },  new FluidStack[]{
+        }, new FluidStack[] {
                 SolderingAlloy.getFluid(L * 20),
                 Polybenzimidazole.getFluid(L * 8)
         });
@@ -1940,7 +1932,8 @@ public class GTHHCircuitRecipes {
                 .researchWithoutRecipe("wetware_super_computer_uv")
                 .EUt(300000).duration(2000).buildAndRegister();
 
-        // T8: Slimeware =================================================================================================
+        // T8: Slimeware
+        // =================================================================================================
 
         // Slime Processing Unit
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder().EUt(32000).duration(800)
@@ -2092,5 +2085,4 @@ public class GTHHCircuitRecipes {
                 .researchWithoutRecipe("slimeware_computer_uhv")
                 .EUt(300000).duration(2000).buildAndRegister();
     }
-
 }

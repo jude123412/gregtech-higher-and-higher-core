@@ -1,25 +1,22 @@
 package org.gthhcore.api.unification.ore;
 
-import gregtech.api.unification.Element;
-import gregtech.api.unification.material.Material;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.Flags.*;
+import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.*;
+import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+import static org.gthhcore.api.util.GTHHMods.*;
+
+import org.gthhcore.api.unification.material.info.GTHHMaterialIconType;
+
 import gregtech.api.unification.material.info.MaterialIconType;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.MaterialStack;
 import gregtech.common.items.MetaItems;
-import org.gthhcore.api.unification.material.info.GTHHMaterialIconType;
-
-import java.util.function.Predicate;
-
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.Conditions.hasBlastProperty;
-import static gregtech.api.unification.ore.OrePrefix.Flags.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
-import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.*;
-import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
-import static org.gthhcore.api.util.GTHHMods.*;
 
 public class GTHHOrePrefix {
+
     public static final OrePrefix oreMoon = new OrePrefix("oreMoon", -1, null,
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
@@ -149,29 +146,38 @@ public class GTHHOrePrefix {
     public static void init() {
         oreMoon.addSecondaryMaterial(new MaterialStack(MoonStone, OrePrefix.dust.getMaterialAmount(MoonStone)));
         oreMars.addSecondaryMaterial(new MaterialStack(MarsStone, OrePrefix.dust.getMaterialAmount(MarsStone)));
-        oreAsteroid.addSecondaryMaterial(new MaterialStack(AsteroidStone, OrePrefix.dust.getMaterialAmount(AsteroidStone)));
+        oreAsteroid.addSecondaryMaterial(
+                new MaterialStack(AsteroidStone, OrePrefix.dust.getMaterialAmount(AsteroidStone)));
         oreVenus.addSecondaryMaterial(new MaterialStack(VenusStone, OrePrefix.dust.getMaterialAmount(VenusStone)));
-        oreMercury.addSecondaryMaterial(new MaterialStack(MercuryStone, OrePrefix.dust.getMaterialAmount(MercuryStone)));
+        oreMercury
+                .addSecondaryMaterial(new MaterialStack(MercuryStone, OrePrefix.dust.getMaterialAmount(MercuryStone)));
         oreCeres.addSecondaryMaterial(new MaterialStack(CeresStone, OrePrefix.dust.getMaterialAmount(CeresStone)));
-        oreJupiter.addSecondaryMaterial(new MaterialStack(JupiterStone, OrePrefix.dust.getMaterialAmount(JupiterStone)));
+        oreJupiter
+                .addSecondaryMaterial(new MaterialStack(JupiterStone, OrePrefix.dust.getMaterialAmount(JupiterStone)));
         oreSaturn.addSecondaryMaterial(new MaterialStack(SaturnStone, OrePrefix.dust.getMaterialAmount(SaturnStone)));
         oreUranus.addSecondaryMaterial(new MaterialStack(UranusStone, OrePrefix.dust.getMaterialAmount(UranusStone)));
-        oreNeptune.addSecondaryMaterial(new MaterialStack(NeptuneStone, OrePrefix.dust.getMaterialAmount(NeptuneStone)));
+        oreNeptune
+                .addSecondaryMaterial(new MaterialStack(NeptuneStone, OrePrefix.dust.getMaterialAmount(NeptuneStone)));
         orePluto.addSecondaryMaterial(new MaterialStack(PlutoStone, OrePrefix.dust.getMaterialAmount(PlutoStone)));
         oreEris.addSecondaryMaterial(new MaterialStack(ErisStone, OrePrefix.dust.getMaterialAmount(ErisStone)));
-        oreKepler22B.addSecondaryMaterial(new MaterialStack(Kepler22bStone, OrePrefix.dust.getMaterialAmount(Kepler22bStone)));
+        oreKepler22B.addSecondaryMaterial(
+                new MaterialStack(Kepler22bStone, OrePrefix.dust.getMaterialAmount(Kepler22bStone)));
         oreEuropa.addSecondaryMaterial(new MaterialStack(EuropaStone, OrePrefix.dust.getMaterialAmount(EuropaStone)));
         oreIo.addSecondaryMaterial(new MaterialStack(IoStone, OrePrefix.dust.getMaterialAmount(IoStone)));
         oreDeimos.addSecondaryMaterial(new MaterialStack(DeimosStone, OrePrefix.dust.getMaterialAmount(DeimosStone)));
         orePhobos.addSecondaryMaterial(new MaterialStack(PhobosStone, OrePrefix.dust.getMaterialAmount(PhobosStone)));
         oreTriton.addSecondaryMaterial(new MaterialStack(TritonStone, OrePrefix.dust.getMaterialAmount(TritonStone)));
-        oreCallisto.addSecondaryMaterial(new MaterialStack(CallistoStone, OrePrefix.dust.getMaterialAmount(CallistoStone)));
-        oreGanymede.addSecondaryMaterial(new MaterialStack(GanymedeStone, OrePrefix.dust.getMaterialAmount(GanymedeStone)));
+        oreCallisto.addSecondaryMaterial(
+                new MaterialStack(CallistoStone, OrePrefix.dust.getMaterialAmount(CallistoStone)));
+        oreGanymede.addSecondaryMaterial(
+                new MaterialStack(GanymedeStone, OrePrefix.dust.getMaterialAmount(GanymedeStone)));
         oreRhea.addSecondaryMaterial(new MaterialStack(RheaStone, OrePrefix.dust.getMaterialAmount(RheaStone)));
         oreTitan.addSecondaryMaterial(new MaterialStack(TitanStone, OrePrefix.dust.getMaterialAmount(TitanStone)));
         oreOberon.addSecondaryMaterial(new MaterialStack(OberonStone, OrePrefix.dust.getMaterialAmount(OberonStone)));
-        oreTitania.addSecondaryMaterial(new MaterialStack(TitaniaStone, OrePrefix.dust.getMaterialAmount(TitaniaStone)));
-        oreIapetus.addSecondaryMaterial(new MaterialStack(IapetusStone, OrePrefix.dust.getMaterialAmount(IapetusStone)));
+        oreTitania
+                .addSecondaryMaterial(new MaterialStack(TitaniaStone, OrePrefix.dust.getMaterialAmount(TitaniaStone)));
+        oreIapetus
+                .addSecondaryMaterial(new MaterialStack(IapetusStone, OrePrefix.dust.getMaterialAmount(IapetusStone)));
 
         // Set Ignore Stuff
         cluster.setIgnored(Iron);
@@ -182,22 +188,19 @@ public class GTHHOrePrefix {
         cluster.setIgnored(Lead);
         cluster.setIgnored(Cinnabar);
 
-
         // Ae2
         if (Ae2.isModLoaded()) {
-        gem.setIgnored(CertusQuartz);
-        gem.setIgnored(ChargedCertusQuartz);
-        gem.setIgnored(Fluix);
-        gem.setIgnored(FluixPearl);
-        dust.setIgnored(CertusQuartz);
-        dust.setIgnored(Fluix);
-        dust.setIgnored(SkyStone);
-        block.setIgnored(CertusQuartz);
-        block.setIgnored(Fluix);
-        block.setIgnored(Fluixilized);
-        block.modifyMaterialAmount(CertusQuartz, 4);
-        block.modifyMaterialAmount(Fluix, 4);
-        block.modifyMaterialAmount(Fluixilized, 4);
+            gem.setIgnored(CertusQuartz);
+            gem.setIgnored(ChargedCertusQuartz);
+            gem.setIgnored(Fluix);
+            gem.setIgnored(FluixPearl);
+            dust.setIgnored(SkyStone);
+            block.setIgnored(CertusQuartz);
+            block.setIgnored(Fluix);
+            block.setIgnored(Fluixilized);
+            block.modifyMaterialAmount(CertusQuartz, 4);
+            block.modifyMaterialAmount(Fluix, 4);
+            block.modifyMaterialAmount(Fluixilized, 4);
         }
 
         // Astral Sorcery
@@ -242,7 +245,7 @@ public class GTHHOrePrefix {
         }
 
         // Ender Io
-        if(EnderIo.isModLoaded()) {
+        if (EnderIo.isModLoaded()) {
             nugget.setIgnored(ElectricalSteel);
             nugget.setIgnored(EnergeticAlloy);
             nugget.setIgnored(VibrantAlloy);
@@ -285,7 +288,7 @@ public class GTHHOrePrefix {
             block.setIgnored(Soularium);
             block.setIgnored(EndSteel);
 
-            if(EnderIoEndergy.isModLoaded()) {
+            if (EnderIoEndergy.isModLoaded()) {
                 nugget.setIgnored(CrudeSteel);
                 nugget.setIgnored(CrystallineAlloy);
                 nugget.setIgnored(MelodicAlloy);
@@ -316,8 +319,6 @@ public class GTHHOrePrefix {
         if (Thaumcraft.isModLoaded()) {
             MetaItems.addOrePrefix(cluster);
         }
-
-
 
         // Astra Sorcery
         if (AstralSorcery.isModLoaded()) {

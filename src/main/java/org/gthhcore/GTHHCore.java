@@ -1,23 +1,22 @@
 package org.gthhcore;
 
+import static org.gthhcore.Tags.MODID;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
-
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
 import org.gthhcore.api.util.GTHHLog;
 import org.gthhcore.common.CommonProxy;
 
-import static org.gthhcore.Tags.MODID;
-
-
 @Mod(modid = MODID,
-        version = Tags.VERSION,
-        name = Tags.MODNAME,
-        acceptedMinecraftVersions = "[1.12.2]")
+     version = Tags.VERSION,
+     name = Tags.MODNAME,
+     acceptedMinecraftVersions = "[1.12.2]")
 public class GTHHCore {
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
@@ -29,7 +28,6 @@ public class GTHHCore {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         CommonProxy.onInit();
-
     }
 
     @Mod.EventHandler

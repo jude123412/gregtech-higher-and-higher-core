@@ -5,6 +5,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 
 public class GTHHFusionRecipes {
+
     public static void init() {
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Tantalum.getFluid(125))

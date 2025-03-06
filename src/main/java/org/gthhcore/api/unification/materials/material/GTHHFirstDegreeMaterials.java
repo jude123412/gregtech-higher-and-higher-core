@@ -1,18 +1,18 @@
 package org.gthhcore.api.unification.materials.material;
 
+import static gregtech.api.GTValues.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static gregtech.api.util.GTUtility.gregtechId;
+import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+
+import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
+
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty;
-import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
-
-import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.api.util.GTUtility.gregtechId;
-import static gregtech.integration.groovy.GroovyMaterialBuilderExpansion.components;
-import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 
 public class GTHHFirstDegreeMaterials {
 
@@ -20,7 +20,6 @@ public class GTHHFirstDegreeMaterials {
     private static int endId = 10499;
 
     public static void register() {
-
         // LV -> EV Materials
         Cryotheum = new Material.Builder(getMetaItemId(), gregtechId("cryotheum"))
                 .dust()
@@ -150,7 +149,7 @@ public class GTHHFirstDegreeMaterials {
                 .flags(EXT2_METAL, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW, GENERATE_RING)
                 .blast(b -> b
                         .temp(1990, BlastProperty.GasTier.LOW)
-                        .blastStats(VA[EV], L * 4 ))
+                        .blastStats(VA[EV], L * 4))
                 .components(Tantalum, 5, Copper, 2, Gold, 1)
                 .color(0xc3b058)
                 .iconSet(MaterialIconSet.SHINY)
@@ -183,7 +182,7 @@ public class GTHHFirstDegreeMaterials {
     }
 
     private static int getMetaItemId() {
-        if (startId < endId){
+        if (startId < endId) {
             return startId++;
         }
         throw new ArrayIndexOutOfBoundsException();

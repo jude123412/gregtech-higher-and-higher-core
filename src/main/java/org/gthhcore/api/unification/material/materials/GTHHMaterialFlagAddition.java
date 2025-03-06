@@ -1,10 +1,5 @@
 package org.gthhcore.api.unification.material.materials;
 
-import gregtech.api.fluids.store.FluidStorageKeys;
-import gregtech.api.unification.material.info.MaterialIconSet;
-import gregtech.api.unification.material.properties.*;
-import org.gthhcore.api.util.GTHHLog;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -13,10 +8,15 @@ import static org.gthhcore.api.unification.material.materials.GTHHMaterialFlagHe
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 import static org.gthhcore.api.util.GTHHValues.*;
 
+import org.gthhcore.api.util.GTHHLog;
+
+import gregtech.api.fluids.store.FluidStorageKeys;
+import gregtech.api.unification.material.info.MaterialIconSet;
+import gregtech.api.unification.material.properties.*;
+
 public class GTHHMaterialFlagAddition {
 
     public static void init() {
-
         GTHHLog.logger.info("Changing Recipe Map Inputs & Outputs");
         THERMAL_CENTRIFUGE_RECIPES.setMaxFluidInputs(3);
         THERMAL_CENTRIFUGE_RECIPES.setMaxFluidOutputs(3);

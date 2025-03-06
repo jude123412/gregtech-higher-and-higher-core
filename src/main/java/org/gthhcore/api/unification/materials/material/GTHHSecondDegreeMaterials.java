@@ -1,19 +1,15 @@
 package org.gthhcore.api.unification.materials.material;
 
+import static gregtech.api.GTValues.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static gregtech.api.util.GTUtility.gregtechId;
+import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
-import org.gthhcore.api.unification.GTHHElements;
-import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
-
-import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.*;
-import static gregtech.api.util.GTUtility.gregtechId;
-
 
 public class GTHHSecondDegreeMaterials {
 
@@ -21,7 +17,6 @@ public class GTHHSecondDegreeMaterials {
     private static int endId = 11499;
 
     public static void register() {
-
         // IV -> UV Materials
         SaltsCatalyst = new Material.Builder(getMetaItemId(), gregtechId("salts_catalyst"))
                 .dust()
@@ -71,11 +66,11 @@ public class GTHHSecondDegreeMaterials {
                         .blastStats(VA[LuV], L * 10))
                 .color(0x000000)
                 .iconSet(SHINY)
-                .build();                
+                .build();
     }
 
     private static int getMetaItemId() {
-        if (startId < endId){
+        if (startId < endId) {
             return startId++;
         }
         throw new ArrayIndexOutOfBoundsException();

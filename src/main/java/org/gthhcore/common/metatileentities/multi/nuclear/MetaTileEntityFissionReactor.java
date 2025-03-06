@@ -1,5 +1,24 @@
 package org.gthhcore.common.metatileentities.multi.nuclear;
 
+import static gregtech.api.metatileentity.multiblock.MultiblockAbility.*;
+import static org.gthhcore.api.recipes.GTHHRecipeMaps.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import org.gthhcore.api.capability.impl.MultiblockFissionRecipeLogic;
+import org.gthhcore.api.metatileentity.multiblock.FissionMultiblockController;
+import org.gthhcore.common.metatileentities.GTHHMetaTileEntities;
+import org.jetbrains.annotations.NotNull;
+
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -15,26 +34,8 @@ import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.core.sound.GTSoundEvents;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import org.gthhcore.api.capability.impl.MultiblockFissionRecipeLogic;
-import org.gthhcore.api.metatileentity.multiblock.FissionMultiblockController;
-import org.gthhcore.common.metatileentities.GTHHMetaTileEntities;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static gregtech.api.metatileentity.multiblock.MultiblockAbility.*;
-import static org.gthhcore.api.recipes.GTHHRecipeMaps.*;
 
 public class MetaTileEntityFissionReactor extends FissionMultiblockController {
-
 
     public MetaTileEntityFissionReactor(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, FISSION_RECIPES);
@@ -55,9 +56,8 @@ public class MetaTileEntityFissionReactor extends FissionMultiblockController {
                 .where('S', selfPredicate().setCenter())
                 .where('C', states(getCasingState()))
                 .where('X', states(getCasingState()).setMinGlobalLimited(1)
-                        .or(autoAbilities(false, true, true, true,false,false,false)
-                                .or(abilities(OUTPUT_ENERGY).setMaxGlobalLimited(1)))
-                )
+                        .or(autoAbilities(false, true, true, true, false, false, false)
+                                .or(abilities(OUTPUT_ENERGY).setMaxGlobalLimited(1))))
                 .where('A', any())
                 .build();
     }
@@ -98,14 +98,16 @@ public class MetaTileEntityFissionReactor extends FissionMultiblockController {
                 .where('I', MetaTileEntities.ITEM_IMPORT_BUS[GTValues.LV], EnumFacing.WEST)
                 .where('O', MetaTileEntities.ITEM_EXPORT_BUS[GTValues.LV], EnumFacing.EAST)
                 .where('M', () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH :
-                        MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF), EnumFacing.SOUTH);
-                 shapeInfo.add(builder.build());
+                        MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF),
+                        EnumFacing.SOUTH);
+        shapeInfo.add(builder.build());
         return shapeInfo;
     }
-    
+
     public static class FissionReactorWorkableHandler extends MultiblockFissionRecipeLogic {
 
         private final MetaTileEntityFissionReactor fissionReactor;
+
         public FissionReactorWorkableHandler(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);
             this.fissionReactor = (MetaTileEntityFissionReactor) tileEntity;

@@ -1,12 +1,13 @@
 package org.gthhcore.api.capability.impl;
 
-import gregtech.api.capability.impl.MultiblockFuelRecipeLogic;
+import net.minecraft.util.Tuple;
+
+import org.jetbrains.annotations.NotNull;
+
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.ParallelLogicType;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.recipeproperties.IRecipePropertyStorage;
-import net.minecraft.util.Tuple;
-import org.jetbrains.annotations.NotNull;
 
 public class MultiblockFissionRecipeLogic extends MultiblockRecipeLogic {
 

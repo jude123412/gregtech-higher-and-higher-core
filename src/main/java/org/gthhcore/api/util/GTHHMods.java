@@ -1,10 +1,11 @@
 package org.gthhcore.api.util;
 
-import net.minecraftforge.fml.common.Loader;
-
 import java.util.function.Function;
 
+import net.minecraftforge.fml.common.Loader;
+
 public enum GTHHMods {
+
     Thaumcraft(Names.THAUMCRAFT),
     Botania(Names.BOTANIA),
     AstralSorcery(Names.ASTRAL_SORCERY),
@@ -13,12 +14,14 @@ public enum GTHHMods {
     CrazyAe(Names.CRAZY_AE),
     LogisticsPipes(Names.LOGISTICS_PIPES),
     Avaritia(Names.AVARITIA),
+    EternalSingularity(Names.ETERNAL_SINGULARITY),
     EnderIo(Names.ENDER_IO),
     EnderIoConduits(Names.ENDER_IO_CONDUITS),
     EnderIoEndergy(Names.ENDER_IO_ENDERGY),
     EnderIoMachines(Names.ENDER_IO_MACHINES);
 
     public static class Names {
+
         public static final String THAUMCRAFT = "thaumcraft";
         public static final String BOTANIA = "botania";
         public static final String ASTRAL_SORCERY = "astralsorcery";
@@ -27,16 +30,16 @@ public enum GTHHMods {
         public static final String CRAZY_AE = "crazyae";
         public static final String LOGISTICS_PIPES = "logisticspipes";
         public static final String AVARITIA = "avaritia";
+        public static final String ETERNAL_SINGULARITY = "eternalsingularity";
         public static final String ENDER_IO = "enderio";
         public static final String ENDER_IO_CONDUITS = "enderioconduits";
         public static final String ENDER_IO_ENDERGY = "enderioendergy";
-        public static final String ENDER_IO_MACHINES ="enderiomachines";
+        public static final String ENDER_IO_MACHINES = "enderiomachines";
     }
 
     private final String ID;
     private final Function<GTHHMods, Boolean> extraCheck;
     protected Boolean modLoaded;
-
 
     GTHHMods(String ID) {
         this.ID = ID;

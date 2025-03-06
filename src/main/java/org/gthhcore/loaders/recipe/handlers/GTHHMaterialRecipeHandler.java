@@ -1,9 +1,21 @@
 package org.gthhcore.loaders.recipe.handlers;
 
+import static gregtech.api.GTValues.*;
+import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
+import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.*;
+import static org.gthhcore.api.unification.ore.GTHHOrePrefix.*;
+
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
+import org.gthhcore.api.unification.material.info.GTHHMaterialFlags;
+
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.recipes.ingredients.nbtmatch.NBTMatcher;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.IngotProperty;
@@ -11,21 +23,6 @@ import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.util.Constants;
-import net.minecraftforge.fluids.FluidStack;
-import org.gthhcore.api.unification.material.info.GTHHMaterialFlags;
-import org.gthhcore.api.util.GTHHLog;
-
-import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
-import static gregtech.api.recipes.ModHandler.removeRecipeByOutput;
-import static gregtech.api.recipes.RecipeMaps.*;
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.IS_MAGNETIC;
-import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
-import static org.gthhcore.api.unification.ore.GTHHOrePrefix.*;
 
 public class GTHHMaterialRecipeHandler {
 
@@ -35,7 +32,6 @@ public class GTHHMaterialRecipeHandler {
     }
 
     static void processEBFRecipe(OrePrefix dustPrefix, Material material, BlastProperty property) {
-
         boolean hasHotIngot = OrePrefix.ingotHot.doGenerateItem(material);
         ItemStack ingotStack = OreDictUnifier.get(hasHotIngot ? OrePrefix.ingotHot : OrePrefix.ingot, material);
 
@@ -43,7 +39,8 @@ public class GTHHMaterialRecipeHandler {
         int duration = property.getDurationOverride();
         int energy = property.getEUtOverride();
         int vacuumEnergy = property.getVacuumEUtOverride() != -1 ? property.getVacuumEUtOverride() : VA[MV];
-        int vacuumDuration = property.getVacuumDurationOverride() != -1 ? property.getVacuumDurationOverride() : (int) material.getMass() * 3;
+        int vacuumDuration = property.getVacuumDurationOverride() != -1 ? property.getVacuumDurationOverride() :
+                (int) material.getMass() * 3;
 
         IngotProperty ingotProperty = material.getProperty(PropertyKey.INGOT);
 
@@ -61,172 +58,170 @@ public class GTHHMaterialRecipeHandler {
 
         if (blastTemp > 0) {
 
-            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                     OreDictUnifier.get(dust, material),
                     IntCircuitIngredient.getIntegratedCircuit(1)
             });
 
-
-            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                     OreDictUnifier.get(dust, material),
                     IntCircuitIngredient.getIntegratedCircuit(2)
-            }, new FluidStack[]{
+            }, new FluidStack[] {
                     Nitrogen.getFluid(1000)
             });
 
-            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                     OreDictUnifier.get(dust, material),
                     IntCircuitIngredient.getIntegratedCircuit(2)
-            }, new FluidStack[]{
+            }, new FluidStack[] {
                     Helium.getFluid(100)
             });
 
-            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                     OreDictUnifier.get(dust, material),
                     IntCircuitIngredient.getIntegratedCircuit(2)
-            }, new FluidStack[]{
+            }, new FluidStack[] {
                     Argon.getFluid(50)
             });
 
-            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                     OreDictUnifier.get(dust, material),
                     IntCircuitIngredient.getIntegratedCircuit(2)
-            }, new FluidStack[]{
+            }, new FluidStack[] {
                     Neon.getFluid(25)
             });
 
-            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+            removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                     OreDictUnifier.get(dust, material),
                     IntCircuitIngredient.getIntegratedCircuit(2)
-            }, new FluidStack[]{
+            }, new FluidStack[] {
                     Krypton.getFluid(10)
             });
 
-            removeRecipesByInputs(VACUUM_RECIPES, new ItemStack[]{
+            removeRecipesByInputs(VACUUM_RECIPES, new ItemStack[] {
                     OreDictUnifier.get(ingotHot, material),
-            }, new FluidStack[]{
+            }, new FluidStack[] {
                     Helium.getFluid(FluidStorageKeys.LIQUID, 500)
             });
 
             if (ingotProperty.getMagneticMaterial() != null) {
-                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                         OreDictUnifier.get(dust, ingotProperty.getMagneticMaterial()),
                         IntCircuitIngredient.getIntegratedCircuit(1)
                 });
 
-                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                         OreDictUnifier.get(dust, ingotProperty.getMagneticMaterial()),
                         IntCircuitIngredient.getIntegratedCircuit(2)
-                }, new FluidStack[]{
+                }, new FluidStack[] {
                         Nitrogen.getFluid(1000)
                 });
 
-                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                         OreDictUnifier.get(dust, ingotProperty.getMagneticMaterial()),
                         IntCircuitIngredient.getIntegratedCircuit(2)
-                }, new FluidStack[]{
+                }, new FluidStack[] {
                         Helium.getFluid(100)
                 });
 
-                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                         OreDictUnifier.get(dust, ingotProperty.getMagneticMaterial()),
                         IntCircuitIngredient.getIntegratedCircuit(2)
-                }, new FluidStack[]{
+                }, new FluidStack[] {
                         Argon.getFluid(50)
                 });
 
-                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                         OreDictUnifier.get(dust, ingotProperty.getMagneticMaterial()),
                         IntCircuitIngredient.getIntegratedCircuit(2)
-                }, new FluidStack[]{
+                }, new FluidStack[] {
                         Neon.getFluid(25)
                 });
 
-                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{
+                removeRecipesByInputs(BLAST_RECIPES, new ItemStack[] {
                         OreDictUnifier.get(dust, ingotProperty.getMagneticMaterial()),
                         IntCircuitIngredient.getIntegratedCircuit(2)
-                }, new FluidStack[]{
+                }, new FluidStack[] {
                         Krypton.getFluid(10)
                 });
             }
         }
 
-
         // New Magnetic Material Smelting
-    if (blastTemp > 0 && ingotProperty.getMagneticMaterial() != null) {
-        BLAST_RECIPES.recipeBuilder()
-                .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
-                .outputs(ingotStack)
-                .circuitMeta(1)
-                .blastFurnaceTemp(blastTemp)
-                .duration(duration).EUt(energy)
-                .buildAndRegister();
+        if (blastTemp > 0 && ingotProperty.getMagneticMaterial() != null) {
+            BLAST_RECIPES.recipeBuilder()
+                    .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
+                    .outputs(ingotStack)
+                    .circuitMeta(1)
+                    .blastFurnaceTemp(blastTemp)
+                    .duration(duration).EUt(energy)
+                    .buildAndRegister();
 
-        BLAST_RECIPES.recipeBuilder()
-                .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
-                .outputs(ingotStack)
-                .fluidInputs(Nitrogen.getFluid(1000))
-                .circuitMeta(2)
-                .blastFurnaceTemp(blastTemp)
-                .duration((int) (duration * 0.90)).EUt(energy)
-                .buildAndRegister();
+            BLAST_RECIPES.recipeBuilder()
+                    .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
+                    .outputs(ingotStack)
+                    .fluidInputs(Nitrogen.getFluid(1000))
+                    .circuitMeta(2)
+                    .blastFurnaceTemp(blastTemp)
+                    .duration((int) (duration * 0.90)).EUt(energy)
+                    .buildAndRegister();
 
-        BLAST_RECIPES.recipeBuilder()
-                .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
-                .outputs(ingotStack)
-                .fluidInputs(Helium.getFluid(900))
-                .circuitMeta(2)
-                .blastFurnaceTemp(blastTemp)
-                .duration((int) (duration * 0.80)).EUt(energy)
-                .buildAndRegister();
+            BLAST_RECIPES.recipeBuilder()
+                    .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
+                    .outputs(ingotStack)
+                    .fluidInputs(Helium.getFluid(900))
+                    .circuitMeta(2)
+                    .blastFurnaceTemp(blastTemp)
+                    .duration((int) (duration * 0.80)).EUt(energy)
+                    .buildAndRegister();
 
-        BLAST_RECIPES.recipeBuilder()
-                .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
-                .outputs(ingotStack)
-                .fluidInputs(Neon.getFluid(800))
-                .circuitMeta(2)
-                .blastFurnaceTemp(blastTemp)
-                .duration((int) (duration * 0.70)).EUt(energy)
-                .buildAndRegister();
+            BLAST_RECIPES.recipeBuilder()
+                    .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
+                    .outputs(ingotStack)
+                    .fluidInputs(Neon.getFluid(800))
+                    .circuitMeta(2)
+                    .blastFurnaceTemp(blastTemp)
+                    .duration((int) (duration * 0.70)).EUt(energy)
+                    .buildAndRegister();
 
-        BLAST_RECIPES.recipeBuilder()
-                .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
-                .outputs(ingotStack)
-                .fluidInputs(Argon.getFluid(700))
-                .circuitMeta(2)
-                .blastFurnaceTemp(blastTemp)
-                .duration((int) (duration * 0.60)).EUt(energy)
-                .buildAndRegister();
+            BLAST_RECIPES.recipeBuilder()
+                    .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
+                    .outputs(ingotStack)
+                    .fluidInputs(Argon.getFluid(700))
+                    .circuitMeta(2)
+                    .blastFurnaceTemp(blastTemp)
+                    .duration((int) (duration * 0.60)).EUt(energy)
+                    .buildAndRegister();
 
-        BLAST_RECIPES.recipeBuilder()
-                .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
-                .outputs(ingotStack)
-                .fluidInputs(Krypton.getFluid(600))
-                .circuitMeta(2)
-                .blastFurnaceTemp(blastTemp)
-                .duration((int) (duration * 0.50)).EUt(energy)
-                .buildAndRegister();
+            BLAST_RECIPES.recipeBuilder()
+                    .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
+                    .outputs(ingotStack)
+                    .fluidInputs(Krypton.getFluid(600))
+                    .circuitMeta(2)
+                    .blastFurnaceTemp(blastTemp)
+                    .duration((int) (duration * 0.50)).EUt(energy)
+                    .buildAndRegister();
 
-        BLAST_RECIPES.recipeBuilder()
-                .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
-                .outputs(ingotStack)
-                .fluidInputs(Xenon.getFluid(500))
-                .circuitMeta(2)
-                .blastFurnaceTemp(blastTemp)
-                .duration((int) (duration * 0.40)).EUt(energy)
-                .buildAndRegister();
+            BLAST_RECIPES.recipeBuilder()
+                    .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
+                    .outputs(ingotStack)
+                    .fluidInputs(Xenon.getFluid(500))
+                    .circuitMeta(2)
+                    .blastFurnaceTemp(blastTemp)
+                    .duration((int) (duration * 0.40)).EUt(energy)
+                    .buildAndRegister();
 
-        BLAST_RECIPES.recipeBuilder()
-                .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
-                .outputs(ingotStack)
-                .fluidInputs(Oganesson.getFluid(250))
-                .circuitMeta(2)
-                .blastFurnaceTemp(blastTemp)
-                .duration((int) (duration * 0.25)).EUt(energy)
-                .buildAndRegister();
-    }
+            BLAST_RECIPES.recipeBuilder()
+                    .input(dustPrefix, ingotProperty.getMagneticMaterial(), 1)
+                    .outputs(ingotStack)
+                    .fluidInputs(Oganesson.getFluid(250))
+                    .circuitMeta(2)
+                    .blastFurnaceTemp(blastTemp)
+                    .duration((int) (duration * 0.25)).EUt(energy)
+                    .buildAndRegister();
+        }
 
-    if (blastTemp > 0 && material.hasFlag(GTHHMaterialFlags.GENERATE_RAW)) {
+        if (blastTemp > 0 && material.hasFlag(GTHHMaterialFlags.GENERATE_RAW)) {
             BLAST_RECIPES.recipeBuilder()
                     .input(raw, material)
                     .outputs(ingotStack)
@@ -298,15 +293,15 @@ public class GTHHMaterialRecipeHandler {
                     .duration((int) (duration * 0.25)).EUt(energy)
                     .buildAndRegister();
 
-        VACUUM_RECIPES.recipeBuilder()
-                .input(ingotHot, material, 1)
-                .output(ingot, material, 1)
-                .duration(vacuumDuration)
-                .EUt(vacuumEnergy)
-                .buildAndRegister();
+            VACUUM_RECIPES.recipeBuilder()
+                    .input(ingotHot, material, 1)
+                    .output(ingot, material, 1)
+                    .duration(vacuumDuration)
+                    .EUt(vacuumEnergy)
+                    .buildAndRegister();
         }
 
-     if (blastTemp > 0 && !material.hasFlag(GTHHMaterialFlags.GENERATE_RAW)) {
+        if (blastTemp > 0 && !material.hasFlag(GTHHMaterialFlags.GENERATE_RAW)) {
             BLAST_RECIPES.recipeBuilder()
                     .input(dustPrefix, material, 1)
                     .outputs(ingotStack)
@@ -387,8 +382,8 @@ public class GTHHMaterialRecipeHandler {
 
         }
     }
-    static void processRawMaterial(OrePrefix dustPrefix, Material material, BlastProperty property) {
 
+    static void processRawMaterial(OrePrefix dustPrefix, Material material, BlastProperty property) {
         int blastTemp = property.getBlastTemperature();
         int energy = property.getEUtOverride();
         int duration = property.getDurationOverride();

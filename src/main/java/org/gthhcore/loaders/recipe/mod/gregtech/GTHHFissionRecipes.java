@@ -16,7 +16,6 @@ public class GTHHFissionRecipes {
     }
 
     public static void fuelProcessingRecipes() {
-
         // Empty Fuel Rods
         BENDER_RECIPES.recipeBuilder()
                 .duration(S * 5).EUt(VA[LV])
@@ -86,8 +85,8 @@ public class GTHHFissionRecipes {
                 .fluidOutputs(Neon.getFluid(400))
                 .buildAndRegister();
     }
-    public static void thoriumFissionRecipes() {
 
+    public static void thoriumFissionRecipes() {
         // Thorium Fission
         FISSION_RECIPES.recipeBuilder()
                 .duration(S * 50000).EUt(VA[LV])

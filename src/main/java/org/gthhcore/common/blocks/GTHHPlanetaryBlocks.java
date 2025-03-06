@@ -1,30 +1,25 @@
 package org.gthhcore.common.blocks;
 
-import gregtech.api.block.VariantBlock;
-import gregtech.api.items.toolitem.ToolClasses;
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Random;
+import gregtech.api.block.VariantBlock;
+import gregtech.api.items.toolitem.ToolClasses;
 
 public class GTHHPlanetaryBlocks extends VariantBlock<GTHHPlanetaryBlocks.GTHHPlanetaryType> {
 
     // shared property instance
-    private static final PropertyEnum<GTHHPlanetaryType> PROPERTY = PropertyEnum.create("variant", GTHHPlanetaryType.class);
+    private static final PropertyEnum<GTHHPlanetaryType> PROPERTY = PropertyEnum.create("variant",
+            GTHHPlanetaryType.class);
 
     public GTHHPlanetaryBlocks(@NotNull GTHHPlanetaryVariant planetaryStoneVariant) {
         super(net.minecraft.block.material.Material.ROCK);
@@ -55,7 +50,7 @@ public class GTHHPlanetaryBlocks extends VariantBlock<GTHHPlanetaryBlocks.GTHHPl
 
         MERCURY("mercury", MapColor.BLACK),
         VENUS("venus", MapColor.GRAY),
-        MOON("moon",MapColor.SNOW),
+        MOON("moon", MapColor.SNOW),
         MARS("mars", MapColor.RED),
         DEIMOS("deimos", MapColor.GOLD),
         PHOBOS("phobos", MapColor.BROWN);
