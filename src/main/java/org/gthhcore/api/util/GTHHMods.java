@@ -11,7 +11,12 @@ public enum GTHHMods {
     BloodMagic(Names.BLOOD_MAGIC),
     Ae2(Names.APPLIED_ENERGISTICS_2),
     CrazyAe(Names.CRAZY_AE),
-    LogisticsPipes(Names.LOGISTICSPIPES);
+    LogisticsPipes(Names.LOGISTICS_PIPES),
+    Avaritia(Names.AVARITIA),
+    EnderIo(Names.ENDER_IO),
+    EnderIoConduits(Names.ENDER_IO_CONDUITS),
+    EnderIoEndergy(Names.ENDER_IO_ENDERGY),
+    EnderIoMachines(Names.ENDER_IO_MACHINES);
 
     public static class Names {
         public static final String THAUMCRAFT = "thaumcraft";
@@ -20,7 +25,12 @@ public enum GTHHMods {
         public static final String BLOOD_MAGIC = "bloodmagic";
         public static final String APPLIED_ENERGISTICS_2 = "appliedenergistics2";
         public static final String CRAZY_AE = "crazyae";
-        public static final String LOGISTICSPIPES = "logisticspipes";
+        public static final String LOGISTICS_PIPES = "logisticspipes";
+        public static final String AVARITIA = "avaritia";
+        public static final String ENDER_IO = "enderio";
+        public static final String ENDER_IO_CONDUITS = "enderioconduits";
+        public static final String ENDER_IO_ENDERGY = "enderioendergy";
+        public static final String ENDER_IO_MACHINES ="enderiomachines";
     }
 
     private final String ID;

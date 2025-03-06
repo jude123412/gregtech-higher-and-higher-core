@@ -12,6 +12,6 @@ public class GTHHMaterialIconSet {
     public static final MaterialIconSet SANDCOMPOUND = new MaterialIconSet("sand_compound", MaterialIconSet.DULL);
     public static final MaterialIconSet INFERNORITE = new MaterialIconSet("infernorite", MaterialIconSet.SHINY);
     public static final MaterialIconSet MISSINGERROR = new MaterialIconSet("missing_error", MaterialIconSet.SHINY);
-    public static final MaterialIconSet PEARL = new MaterialIconSet("pearl", MaterialIconSet.SHINY);
-
+    public static final MaterialIconSet PEARL = new MaterialIconSet("pearl", MaterialIconSet.DIAMOND);
+    public static final MaterialIconSet STARMETAL = new MaterialIconSet("starmetal", MaterialIconSet.SHINY);
 }

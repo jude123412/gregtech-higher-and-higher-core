@@ -45,7 +45,7 @@ dependencies {
 
 
     // Soft Dependencies, Compile Only, Optional Mods
-    compileOnly rfg.deobf("curse.maven:avaritia-1-1x-unofficial-1165010:6108030") // Avaritia 3.3.0.38
+    compileOnly rfg.deobf("curse.maven:avaritia-1-1x-unofficial-1165010:6206823") // Avaritia 3.3.0.44
     compileOnly rfg.deobf("curse.maven:eternal-singularity-1.0.7-253077:2922583") // Eternal Singularity 1.0.7
     compileOnly rfg.deobf("curse.maven:ae2-unofficial-extended-life-0.56.6-570458:5411078") // AE2 UEL 0.56.6
     compileOnly rfg.deobf("curse.maven:crazy-ae-0.3-1111042:5845065") // Crazy AE 0.56.6
@@ -54,13 +54,12 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:astral-scorcery-1.12.2-1.10.27-241721:3044416") // Astral Scorcery 1.10.27
     compileOnly rfg.deobf("curse.maven:blood-magic-1.12.2-2.4.3-105-224791:2822288") // Blood Magic 2.4.3-105
     compileOnly rfg.deobf("curse.maven:logistics-pipes-0.10.4.29-105-232838:4007568") // Logistics Pipes 0.10.4.29
-    compileOnly rfg.deobf("curse.maven:logistics-bridge-1.4.5.4-869877:5867120") // Logistics Bridge 1.5.2
 
     // Mod Dependencies
     // Uncomment any of these to test in-game
 
     // Avaritia
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:avaritia-1.1x-unofficial-1165010:6108030") // Avaritia 3.3.0.42
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:avaritia-1.1x-unofficial-1165010:6206823") // Avaritia 3.3.0.44
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:eternal-singularity-1.0.7-253077:2922583") // Eternal Singularity 1.0.7
     // Avaritia
 
@@ -88,16 +87,9 @@ dependencies {
 
     // Logistics Pipes
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:logistics-pipes-0.10.4.29-232838:4007568") // Logistics Pipes 0.10.4.29
-
-    // There is currently an issue with Logistics Bridge so for now leave commented
-//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:logistics-bridge-1.4.5.4-492379:3439354") // Logistics Bridge 1.4.5.4
     // Logistics Pipes
 
-    // Ender IO
-
-    // Ender IO
-
-    // Needed for other Mods, Not a dependency
+    // Core mods needed for other Mods, Not a dependency
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:baubles-1.12-1.5.2-227083:2518667") // Baubles
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:guide-api-1.12-2.1.8-63-228832:2645992") // Guide API
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:mixin-booter-10.2-419286:5906634") // Mixin Booter 10.2

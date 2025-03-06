@@ -1,24 +1,59 @@
 package org.gthhcore.api.unification.materials.material;
 
 import gregtech.api.unification.material.Material;
-import net.minecraft.block.BlockEndPortal;
-import net.minecraft.client.renderer.tileentity.TileEntityEndPortalRenderer;
+import gregtech.api.unification.material.info.MaterialFlag;
 import org.gthhcore.api.unification.material.materials.GTHHMaterialFlagAddition;
 import org.gthhcore.api.unification.materials.material.info.GTHHElementMaterials;
 import org.gthhcore.api.unification.ore.GTHHOrePrefix;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
+
 public class GTHHMaterials {
 
+    public static final List<MaterialFlag> GENERATE_ALL_GEM = new ArrayList<>();
+    public static final List<MaterialFlag> GENERATE_ALL_METAL = new ArrayList<>();
+
+    static {
+        // Update These if new Material Items are added
+        GENERATE_ALL_METAL.addAll(
+                EXT2_METAL
+        );
+        GENERATE_ALL_METAL.addAll(Arrays.asList(
+                EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
+                GENERATE_SPRING,
+                GENERATE_SPRING_SMALL,
+                GENERATE_RING,
+                GENERATE_ROTOR,
+                GENERATE_SMALL_GEAR,
+                GENERATE_FRAME,
+                GENERATE_DENSE,
+                GENERATE_FOIL,
+                GENERATE_GEAR,
+                GENERATE_DOUBLE_PLATE,
+                GENERATE_FINE_WIRE
+        ));
+
+        GENERATE_ALL_GEM.addAll(Arrays.asList(
+                NO_SMASHING,
+                NO_WORKING,
+                EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
+                EXCLUDE_BLOCK_CRAFTING_RECIPES,
+                GENERATE_BOLT_SCREW,
+                GENERATE_SMALL_GEAR,
+                GENERATE_FRAME,
+                GENERATE_GEAR
+        ));
+    }
 
     // Element Materials
-    public static Material CosmicNeutronium;
-    public static Material InfinityCatalyst;
-    public static Material Infinity;
     public static Material Multiversium;
     public static Material Infernorite;
     public static Material Crynorium;
-    public static Material Draconium;
-    public static Material AwakenedDraconium;
     public static Material ElectroMatter;
     public static Material MissingError;
 
@@ -48,9 +83,46 @@ public class GTHHMaterials {
     public static Material Cryolite;
     public static Material SolarGradeSilicon;
 
+
+    // First Degree Materials
+    public static Material Pyrotheum;
+    public static Material Cryotheum;
+
     // Second Degree Materials
     public static Material SaltsCatalyst;
     public static Material MicaInsulator;
+
+
+    // Third Degree Materials
+    public static Material Sand;
+    public static Material SilverGallium;
+    public static Material Tantaloper;
+    public static Material Zinvar;
+    public static Material SterlingPlatinum;
+    public static Material Mytryl;
+    public static Material CosmicCarbon;
+    public static Material Tetrapech;
+
+    // Mod Integration Materials
+
+    // AE2
+    public static Material ChargedCertusQuartz;
+    public static Material Fluix;
+    public static Material Fluixilized;
+    public static Material FluixPearl;
+    public static Material SkyStone;
+
+    // Avaritia
+    public static Material CrystalMatrix;
+    public static Material CosmicNeutronium;
+    public static Material InfinityCatalyst;
+    public static Material Infinity;
+
+    // Draconic Evolution
+    public static Material Draconium;
+    public static Material AwakenedDraconium;
+
+    // Ender Io
     public static Material VividAlloy;
     public static Material VibrantAlloy;
     public static Material StellarAlloy;
@@ -67,10 +139,18 @@ public class GTHHMaterials {
     public static Material CrystallineAlloy;
     public static Material CrudeSteel;
     public static Material ConductiveIron;
+    public static Material PulsatingCrystal;
+    public static Material VibrantCrystal;
+    public static Material EnderCrystal;
+    public static Material EnticingCrystal;
     public static Material WeatherCrystal;
+    public static Material PrescientCrystal;
+
+    // Logistics Pipes
     public static Material SandCompound;
-    public static Material Pyrotheum;
-    public static Material Cryotheum;
+
+
+    // Advanced Rocketry
     public static Material MoonStone;
     public static Material MarsStone;
     public static Material AsteroidStone;
@@ -97,32 +177,26 @@ public class GTHHMaterials {
     public static Material TitaniaStone;
     public static Material IapetusStone;
 
-    // Third Degree Materials
-    public static Material Sand;
-    public static Material SilverGallium;
-    public static Material Tantaloper;
-    public static Material Zinvar;
-    public static Material SterlingPlatinum;
-    public static Material Mytryl;
-    public static Material CosmicCarbon;
-    public static Material Tetrapech;
+    // Astral Sorcery
+    public static Material Starmetal;
+    public static Material Aquamarine;
 
-    // Mod Integration Materials
-    public static Material ChargedCertusQuartz;
-    public static Material Fluix;
-    public static Material Fluixilized;
-    public static Material FluixPearl;
-    public static Material SkyStone;
-
+    // Botania
+    public static Material ManaSteel;
+    public static Material TerraSteel;
+    public static Material Elementium;
+    public static Material ManaDiamond;
+    public static Material ManaPearl;
+    public static Material GaiaSpirit;
 
     public static void init() {
         GTHHElementMaterials.register();
+        GTHHModIntegrationMaterials.register();
         GTHHFantasyMaterials.register();
         GTHHFirstDegreeMaterials.register();
         GTHHSecondDegreeMaterials.register();
         GTHHThirdDegreeMaterials.register();
         GTHHFluidMaterials.register();
-        GTHHModIntegrationMaterials.register();
         GTHHMaterialFlagAddition.init();
         GTHHOrePrefix.init();
     }

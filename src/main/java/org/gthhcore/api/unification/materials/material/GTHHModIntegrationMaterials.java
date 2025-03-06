@@ -5,6 +5,7 @@ import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty;
+import org.gthhcore.api.unification.GTHHElements;
 import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
 
 import static gregtech.api.GTValues.*;
@@ -14,19 +15,21 @@ import static gregtech.api.unification.material.info.MaterialIconSet.ROUGH;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 import static org.gthhcore.api.util.GTHHMods.*;
+import static org.gthhcore.api.util.GTHHUtility.gthhId;
 
 public class GTHHModIntegrationMaterials {
 
     private static int startId = 12000;
-    private static int endId = 12499;
 
     public static void register() {
-        if(Ae2.isModLoaded()) {
+
+
+            // Applied Energistics 2
             ChargedCertusQuartz = new Material.Builder(getMetaItemId(), gregtechId("charged_certus_quartz"))
                     .dust()
                     .gem(2)
                     .ore(true)
-                    .flags(NO_SMASHING, NO_SMELTING)
+                    .flags(GENERATE_ALL_GEM)
                     .components(Silicon, 1, Oxygen, 2, MissingError, 1)
                     .color(0x7697A6)
                     .iconSet(MaterialIconSet.CERTUS)
@@ -36,7 +39,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .gem(2)
                     .ore(true)
-                    .flags(NO_SMASHING, NO_SMELTING)
+                    .flags(GENERATE_ALL_GEM)
                     .components(ChargedCertusQuartz, 1, CertusQuartz, 1, Redstone, 1)
                     .color(0x832FBA)
                     .iconSet(MaterialIconSet.CERTUS)
@@ -45,35 +48,113 @@ public class GTHHModIntegrationMaterials {
             FluixPearl = new Material.Builder(getMetaItemId(), gregtechId("fluix_pearl"))
                     .dust()
                     .gem(2)
-                    .flags(NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
+                    .flags(GENERATE_ALL_GEM)
                     .components(Fluix, 8, EnderPearl, 1)
+                    .iconSet(GTHHMaterialIconSet.PEARL)
                     .color(0x832FBA)
                     .build();
 
-//            SkyStone = new Material.Builder(getMetaItemId(), gregtechId("stone_sky"))
-//                    .dust(2)
-//                    .flags(NO_SMASHING, NO_SMELTING, MORTAR_GRINDABLE)
-//                    .color(0x23343A)
-//                    .iconSet(MaterialIconSet.ROUGH)
-//                    .build();
+            SkyStone = new Material.Builder(getMetaItemId(), gregtechId("skystone"))
+                    .dust()
+                    .flags(NO_SMASHING, NO_SMELTING, GENERATE_PLATE, DISABLE_DECOMPOSITION)
+                    .color(0x001C1C)
+                    .iconSet(MaterialIconSet.CERTUS)
+                    .build();
 
-            if(CrazyAe.isModLoaded()) {
-                Fluixilized = new Material.Builder(getMetaItemId(), gregtechId("fluixilized"))
-                        .dust()
-                        .gem(2)
-                        .ore(true)
-                        .flags(NO_SMASHING, NO_SMELTING)
-                        .components(FluixPearl, 4, CertusQuartz, 4, Fluix, 4)
-                        .color(0xFF007F)
-                        .iconSet(MaterialIconSet.CERTUS)
-                        .build();
-            }
+            Fluixilized = new Material.Builder(getMetaItemId(), gregtechId("fluixilized"))
+                    .dust()
+                    .gem(2)
+                    .ore(true)
+                    .flags(GENERATE_ALL_GEM)
+                    .components(FluixPearl, 4, CertusQuartz, 4, Fluix, 4)
+                    .color(0xFF007F)
+                    .iconSet(MaterialIconSet.CERTUS)
+                    .build();
 
+            // Avaritia
+            CrystalMatrix = new Material.Builder(getMetaItemId(), gregtechId("crystal_matrix"))
+                    .dust()
+                    .ingot()
+                    .ore()
+                    .flags(GENERATE_ALL_METAL)
+                    .color(0x2BA8A2)
+                    .iconSet(MaterialIconSet.SHINY)
+                    .build();
+
+            CosmicNeutronium = new Material.Builder(getMetaItemId(), gregtechId("cosmic_neutronium"))
+                    .dust()
+                    .ingot()
+                    .ore()
+                    .flags(GENERATE_ALL_METAL)
+                    .blast(b -> b
+                            .temp(10000, BlastProperty.GasTier.LOW)
+                            .blastStats(VA[UEV], 8000)
+                            .vacuumStats(VA[UHV]))
+                    .iconSet(GTHHMaterialIconSet.COSMICNEUTRONIUM)
+                    .element(GTHHElements.CosmicNeutronium)
+                    .build();
+
+            InfinityCatalyst = new Material.Builder(getMetaItemId(), gregtechId("infinity_catalyst"))
+                    .dust()
+                    .gem()
+                    .ore()
+                    .flags(GENERATE_ALL_GEM)
+                    .iconSet(GTHHMaterialIconSet.INFINITYCATALYST)
+                    .element(GTHHElements.InfinityCatalyst)
+                    .build();
+
+            Infinity = new Material.Builder(getMetaItemId(), gregtechId("infinity"))
+                    .dust()
+                    .ingot()
+                    .blast(b -> b
+                            .temp(10000, BlastProperty.GasTier.LOW)
+                            .blastStats(VA[UIV], 16000)
+                            .vacuumStats(VA[UEV]))
+                    .flags(GENERATE_ALL_METAL)
+                    .iconSet(GTHHMaterialIconSet.INFINITY)
+                    .element(GTHHElements.Infinity)
+                    .cableProperties(V[MAX], 8192, (int) V[ZPM])
+                    .build();
+
+            // Draconic Evolution
+            Draconium = new Material.Builder(getMetaItemId(), gregtechId("draconium"))
+                    .dust()
+                    .ingot()
+                    .ore()
+                    .liquid(new FluidBuilder().temperature(5555))
+                    .flags(GENERATE_ALL_METAL)
+                    .blast(b -> b
+                            .temp(5555, BlastProperty.GasTier.LOW)
+                            .blastStats(VA[LuV], 2560)
+                            .vacuumStats(VA[MV]))
+                    .iconSet(MaterialIconSet.SHINY)
+                    .element(GTHHElements.Draconium)
+                    .cableProperties(V[UEV], 4, (int) V[IV])
+                    .color(0x9500D6)
+                    .build();
+
+            AwakenedDraconium = new Material.Builder(getMetaItemId(), gregtechId("awakened_draconium"))
+                    .dust()
+                    .ingot()
+                    .ore()
+                    .liquid(new FluidBuilder().temperature(7777))
+                    .flags(GENERATE_ALL_METAL)
+                    .blast(b -> b
+                            .temp(7777, BlastProperty.GasTier.LOW)
+                            .blastStats(VA[LuV], 2560)
+                            .vacuumStats(VA[MV]))
+                    .iconSet(MaterialIconSet.SHINY)
+                    .element(GTHHElements.AwakenedDraconium)
+                    .cableProperties(V[UIV], 4,(int) V[LuV])
+                    .color(0xFF5D00)
+                    .build();
+
+            // Ender Io
             ElectricalSteel = new Material.Builder(getMetaItemId(), gregtechId("electrical_steel"))
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1688))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(1688, BlastProperty.GasTier.LOW)
                             .blastStats(VA[MV], 1100))
@@ -87,7 +168,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(2100))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(2100, BlastProperty.GasTier.LOW)
                             .blastStats(VA[MV], 1680))
@@ -101,7 +182,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(2950))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(2950, BlastProperty.GasTier.LOW)
                             .blastStats(VA[HV], 2052))
@@ -115,7 +196,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1750))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(1750, BlastProperty.GasTier.LOW)
                             .blastStats(VA[MV], 860))
@@ -129,7 +210,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1555))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(1555, BlastProperty.GasTier.LOW)
                             .blastStats(VA[MV], 900))
@@ -143,7 +224,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1720))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(1720, BlastProperty.GasTier.LOW)
                             .blastStats(VA[MV], 625))
@@ -157,7 +238,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1690))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_ROUND)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(1690, BlastProperty.GasTier.LOW)
                             .blastStats(VA[MV], 1200))
@@ -170,7 +251,8 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(2280))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_ROUND)
+                    .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
+                    .components(Gold, 1, Ash, 1, MissingError, 1)
                     .blast(b -> b
                             .temp(2280, BlastProperty.GasTier.LOW)
                             .blastStats(VA[MV], 1100))
@@ -182,7 +264,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(3000))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .components(DarkSteel, 1, Obsidian, 1)
                     .blast(b -> b
                             .temp(3000, BlastProperty.GasTier.LOW)
@@ -195,7 +277,8 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(1300))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
+                    .components(Clay, 1, MissingError, 1)
                     .blast(b -> b
                             .temp(1300, BlastProperty.GasTier.LOW)
                             .blastStats(VA[LV], 651))
@@ -207,7 +290,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(3820))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(3820, BlastProperty.GasTier.LOW)
                             .blastStats(VA[EV], 2872))
@@ -220,7 +303,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(3290))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(3290, BlastProperty.GasTier.LOW)
                             .blastStats(VA[HV], 2490))
@@ -233,7 +316,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(3890))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(4890, BlastProperty.GasTier.LOW)
                             .blastStats(VA[EV], 1100))
@@ -246,7 +329,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(2085))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(2085, BlastProperty.GasTier.LOW)
                             .blastStats(VA[MV], 1680))
@@ -259,7 +342,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(2925))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(2925, BlastProperty.GasTier.LOW)
                             .blastStats(VA[HV], 2052))
@@ -272,7 +355,7 @@ public class GTHHModIntegrationMaterials {
                     .dust()
                     .ingot()
                     .liquid(new FluidBuilder().temperature(5480))
-                    .flags(EXT2_METAL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_RING, GENERATE_ROTOR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_DENSE, GENERATE_FOIL, GENERATE_GEAR, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
+                    .flags(GENERATE_ALL_METAL)
                     .blast(b -> b
                             .temp(5480, BlastProperty.GasTier.LOW)
                             .blastStats(VA[IV], 9950)
@@ -283,12 +366,57 @@ public class GTHHModIntegrationMaterials {
                     .cableProperties(2097152, 36, 256, false)
                     .build();
 
-            WeatherCrystal = new Material.Builder(getMetaItemId(), gregtechId("weather_crystal"))
+            PulsatingCrystal = new Material.Builder(getMetaItemId(), gregtechId("pulsating_crystal"))
                     .dust()
-                    .color(0x793BAB)
-                    .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                    .gem(2)
+                    .color(0x3DFF9E)
+                    .flags(GENERATE_ALL_GEM)
+                    .iconSet(MaterialIconSet.EMERALD)
                     .build();
 
+            VibrantCrystal = new Material.Builder(getMetaItemId(), gregtechId("vibrant_crystal"))
+                    .dust()
+                    .gem(2)
+                    .color(0x4FA045)
+                    .flags(GENERATE_ALL_GEM)
+                    .iconSet(MaterialIconSet.EMERALD)
+                    .build();
+
+            EnderCrystal = new Material.Builder(getMetaItemId(), gregtechId("ender_crystal"))
+                    .dust()
+                    .gem(2)
+                    .color(0x3A7C27)
+                    .flags(GENERATE_ALL_GEM)
+                    .iconSet(MaterialIconSet.EMERALD)
+                    .build();
+
+
+            EnticingCrystal = new Material.Builder(getMetaItemId(), gregtechId("attractor_crystal"))
+                    .dust()
+                    .gem(2)
+                    .color(0x509375)
+                    .flags(GENERATE_ALL_GEM)
+                    .iconSet(MaterialIconSet.EMERALD)
+                    .build();
+
+
+            WeatherCrystal = new Material.Builder(getMetaItemId(), gregtechId("weather_crystal"))
+                    .dust()
+                    .gem(2)
+                    .color(0x4F1F60)
+                    .flags(GENERATE_ALL_GEM)
+                    .iconSet(MaterialIconSet.EMERALD)
+                    .build();
+
+            PrescientCrystal = new Material.Builder(getMetaItemId(), gregtechId("prescient_crystal"))
+                    .dust()
+                    .gem(2)
+                    .color(0x49A562)
+                    .flags(GENERATE_ALL_GEM)
+                    .iconSet(MaterialIconSet.EMERALD)
+                    .build();
+
+            // Planetary Stones
             MoonStone = new Material.Builder(getMetaItemId(), gregtechId("moon_stone"))
                     .dust()
                     .color(0x6D6D6D)
@@ -439,20 +567,87 @@ public class GTHHModIntegrationMaterials {
                     .iconSet(ROUGH)
                     .build();
 
-            if (LogisticsPipes.isModLoaded()) {
-                SandCompound = new Material.Builder(getMetaItemId(), gregtechId("sand_compound"))
-                        .dust()
-                        .color(0xB4B394)
-                        .iconSet(GTHHMaterialIconSet.SANDCOMPOUND)
-                        .build();
-            }
+            // Logistics Pipes
+            SandCompound = new Material.Builder(getMetaItemId(), gregtechId("sand_compound"))
+                    .dust()
+                    .color(0xB4B394)
+                    .iconSet(GTHHMaterialIconSet.SANDCOMPOUND)
+                    .build();
+
+            // Astral Sorcery
+            Starmetal = new Material.Builder(getMetaItemId(), gregtechId("astral_starmetal"))
+                    .dust()
+                    .ore()
+                    .ingot()
+                    .liquid(new FluidBuilder().temperature(1))
+                    .flags(GENERATE_ALL_METAL)
+                    .color(0x2500D1)
+                    .iconSet(GTHHMaterialIconSet.STARMETAL)
+                    .build();
+
+            Aquamarine = new Material.Builder(getMetaItemId(), gregtechId("aquamarine"))
+                    .dust()
+                    .ore()
+                    .gem(2)
+                    .flags(GENERATE_ALL_GEM)
+                    .components(Beryllium, 3, Aluminium, 2, Silicon, 6, Oxygen, 18)
+                    .color(0x008EFF)
+                    .iconSet(MaterialIconSet.DIAMOND)
+                    .build();
+
+            // Botania
+            ManaSteel = new Material.Builder(getMetaItemId(), gregtechId("manasteel"))
+                    .dust()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0x008EFF)
+                    .iconSet(MaterialIconSet.SHINY)
+                    .build();
+
+            TerraSteel = new Material.Builder(getMetaItemId(), gregtechId("terrasteel"))
+                    .dust()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0x2DFF4C)
+                    .iconSet(MaterialIconSet.SHINY)
+                    .build();
+
+            Elementium = new Material.Builder(getMetaItemId(), gregtechId("elementium"))
+                    .dust()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0xFF2DEA)
+                    .iconSet(MaterialIconSet.SHINY)
+                    .build();
+
+            GaiaSpirit = new Material.Builder(getMetaItemId(), gregtechId("gaia_spirit"))
+                    .dust()
+                    .flags(GENERATE_ALL_METAL, NO_SMELTING)
+                    .color(0xFFFFFF)
+                    .iconSet(MaterialIconSet.SHINY)
+                    .build();
+
+            ManaDiamond = new Material.Builder(getMetaItemId(), gregtechId("mana_diamond"))
+                    .dust()
+                    .gem(2)
+                    .flags(GENERATE_ALL_GEM)
+                    .color(0x009FB0)
+                    .iconSet(MaterialIconSet.DIAMOND)
+                    .build();
+
+            ManaPearl = new Material.Builder(getMetaItemId(), gregtechId("mana_pearl"))
+                    .dust()
+                    .gem(2)
+                    .flags(GENERATE_ALL_GEM)
+                    .color(0x007EA5)
+                    .iconSet(GTHHMaterialIconSet.PEARL)
+                    .build();
+
         }
-    }
 
     private static int getMetaItemId() {
+        int endId = 12499;
         if (startId < endId){
             return startId++;
         }
         throw new ArrayIndexOutOfBoundsException();
     }
 }
+

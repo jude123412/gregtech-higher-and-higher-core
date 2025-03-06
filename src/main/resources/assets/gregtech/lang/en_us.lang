@@ -293,9 +293,6 @@ gregtech.veins.ore.ilmenite=Ilmenite
 gregtech.veins.ore.aluminium=Aluminium
 
 # Element Materials
-gregtech.material.cosmic_neutronium=Cosmic Neutronium
-gregtech.material.infinity_catalyst=Infinity Catalyst
-gregtech.material.infinity=Infinity
 gregtech.material.multiversium=Multiversium
 gregtech.material.infernorite=Infernorite
 gregtech.material.crynorium=Crynorium
@@ -336,6 +333,22 @@ gregtech.material.solar_grade_silicon=Poly(Si) Solar Grade Silicon
 # Second Degree Materials
 gregtech.material.salts_catalyst=Salts Catalyst
 gregtech.material.mica_insulator=Mica Insulator
+gregtech.material.pyrotheum=Pyrotheum
+gregtech.material.cryotheum=Cryotheum
+
+# Third Degree Materials
+gregtech.material.sand=Sand
+gregtech.material.rtm_alloy=Ruthubdenum
+gregtech.material.silver_gallium=Silver Gallium
+gregtech.material.tantaloper=Tantaloper
+gregtech.material.zinvar=Zinvar
+gregtech.material.sterling_platinum=Sterling Platinum
+gregtech.material.mytryl=Mytryl
+gregtech.material.tetrapech=Tetrapech
+gregtech.material.cosmic_carbon=Cosmic Carbon
+
+# Mod Integration Materials
+# Ender IO
 gregtech.material.electrical_steel=Electrical Steel
 gregtech.material.energetic_alloy=Energetic Alloy
 gregtech.material.vibrant_alloy=Vibrant Alloy
@@ -352,10 +365,44 @@ gregtech.material.crystalline_pink_slime=Crystalline Pink Slime
 gregtech.material.energetic_silver=Energetic Silver
 gregtech.material.vivid_alloy=Vivid Alloy
 gregtech.material.stellar_alloy=Stellar Alloy
+gregtech.material.pulsating_crystal=Pulsating Crystal
+gregtech.material.vibrant_crystal=Vibrant Crystal
+gregtech.material.ender_crystal=Ender Crystal
+gregtech.material.attractor_crystal=Enticing Crystal
 gregtech.material.weather_crystal=Weather Crystal
+gregtech.material.prescient_crystal=Prescient Crystal
+# Ender IO
+#
+# AE2
+gregtech.material.certus=Certus Quartz Crystal
+gregtech.material.charged_certus_quartz=Charged Certus Quartz Crystal
+gregtech.material.fluix=Fluix Crystal
+gregtech.material.fluix_pearl=Fluix Pearl
+gregtech.material.skystone=Sky Stone
+gregtech.material.fluixilized=Fluixilized Crystal
+# AE2
+#
+# Avaritia
+gregtech.material.crystal_matrix=Crystal Matrix
+gregtech.material.cosmic_neutronium=Cosmic Neutronium
+gregtech.material.infinity_catalyst=Infinity Catalyst
+gregtech.material.infinity=Infinity
+# Avaritia
+#
+# Botania
+gregtech.material.manasteel=Manasteel
+gregtech.material.terrasteel=Terrasteel
+gregtech.material.elementium=Elementium
+gregtech.material.gaia_spirit=Gaia Spirit
+gregtech.material.mana_diamond=Mana Diamond
+gregtech.material.mana_pearl=Mana Pearl
+# Botania
+#
+# Logistics Pipes
 gregtech.material.sand_compound=Sand Compound
-gregtech.material.pyrotheum=Pyrotheum
-gregtech.material.cryotheum=Cryotheum
+# Logistics Pipes
+#
+# Advanced Rocketry
 gregtech.material.moon_stone=Moon Stone
 gregtech.material.mars_stone=Mars Stone
 gregtech.material.asteroid_stone=Asteroid Stone
@@ -381,30 +428,15 @@ gregtech.material.titan_stone=Titan Stone
 gregtech.material.oberon_stone=Oberon Stone
 gregtech.material.titania_stone=Titania Stone
 gregtech.material.iapetus_stone=Iapetus Stone
+# Advanced Rocketry
 
-# Third Degree Materials
-gregtech.material.sand=Sand
-gregtech.material.rtm_alloy=Ruthubdenum
-gregtech.material.silver_gallium=Silver Gallium
-gregtech.material.tantaloper=Tantaloper
-gregtech.material.zinvar=Zinvar
-gregtech.material.sterling_platinum=Sterling Platinum
-gregtech.material.mytryl=Mytryl
-gregtech.material.tetrapech=Tetrapech
-gregtech.material.cosmic_carbon=Cosmic Carbon
-
-# Mod Integration Materials
-# AE2
-gregtech.material.certus=Certus Quartz Crystal
-gregtech.material.charged_certus_quartz=Charged Certus Quartz Crystal
-gregtech.material.fluix=Fluix Crystal
-gregtech.material.fluix_pearl=Fluix Pearl
-gregtech.material.sky_stone=Sky Stone
-# AE2
-# Crazy AE
-gregtech.material.fluixilized=Fluixilized Crystal
-# Crazy AE
-
+# Advanced Rocketry
+#
+# Astra Sorcery
+gregtech.material.astral_starmetal=Starmetal
+gregtech.material.aquamarine=Aquamarine
+# Astra Sorcery
+#
 # Wire Coils
 tile.wire_coil.rtm_alloy.name=Ruthubdenum Coil Block
 

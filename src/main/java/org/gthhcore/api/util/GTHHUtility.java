@@ -19,22 +19,30 @@ public class GTHHUtility {
 
     /**
      *
-     * @param id As a String - Example would be "minecraft:bedrock"
+     * @param modId As a String - Example would be "minecraft"
+     * @param itemId As a String - Example would be "bedrock"
+     * @param amount As an Integer - Example would be any number less than 64
+     * @param metaId As an Integer - Example would be 0
      * @return an ItemStack from Forges Registry based on the String I'd of said item.
      * You can view the String I'd's by pressing F3 + H
      */
-    public static @NotNull ItemStack getItemStackFromString(String id){
-        return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(id))));
+    public static @NotNull ItemStack getItemStackFromString(String modId, String itemId, int amount, int metaId){
+        return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(modId, itemId))), amount, metaId);
     }
 
+
+    public static @NotNull ItemStack getItemStackFromString(String modId, String itemId, int metaId){
+        return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(modId, itemId))), 1, metaId);
+    }
     /**
      *
-     * @param id As a String - Example : "minecraft:bedrock"
+     * @param modId As a String - Example would be "minecraft"
+     * @param itemId As a String - Example would be "bedrock"
      * @return Item of the Strings Value, Can be any Item from any mod, As long as you get the String ID correct!
      * This one allows setting Item amounts for recipes.
      * Useful in GTCEU Machines or anything that needs more than one Item in the recipe
      */
-    public static @NotNull Item getItemFromString(String id){
-        return Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(id)));
+    public static @NotNull Item getItemFromString(String modId, String itemId){
+        return Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(modId, itemId)));
     }
 }

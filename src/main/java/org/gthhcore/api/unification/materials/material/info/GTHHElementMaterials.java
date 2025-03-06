@@ -22,40 +22,6 @@ public class GTHHElementMaterials {
     private static int endId = 9499;
 
         public static void register() {
-            CosmicNeutronium = new Material.Builder(getMetaItemId(), gregtechId("cosmic_neutronium"))
-                    .dust()
-                    .ingot()
-                    .ore()
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
-                    .blast(b -> b
-                            .temp(10000, GasTier.LOW)
-                            .blastStats(VA[UEV], 8000)
-                            .vacuumStats(VA[UHV]))
-                    .iconSet(GTHHMaterialIconSet.COSMICNEUTRONIUM)
-                    .element(GTHHElements.CosmicNeutronium)
-                    .build();
-
-            InfinityCatalyst = new Material.Builder(getMetaItemId(), gregtechId("infinity_catalyst"))
-                    .dust()
-                    .gem()
-                    .ore()
-                    .iconSet(GTHHMaterialIconSet.INFINITYCATALYST)
-                    .element(GTHHElements.InfinityCatalyst)
-                    .build();
-
-            Infinity = new Material.Builder(getMetaItemId(), gregtechId("infinity"))
-                    .dust()
-                    .ingot()
-                    .blast(b -> b
-                            .temp(10000, GasTier.LOW)
-                            .blastStats(VA[UIV], 16000)
-                            .vacuumStats(VA[UEV]))
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
-                    .iconSet(GTHHMaterialIconSet.INFINITY)
-                    .element(GTHHElements.Infinity)
-                    .cableProperties(V[MAX], 8192, (int) V[ZPM])
-                    .build();
-
             Multiversium = new Material.Builder(getMetaItemId(), gregtechId("multiversium"))
                     .dust()
                     .ingot()
@@ -102,38 +68,6 @@ public class GTHHElementMaterials {
                     .iconSet(GTHHMaterialIconSet.INFERNORITE)
                     .element(GTHHElements.Crynorium)
                     .color(0x0046FF)
-                    .build();
-
-            Draconium = new Material.Builder(getMetaItemId(), gregtechId("draconium"))
-                    .dust()
-                    .ingot()
-                    .ore()
-                    .liquid(new FluidBuilder().temperature(5555))
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
-                    .blast(b -> b
-                            .temp(5555, GasTier.LOW)
-                            .blastStats(VA[LuV], 2560)
-                            .vacuumStats(VA[MV]))
-                    .iconSet(MaterialIconSet.SHINY)
-                    .element(GTHHElements.Draconium)
-                    .cableProperties(V[UEV], 4, (int) V[IV])
-                    .color(0x9500D6)
-                    .build();
-
-            AwakenedDraconium = new Material.Builder(getMetaItemId(), gregtechId("awakened_draconium"))
-                    .dust()
-                    .ingot()
-                    .ore()
-                    .liquid(new FluidBuilder().temperature(7777))
-                    .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
-                    .blast(b -> b
-                            .temp(7777, GasTier.LOW)
-                            .blastStats(VA[LuV], 2560)
-                            .vacuumStats(VA[MV]))
-                    .iconSet(MaterialIconSet.SHINY)
-                    .element(GTHHElements.AwakenedDraconium)
-                    .cableProperties(V[UIV], 4,(int) V[LuV])
-                    .color(0xFF5D00)
                     .build();
 
             ElectroMatter = new Material.Builder(getMetaItemId(), gregtechId("electro_matter"))
