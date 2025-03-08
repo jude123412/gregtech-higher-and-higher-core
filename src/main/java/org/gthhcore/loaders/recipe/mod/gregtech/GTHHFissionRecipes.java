@@ -57,19 +57,19 @@ public class GTHHFissionRecipes {
     public static void thoriumFissionRecipes() {
         // Thorium Fission
         FISSION_RECIPES.recipeBuilder()
-                .duration(S * 50000).EUt(VA[LV])
+                .duration(S * 50000).EUt((int) V[LV])
                 .input(rodFuelSingle, Thorium)
                 .output(rodDepletedSingle, Thorium)
                 .buildAndRegister();
 
         FISSION_RECIPES.recipeBuilder()
-                .duration(S * 50000).EUt(VA[MV])
+                .duration(S * 50000).EUt((int) V[MV])
                 .input(rodFuelDual, Thorium)
                 .output(rodDepletedDual, Thorium)
                 .buildAndRegister();
 
         FISSION_RECIPES.recipeBuilder()
-                .duration(S * 50000).EUt(VA[HV])
+                .duration(S * 50000).EUt((int) V[HV])
                 .input(rodFuelQuad, Thorium)
                 .output(rodDepletedQuad, Thorium)
                 .buildAndRegister();

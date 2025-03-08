@@ -10,7 +10,6 @@ import static org.gthhcore.api.unification.ore.GTHHOrePrefix.*;
 import static org.gthhcore.api.util.GTHHValues.S;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
-import gregtech.api.unification.material.properties.DustProperty;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -21,6 +20,7 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
+import gregtech.api.unification.material.properties.DustProperty;
 import gregtech.api.unification.material.properties.IngotProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
