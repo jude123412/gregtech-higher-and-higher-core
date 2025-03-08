@@ -31,12 +31,6 @@ public final class GTHHMetaItems {
 
     // Fuel Rods
     public static MetaItem<?>.MetaValueItem FUEL_ROD;
-    public static MetaItem<?>.MetaValueItem FUEL_ROD_SINGLE_THORIUM;
-    public static MetaItem<?>.MetaValueItem FUEL_ROD_DUAL_THORIUM;
-    public static MetaItem<?>.MetaValueItem FUEL_ROD_QUAD_THORIUM;
-    public static MetaItem<?>.MetaValueItem FUEL_ROD_DEPLETED_SINGLE_THORIUM;
-    public static MetaItem<?>.MetaValueItem FUEL_ROD_DEPLETED_DUAL_THORIUM;
-    public static MetaItem<?>.MetaValueItem FUEL_ROD_DEPLETED_QUAD_THORIUM;
 
     // Pam's Integration
     public static MetaItem<?>.MetaValueItem UNFIRED_JUICER;

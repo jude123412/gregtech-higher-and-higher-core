@@ -35,14 +35,6 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         COOLANT_CELL_EMPTY_SIXTY_K = addItem(15, "component.empty_60k_coolant_cell");
 
         // Fission Fuel Rods: ID 900-999
-        FUEL_ROD_SINGLE_THORIUM = addItem(900, "fuel_rod.thorium.single");
-        FUEL_ROD_DUAL_THORIUM = addItem(901, "fuel_rod.thorium.dual");
-        FUEL_ROD_QUAD_THORIUM = addItem(902, "fuel_rod.thorium.quad");
-
-        FUEL_ROD_DEPLETED_SINGLE_THORIUM = addItem(950, "fuel_rod.thorium.depleted.single");
-        FUEL_ROD_DEPLETED_DUAL_THORIUM = addItem(951, "fuel_rod.thorium.depleted.dual");
-        FUEL_ROD_DEPLETED_QUAD_THORIUM = addItem(952, "fuel_rod.thorium.depleted.quad");
-
         FUEL_ROD = addItem(999, "fuel_rod.empty");
 
         // Pam's Integration: ID 1000-1049

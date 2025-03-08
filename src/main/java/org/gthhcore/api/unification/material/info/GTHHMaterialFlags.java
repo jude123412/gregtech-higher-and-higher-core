@@ -12,4 +12,8 @@ public class GTHHMaterialFlags {
     public static final MaterialFlag GENERATE_HOT = new MaterialFlag.Builder("generate_hot")
             .requireProps(PropertyKey.INGOT)
             .build();
+
+    public static final MaterialFlag GENERATE_ROD_FUEL = new MaterialFlag.Builder("generate_rod_fuel")
+            .requireProps(PropertyKey.DUST)
+            .build();
 }

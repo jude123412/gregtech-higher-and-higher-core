@@ -143,6 +143,36 @@ public class GTHHOrePrefix {
             ENABLE_UNIFICATION,
             mat -> mat.hasFlag(GENERATE_RAW));
 
+    public static final OrePrefix rodFuelSingle = new OrePrefix("rodFuelSingle", -1, null,
+            GTHHMaterialIconType.rodFuelSingle,
+            ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_ROD_FUEL));
+
+    public static final OrePrefix rodFuelDual = new OrePrefix("rodFuelDual", -1, null,
+            GTHHMaterialIconType.rodFuelDual,
+            ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_ROD_FUEL));
+
+    public static final OrePrefix rodFuelQuad = new OrePrefix("rodFuelQuad", -1, null,
+            GTHHMaterialIconType.rodFuelQuad,
+            ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_ROD_FUEL));
+
+    public static final OrePrefix rodDepletedSingle = new OrePrefix("rodDepletedSingle", -1, null,
+            GTHHMaterialIconType.rodDepletedSingle,
+            ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_ROD_FUEL));
+
+    public static final OrePrefix rodDepletedDual = new OrePrefix("rodDepletedDual", -1, null,
+            GTHHMaterialIconType.rodDepletedDual,
+            ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_ROD_FUEL));
+
+    public static final OrePrefix rodDepletedQuad = new OrePrefix("rodDepletedQuad", -1, null,
+            GTHHMaterialIconType.rodDepletedQuad,
+            ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_ROD_FUEL));
+
     public static void init() {
         oreMoon.addSecondaryMaterial(new MaterialStack(MoonStone, OrePrefix.dust.getMaterialAmount(MoonStone)));
         oreMars.addSecondaryMaterial(new MaterialStack(MarsStone, OrePrefix.dust.getMaterialAmount(MarsStone)));
@@ -331,5 +361,11 @@ public class GTHHOrePrefix {
         }
 
         MetaItems.addOrePrefix(raw);
+        MetaItems.addOrePrefix(rodFuelSingle);
+        MetaItems.addOrePrefix(rodFuelDual);
+        MetaItems.addOrePrefix(rodFuelQuad);
+        MetaItems.addOrePrefix(rodDepletedSingle);
+        MetaItems.addOrePrefix(rodDepletedDual);
+        MetaItems.addOrePrefix(rodDepletedQuad);
     }
 }

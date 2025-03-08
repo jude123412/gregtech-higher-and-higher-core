@@ -95,5 +95,11 @@ public class GTHHMaterialFlagAddition {
         orePropBasalticMineralSand.getSeparatedInto().clear();
         orePropBasalticMineralSand.setOreByProducts(Basalt, Magnetite);
         orePropBasalticMineralSand.setSeparatedInto(PreciousMetals);
+
+        // Fuel Rod Flags
+        Thorium.addFlags(GENERATE_ROD_FUEL);
+        Naquadah.addFlags(GENERATE_ROD_FUEL);
+        NaquadahEnriched.addFlags(GENERATE_ROD_FUEL);
+        Naquadria.addFlags(GENERATE_ROD_FUEL);
     }
 }

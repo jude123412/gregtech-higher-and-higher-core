@@ -7,7 +7,10 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static org.gthhcore.api.unification.ore.GTHHOrePrefix.*;
+import static org.gthhcore.api.util.GTHHValues.S;
+import static org.gthhcore.common.items.GTHHMetaItems.*;
 
+import gregtech.api.unification.material.properties.DustProperty;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -29,6 +32,7 @@ public class GTHHMaterialRecipeHandler {
     static void register() {
         dust.addProcessingHandler(PropertyKey.BLAST, GTHHMaterialRecipeHandler::processEBFRecipe);
         dust.addProcessingHandler(PropertyKey.BLAST, GTHHMaterialRecipeHandler::processRawMaterial);
+        dust.addProcessingHandler(PropertyKey.DUST, GTHHMaterialRecipeHandler::processFuelRod);
     }
 
     static void processEBFRecipe(OrePrefix dustPrefix, Material material, BlastProperty property) {
@@ -443,6 +447,42 @@ public class GTHHMaterialRecipeHandler {
                     .EUt(energy)
                     .buildAndRegister();
 
+        }
+    }
+
+    static void processFuelRod(OrePrefix dustPrefix, Material material, DustProperty property) {
+        if (material.hasFlag(GTHHMaterialFlags.GENERATE_ROD_FUEL)) {
+            CANNER_RECIPES.recipeBuilder()
+                    .input(dustPrefix, material, 4)
+                    .input(FUEL_ROD)
+                    .output(rodFuelSingle, material)
+                    .duration(S * 20)
+                    .EUt(VA[LV])
+                    .buildAndRegister();
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .duration(S * 4).EUt(VA[LV])
+                    .input(rodFuelSingle, material, 2)
+                    .input(stickLong, Steel, 2)
+                    .output(rodFuelDual, material)
+                    .circuitMeta(2)
+                    .buildAndRegister();
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .duration(S * 4).EUt(VA[LV])
+                    .input(rodFuelSingle, material, 2)
+                    .input(stickLong, Steel, 4)
+                    .output(rodFuelQuad, material)
+                    .circuitMeta(4)
+                    .buildAndRegister();
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .duration(S * 4).EUt(VA[LV])
+                    .input(rodFuelDual, material, 2)
+                    .input(stickLong, Steel, 2)
+                    .output(rodFuelQuad, material)
+                    .circuitMeta(4)
+                    .buildAndRegister();
         }
     }
 }

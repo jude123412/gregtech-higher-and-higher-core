@@ -510,6 +510,12 @@ item.material.oreprefix.glob=%s Glob
 item.material.oreprefix.fragment=%s Fragment
 item.material.oreprefix.murky=Murky %s
 item.material.oreprefix.raw=Raw %s
+item.material.oreprefix.rodFuelSingle=%s Fuel Rod Single
+item.material.oreprefix.rodFuelDual=%s Fuel Rod Dual
+item.material.oreprefix.rodFuelQuad=%s Fuel Rod Quad
+item.material.oreprefix.rodDepletedSingle=Depleted %s Fuel Rod Single
+item.material.oreprefix.rodDepletedDual=Depleted %s Fuel Rod Dual
+item.material.oreprefix.rodDepletedQuad=Depleted %s Fuel Rod Quad
 
 # Superconductor Bases
 metaitem.base.manganese_phosphide.name=Base Manganese Phosphide wire
