@@ -307,8 +307,10 @@ gregtech.material.clean_precious_metal_solution=Clean Precious Metal Solution
 gregtech.material.concentrated_precious_metal_solution=Concentrated Precious Metal Solution
 gregtech.material.coal_slurry=Coal Slurry
 gregtech.material.coolant=Coolant
-gregtech.material.nak_coolant=NaK Coolant
 gregtech.material.space_coolant=Space Coolant
+gregtech.material.hot_coolant=Hot Coolant
+gregtech.material.hot_sodium_potassium=Hot Sodium Potassium
+gregtech.material.hot_space_coolant=Hot Space Coolant
 gregtech.material.photovoltaic_composite=Photovoltaic Composite
 gregtech.material.raw_slime_growth_medium=Raw Slime Growth Medium
 gregtech.material.sterile_slime_growth_medium=Sterile Slime Growth Medium
@@ -456,6 +458,13 @@ gregtech.multiblock.gthh_precise_assembler.description=The Precise Assembler is 
 
 # Multiblock Info
 gregtech.multiblock.maceration_stack.tier=Casing Tier: %s
+gregtech.multiblock.fission_reactor.heat_output=Heat Generation: %s
+gregtech.multiblock.fission_reactor.hull_heat=Hull Heat: %s
+
+# Jei Info
+gregtech.recipe.fission_heat=Generation: %s HU/t
+gregtech.recipe.super_heated=Warning: Superheated
+gregtech.recipe.supercritical=Warning: Supercritical
 
 # Machines
 gregtech.machine.zombie_engine.lv.name=Zombie Engine I
@@ -500,8 +509,6 @@ gregtech.machine.precise_assembler.opv.tooltip=Flame on, I mean Avengers Assembl
 # Recipemaps
 recipemap.zombie_engine_fuels.name=Zombie Generator
 recipemap.ender_engine_fuels.name=Ender Generator
-recipemap.gthh_blast_recipes.name=Blast Furnace
-recipemap.gthh_vacuum_recipes.name=Vacuum Freezing
 recipemap.gthh_precise_recipes.name=Precise Assembly
 
 # Ore Prefix Names, %s is a material name

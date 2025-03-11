@@ -94,24 +94,24 @@ public class MetaTileEntityFissionReactor extends MultiblockWithDisplayBase impl
                 .setWorkingStatus(recipeLogic.isWorkingEnabled(), recipeLogic.isActive())
                 .addCustom(tl -> {
                     if (isStructureFormed()) {
-                        // Steam Output line
+                        // Coolant Output line
                         ITextComponent steamOutput = TextComponentUtil.stringWithColor(
                                 TextFormatting.AQUA,
-                                TextFormattingUtil.formatNumbers(recipeLogic.getLastTickSteam()) + " L/t");
+                                TextFormattingUtil.formatNumbers(recipeLogic.getLastTickCoolant()) + " HU/t");
 
                         tl.add(TextComponentUtil.translationWithColor(
                                 TextFormatting.GRAY,
-                                "gregtech.multiblock.large_boiler.steam_output",
+                                "gregtech.multiblock.fission_reactor.heat_output",
                                 steamOutput));
 
-                        // Efficiency line
+                        // Hull Heat line
                         ITextComponent efficiency = TextComponentUtil.stringWithColor(
                                 getNumberColor(recipeLogic.getHeatScaled()),
                                 recipeLogic.getHeatScaled() + "%");
 
                         tl.add(TextComponentUtil.translationWithColor(
                                 TextFormatting.GRAY,
-                                "gregtech.multiblock.large_boiler.efficiency",
+                                "gregtech.multiblock.fission_reactor.hull_heat",
                                 efficiency));
 
                     }
@@ -120,14 +120,14 @@ public class MetaTileEntityFissionReactor extends MultiblockWithDisplayBase impl
     }
 
     private TextFormatting getNumberColor(int number) {
-        if (number == 0) {
-            return TextFormatting.DARK_RED;
-        } else if (number <= 40) {
-            return TextFormatting.RED;
-        } else if (number < 100) {
-            return TextFormatting.YELLOW;
-        } else {
+        if (number <= 25) {
             return TextFormatting.GREEN;
+        } else if (number <= 50) {
+            return TextFormatting.YELLOW;
+        } else if (number <= 75) {
+            return TextFormatting.RED;
+        } else {
+            return TextFormatting.DARK_RED;
         }
     }
 
@@ -144,10 +144,10 @@ public class MetaTileEntityFissionReactor extends MultiblockWithDisplayBase impl
                 .aisle("XXX", "XSX", "XXX")
                 .where('S', selfPredicate())
                 .where('X', states(getCasingState()).setMinGlobalLimited(4)
-                        .or(abilities(MultiblockAbility.IMPORT_FLUIDS).setMinGlobalLimited(1))
-                        .or(abilities(MultiblockAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
-                        .or(abilities(MultiblockAbility.EXPORT_ITEMS).setMaxGlobalLimited(1))
-                        .or(abilities(MultiblockAbility.EXPORT_FLUIDS).setMinGlobalLimited(1))
+                        .or(abilities(MultiblockAbility.IMPORT_FLUIDS).setMinGlobalLimited(1).setMaxGlobalLimited(1))
+                        .or(abilities(MultiblockAbility.IMPORT_ITEMS).setMaxGlobalLimited(1).setMaxGlobalLimited(1))
+                        .or(abilities(MultiblockAbility.EXPORT_ITEMS).setMaxGlobalLimited(1).setMaxGlobalLimited(1))
+                        .or(abilities(MultiblockAbility.EXPORT_FLUIDS).setMinGlobalLimited(1).setMaxGlobalLimited(1))
                         .or(autoAbilities()))
                 .build();
     }

@@ -63,6 +63,9 @@ public class GTHHMaterials {
     public static Material CoalSlurry;
     public static Material Coolant;
     public static Material SpaceCoolant;
+    public static Material HotCoolant;
+    public static Material HotSodiumPotassium;
+    public static Material HotSpaceCoolant;
     public static Material PhotovoltaicComposite;
     public static Material RawSlimeGrowthMedium;
     public static Material SterileSlimeGrowthMedium;

@@ -57,21 +57,59 @@ public class GTHHFissionRecipes {
     public static void thoriumFissionRecipes() {
         // Thorium Fission
         FISSION_RECIPES.recipeBuilder()
-                .duration(S * 50000).EUt((int) V[LV])
+                .duration(S * 50000).HUt(32)
                 .input(rodFuelSingle, Thorium)
                 .output(rodDepletedSingle, Thorium)
                 .buildAndRegister();
 
         FISSION_RECIPES.recipeBuilder()
-                .duration(S * 50000).EUt((int) V[MV])
+                .duration(S * 50000).HUt(64)
                 .input(rodFuelDual, Thorium)
                 .output(rodDepletedDual, Thorium)
                 .buildAndRegister();
 
         FISSION_RECIPES.recipeBuilder()
-                .duration(S * 50000).EUt((int) V[HV])
+                .duration(S * 50000).HUt(128)
                 .input(rodFuelQuad, Thorium)
                 .output(rodDepletedQuad, Thorium)
+                .buildAndRegister();
+
+        // Naquadah Fission
+        FISSION_RECIPES.recipeBuilder()
+                .duration(S * 100000).HUt(256).isSuperHeated()
+                .input(rodFuelSingle, Naquadah)
+                .output(rodDepletedSingle, Naquadah)
+                .buildAndRegister();
+
+        FISSION_RECIPES.recipeBuilder()
+                .duration(S * 100000).HUt(512).isSuperHeated()
+                .input(rodFuelDual, Naquadah)
+                .output(rodDepletedDual, Naquadah)
+                .buildAndRegister();
+
+        FISSION_RECIPES.recipeBuilder()
+                .duration(S * 100000).HUt(1024).isSuperHeated()
+                .input(rodFuelQuad, Naquadah)
+                .output(rodDepletedQuad, Naquadah)
+                .buildAndRegister();
+
+        // Naquadria Fission
+        FISSION_RECIPES.recipeBuilder()
+                .duration(S * 100000).HUt(512).isSupercritical()
+                .input(rodFuelSingle, Naquadria)
+                .output(rodDepletedSingle, Naquadria)
+                .buildAndRegister();
+
+        FISSION_RECIPES.recipeBuilder()
+                .duration(S * 100000).HUt(1024).isSupercritical()
+                .input(rodFuelDual, Naquadria)
+                .output(rodDepletedDual, Naquadria)
+                .buildAndRegister();
+
+        FISSION_RECIPES.recipeBuilder()
+                .duration(S * 100000).HUt(2048).isSupercritical()
+                .input(rodFuelQuad, Naquadria)
+                .output(rodDepletedQuad, Naquadria)
                 .buildAndRegister();
     }
 }

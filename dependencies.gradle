@@ -89,6 +89,10 @@ dependencies {
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:logistics-pipes-0.10.4.29-232838:4007568") // Logistics Pipes 0.10.4.29
     // Logistics Pipes
 
+    // Draconic Evolution
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:draconic-evolution-2.3.28.354-223565:3431261") // Draconic Evolution 2.3.28.354
+    // Draconic Evolution
+
     // Core mods needed for other Mods, Not a dependency
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:baubles-1.12-1.5.2-227083:2518667") // Baubles
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:guide-api-1.12-2.1.8-63-228832:2645992") // Guide API
@@ -96,4 +100,6 @@ dependencies {
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:ctm-267602:2915363") // CTM 1.0.2.31
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:ore-dict-tips-252832:2545766") // OreDictTips 2.0.2
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:wanion-lib-2.91-253043:4623135") // Wanion Lib 2.91
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:redstone-flux-2.1.1.1-270789:2920436") // Redstone Flux 2.1.1.1
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:brandons-core-2.4.20.162-231382:3408276") // Brandons Core 2.4.20.162
 }

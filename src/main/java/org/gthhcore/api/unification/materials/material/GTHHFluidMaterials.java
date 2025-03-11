@@ -103,6 +103,27 @@ public class GTHHFluidMaterials {
                 .iconSet(FLUID)
                 .build();
 
+        HotCoolant = new Material.Builder(getMetaItemId(), gregtechId("hot_coolant"))
+                .liquid(new FluidBuilder()
+                        .temperature(293))
+                .color(0xE60FAD)
+                .iconSet(FLUID)
+                .build();
+
+        HotSodiumPotassium = new Material.Builder(getMetaItemId(), gregtechId("hot_sodium_potassium"))
+                .liquid(new FluidBuilder()
+                        .temperature(293))
+                .color(0xFFBDAD)
+                .iconSet(FLUID)
+                .build();
+
+        HotSpaceCoolant = new Material.Builder(getMetaItemId(), gregtechId("hot_space_coolant"))
+                .liquid(new FluidBuilder()
+                        .temperature(293))
+                .color(0xFFFF00)
+                .iconSet(FLUID)
+                .build();
+
         PhotovoltaicComposite = new Material.Builder(getMetaItemId(), gregtechId("photovoltaic_composite"))
                 .liquid(new FluidBuilder()
                         .temperature(1120))
