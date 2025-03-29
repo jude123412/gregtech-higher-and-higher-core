@@ -29,7 +29,6 @@ import org.gthhcore.api.unification.ore.GTHHStoneTypes;
 import org.gthhcore.api.util.GTHHLog;
 import org.gthhcore.common.blocks.GTHHBlockWireCoil;
 import org.gthhcore.common.blocks.GTHHMetaBlocks;
-import org.gthhcore.common.blocks.GTHHPlanetaryBlocks;
 import org.gthhcore.common.items.GTHHMetaItems;
 import org.gthhcore.common.metatileentities.GTHHMetaTileEntities;
 import org.gthhcore.loaders.GTHHOreDictionaryLoader;
@@ -62,8 +61,6 @@ public class CommonProxy {
         registry.register(GTHH_MULTIBLOCK_CASING);
         registry.register(GTHH_BLOCK_WIRE_COIL);
 
-        for (GTHHPlanetaryBlocks block : GTHH_PLANETARY_BLOCKS.values()) registry.register(block);
-
         for (GTHHBlockWireCoil.GTHHCoilType type : GTHHBlockWireCoil.GTHHCoilType.values()) {
             HEATING_COILS.put(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getState(type), type);
         }
@@ -76,10 +73,6 @@ public class CommonProxy {
 
         registry.register(createItemBlock(GTHH_MULTIBLOCK_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTHH_BLOCK_WIRE_COIL, VariantItemBlock::new));
-
-        for (GTHHPlanetaryBlocks block : GTHH_PLANETARY_BLOCKS.values()) {
-            registry.register(createItemBlock(block, VariantItemBlock::new));
-        }
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {
@@ -106,7 +99,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerPostMaterials(PostMaterialEvent event) {
         GTHHLog.logger.info("Registering Stone Types...");
-        GTHHStoneTypes.advancedRocketryOres();
+        GTHHStoneTypes.galacticraftOres();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)

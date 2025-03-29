@@ -19,6 +19,7 @@ import gregtech.api.unification.material.properties.BlastProperty;
 public class GTHHModIntegrationMaterials {
 
     private static int startId = 12000;
+    private static int endId = 12499;
 
     public static void register() {
         // Applied Energistics 2
@@ -638,7 +639,6 @@ public class GTHHModIntegrationMaterials {
     }
 
     private static int getMetaItemId() {
-        int endId = 12499;
         if (startId < endId) {
             return startId++;
         }

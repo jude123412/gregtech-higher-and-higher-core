@@ -54,44 +54,52 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:astral-scorcery-1.12.2-1.10.27-241721:3044416") // Astral Scorcery 1.10.27
     compileOnly rfg.deobf("curse.maven:blood-magic-1.12.2-2.4.3-105-224791:2822288") // Blood Magic 2.4.3-105
     compileOnly rfg.deobf("curse.maven:logistics-pipes-0.10.4.29-105-232838:4007568") // Logistics Pipes 0.10.4.29
+    compileOnly rfg.deobf("curse.maven:galacticraft-4.0.6-564236:4671122") // Galacticraft 4.0.6
+    compileOnly rfg.deobf("curse.maven:extra-planets-0.8.0-241291:5339029") // Extra Planets 0.8.0
 
     // Mod Dependencies
     // Uncomment any of these to test in-game
 
     // Avaritia
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:avaritia-1.1x-unofficial-1165010:6206823") // Avaritia 3.3.0.44
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:eternal-singularity-1.0.7-253077:2922583") // Eternal Singularity 1.0.7
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:avaritia-1.1x-unofficial-1165010:6206823") // Avaritia 3.3.0.44
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:eternal-singularity-1.0.7-253077:2922583") // Eternal Singularity 1.0.7
     // Avaritia
 
     // Applied Energistics 2
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:ae2-unofficial-extended-life-0.56.6-570458:5411078") // AE2 UEL 0.56.6
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:crazy-ae-0.3-1111042:5845065") // Crazy AE 0.56.6
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:ae2-unofficial-extended-life-0.56.6-570458:5411078") // AE2 UEL 0.56.6
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:crazy-ae-0.3-1111042:5845065") // Crazy AE 0.56.6
     // Applied Energistics 2
 
     // Thaumcraft
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:thaumcraft-1.12.2-6.1.beta-26-223628:2629023") // Thaumcraft 6.1.beta-26
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:thaumic-jei-1.12.2-1.7.0-285492:5646810") // Thaumic JEI
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:thaumcraft-1.12.2-6.1.beta-26-223628:2629023") // Thaumcraft 6.1.beta-26
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:thaumic-jei-1.12.2-1.7.0-285492:5646810") // Thaumic JEI
     // Thaumcraft
 
     // Botania
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:botania-r-1.10-364.4-225643:3330934") // Botania 1.0-364.4
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:botania-r-1.10-364.4-225643:3330934") // Botania 1.0-364.4
     // Botania
 
     // Astral Sorcery
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:astral-sorcery-1.12.2-1.10.27-241721:3044416") // Astral Sorcery 1.10.27
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:astral-sorcery-1.12.2-1.10.27-241721:3044416") // Astral Sorcery 1.10.27
     // Astral Sorcery
 
     // Blood Magic
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:blood-magic-1.12.2-2.4.3-105-224791:2822288") // Blood Magic 2.4.3-105
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:blood-magic-1.12.2-2.4.3-105-224791:2822288") // Blood Magic 2.4.3-105
     // Blood Magic
 
     // Logistics Pipes
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:logistics-pipes-0.10.4.29-232838:4007568") // Logistics Pipes 0.10.4.29
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:logistics-pipes-0.10.4.29-232838:4007568") // Logistics Pipes 0.10.4.29
     // Logistics Pipes
 
     // Draconic Evolution
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:draconic-evolution-2.3.28.354-223565:3431261") // Draconic Evolution 2.3.28.354
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:draconic-evolution-2.3.28.354-223565:3431261") // Draconic Evolution 2.3.28.354
     // Draconic Evolution
+
+    // Galacticraft
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:galacticraft-4.0.6-564236:4671122") // Galacticraft 4.0.6
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:extra-planets-0.8.0-241291:5339029") // Extra Planets 0.8.0
+    // Galacticraft
+
 
     // Core mods needed for other Mods, Not a dependency
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:baubles-1.12-1.5.2-227083:2518667") // Baubles
@@ -102,4 +110,5 @@ dependencies {
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:wanion-lib-2.91-253043:4623135") // Wanion Lib 2.91
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:redstone-flux-2.1.1.1-270789:2920436") // Redstone Flux 2.1.1.1
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:brandons-core-2.4.20.162-231382:3408276") // Brandons Core 2.4.20.162
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:mjrlegends-lib-1.2.1-284331:3344068") // MJRLegends Lib 0.8.0
 }

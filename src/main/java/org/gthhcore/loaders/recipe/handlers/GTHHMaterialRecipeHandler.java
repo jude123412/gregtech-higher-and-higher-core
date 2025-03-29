@@ -5,9 +5,9 @@ import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
+import static org.gthhcore.api.recipes.GTHHRecipeMaps.*;
 import static org.gthhcore.api.unification.ore.GTHHOrePrefix.*;
-import static org.gthhcore.api.util.GTHHValues.S;
+import static org.gthhcore.api.util.GTHHValues.*;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
 import net.minecraft.item.ItemStack;
@@ -482,6 +482,25 @@ public class GTHHMaterialRecipeHandler {
                     .input(stickLong, Steel, 2)
                     .output(rodFuelQuad, material)
                     .circuitMeta(4)
+                    .buildAndRegister();
+
+            // Auto-generated Breeder Recipes
+            BREEDER_RECIPES.recipeBuilder()
+                    .duration(S * 600).EUt(VA[LuV])
+                    .input(rodFuelSingle, material)
+                    .output(rodDepletedSingle, material)
+                    .buildAndRegister();
+
+            BREEDER_RECIPES.recipeBuilder()
+                    .duration(S * 1200).EUt(VA[LuV])
+                    .input(rodFuelDual, material)
+                    .output(rodDepletedDual, material)
+                    .buildAndRegister();
+
+            BREEDER_RECIPES.recipeBuilder()
+                    .duration(S * 2400).EUt(VA[LuV])
+                    .input(rodFuelQuad, material)
+                    .output(rodDepletedQuad, material)
                     .buildAndRegister();
         }
     }

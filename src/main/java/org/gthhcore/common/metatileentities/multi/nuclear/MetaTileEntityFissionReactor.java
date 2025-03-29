@@ -1,8 +1,5 @@
 package org.gthhcore.common.metatileentities.multi.nuclear;
 
-import static gregtech.api.metatileentity.multiblock.MultiblockAbility.*;
-import static org.gthhcore.api.recipes.GTHHRecipeMaps.*;
-
 import java.util.Collections;
 import java.util.List;
 
@@ -97,7 +94,7 @@ public class MetaTileEntityFissionReactor extends MultiblockWithDisplayBase impl
                         // Coolant Output line
                         ITextComponent steamOutput = TextComponentUtil.stringWithColor(
                                 TextFormatting.AQUA,
-                                TextFormattingUtil.formatNumbers(recipeLogic.getLastTickCoolant()) + " HU/t");
+                                TextFormattingUtil.formatNumbers(recipeLogic.getRecipeHUt()) + " HU/t");
 
                         tl.add(TextComponentUtil.translationWithColor(
                                 TextFormatting.GRAY,

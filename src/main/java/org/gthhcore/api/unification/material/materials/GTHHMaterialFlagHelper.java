@@ -7,6 +7,7 @@ import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.store.FluidStorageKey;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
+import gregtech.api.unification.material.properties.DustProperty;
 import gregtech.api.unification.material.properties.FluidProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 
@@ -38,16 +39,19 @@ public class GTHHMaterialFlagHelper {
         }
     }
 
-    public static void setupBlastType(Material material, int blastTemperature) {
+    public static void setupBlastType(Material material, int blastTemperature, int blastEut, int blastDuration,
+                                      int vacuumEut, int vacuumDuration) {
         if (material.getProperty(PropertyKey.BLAST) == null && blastTemperature <= 1750) {
             material.addFlags(NO_SMELTING);
             material.setProperty(PropertyKey.BLAST, new BlastProperty.Builder()
-                    .temp(blastTemperature, BlastProperty.GasTier.LOW)
+                    .temp(blastTemperature)
                     .build());
         } else if (material.getProperty(PropertyKey.BLAST) == null && blastTemperature > 1750) {
             material.addFlags(NO_SMELTING, GENERATE_HOT);
             material.setProperty(PropertyKey.BLAST, new BlastProperty.Builder()
                     .temp(blastTemperature, BlastProperty.GasTier.LOW)
+                    .blastStats(blastEut, blastDuration)
+                    .vacuumStats(vacuumEut, vacuumDuration)
                     .build());
         }
     }
@@ -67,20 +71,23 @@ public class GTHHMaterialFlagHelper {
         }
     }
 
-    public static void setupBlastType(Material material, int blastTemperature, int blastEut, int blastDuration,
-                                      int vacuumEut, int vacuumDuration) {
+    public static void setupBlastType(Material material, int blastTemperature) {
         if (material.getProperty(PropertyKey.BLAST) == null && blastTemperature <= 1750) {
             material.addFlags(NO_SMELTING);
             material.setProperty(PropertyKey.BLAST, new BlastProperty.Builder()
-                    .temp(blastTemperature)
+                    .temp(blastTemperature, BlastProperty.GasTier.LOW)
                     .build());
         } else if (material.getProperty(PropertyKey.BLAST) == null && blastTemperature > 1750) {
             material.addFlags(NO_SMELTING, GENERATE_HOT);
             material.setProperty(PropertyKey.BLAST, new BlastProperty.Builder()
                     .temp(blastTemperature, BlastProperty.GasTier.LOW)
-                    .blastStats(blastEut, blastDuration)
-                    .vacuumStats(vacuumEut, vacuumDuration)
                     .build());
+        }
+    }
+
+    public static void setupDustProperty(Material material, int harvestLevel, int burnTime) {
+        if (material.getProperty(PropertyKey.DUST) == null) {
+            material.setProperty(PropertyKey.DUST, new DustProperty(harvestLevel, burnTime));
         }
     }
 }

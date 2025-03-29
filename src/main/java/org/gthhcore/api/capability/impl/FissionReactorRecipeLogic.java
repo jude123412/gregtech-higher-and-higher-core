@@ -7,11 +7,8 @@ import java.util.Collections;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fluids.*;
-import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
 import org.gthhcore.api.recipes.GTHHRecipeMaps;
@@ -19,26 +16,23 @@ import org.gthhcore.api.recipes.properties.HeatUnitProperty;
 import org.gthhcore.api.recipes.properties.SupercriticalProperty;
 import org.gthhcore.api.recipes.properties.SuperheatedProperty;
 import org.gthhcore.api.unification.materials.material.GTHHMaterials;
-import org.gthhcore.api.util.GTHHLog;
 import org.gthhcore.common.metatileentities.multi.nuclear.MetaTileEntityFissionReactor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import gregtech.api.capability.IMultiblockController;
 import gregtech.api.capability.impl.AbstractRecipeLogic;
 import gregtech.api.recipes.Recipe;
+import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTTransferUtils;
 import gregtech.common.ConfigHolder;
 
 public class FissionReactorRecipeLogic extends AbstractRecipeLogic {
 
-    private int currentHeat;
-    private int lastTickCoolantOutput;
-    private int excessWater, excessFuel, excessProjectedEU;
+    private int currentHullHeat, excessCoolant;
 
     protected float recipeHUt = 0;
-    protected boolean isSuperHeated = false, isSupercritical = false, isCoolantPresent = true;
+    protected boolean isSuperHeated = false, isSupercritical = false;
 
     public FissionReactorRecipeLogic(MetaTileEntityFissionReactor tileEntity) {
         super(tileEntity, null);
@@ -48,12 +42,14 @@ public class FissionReactorRecipeLogic extends AbstractRecipeLogic {
 
     @Override
     public void update() {
-        if ((!isActive() || !canProgressRecipe() || !isWorkingEnabled() && currentHeat > 0)) {
-            setHeat(currentHeat - 1);
-            if (currentHeat <= 0) {
+        if ((!isActive() || !isWorkingEnabled())) {
+            if (currentHullHeat > recipeHUt) {
+                setHeat(currentHullHeat - 1);
+            }
+
+            if (currentHullHeat <= 0) {
                 setHeat(0);
             }
-            setLastTickCoolant(0);
         }
         super.update();
     }
@@ -112,48 +108,57 @@ public class FissionReactorRecipeLogic extends AbstractRecipeLogic {
     @Override
     protected void updateRecipeProgress() {
         if (canRecipeProgress) {
-            int HUt = (int) ((getMaximumMaintenanceProblems() == 0) ? this.recipeHUt : getMaximumMaintenanceProblems());
+            int coolantAmount = (int) this.recipeHUt;
 
-            FluidStack drainedCoolant = getCoolantInput(getInputTank(), HUt);
+            // Consume Coolant, output Hot Coolant and Heat reactor if coolant isn't present
+            if (coolantAmount > 0) {
+                if (currentHullHeat < getMaximumHeat()) {
+                    FluidStack coolantStack;
+                    FluidStack hotCoolantStack;
 
-            // Consume Coolant and output Hot Coolant
-            if (HUt > 0) {
-                setLastTickCoolant(HUt);
-                getCoolantInput(getInputTank(), HUt);
-                getOutputTank().fill(getCoolantOutput(HUt), true);
-            }
-
-            // Begin Heating Reactor if there is no coolant present
-            // Cool Reactor if coolant is present
-            if (currentHeat < getMaximumHeat()) {
-                if (HUt != 0 && (drainedCoolant == null || drainedCoolant.amount < HUt)) {
-                    isCoolantPresent = false;
-                    setHeat(currentHeat + HUt);
-                } else {
-                    if (currentHeat > HUt) {
-                        setHeat(currentHeat - HUt);
+                    if (isSupercritical) {
+                        coolantStack = getCoolantStack(GTHHMaterials.SpaceCoolant, coolantAmount);
+                        hotCoolantStack = getHotCoolantStack(GTHHMaterials.HotSpaceCoolant, coolantAmount);
+                    } else if (isSuperHeated) {
+                        coolantStack = getCoolantStack(Materials.SodiumPotassium, coolantAmount);
+                        hotCoolantStack = getHotCoolantStack(GTHHMaterials.HotSodiumPotassium, coolantAmount);
                     } else {
-                        setHeat(0);
+                        coolantStack = getCoolantStack(GTHHMaterials.Coolant, coolantAmount);
+                        hotCoolantStack = getHotCoolantStack(GTHHMaterials.HotCoolant, coolantAmount);
+                    }
+
+                    if (getInputTank().drain(coolantStack, false) == null) {
+                        setHeat(currentHullHeat + coolantAmount);
+                    } else {
+                        getInputTank().drain(coolantStack, true);
+                        getOutputTank().fill(hotCoolantStack, true);
+                        if (currentHullHeat > recipeHUt) {
+                            setHeat((int) (currentHullHeat - recipeHUt));
+                        } else {
+                            setHeat(0);
+                        }
                     }
                 }
             }
 
             // Explode Reactor when Max Hull Heat is reached
-            if (currentHeat > getMaximumHeat() - 1) {
+            if (currentHullHeat > getMaximumHeat() - 1) {
                 getMetaTileEntity().explodeMultiblock(32.0f);
             }
 
             if (++progressTime > maxProgressTime) {
                 completeRecipe();
-                GTHHLog.logger.info(itemOutputs.toString());
             }
         }
     }
 
     private int getMaximumMaintenanceProblems() {
         int maintenanceIssues = getMetaTileEntity().getNumMaintenanceProblems();
-        if (ConfigHolder.machines.enableMaintenance && (maintenanceIssues >= 1 && maintenanceIssues <= 6)) {
+        if (ConfigHolder.machines.enableMaintenance && (maintenanceIssues >= 1 && maintenanceIssues <= 5)) {
             return (int) (this.recipeHUt * (1 - (maintenanceIssues * 0.1)));
+        } else if (ConfigHolder.machines.enableMaintenance && maintenanceIssues > 5) {
+            getMetaTileEntity().explodeMultiblock(32.0f);
+            return 6;
         } else {
             return 0;
         }
@@ -164,30 +169,23 @@ public class FissionReactorRecipeLogic extends AbstractRecipeLogic {
     }
 
     public int getHeatScaled() {
-        return (int) Math.round(currentHeat / (1.0 * getMaximumHeat()) * 100);
+        return (int) Math.round(currentHullHeat / (1.0 * getMaximumHeat()) * 100);
     }
 
     public void setHeat(int heat) {
-        if (heat != this.currentHeat && !metaTileEntity.getWorld().isRemote) {
+        if (heat != this.currentHullHeat && !metaTileEntity.getWorld().isRemote) {
             writeCustomData(BOILER_HEAT, b -> b.writeVarInt(heat));
         }
-        this.currentHeat = heat;
+        this.currentHullHeat = heat;
     }
 
-    public int getLastTickCoolant() {
-        return lastTickCoolantOutput;
-    }
-
-    public void setLastTickCoolant(int lastTickSteamOutput) {
-        if (lastTickSteamOutput != this.lastTickCoolantOutput && !metaTileEntity.getWorld().isRemote) {
-            writeCustomData(BOILER_LAST_TICK_STEAM, b -> b.writeVarInt(lastTickSteamOutput));
-        }
-        this.lastTickCoolantOutput = lastTickSteamOutput;
+    public int getRecipeHUt() {
+        return (int) recipeHUt;
     }
 
     @Override
     public int getInfoProviderEUt() {
-        return lastTickCoolantOutput;
+        return (int) recipeHUt;
     }
 
     @Override
@@ -200,7 +198,6 @@ public class FissionReactorRecipeLogic extends AbstractRecipeLogic {
         maxProgressTime = 0;
         recipeHUt = 0;
         setActive(false);
-        setLastTickCoolant(0);
     }
 
     @Override
@@ -221,50 +218,6 @@ public class FissionReactorRecipeLogic extends AbstractRecipeLogic {
     @Override
     public MetaTileEntityFissionReactor getMetaTileEntity() {
         return (MetaTileEntityFissionReactor) super.getMetaTileEntity();
-    }
-
-    @NotNull
-    @Override
-    public NBTTagCompound serializeNBT() {
-        NBTTagCompound compound = super.serializeNBT();
-        compound.setInteger("Heat", currentHeat);
-        compound.setInteger("ExcessFuel", excessFuel);
-        compound.setInteger("ExcessWater", excessWater);
-        compound.setInteger("ExcessProjectedEU", excessProjectedEU);
-        return compound;
-    }
-
-    @Override
-    public void deserializeNBT(@NotNull NBTTagCompound compound) {
-        super.deserializeNBT(compound);
-        this.currentHeat = compound.getInteger("Heat");
-        this.excessFuel = compound.getInteger("ExcessFuel");
-        this.excessWater = compound.getInteger("ExcessWater");
-        this.excessProjectedEU = compound.getInteger("ExcessProjectedEU");
-    }
-
-    @Override
-    public void writeInitialSyncData(@NotNull PacketBuffer buf) {
-        super.writeInitialSyncData(buf);
-        buf.writeVarInt(currentHeat);
-        buf.writeVarInt(lastTickCoolantOutput);
-    }
-
-    @Override
-    public void receiveInitialSyncData(@NotNull PacketBuffer buf) {
-        super.receiveInitialSyncData(buf);
-        this.currentHeat = buf.readVarInt();
-        this.lastTickCoolantOutput = buf.readVarInt();
-    }
-
-    @Override
-    public void receiveCustomData(int dataId, @NotNull PacketBuffer buf) {
-        super.receiveCustomData(dataId, buf);
-        if (dataId == BOILER_HEAT) {
-            this.currentHeat = buf.readVarInt();
-        } else if (dataId == BOILER_LAST_TICK_STEAM) {
-            this.lastTickCoolantOutput = buf.readVarInt();
-        }
     }
 
     @Override
@@ -292,41 +245,11 @@ public class FissionReactorRecipeLogic extends AbstractRecipeLogic {
         return 0;
     }
 
-    @Nullable
-    private FluidStack getCoolantInput(@NotNull IFluidHandler fluidHandler, int amount) {
-        if (amount == 0) {
-            return null;
-        }
-        FluidStack drainFluid = fluidHandler.drain(Materials.Water.getFluid(amount), true);
-
-        if (!isSuperHeated && !isSupercritical) {
-            drainFluid = fluidHandler.drain(GTHHMaterials.Coolant.getFluid(amount), true);
-        }
-        if (isSuperHeated) {
-            drainFluid = fluidHandler.drain(Materials.SodiumPotassium.getFluid(amount), true);
-        }
-        if (isSupercritical) {
-            drainFluid = fluidHandler.drain(GTHHMaterials.SpaceCoolant.getFluid(amount), true);
-        }
-        return drainFluid;
+    public FluidStack getCoolantStack(Material coolant, int amount) {
+        return new FluidStack(coolant.getFluid(), amount);
     }
 
-    @Nullable
-    private FluidStack getCoolantOutput(int amount) {
-        if (amount == 0) {
-            return null;
-        }
-        FluidStack fillFluid = Materials.Steam.getFluid(amount * 160);
-
-        if (!isSuperHeated && !isSupercritical) {
-            fillFluid = GTHHMaterials.HotCoolant.getFluid(amount);
-        }
-        if (isSuperHeated) {
-            fillFluid = GTHHMaterials.HotSodiumPotassium.getFluid(amount);
-        }
-        if (isSupercritical) {
-            fillFluid = GTHHMaterials.HotSpaceCoolant.getFluid(amount);
-        }
-        return fillFluid;
+    public FluidStack getHotCoolantStack(Material hotCoolant, int amount) {
+        return new FluidStack(hotCoolant.getFluid(), amount);
     }
 }

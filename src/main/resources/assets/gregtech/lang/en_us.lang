@@ -299,6 +299,10 @@ gregtech.material.crynorium=Crynorium
 gregtech.material.draconium=Draconium
 gregtech.material.awakened_draconium=Awakened Draconium
 gregtech.material.electro_matter=Electro-Matter
+gregtech.material.protactinium_226=Protactinium 226
+gregtech.material.protactinium_231=Protactinium 231
+gregtech.material.neptunium_226=Neptunium 226
+gregtech.material.neptunium_237=Neptunium 237
 
 # Fluid Materials
 gregtech.material.dirty_precious_metal_solution=Dirty Precious Metal Solution
@@ -439,6 +443,12 @@ gregtech.material.astral_starmetal=Starmetal
 gregtech.material.aquamarine=Aquamarine
 # Astra Sorcery
 #
+# Nuclear Materials
+gregtech.material.enriched_protactinium=Enriched Protactinium
+gregtech.material.enriched_uranium=Enriched Uranium
+gregtech.material.enriched_neptunium=Enriched Neptunium
+gregtech.material.enriched_plutonium=Enriched Plutonium
+
 # Wire Coils
 tile.wire_coil.rtm_alloy.name=Ruthubdenum Coil Block
 
@@ -463,7 +473,7 @@ gregtech.multiblock.fission_reactor.hull_heat=Hull Heat: %s
 
 # Jei Info
 gregtech.recipe.fission_heat=Generation: %s HU/t
-gregtech.recipe.super_heated=Warning: Superheated
+gregtech.recipe.superheated=Warning: Superheated
 gregtech.recipe.supercritical=Warning: Supercritical
 
 # Machines
@@ -510,6 +520,8 @@ gregtech.machine.precise_assembler.opv.tooltip=Flame on, I mean Avengers Assembl
 recipemap.zombie_engine_fuels.name=Zombie Generator
 recipemap.ender_engine_fuels.name=Ender Generator
 recipemap.gthh_precise_recipes.name=Precise Assembly
+recipemap.fission_reactor.name=Fission Reactor
+recipemap.breeder_reactor.name=Breeder Reactor
 
 # Ore Prefix Names, %s is a material name
 item.material.oreprefix.cluster=Native %s Cluster
@@ -517,12 +529,12 @@ item.material.oreprefix.glob=%s Glob
 item.material.oreprefix.fragment=%s Fragment
 item.material.oreprefix.murky=Murky %s
 item.material.oreprefix.raw=Raw %s
-item.material.oreprefix.rodFuelSingle=%s Fuel Rod Single
-item.material.oreprefix.rodFuelDual=%s Fuel Rod Dual
-item.material.oreprefix.rodFuelQuad=%s Fuel Rod Quad
-item.material.oreprefix.rodDepletedSingle=Depleted %s Fuel Rod Single
-item.material.oreprefix.rodDepletedDual=Depleted %s Fuel Rod Dual
-item.material.oreprefix.rodDepletedQuad=Depleted %s Fuel Rod Quad
+item.material.oreprefix.rodFuelSingle=Single Fuel Rod (%s)
+item.material.oreprefix.rodFuelDual=Dual Fuel Rod (%s)
+item.material.oreprefix.rodFuelQuad=Quad Fuel Rod (%s)
+item.material.oreprefix.rodDepletedSingle=Single Fuel Rod (Depleted %s)
+item.material.oreprefix.rodDepletedDual=Dual Fuel Rod (Depleted %s)
+item.material.oreprefix.rodDepletedQuad=Quad Fuel Rod (Depleted %s)
 
 # Superconductor Bases
 metaitem.base.manganese_phosphide.name=Base Manganese Phosphide wire

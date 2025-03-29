@@ -18,7 +18,10 @@ public enum GTHHMods {
     EnderIo(Names.ENDER_IO),
     EnderIoConduits(Names.ENDER_IO_CONDUITS),
     EnderIoEndergy(Names.ENDER_IO_ENDERGY),
-    EnderIoMachines(Names.ENDER_IO_MACHINES);
+    EnderIoMachines(Names.ENDER_IO_MACHINES),
+    GalacticraftCore(Names.GALACTICRAFT_CORE),
+    GalacticraftPlanets(Names.GALACTICRAFT_PLANETS),
+    ExtraPlanets(Names.EXTRA_PLANETS);
 
     public static class Names {
 
@@ -35,6 +38,9 @@ public enum GTHHMods {
         public static final String ENDER_IO_CONDUITS = "enderioconduits";
         public static final String ENDER_IO_ENDERGY = "enderioendergy";
         public static final String ENDER_IO_MACHINES = "enderiomachines";
+        public static final String GALACTICRAFT_CORE = "galacticraftcore";
+        public static final String GALACTICRAFT_PLANETS = "galacticraftplanets";
+        public static final String EXTRA_PLANETS = "extraplanets";
     }
 
     private final String ID;

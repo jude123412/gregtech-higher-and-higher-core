@@ -30,14 +30,6 @@ public class GTHHMaterialFlagAddition {
         CHEMICAL_RECIPES.setMaxInputs(3);
 
         GTHHLog.logger.info("Changing Material Flags");
-        // Fluid Registry For Existing Materials
-        setupFluidType(Bismuth, FluidStorageKeys.PLASMA);
-        setupFluidType(Oganesson, FluidStorageKeys.LIQUID, 765);
-        setupFluidType(Iron, FluidStorageKeys.LIQUID, 1811);
-
-        // Blast Property Registration
-        setupBlastType(Neutronium, 6951, VA[UV], O(1200), VA[ZPM], O(600));
-
         // Material Flag Addition
         Aluminium.addFlags(GENERATE_RAW);
         Neutronium.addFlags(GENERATE_RAW);
@@ -101,5 +93,15 @@ public class GTHHMaterialFlagAddition {
         Naquadah.addFlags(GENERATE_ROD_FUEL);
         NaquadahEnriched.addFlags(GENERATE_ROD_FUEL);
         Naquadria.addFlags(GENERATE_ROD_FUEL);
+        Americium.addFlags(GENERATE_ROD_FUEL);
+
+        GTHHLog.logger.info("adding Material Properties");
+        // Fluid Registry For Existing Materials
+        setupFluidType(Bismuth, FluidStorageKeys.PLASMA);
+        setupFluidType(Oganesson, FluidStorageKeys.LIQUID, 765);
+        setupFluidType(Iron, FluidStorageKeys.LIQUID, 1811);
+
+        // Blast Property Registration
+        setupBlastType(Neutronium, 6951, VA[UV], O(1200), VA[ZPM], O(600));
     }
 }

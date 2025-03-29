@@ -10,6 +10,7 @@ import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty.GasTier;
 import gregtech.api.unification.material.properties.ToolProperty;
 
@@ -105,6 +106,34 @@ public class GTHHElementMaterials {
                 .element(GTHHElements.MissingError)
                 .cableProperties(V[UXV], 4, (int) V[ZPM])
                 .color(0xFF00C7)
+                .build();
+
+        Protactinium226 = new Material.Builder(getMetaItemId(), gregtechId("protactinium_226"))
+                .dust()
+                .color(0xA78B6D)
+                .iconSet(MaterialIconSet.METALLIC)
+                .element(GTHHElements.Pa226)
+                .build();
+
+        Protactinium231 = new Material.Builder(getMetaItemId(), gregtechId("protactinium_231"))
+                .dust()
+                .color(0xA57036)
+                .iconSet(MaterialIconSet.METALLIC)
+                .element(GTHHElements.Pa231)
+                .build();
+
+        Neptunium228 = new Material.Builder(getMetaItemId(), gregtechId("neptunium_228"))
+                .dust()
+                .color(0x284D7B)
+                .iconSet(MaterialIconSet.METALLIC)
+                .element(GTHHElements.Np226)
+                .build();
+
+        Neptunium237 = new Material.Builder(getMetaItemId(), gregtechId("neptunium_237"))
+                .dust()
+                .color(0x073B7A)
+                .iconSet(MaterialIconSet.METALLIC)
+                .element(GTHHElements.Np237)
                 .build();
     }
 
