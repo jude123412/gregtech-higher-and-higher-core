@@ -7,10 +7,11 @@ import gregtech.common.ConfigHolder;
 public class GTHHRecipeHandlerList {
 
     public static void registerEarly() {
-        GTHHMaterialRecipeHandler.register();
+
     }
 
     public static void register() {
+        GTHHMaterialRecipeHandler.register();
         GTHHOreRecipeHandler.register();
         
         if (Thaumcraft.isModLoaded()) {

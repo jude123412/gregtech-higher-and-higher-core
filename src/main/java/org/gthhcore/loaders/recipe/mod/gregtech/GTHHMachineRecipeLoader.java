@@ -7,7 +7,7 @@ public class GTHHMachineRecipeLoader {
 
     private GTHHMachineRecipeLoader() {}
 
-    public static void register() {
+    public static void registerEarly() {
         registerChains();
         registerRecipes();
     }
