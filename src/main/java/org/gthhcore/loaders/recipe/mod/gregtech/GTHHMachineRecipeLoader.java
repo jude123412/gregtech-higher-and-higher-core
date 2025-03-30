@@ -1,6 +1,5 @@
 package org.gthhcore.loaders.recipe.mod.gregtech;
 
-import org.gthhcore.loaders.recipe.mod.advancedrocketry.GTHHPlanetaryStoneRecipes;
 import org.gthhcore.loaders.recipe.mod.gregtech.chains.*;
 
 public class GTHHMachineRecipeLoader {
@@ -19,12 +18,12 @@ public class GTHHMachineRecipeLoader {
         GTHHGemSlurryRecipes.init();
         GTHHSolarGradeSiliconRecipes.init();
         GTHHPreciousMetalsRecipes.init();
+
     }
 
     public static void registerRecipes() {
         GTHHFissionRecipes.init();
         GTHHFusionRecipes.init();
         GTHHHeatingCoilRecipes.init();
-        GTHHPlanetaryStoneRecipes.init();
     }
 }

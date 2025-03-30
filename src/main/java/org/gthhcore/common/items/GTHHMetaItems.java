@@ -211,6 +211,18 @@ public final class GTHHMetaItems {
     public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_OPV;
     public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MAX;
 
+    // Heavy Duty Alloy
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T1;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T2;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T3;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T4;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T5;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T6;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T7;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T8;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T9;
+    public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T10;
+
     public static void init() {
         // GTHH MetaItem Registry : Registers under GregTech Tab with a registry name of meta_item_2
         GTHHMetaItem2 metaItem2 = new GTHHMetaItem2();

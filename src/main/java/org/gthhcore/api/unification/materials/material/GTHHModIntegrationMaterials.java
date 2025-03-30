@@ -3,8 +3,8 @@ package org.gthhcore.api.unification.materials.material;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.ROUGH;
 import static gregtech.api.util.GTUtility.gregtechId;
+import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 import static org.gthhcore.api.util.GTHHMods.*;
 
@@ -417,151 +417,151 @@ public class GTHHModIntegrationMaterials {
         MoonStone = new Material.Builder(getMetaItemId(), gregtechId("moon_stone"))
                 .dust()
                 .color(0x6D6D6D)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         MarsStone = new Material.Builder(getMetaItemId(), gregtechId("mars_stone"))
                 .dust()
                 .color(0x841C02)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         AsteroidStone = new Material.Builder(getMetaItemId(), gregtechId("asteroid_stone"))
                 .dust()
                 .color(0x2D2C27)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         VenusStone = new Material.Builder(getMetaItemId(), gregtechId("venus_stone"))
                 .dust()
                 .color(0x634B44)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         MercuryStone = new Material.Builder(getMetaItemId(), gregtechId("mercury_stone"))
                 .dust()
                 .color(0x4E4D6B)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         CeresStone = new Material.Builder(getMetaItemId(), gregtechId("ceres_stone"))
                 .dust()
                 .color(0x65647F)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         JupiterStone = new Material.Builder(getMetaItemId(), gregtechId("jupiter_stone"))
                 .dust()
                 .color(0xDD9B68)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         SaturnStone = new Material.Builder(getMetaItemId(), gregtechId("saturn_stone"))
                 .dust()
                 .color(0xA5744F)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         UranusStone = new Material.Builder(getMetaItemId(), gregtechId("uranus_stone"))
                 .dust()
                 .color(0x88B4FC)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         NeptuneStone = new Material.Builder(getMetaItemId(), gregtechId("neptune_stone"))
                 .dust()
                 .color(0x166DF9)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         PlutoStone = new Material.Builder(getMetaItemId(), gregtechId("pluto_stone"))
                 .dust()
                 .color(0x5B5B5B)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         ErisStone = new Material.Builder(getMetaItemId(), gregtechId("eris_stone"))
                 .dust()
                 .color(0x979E91)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         Kepler22bStone = new Material.Builder(getMetaItemId(), gregtechId("kepler_twotwob_stone"))
                 .dust()
                 .color(0xA58359)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         EuropaStone = new Material.Builder(getMetaItemId(), gregtechId("europa_stone"))
                 .dust()
                 .color(0x847670)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         IoStone = new Material.Builder(getMetaItemId(), gregtechId("io_stone"))
                 .dust()
                 .color(0xD18F3E)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         DeimosStone = new Material.Builder(getMetaItemId(), gregtechId("deimos_stone"))
                 .dust()
                 .color(0xC1A58D)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         PhobosStone = new Material.Builder(getMetaItemId(), gregtechId("phobos_stone"))
                 .dust()
                 .color(0x846B57)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         TritonStone = new Material.Builder(getMetaItemId(), gregtechId("triton_stone"))
                 .dust()
                 .color(0x7C797C)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         CallistoStone = new Material.Builder(getMetaItemId(), gregtechId("callisto_stone"))
                 .dust()
                 .color(0x543A28)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         GanymedeStone = new Material.Builder(getMetaItemId(), gregtechId("ganymede_stone"))
                 .dust()
                 .color(0x4F4943)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         RheaStone = new Material.Builder(getMetaItemId(), gregtechId("rhea_stone"))
                 .dust()
                 .color(0x333333)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         TitanStone = new Material.Builder(getMetaItemId(), gregtechId("titan_stone"))
                 .dust()
                 .color(0x332B1F)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         OberonStone = new Material.Builder(getMetaItemId(), gregtechId("oberon_stone"))
                 .dust()
                 .color(0x897A88)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         TitaniaStone = new Material.Builder(getMetaItemId(), gregtechId("titania_stone"))
                 .dust()
                 .color(0x8B8F93)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         IapetusStone = new Material.Builder(getMetaItemId(), gregtechId("iapetus_stone"))
                 .dust()
                 .color(0x35230E)
-                .iconSet(ROUGH)
+                .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
         // Logistics Pipes
@@ -595,6 +595,7 @@ public class GTHHModIntegrationMaterials {
         // Botania
         ManaSteel = new Material.Builder(getMetaItemId(), gregtechId("manasteel"))
                 .dust()
+                .ingot()
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0x008EFF)
                 .iconSet(MaterialIconSet.SHINY)
@@ -602,6 +603,7 @@ public class GTHHModIntegrationMaterials {
 
         TerraSteel = new Material.Builder(getMetaItemId(), gregtechId("terrasteel"))
                 .dust()
+                .ingot()
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0x2DFF4C)
                 .iconSet(MaterialIconSet.SHINY)
@@ -609,6 +611,7 @@ public class GTHHModIntegrationMaterials {
 
         Elementium = new Material.Builder(getMetaItemId(), gregtechId("elementium"))
                 .dust()
+                .ingot()
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0xFF2DEA)
                 .iconSet(MaterialIconSet.SHINY)
@@ -616,6 +619,7 @@ public class GTHHModIntegrationMaterials {
 
         GaiaSpirit = new Material.Builder(getMetaItemId(), gregtechId("gaia_spirit"))
                 .dust()
+                .ingot()
                 .flags(GENERATE_ALL_METAL, NO_SMELTING)
                 .color(0xFFFFFF)
                 .iconSet(MaterialIconSet.SHINY)
@@ -635,6 +639,115 @@ public class GTHHModIntegrationMaterials {
                 .flags(GENERATE_ALL_GEM)
                 .color(0x007EA5)
                 .iconSet(GTHHMaterialIconSet.PEARL)
+                .build();
+
+        // Galacticraft
+        MeteoricIron = new Material.Builder(getMetaItemId(), gregtechId("meteoric_iron"))
+                .dust()
+                .ore()
+                .ingot()
+                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
+                .color(0x9B7753)
+                .iconSet(MaterialIconSet.DULL)
+                .build();
+
+        Desh = new Material.Builder(getMetaItemId(), gregtechId("desh"))
+                .dust()
+                .ore()
+                .ingot()
+                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
+                .color(0x231D1D)
+                .iconSet(MaterialIconSet.DULL)
+                .build();
+
+        // Extra Planets
+        Crystal = new Material.Builder(getMetaItemId(), gregtechId("crystal"))
+                .dust()
+                .ore()
+                .ingot()
+                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
+                .color(0xE5E5E5)
+                .iconSet(MaterialIconSet.DULL)
+                .build();
+
+        ReinforcedCrystal = new Material.Builder(getMetaItemId(), gregtechId("reinforced_crystal"))
+                .dust()
+                .ingot()
+                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
+                .color(0xC9EFFF)
+                .iconSet(MaterialIconSet.SHINY)
+                .build();
+
+        WhiteGem = new Material.Builder(getMetaItemId(), gregtechId("white_gem"))
+                .dust()
+                .gem(2)
+                .ore()
+                .flags(GENERATE_ALL_GEM, NO_SMELTING, GENERATE_COMPRESSED)
+                .color(0xE5E5E5)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .build();
+
+        BlueGem = new Material.Builder(getMetaItemId(), gregtechId("blue_gem"))
+                .dust()
+                .gem(2)
+                .ore()
+                .flags(GENERATE_ALL_GEM, NO_SMELTING, GENERATE_COMPRESSED)
+                .color(0x0CD0FF)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .build();
+
+        BlueDiamond = new Material.Builder(getMetaItemId(), gregtechId("blue_diamond"))
+                .dust()
+                .gem(2)
+                .ore()
+                .flags(GENERATE_ALL_GEM, NO_SMELTING)
+                .color(0x0C7BFF)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .build();
+
+        RedDiamond = new Material.Builder(getMetaItemId(), gregtechId("red_diamond"))
+                .dust()
+                .gem(2)
+                .ore()
+                .flags(GENERATE_ALL_GEM, NO_SMELTING)
+                .color(0xFF1F0C)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .build();
+
+        PurpleDiamond = new Material.Builder(getMetaItemId(), gregtechId("purple_diamond"))
+                .dust()
+                .gem(2)
+                .ore()
+                .flags(GENERATE_ALL_GEM, NO_SMELTING)
+                .color(0x770CFF)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .build();
+
+        YellowDiamond = new Material.Builder(getMetaItemId(), gregtechId("yellow_diamond"))
+                .dust()
+                .gem(2)
+                .ore()
+                .flags(GENERATE_ALL_GEM, NO_SMELTING)
+                .color(0xFFF10C)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .build();
+
+        GreenDiamond = new Material.Builder(getMetaItemId(), gregtechId("green_diamond"))
+                .dust()
+                .gem(2)
+                .ore()
+                .flags(GENERATE_ALL_GEM, NO_SMELTING)
+                .color(0x2DFF0C)
+                .iconSet(MaterialIconSet.DIAMOND)
+                .build();
+
+        DarkIron = new Material.Builder(getMetaItemId(), gregtechId("dark_iron"))
+                .dust()
+                .ore()
+                .ingot()
+                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
+                .color(0x191919)
+                .iconSet(MaterialIconSet.SHINY)
                 .build();
     }
 

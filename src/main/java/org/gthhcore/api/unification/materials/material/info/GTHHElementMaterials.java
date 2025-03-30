@@ -3,6 +3,7 @@ package org.gthhcore.api.unification.materials.material.info;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.util.GTUtility.*;
+import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 
 import org.gthhcore.api.unification.GTHHElements;
@@ -40,9 +41,7 @@ public class GTHHElementMaterials {
                 .ingot()
                 .ore(true)
                 .liquid(new FluidBuilder().temperature(5299))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW,
-                        GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING,
-                        GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
+                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
                 .blast(b -> b
                         .temp(5299, GasTier.LOW)
                         .blastStats(VA[IV], 3320)

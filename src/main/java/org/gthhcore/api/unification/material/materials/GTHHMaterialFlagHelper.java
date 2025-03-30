@@ -6,10 +6,7 @@ import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.GENER
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.store.FluidStorageKey;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.BlastProperty;
-import gregtech.api.unification.material.properties.DustProperty;
-import gregtech.api.unification.material.properties.FluidProperty;
-import gregtech.api.unification.material.properties.PropertyKey;
+import gregtech.api.unification.material.properties.*;
 
 public class GTHHMaterialFlagHelper {
 
@@ -88,6 +85,12 @@ public class GTHHMaterialFlagHelper {
     public static void setupDustProperty(Material material, int harvestLevel, int burnTime) {
         if (material.getProperty(PropertyKey.DUST) == null) {
             material.setProperty(PropertyKey.DUST, new DustProperty(harvestLevel, burnTime));
+        }
+    }
+
+    public static void setupIngotProperty(Material material) {
+        if (material.getProperty(PropertyKey.INGOT) == null) {
+            material.setProperty(PropertyKey.INGOT, new IngotProperty());
         }
     }
 }

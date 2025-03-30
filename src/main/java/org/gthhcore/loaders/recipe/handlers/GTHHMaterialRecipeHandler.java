@@ -7,13 +7,13 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static org.gthhcore.api.recipes.GTHHRecipeMaps.*;
 import static org.gthhcore.api.unification.ore.GTHHOrePrefix.*;
-import static org.gthhcore.api.util.GTHHValues.*;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import org.gthhcore.api.unification.material.info.GTHHMaterialFlags;
+import org.gthhcore.api.util.GTHHValues;
 
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
@@ -33,6 +33,8 @@ public class GTHHMaterialRecipeHandler {
         dust.addProcessingHandler(PropertyKey.BLAST, GTHHMaterialRecipeHandler::processEBFRecipe);
         dust.addProcessingHandler(PropertyKey.BLAST, GTHHMaterialRecipeHandler::processRawMaterial);
         dust.addProcessingHandler(PropertyKey.DUST, GTHHMaterialRecipeHandler::processFuelRod);
+
+        plate.addProcessingHandler(PropertyKey.DUST, GTHHMaterialRecipeHandler::processCompressed);
     }
 
     static void processEBFRecipe(OrePrefix dustPrefix, Material material, BlastProperty property) {
@@ -456,12 +458,12 @@ public class GTHHMaterialRecipeHandler {
                     .input(dustPrefix, material, 4)
                     .input(FUEL_ROD)
                     .output(rodFuelSingle, material)
-                    .duration(S * 20)
+                    .duration(GTHHValues.second * 20)
                     .EUt(VA[LV])
                     .buildAndRegister();
 
             ASSEMBLER_RECIPES.recipeBuilder()
-                    .duration(S * 4).EUt(VA[LV])
+                    .duration(GTHHValues.second * 4).EUt(VA[LV])
                     .input(rodFuelSingle, material, 2)
                     .input(stickLong, Steel, 2)
                     .output(rodFuelDual, material)
@@ -469,7 +471,7 @@ public class GTHHMaterialRecipeHandler {
                     .buildAndRegister();
 
             ASSEMBLER_RECIPES.recipeBuilder()
-                    .duration(S * 4).EUt(VA[LV])
+                    .duration(GTHHValues.second * 4).EUt(VA[LV])
                     .input(rodFuelSingle, material, 2)
                     .input(stickLong, Steel, 4)
                     .output(rodFuelQuad, material)
@@ -477,7 +479,7 @@ public class GTHHMaterialRecipeHandler {
                     .buildAndRegister();
 
             ASSEMBLER_RECIPES.recipeBuilder()
-                    .duration(S * 4).EUt(VA[LV])
+                    .duration(GTHHValues.second * 4).EUt(VA[LV])
                     .input(rodFuelDual, material, 2)
                     .input(stickLong, Steel, 2)
                     .output(rodFuelQuad, material)
@@ -486,21 +488,61 @@ public class GTHHMaterialRecipeHandler {
 
             // Auto-generated Breeder Recipes
             BREEDER_RECIPES.recipeBuilder()
-                    .duration(S * 600).EUt(VA[LuV])
+                    .duration(GTHHValues.second * 600).EUt(VA[LuV])
                     .input(rodFuelSingle, material)
                     .output(rodDepletedSingle, material)
                     .buildAndRegister();
 
             BREEDER_RECIPES.recipeBuilder()
-                    .duration(S * 1200).EUt(VA[LuV])
+                    .duration(GTHHValues.second * 1200).EUt(VA[LuV])
                     .input(rodFuelDual, material)
                     .output(rodDepletedDual, material)
                     .buildAndRegister();
 
             BREEDER_RECIPES.recipeBuilder()
-                    .duration(S * 2400).EUt(VA[LuV])
+                    .duration(GTHHValues.second * 2400).EUt(VA[LuV])
                     .input(rodFuelQuad, material)
                     .output(rodDepletedQuad, material)
+                    .buildAndRegister();
+        }
+    }
+
+    static void processCompressed(OrePrefix platePrefix, Material material, DustProperty property) {
+        if (material.hasFlag(GTHHMaterialFlags.GENERATE_COMPRESSED) && material.hasProperty(PropertyKey.DUST)) {
+            IMPLOSION_RECIPES.recipeBuilder()
+                    .duration(GTHHValues.second * 60).EUt(VA[LV])
+                    .circuitMeta(3)
+                    .input(platePrefix, material, 3)
+                    .output(compressed, material)
+                    .chancedOutput(dust, DarkAsh, 2500, 0)
+                    .explosivesType(new ItemStack(MetaBlocks.POWDERBARREL, 16))
+                    .buildAndRegister();
+
+            IMPLOSION_RECIPES.recipeBuilder()
+                    .duration(GTHHValues.second * 60).EUt(VA[LV])
+                    .circuitMeta(3)
+                    .input(platePrefix, material, 3)
+                    .output(compressed, material)
+                    .chancedOutput(dust, DarkAsh, 2500, 0)
+                    .explosivesAmount(8)
+                    .buildAndRegister();
+
+            IMPLOSION_RECIPES.recipeBuilder()
+                    .duration(GTHHValues.second * 60).EUt(VA[LV])
+                    .circuitMeta(3)
+                    .input(platePrefix, material, 3)
+                    .output(compressed, material)
+                    .chancedOutput(dust, DarkAsh, 2500, 0)
+                    .explosivesType(MetaItems.DYNAMITE.getStackForm(4))
+                    .buildAndRegister();
+
+            IMPLOSION_RECIPES.recipeBuilder()
+                    .duration(GTHHValues.second * 60).EUt(VA[LV])
+                    .circuitMeta(3)
+                    .input(platePrefix, material, 3)
+                    .output(compressed, material)
+                    .chancedOutput(dust, DarkAsh, 2500, 0)
+                    .explosivesType(new ItemStack(MetaBlocks.ITNT))
                     .buildAndRegister();
         }
     }

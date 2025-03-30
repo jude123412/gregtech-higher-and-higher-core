@@ -9,6 +9,7 @@ import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
+import org.gthhcore.api.GTHHApi;
 
 public class GTHHMetaItem2 extends StandardMetaItem {
 
@@ -470,5 +471,36 @@ public class GTHHMetaItem2 extends StandardMetaItem {
                 .addComponents(ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.MAX))
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+
+        // Heavy Duty Alloy 3100-3110
+        INGOT_HEAVY_DUTY_T1 = addItem(3100, "ingot.heavy_duty.t1")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T2 = addItem(3101, "ingot.heavy_duty.t2")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T3 = addItem(3102, "ingot.heavy_duty.t3")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T4 = addItem(3103, "ingot.heavy_duty.t4")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T5 = addItem(3104, "ingot.heavy_duty.t5")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T6 = addItem(3105, "ingot.heavy_duty.t6")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T7 = addItem(3106, "ingot.heavy_duty.t7")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T8 = addItem(3107, "ingot.heavy_duty.t8")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T9 = addItem(3108, "ingot.heavy_duty.t9")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
+
+        INGOT_HEAVY_DUTY_T10 = addItem(3109, "ingot.heavy_duty.t10")
+                .setCreativeTabs(GTHHApi.TAB_GTHH);
     }
 }

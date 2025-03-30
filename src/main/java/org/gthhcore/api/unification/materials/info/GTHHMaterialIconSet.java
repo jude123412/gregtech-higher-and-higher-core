@@ -17,4 +17,5 @@ public class GTHHMaterialIconSet {
     public static final MaterialIconSet MISSINGERROR = new MaterialIconSet("missing_error", MaterialIconSet.SHINY);
     public static final MaterialIconSet PEARL = new MaterialIconSet("pearl", MaterialIconSet.DIAMOND);
     public static final MaterialIconSet STARMETAL = new MaterialIconSet("starmetal", MaterialIconSet.SHINY);
+    public static final MaterialIconSet FLUXED = new MaterialIconSet("fluxed", MaterialIconSet.SHINY);
 }

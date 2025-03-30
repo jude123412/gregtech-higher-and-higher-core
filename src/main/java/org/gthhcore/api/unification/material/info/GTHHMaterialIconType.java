@@ -15,4 +15,5 @@ public class GTHHMaterialIconType {
     public static final MaterialIconType rodDepletedSingle = new MaterialIconType("rodDepletedSingle");
     public static final MaterialIconType rodDepletedDual = new MaterialIconType("rodDepletedDual");
     public static final MaterialIconType rodDepletedQuad = new MaterialIconType("rodDepletedQuad");
+    public static final MaterialIconType compressed = new MaterialIconType("compressed");
 }

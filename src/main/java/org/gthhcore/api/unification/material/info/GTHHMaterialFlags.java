@@ -1,7 +1,9 @@
 package org.gthhcore.api.unification.material.info;
 
 import gregtech.api.unification.material.info.MaterialFlag;
+import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.PropertyKey;
+
 
 public class GTHHMaterialFlags {
 
@@ -14,6 +16,10 @@ public class GTHHMaterialFlags {
             .build();
 
     public static final MaterialFlag GENERATE_ROD_FUEL = new MaterialFlag.Builder("generate_rod_fuel")
+            .requireProps(PropertyKey.DUST)
+            .build();
+
+    public static final MaterialFlag GENERATE_COMPRESSED = new MaterialFlag.Builder("generate_compressed")
             .requireProps(PropertyKey.DUST)
             .build();
 }

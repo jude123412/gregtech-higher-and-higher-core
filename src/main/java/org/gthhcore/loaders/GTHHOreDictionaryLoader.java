@@ -64,5 +64,37 @@ public class GTHHOreDictionaryLoader {
             OreDictionary.registerOre("gemPrescientCrystal",
                     GTHHUtility.getItemStackFromString("enderio", "item_material", 19));
         }
+
+        if (GalacticraftCore.isModLoaded() || GalacticraftPlanets.isModLoaded()) {
+            OreDictionary.registerOre("blockMeteoricIron",
+                    GTHHUtility.getItemStackFromString("galacticraftcore", "basic_block_core", 12));
+            OreDictionary.registerOre("stickDesh",
+                    GTHHUtility.getItemStackFromString("galacticraftplanets", "item_basic_mars", 1));
+
+            if (ExtraPlanets.isModLoaded()) {
+                OreDictionary.registerOre("compressedMercury",
+                        GTHHUtility.getItemStackFromString("extraplanets", "compressed_mercury", 0));
+                OreDictionary.registerOre("compressedCarbon",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier4_items", 4));
+                OreDictionary.registerOre("compressedPalladium",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier5_items", 4));
+                OreDictionary.registerOre("compressedNickel",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier5_items", 6));
+                OreDictionary.registerOre("compressedMagnesium",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier6_items", 4));
+                OreDictionary.registerOre("compressedCrystal",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier7_items", 4));
+                OreDictionary.registerOre("compressedReinforcedCrystal",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier7_items", 6));
+                OreDictionary.registerOre("compressedZinc",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier8_items", 4));
+                OreDictionary.registerOre("compressedTungsten",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier9_items", 4));
+                OreDictionary.registerOre("compressedDarkIron",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier10_items", 4));
+                OreDictionary.registerOre("compressedPlatinum",
+                        GTHHUtility.getItemStackFromString("extraplanets", "tier11_items", 6));
+            }
+        }
     }
 }

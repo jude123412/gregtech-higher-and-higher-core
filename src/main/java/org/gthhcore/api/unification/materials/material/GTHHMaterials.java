@@ -25,6 +25,7 @@ public class GTHHMaterials {
                 EXT2_METAL);
         GENERATE_ALL_METAL.addAll(Arrays.asList(
                 EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
+                GENERATE_PLATE,
                 GENERATE_SPRING,
                 GENERATE_SPRING_SMALL,
                 GENERATE_RING,
@@ -42,8 +43,8 @@ public class GTHHMaterials {
                 NO_WORKING,
                 EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
                 EXCLUDE_BLOCK_CRAFTING_RECIPES,
+                GENERATE_PLATE,
                 GENERATE_BOLT_SCREW,
-                GENERATE_SMALL_GEAR,
                 GENERATE_FRAME,
                 GENERATE_GEAR));
     }
@@ -91,20 +92,25 @@ public class GTHHMaterials {
     // First Degree Materials
     public static Material Pyrotheum;
     public static Material Cryotheum;
-
-    // Second Degree Materials
-    public static Material SaltsCatalyst;
     public static Material MicaInsulator;
-
-    // Third Degree Materials
-    public static Material Sand;
     public static Material SilverGallium;
     public static Material Tantaloper;
     public static Material Zinvar;
     public static Material SterlingPlatinum;
+
+    // Second Degree Materials
+    public static Material SaltsCatalyst;
     public static Material Mytryl;
-    public static Material CosmicCarbon;
     public static Material Tetrapech;
+    public static Material CosmicCarbon;
+    public static Material Oriharukon;
+    public static Material OriharukonArgentinium;
+
+    // Third Degree Materials
+    public static Material Chronarium;
+
+    // Forth Degree Materials
+    public static Material FluxedElectrum;
 
     // Mod Integration Materials
     // AE2
@@ -190,6 +196,20 @@ public class GTHHMaterials {
     public static Material ManaPearl;
     public static Material GaiaSpirit;
 
+    // Galacticraft
+    public static Material MeteoricIron;
+    public static Material Desh;
+    public static Material Crystal;
+    public static Material ReinforcedCrystal;
+    public static Material WhiteGem;
+    public static Material BlueGem;
+    public static Material BlueDiamond;
+    public static Material RedDiamond;
+    public static Material PurpleDiamond;
+    public static Material YellowDiamond;
+    public static Material GreenDiamond;
+    public static Material DarkIron;
+
     // Nuclear Materials
     public static Material EnrichedProtactinium;
     public static Material EnrichedUranium;
@@ -212,6 +232,7 @@ public class GTHHMaterials {
         GTHHFirstDegreeMaterials.register();
         GTHHSecondDegreeMaterials.register();
         GTHHThirdDegreeMaterials.register();
+        GTHHForthDegreeMaterials.register();
         GTHHFluidMaterials.register();
         GTHHNuclearMaterials.register();
         GTHHMaterialFlagAddition.init();

@@ -173,6 +173,11 @@ public class GTHHOrePrefix {
             ENABLE_UNIFICATION,
             mat -> mat.hasFlag(GENERATE_ROD_FUEL));
 
+    public static final OrePrefix compressed = new OrePrefix("compressed", -1, null,
+            GTHHMaterialIconType.compressed,
+            ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_COMPRESSED));
+
     public static void init() {
         oreMoon.addSecondaryMaterial(new MaterialStack(MoonStone, OrePrefix.dust.getMaterialAmount(MoonStone)));
         oreMars.addSecondaryMaterial(new MaterialStack(MarsStone, OrePrefix.dust.getMaterialAmount(MarsStone)));
@@ -345,6 +350,41 @@ public class GTHHOrePrefix {
             }
         }
 
+        // Galacticraft
+        if (GalacticraftCore.isModLoaded()) {
+            ingot.setIgnored(MeteoricIron);
+
+            block.setIgnored(MeteoricIron);
+        }
+
+        if (GalacticraftPlanets.isModLoaded()) {
+            stick.setIgnored(Desh);
+
+            ingot.setIgnored(Desh);
+
+            compressed.setIgnored(Desh);
+            compressed.setIgnored(Titanium);
+
+            block.setIgnored(Desh);
+        }
+
+        // Extra Planets
+        if (ExtraPlanets.isModLoaded()) {
+            ingot.setIgnored(Crystal);
+            ingot.setIgnored(DarkIron);
+
+            gem.setIgnored(WhiteGem);
+            gem.setIgnored(BlueGem);
+            gem.setIgnored(BlueDiamond);
+            gem.setIgnored(RedDiamond);
+            gem.setIgnored(PurpleDiamond);
+            gem.setIgnored(YellowDiamond);
+            gem.setIgnored(GreenDiamond);
+            
+            block.setIgnored(Crystal);
+            block.setIgnored(DarkIron);
+        }
+
         // Thaumcraft
         if (Thaumcraft.isModLoaded()) {
             MetaItems.addOrePrefix(cluster);
@@ -367,5 +407,6 @@ public class GTHHOrePrefix {
         MetaItems.addOrePrefix(rodDepletedSingle);
         MetaItems.addOrePrefix(rodDepletedDual);
         MetaItems.addOrePrefix(rodDepletedQuad);
+        MetaItems.addOrePrefix(compressed);
     }
 }
