@@ -18,6 +18,7 @@ public class GTHHMaterials {
 
     public static final List<MaterialFlag> GENERATE_ALL_GEM = new ArrayList<>();
     public static final List<MaterialFlag> GENERATE_ALL_METAL = new ArrayList<>();
+    public static final List<MaterialFlag> GENERATE_ALL_STONE = new ArrayList<>();
 
     static {
         // Update These if new Material Items are added
@@ -47,6 +48,15 @@ public class GTHHMaterials {
                 GENERATE_BOLT_SCREW,
                 GENERATE_FRAME,
                 GENERATE_GEAR));
+
+        GENERATE_ALL_STONE.addAll(Arrays.asList(
+                NO_SMASHING,
+                NO_WORKING,
+                EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
+                EXCLUDE_BLOCK_CRAFTING_RECIPES,
+                GENERATE_PLATE,
+                GENERATE_DENSE
+        ));
     }
 
     // Element Materials

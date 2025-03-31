@@ -145,5 +145,8 @@ public class GTHHMaterialFlagAddition {
 
         // No Smelting
         Mercury.addFlags(NO_SMELTING);
+
+        // Fine Wire
+        BlueAlloy.addFlags(GENERATE_FINE_WIRE);
     }
 }

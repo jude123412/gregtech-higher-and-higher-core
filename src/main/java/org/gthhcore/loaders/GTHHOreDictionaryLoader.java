@@ -1,6 +1,7 @@
 package org.gthhcore.loaders;
 
 import static org.gthhcore.api.util.GTHHMods.*;
+import static org.gthhcore.common.items.GTHHMetaItems.*;
 
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -15,6 +16,9 @@ public class GTHHOreDictionaryLoader {
 
     public static void init() {
         GTHHLog.logger.info("Registering OreDict Entries.");
+        OreDictionary.registerOre("plateMicaBased", MICA_BASED_SHEET.getStackForm());
+        OreDictionary.registerOre("plateMicaInsulator", MICA_INSULATOR_SHEET.getStackForm());
+        OreDictionary.registerOre("foilCoilInsulator", MICA_INSULATOR_FOIL.getStackForm());
 
         if (Ae2.isModLoaded()) {
             OreDictionary.registerOre("gemCertusQuartz", MaterialType.CERTUS_QUARTZ_CRYSTAL.stack(1));
@@ -26,6 +30,7 @@ public class GTHHOreDictionaryLoader {
                     Api.INSTANCE.definitions().blocks().quartzBlock().maybeBlock().get());
             OreDictionary.registerOre("blockFluix",
                     Api.INSTANCE.definitions().blocks().fluixBlock().maybeBlock().get());
+            OreDictionary.registerOre("blockSkystone", Api.INSTANCE.definitions().blocks().skyStoneBlock().maybeBlock().get());
         }
 
         if (CrazyAe.isModLoaded()) {

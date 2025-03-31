@@ -47,14 +47,10 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         QUICK_AND_DIRTY_PORTAL_GENERATOR = addItem(1050, "component.quick_and_dirty_portal_generator");
 
         // Boule: ID 2000-2049
-        if (LogisticsPipes.isModLoaded()) {
-            SAND_COMPOUND_BOULE = addItem(2000, "boule.sand_compound");
-        }
+        SAND_COMPOUND_BOULE = addItem(2000, "boule.sand_compound");
 
         // Boule-Direct Wafer: ID 2050-2099
-        if (LogisticsPipes.isModLoaded()) {
-            SAND_COMPOUND_WAFER = addItem(2050, "wafer.sand_compound");
-        }
+        WAFER_SAND_COMPOUND = addItem(2050, "wafer.sand_compound");
 
         // Unfinished Circuit Boards: ID 2100-2124
         SLIMEWARE_BOARD = addItem(2100, "board.slimeware");
@@ -155,9 +151,9 @@ public class GTHHMetaItem2 extends StandardMetaItem {
         SALT_CRYSTAL_SMD_INDUCTOR = addItem(2195, "component.salt_crystal.smd.inductor");
 
         // Complex Wafers: ID 2300-22349
-        BASIC_CHIP_WAFER = addItem(2200, "wafer.basic_chip");
-        ADVANCED_CHIP_WAFER = addItem(2201, "wafer.advanced_chip");
-        FPGA_WAFER = addItem(2202, "wafer.fpga");
+        WAFER_BASIC_CHIP = addItem(2200, "wafer.basic_chip");
+        WAFER_ADVANCED_CHIP = addItem(2201, "wafer.advanced_chip");
+        WAFER_FPGA = addItem(2202, "wafer.fpga");
 
         // Complex Cut Wafers ID 2350-2399
 

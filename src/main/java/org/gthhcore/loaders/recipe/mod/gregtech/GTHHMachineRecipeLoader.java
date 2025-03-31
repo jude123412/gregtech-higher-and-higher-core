@@ -1,6 +1,7 @@
 package org.gthhcore.loaders.recipe.mod.gregtech;
 
 import org.gthhcore.loaders.recipe.mod.gregtech.chains.*;
+import org.gthhcore.loaders.recipe.mod.gregtech.material.ModIntegrationRecipes;
 
 public class GTHHMachineRecipeLoader {
 
@@ -9,6 +10,7 @@ public class GTHHMachineRecipeLoader {
     public static void registerEarly() {
         registerChains();
         registerRecipes();
+        registerMaterialRecipes();
     }
 
     public static void registerChains() {
@@ -24,5 +26,9 @@ public class GTHHMachineRecipeLoader {
         GTHHFissionRecipes.init();
         GTHHFusionRecipes.init();
         GTHHHeatingCoilRecipes.init();
+    }
+
+    public static void registerMaterialRecipes() {
+        ModIntegrationRecipes.init();
     }
 }

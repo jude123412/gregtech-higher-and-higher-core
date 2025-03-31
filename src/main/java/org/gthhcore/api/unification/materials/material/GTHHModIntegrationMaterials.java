@@ -27,8 +27,8 @@ public class GTHHModIntegrationMaterials {
                 .dust()
                 .gem(2)
                 .ore(true)
-                .flags(GENERATE_ALL_GEM)
-                .components(Silicon, 1, Oxygen, 2, MissingError, 1)
+                .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
+                .components(Silicon, 1, Oxygen, 2)
                 .color(0x7697A6)
                 .iconSet(MaterialIconSet.CERTUS)
                 .build();
@@ -47,14 +47,14 @@ public class GTHHModIntegrationMaterials {
                 .dust()
                 .gem(2)
                 .flags(GENERATE_ALL_GEM)
-                .components(Fluix, 8, EnderPearl, 1)
+                .components(Fluix, 1, EnderPearl, 1)
                 .iconSet(GTHHMaterialIconSet.PEARL)
                 .color(0x832FBA)
                 .build();
 
         SkyStone = new Material.Builder(getMetaItemId(), gregtechId("skystone"))
-                .dust()
-                .flags(NO_SMASHING, NO_SMELTING, GENERATE_PLATE, DISABLE_DECOMPOSITION)
+                .dust(2)
+                .flags(GENERATE_ALL_STONE, DISABLE_DECOMPOSITION)
                 .color(0x001C1C)
                 .iconSet(MaterialIconSet.CERTUS)
                 .build();
@@ -64,7 +64,7 @@ public class GTHHModIntegrationMaterials {
                 .gem(2)
                 .ore(true)
                 .flags(GENERATE_ALL_GEM)
-                .components(FluixPearl, 4, CertusQuartz, 4, Fluix, 4)
+                .components(FluixPearl, 1, CertusQuartz, 1, Fluix, 1)
                 .color(0xFF007F)
                 .iconSet(MaterialIconSet.CERTUS)
                 .build();
@@ -198,7 +198,7 @@ public class GTHHModIntegrationMaterials {
                 .blast(b -> b
                         .temp(1750, BlastProperty.GasTier.LOW)
                         .blastStats(VA[MV], 860))
-                .components(ElectricalSteel, 4, Redstone, 1, Silicon, 1)
+                .components(ElectricalSteel, 1, Redstone, 1, Silicon, 1)
                 .color(0xCC3030)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
                 .cableProperties(128, 8, 2, false)
@@ -212,7 +212,7 @@ public class GTHHModIntegrationMaterials {
                 .blast(b -> b
                         .temp(1555, BlastProperty.GasTier.LOW)
                         .blastStats(VA[MV], 900))
-                .components(RedstoneAlloy, 4, Steel, 1, Redstone, 1)
+                .components(RedstoneAlloy, 1, Steel, 1, Redstone, 1)
                 .color(0xFFB4A5)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
                 .cableProperties(512, 12, 4, false)
@@ -226,10 +226,19 @@ public class GTHHModIntegrationMaterials {
                 .blast(b -> b
                         .temp(1720, BlastProperty.GasTier.LOW)
                         .blastStats(VA[MV], 625))
-                .components(Steel, 1, EnderPearl, 1)
+                .components(EnderPearl, 1, Steel, 1)
                 .color(0x9AFFB1)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
                 .cableProperties(8, 1, 1, false)
+                .build();
+
+        PulsatingCrystal = new Material.Builder(getMetaItemId(), gregtechId("pulsating_crystal"))
+                .dust()
+                .gem(2)
+                .color(0x3DFF9E)
+                .flags(GENERATE_ALL_GEM)
+                .components(Diamond, 1, PulsatingIron, 1)
+                .iconSet(MaterialIconSet.EMERALD)
                 .build();
 
         DarkSteel = new Material.Builder(getMetaItemId(), gregtechId("dark_steel"))
@@ -250,7 +259,7 @@ public class GTHHModIntegrationMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature(2280))
                 .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
-                .components(Gold, 1, Ash, 1, MissingError, 1)
+                .components(Gold, 1, Ash, 1)
                 .blast(b -> b
                         .temp(2280, BlastProperty.GasTier.LOW)
                         .blastStats(VA[MV], 1100))
@@ -263,7 +272,7 @@ public class GTHHModIntegrationMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature(3000))
                 .flags(GENERATE_ALL_METAL)
-                .components(DarkSteel, 1, Obsidian, 1)
+                .components(DarkSteel, 1, Endstone, 1)
                 .blast(b -> b
                         .temp(3000, BlastProperty.GasTier.LOW)
                         .blastStats(VA[HV], 1100))
@@ -276,7 +285,7 @@ public class GTHHModIntegrationMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature(1300))
                 .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
-                .components(Clay, 1, MissingError, 1)
+                .components(Clay, 1, QuartzSand, 1, Tin, 1)
                 .blast(b -> b
                         .temp(1300, BlastProperty.GasTier.LOW)
                         .blastStats(VA[LV], 651))
@@ -289,6 +298,7 @@ public class GTHHModIntegrationMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature(3820))
                 .flags(GENERATE_ALL_METAL)
+                .components(Gold, 1, PulsatingCrystal, 1)
                 .blast(b -> b
                         .temp(3820, BlastProperty.GasTier.LOW)
                         .blastStats(VA[EV], 2872))
@@ -301,7 +311,8 @@ public class GTHHModIntegrationMaterials {
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(3290))
-                .flags(GENERATE_ALL_METAL)
+                .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
+                .components(EndSteel, 1)
                 .blast(b -> b
                         .temp(3290, BlastProperty.GasTier.LOW)
                         .blastStats(VA[HV], 2490))
@@ -315,6 +326,7 @@ public class GTHHModIntegrationMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature(3890))
                 .flags(GENERATE_ALL_METAL)
+                .components(MelodicAlloy, 1, CrystallineAlloy, 1)
                 .blast(b -> b
                         .temp(4890, BlastProperty.GasTier.LOW)
                         .blastStats(VA[EV], 1100))
@@ -353,24 +365,15 @@ public class GTHHModIntegrationMaterials {
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(5480))
-                .flags(GENERATE_ALL_METAL)
+                .flags(GENERATE_ALL_METAL, DISABLE_DECOMPOSITION)
+                .components(VividAlloy, 1, VibrantAlloy, 1, CrystallinePinkSlime, 1, NetherStar, 1)
                 .blast(b -> b
                         .temp(5480, BlastProperty.GasTier.LOW)
                         .blastStats(VA[IV], 9950)
                         .vacuumStats(VA[EV] * 2, 2400))
-                .components(VividAlloy, 1, VibrantAlloy, 1, EndSteel, 1, ConductiveIron, 1, NaquadahAlloy, 1,
-                        CrystallinePinkSlime, 6)
                 .color(0xDBFFFF)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
                 .cableProperties(2097152, 36, 256, false)
-                .build();
-
-        PulsatingCrystal = new Material.Builder(getMetaItemId(), gregtechId("pulsating_crystal"))
-                .dust()
-                .gem(2)
-                .color(0x3DFF9E)
-                .flags(GENERATE_ALL_GEM)
-                .iconSet(MaterialIconSet.EMERALD)
                 .build();
 
         VibrantCrystal = new Material.Builder(getMetaItemId(), gregtechId("vibrant_crystal"))
@@ -378,6 +381,7 @@ public class GTHHModIntegrationMaterials {
                 .gem(2)
                 .color(0x4FA045)
                 .flags(GENERATE_ALL_GEM)
+                .components(Emerald, 1, VibrantAlloy, 1)
                 .iconSet(MaterialIconSet.EMERALD)
                 .build();
 
@@ -386,6 +390,7 @@ public class GTHHModIntegrationMaterials {
                 .gem(2)
                 .color(0x3A7C27)
                 .flags(GENERATE_ALL_GEM)
+                .components(VibrantCrystal, 1)
                 .iconSet(MaterialIconSet.EMERALD)
                 .build();
 
@@ -393,7 +398,8 @@ public class GTHHModIntegrationMaterials {
                 .dust()
                 .gem(2)
                 .color(0x509375)
-                .flags(GENERATE_ALL_GEM)
+                .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
+                .components(Emerald, 1)
                 .iconSet(MaterialIconSet.EMERALD)
                 .build();
 
@@ -402,6 +408,7 @@ public class GTHHModIntegrationMaterials {
                 .gem(2)
                 .color(0x4F1F60)
                 .flags(GENERATE_ALL_GEM)
+                .components(PulsatingCrystal, 2, VibrantCrystal, 2, EnderCrystal, 1)
                 .iconSet(MaterialIconSet.EMERALD)
                 .build();
 
@@ -409,7 +416,8 @@ public class GTHHModIntegrationMaterials {
                 .dust()
                 .gem(2)
                 .color(0x49A562)
-                .flags(GENERATE_ALL_GEM)
+                .flags(GENERATE_ALL_GEM, DISABLE_DECOMPOSITION)
+                .components(VibrantCrystal, 1)
                 .iconSet(MaterialIconSet.EMERALD)
                 .build();
 

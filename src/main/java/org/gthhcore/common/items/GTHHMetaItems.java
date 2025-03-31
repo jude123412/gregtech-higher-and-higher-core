@@ -43,7 +43,7 @@ public final class GTHHMetaItems {
     public static MetaItem<?>.MetaValueItem SAND_COMPOUND_BOULE;
 
     // Boule-Direct Wafer
-    public static MetaItem<?>.MetaValueItem SAND_COMPOUND_WAFER;
+    public static MetaItem<?>.MetaValueItem WAFER_SAND_COMPOUND;
 
     // Unfinished Circuit Boards
     public static MetaItem<?>.MetaValueItem SLIMEWARE_BOARD;
@@ -108,9 +108,9 @@ public final class GTHHMetaItems {
     public static MetaItem<?>.MetaValueItem SALT_CRYSTAL_SMD_INDUCTOR;
 
     // Complex Wafers
-    public static MetaItem<?>.MetaValueItem BASIC_CHIP_WAFER;
-    public static MetaItem<?>.MetaValueItem ADVANCED_CHIP_WAFER;
-    public static MetaItem<?>.MetaValueItem FPGA_WAFER;
+    public static MetaItem<?>.MetaValueItem WAFER_BASIC_CHIP;
+    public static MetaItem<?>.MetaValueItem WAFER_ADVANCED_CHIP;
+    public static MetaItem<?>.MetaValueItem WAFER_FPGA;
 
     // Complex Cut Wafers
 

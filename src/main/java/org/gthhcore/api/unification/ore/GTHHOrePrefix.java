@@ -236,6 +236,7 @@ public class GTHHOrePrefix {
             block.modifyMaterialAmount(CertusQuartz, 4);
             block.modifyMaterialAmount(Fluix, 4);
             block.modifyMaterialAmount(Fluixilized, 4);
+            block.modifyMaterialAmount(SkyStone, 1);
         }
 
         // Astral Sorcery
