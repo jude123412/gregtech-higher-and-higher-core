@@ -223,6 +223,27 @@ public final class GTHHMetaItems {
     public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T9;
     public static MetaItem<?>.MetaValueItem INGOT_HEAVY_DUTY_T10;
 
+    // Control Computers
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T1;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T2;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T3;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T4;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T5;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T6;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T7;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T8;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T9;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROCKET_T10;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_BUGGY;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_MINER;
+    public static MetaItem<?>.MetaValueItem COMPUTER_CONTROL_ROVER;
+
+    // Rocket Components
+    public static MetaItem<?>.MetaValueItem NOSE_CONE_ROCKET_T2;
+    public static MetaItem<?>.MetaValueItem ENGINE_ROCKET_T2;
+    public static MetaItem<?>.MetaValueItem FIN_ROCKET_T2;
+    public static MetaItem<?>.MetaValueItem BOOSTER_ROCKET_T2;
+
     public static void init() {
         // GTHH MetaItem Registry : Registers under GregTech Tab with a registry name of meta_item_2
         GTHHMetaItem2 metaItem2 = new GTHHMetaItem2();

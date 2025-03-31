@@ -18,7 +18,6 @@ public class GTHHMachineRecipeLoader {
         GTHHGemSlurryRecipes.init();
         GTHHSolarGradeSiliconRecipes.init();
         GTHHPreciousMetalsRecipes.init();
-
     }
 
     public static void registerRecipes() {

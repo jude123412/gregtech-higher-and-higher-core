@@ -1,9 +1,7 @@
 package org.gthhcore.api.unification.material.info;
 
 import gregtech.api.unification.material.info.MaterialFlag;
-import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.PropertyKey;
-
 
 public class GTHHMaterialFlags {
 

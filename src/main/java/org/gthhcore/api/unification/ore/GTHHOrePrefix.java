@@ -380,7 +380,7 @@ public class GTHHOrePrefix {
             gem.setIgnored(PurpleDiamond);
             gem.setIgnored(YellowDiamond);
             gem.setIgnored(GreenDiamond);
-            
+
             block.setIgnored(Crystal);
             block.setIgnored(DarkIron);
         }

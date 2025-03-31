@@ -3,13 +3,14 @@ package org.gthhcore.common.items;
 import static org.gthhcore.api.util.GTHHMods.*;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
+import org.gthhcore.api.GTHHApi;
+
 import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
-import org.gthhcore.api.GTHHApi;
 
 public class GTHHMetaItem2 extends StandardMetaItem {
 
@@ -472,35 +473,86 @@ public class GTHHMetaItem2 extends StandardMetaItem {
                 .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
-        // Heavy Duty Alloy 3100-3110
+        // Galacticraft/Extra Planets Integration 3100-3199
         INGOT_HEAVY_DUTY_T1 = addItem(3100, "ingot.heavy_duty.t1")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T2 = addItem(3101, "ingot.heavy_duty.t2")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T3 = addItem(3102, "ingot.heavy_duty.t3")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T4 = addItem(3103, "ingot.heavy_duty.t4")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T5 = addItem(3104, "ingot.heavy_duty.t5")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T6 = addItem(3105, "ingot.heavy_duty.t6")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T7 = addItem(3106, "ingot.heavy_duty.t7")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T8 = addItem(3107, "ingot.heavy_duty.t8")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T9 = addItem(3108, "ingot.heavy_duty.t9")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
 
         INGOT_HEAVY_DUTY_T10 = addItem(3109, "ingot.heavy_duty.t10")
-                .setCreativeTabs(GTHHApi.TAB_GTHH);
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T1 = addItem(3110, "rocket.computer.t1")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T2 = addItem(3111, "rocket.computer.t2")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T3 = addItem(3112, "rocket.computer.t3")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T4 = addItem(3113, "rocket.computer.t4")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T5 = addItem(3114, "rocket.computer.t5")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T6 = addItem(3115, "rocket.computer.t6")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T7 = addItem(3116, "rocket.computer.t7")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T8 = addItem(3117, "rocket.computer.t8")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T9 = addItem(3118, "rocket.computer.t9")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROCKET_T10 = addItem(3119, "rocket.computer.t10")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_BUGGY = addItem(3120, "buggy.computer")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_MINER = addItem(3121, "miner.computer")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        COMPUTER_CONTROL_ROVER = addItem(3122, "rover.computer")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        BOOSTER_ROCKET_T2 = addItem(3123, "rocket.booster.t2")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        NOSE_CONE_ROCKET_T2 = addItem(3124, "rocket.cone.t2")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        ENGINE_ROCKET_T2 = addItem(3125, "rocket.engine.t2")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
+
+        FIN_ROCKET_T2 = addItem(3126, "rocket.fin.t2")
+                .setCreativeTabs(GTHHApi.TAB_GTHH_GCEP);
     }
 }

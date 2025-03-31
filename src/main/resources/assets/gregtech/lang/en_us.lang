@@ -325,7 +325,7 @@ metaitem.hull.battery.max.tooltip=An empty §cMAX §7Battery Hull
 metaitem.hull.battery.maximum.tooltip=An empty §cMAX §7Battery Hull
 # Batteries
 #
-# Heavy Duty Ingots
+# Galacticraft/Extra Planets Integration
 metaitem.ingot.heavy_duty.t1.name=Heavy Duty Alloy Ingot T1
 metaitem.ingot.heavy_duty.t2.name=Heavy Duty Alloy Ingot T2
 metaitem.ingot.heavy_duty.t3.name=Heavy Duty Alloy Ingot T3
@@ -336,7 +336,34 @@ metaitem.ingot.heavy_duty.t7.name=Heavy Duty Alloy Ingot T7
 metaitem.ingot.heavy_duty.t8.name=Heavy Duty Alloy Ingot T8
 metaitem.ingot.heavy_duty.t9.name=Heavy Duty Alloy Ingot T9
 metaitem.ingot.heavy_duty.t10.name=Heavy Duty Alloy Ingot T10
-# Heavy Duty Ingots
+metaitem.rocket.computer.t1.name=Tier 1 Rocket Control Computer
+metaitem.rocket.computer.t2.name=Tier 2 Rocket Control Computer
+metaitem.rocket.computer.t3.name=Tier 3 Rocket Control Computer
+metaitem.rocket.computer.t4.name=Tier 4 Rocket Control Computer
+metaitem.rocket.computer.t5.name=Tier 5 Rocket Control Computer
+metaitem.rocket.computer.t6.name=Tier 6 Rocket Control Computer
+metaitem.rocket.computer.t7.name=Tier 7 Rocket Control Computer
+metaitem.rocket.computer.t8.name=Tier 8 Rocket Control Computer
+metaitem.rocket.computer.t9.name=Tier 9 Rocket Control Computer
+metaitem.rocket.computer.t10.name=Tier 10 Rocket Control Computer
+metaitem.buggy.computer.name=Buggy Control Computer
+metaitem.miner.computer.name=Astro-Miner Control Computer
+metaitem.rover.computer.name=Rover Control Computer
+metaitem.rocket.booster.t2.name=Tier 2 Booster
+metaitem.rocket.cone.t2.name=Tier 2 Nose Cone
+metaitem.rocket.engine.t2.name=Tier 2 Rocket Engine
+metaitem.rocket.fin.t2.name=Tier 2 Rocket Fins
+# Galacticraft/Extra Planets Integration
+#
+# Fuel Rods
+metaitem.fuel_rod.empty.name=Empty Fuel Rod
+metaitem.fuel_rod.thorium.single.name=Thorium Fuel Rod Single
+metaitem.fuel_rod.thorium.dual.name=Thorium Fuel Rod Dual
+metaitem.fuel_rod.thorium.quad.name=Thorium Fuel Rod Quad
+metaitem.fuel_rod.thorium.depleted.single.name=Depleted Thorium Fuel Rod Single
+metaitem.fuel_rod.thorium.depleted.dual.name=Depleted Thorium Fuel Rod Dual
+metaitem.fuel_rod.thorium.depleted.quad.name=Depleted Thorium Fuel Rod Quad
+# Fuel Rods
 #
 # Ores
 item.material.oreprefix.oreMoon=Moon %s Ore
@@ -641,9 +668,6 @@ item.material.oreprefix.rodDepletedDual=Dual Fuel Rod (Depleted %s)
 item.material.oreprefix.rodDepletedQuad=Quad Fuel Rod (Depleted %s)
 item.material.oreprefix.compressed=Compressed %s
 
-# Superconductor Bases
-metaitem.base.manganese_phosphide.name=Base Manganese Phosphide wire
-
 # Casing
 tile.multiblock_casing_0.maceration_stack.name=Maceration Stack Casing
 
@@ -655,34 +679,8 @@ tile.wire_coil.infinity.name=Infinity Coil Block
 tile.wire_coil.eternal.name=Eternal Coil Block
 tile.wire_coil.temporal.name=Temporal Coil Block
 
-# Planetary Blocks
-tile.surface_soil.mercury.name=Mercury Soil
-tile.surface_soil.venus.name=Venus Soil
-tile.surface_soil.moon.name=Moon Soil
-tile.surface_soil.mars.name=Mars Soil
-tile.surface_soil.deimos.name=Deimos Soil
-tile.surface_soil.phobos.name=Phobos Soil
-tile.sub_surface_soil.mercury.name=Mercury Sub-Surface Soil
-tile.sub_surface_soil.venus.name=Venus Sub-Surface Soil
-tile.sub_surface_soil.moon.name=Moon Sub-Surface Soil
-tile.sub_surface_soil.mars.name=Mars Sub-Surface Soil
-tile.sub_surface_soil.deimos.name=Deimos Sub-Surface Soil
-tile.sub_surface_soil.phobos.name=Phobos Sub-Surface Soil
-tile.sub_surface_rock.mercury.name=Mercury Rock
-tile.sub_surface_rock.venus.name=Venus Rock
-tile.sub_surface_rock.moon.name=Moon Rock
-tile.sub_surface_rock.mars.name=Mars Rock
-tile.sub_surface_rock.deimos.name=Deimos Rock
-tile.sub_surface_rock.phobos.name=Phobos Rock
+# Creative Tabs
+itemGroup.gthhcore.galacticraft=GTHH GC Integration
+# Creative Tabs
 
-# Fuel Rods
-metaitem.fuel_rod.empty.name=Empty Fuel Rod
-
-metaitem.fuel_rod.thorium.single.name=Thorium Fuel Rod Single
-metaitem.fuel_rod.thorium.dual.name=Thorium Fuel Rod Dual
-metaitem.fuel_rod.thorium.quad.name=Thorium Fuel Rod Quad
-
-metaitem.fuel_rod.thorium.depleted.single.name=Depleted Thorium Fuel Rod Single
-metaitem.fuel_rod.thorium.depleted.dual.name=Depleted Thorium Fuel Rod Dual
-metaitem.fuel_rod.thorium.depleted.quad.name=Depleted Thorium Fuel Rod Quad
 

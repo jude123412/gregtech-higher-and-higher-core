@@ -1,12 +1,12 @@
 package org.gthhcore.api.unification.materials.material;
 
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.info.MaterialIconSet;
-
 import static gregtech.api.unification.material.info.MaterialFlags.NO_SMELTING;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.GENERATE_COMPRESSED;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+
+import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialIconSet;
 
 public class GTHHThirdDegreeMaterials {
 

@@ -1,15 +1,15 @@
 package org.gthhcore.api.unification.materials.material;
 
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.info.MaterialIconSet;
-import gregtech.api.unification.material.properties.BlastProperty;
-import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
-import org.gthhcore.api.util.GTHHValues;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.NO_SMELTING;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+
+import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
+import org.gthhcore.api.util.GTHHValues;
+
+import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.BlastProperty;
 
 public class GTHHForthDegreeMaterials {
 
