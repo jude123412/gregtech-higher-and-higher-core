@@ -578,6 +578,7 @@ public class GTHHModIntegrationMaterials {
                 .dust()
                 .color(0xB4B394)
                 .iconSet(GTHHMaterialIconSet.SANDCOMPOUND)
+                .components(Stone, 4, QuartzSand, 3, Clay, 2)
                 .build();
 
         // Astral Sorcery
@@ -685,6 +686,7 @@ public class GTHHModIntegrationMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
                 .color(0xC9EFFF)
                 .iconSet(MaterialIconSet.SHINY)
+                .components(Crystal, 15, Neutronium, 3, NetherStar, 2)
                 .build();
 
         WhiteGem = new Material.Builder(getMetaItemId(), gregtechId("white_gem"))

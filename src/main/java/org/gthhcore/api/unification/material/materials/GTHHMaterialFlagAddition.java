@@ -148,5 +148,6 @@ public class GTHHMaterialFlagAddition {
 
         // Fine Wire
         BlueAlloy.addFlags(GENERATE_FINE_WIRE);
+        RoseGold.addFlags(GENERATE_FINE_WIRE);
     }
 }

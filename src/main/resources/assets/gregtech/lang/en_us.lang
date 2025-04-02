@@ -432,43 +432,52 @@ gregtech.material.slime_solder=Slime Solder
 gregtech.material.salts_solution=Salts Solution
 
 # Ore Materials
+gregtech.material.moon=Moon
+gregtech.material.ceres=Ceres
+gregtech.material.pluto=Pluto
+# First Degree Materials
+gregtech.material.cryotheum=Cryotheum
+gregtech.material.pyrotheum=Pyrotheum
+gregtech.material.mica_insulator=Mica Insulator
 gregtech.material.albite=Albite
 gregtech.material.anorthite=Anorthite
 gregtech.material.plagioclase=Plagioclase
 gregtech.material.pyroxene=Pyroxene
-gregtech.material.moon=Moon
 gregtech.material.carbonate=Carbonate
 gregtech.material.ammoniated_silicate=Ammoniated Silicate
-gregtech.material.ceres=Ceres
-gregtech.material.pluto=Pluto
 gregtech.material.precious_metals=Precious Metals
 gregtech.material.cryolite=Cryolite
 gregtech.material.solar_grade_silicon=Poly(Si) Solar Grade Silicon
-
+gregtech.material.silver_gallium=Silver Gallium
+gregtech.material.tantaloper=Tantaloper
+gregtech.material.zinvar=Zinvar
+gregtech.material.sterling_platinum=Sterling Platinum
+# First Degree Materials
+#
 # Second Degree Materials
 gregtech.material.salts_catalyst=Salts Catalyst
-gregtech.material.mica_insulator=Mica Insulator
-gregtech.material.pyrotheum=Pyrotheum
-gregtech.material.cryotheum=Cryotheum
+gregtech.material.mytryl=Mytryl
+gregtech.material.tetrapech=Tetrapech
+gregtech.material.cosmic_carbon=Cosmic Carbon
 gregtech.material.oriharukon=Oriharukon
 gregtech.material.oriharukon_argentinium=Oriharukon Argentinium
 # Second Degree Materials
 #
 # Third Degree Materials
 gregtech.material.chronarium=Chronarium
+gregtech.material.black_plutonium=Black Plutonium
+gregtech.material.bedrockium=Bedrockium
+gregtech.material.quaintum=Quaintum
+gregtech.material.chronos_steel=Chronos Steel
 gregtech.material.sand=Sand
 gregtech.material.rtm_alloy=Ruthubdenum
-gregtech.material.silver_gallium=Silver Gallium
-gregtech.material.tantaloper=Tantaloper
-gregtech.material.zinvar=Zinvar
-gregtech.material.sterling_platinum=Sterling Platinum
-gregtech.material.mytryl=Mytryl
-gregtech.material.tetrapech=Tetrapech
-gregtech.material.cosmic_carbon=Cosmic Carbon
 # Third Degree Materials
 #
 # Forth Degree materials
+gregtech.material.temporally_constrained_star_matter=Temporally Constrained Star Matter
 gregtech.material.fluxed_electrum=Fluxed Electrum
+gregtech.material.prismatic_void_matter=Prismatic Void Matter
+gregtech.material.fluxed_awakened_draconium=Fluxed Awakened Draconium
 # Forth Degree materials
 #
 # Mod Integration Materials

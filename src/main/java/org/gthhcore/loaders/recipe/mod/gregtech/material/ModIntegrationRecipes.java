@@ -1,8 +1,5 @@
 package org.gthhcore.loaders.recipe.mod.gregtech.material;
 
-import gregtech.api.metatileentity.multiblock.CleanroomType;
-import net.minecraft.init.Items;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -12,15 +9,15 @@ import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 import static org.gthhcore.api.util.GTHHValues.*;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
+import net.minecraft.init.Items;
+
 public class ModIntegrationRecipes {
 
     public static void init() {
         registerModIntegrationRecipe();
     }
 
-
     public static void registerModIntegrationRecipe() {
-
         // Charged Certus Quartz
         POLARIZER_RECIPES.recipeBuilder()
                 .duration(second * 10).EUt(VA[HV])
@@ -54,15 +51,6 @@ public class ModIntegrationRecipes {
                 .output(dust, Fluixilized, 3)
                 .buildAndRegister();
 
-        // Sand Compound
-        MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[LV])
-                .input(dust, Stone, 4)
-                .input(dust, QuartzSand, 3)
-                .input(dust, Clay, 2)
-                .output(dust, SandCompound, 9)
-                .buildAndRegister();
-
         // Electrical Steel
         MIXER_RECIPES.recipeBuilder()
                 .duration(second * 30).EUt(VA[LV])
@@ -79,7 +67,7 @@ public class ModIntegrationRecipes {
                 .input(dust, Glowstone)
                 .output(dust, EnergeticAlloy, 2)
                 .buildAndRegister();
-        
+
         // Vibrant Alloy
         MIXER_RECIPES.recipeBuilder()
                 .duration(second * 60).EUt(VA[EV])
@@ -206,8 +194,6 @@ public class ModIntegrationRecipes {
                 .output(dust, StellarAlloy, 4)
                 .buildAndRegister();
 
-
-
         // Vibrant Crystal
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .duration(second * 60).EUt(VA[MV])
@@ -223,6 +209,25 @@ public class ModIntegrationRecipes {
                 .input(dust, VibrantCrystal, 2)
                 .input(dust, EnderCrystal)
                 .output(dust, WeatherCrystal, 5)
+                .buildAndRegister();
+
+        // Sand Compound
+        MIXER_RECIPES.recipeBuilder()
+                .duration(second * 45).EUt(VA[LV])
+                .input(dust, Stone, 4)
+                .input(dust, QuartzSand, 3)
+                .input(dust, Clay, 2)
+                .output(dust, SandCompound, 9)
+                .buildAndRegister();
+
+        // Reinforced Crystal
+        MIXER_RECIPES.recipeBuilder()
+                .duration(second * 50).EUt(VA[UHV])
+                .circuitMeta(1)
+                .input(dust, Crystal, 15)
+                .input(dust, Neutronium, 3)
+                .input(dust, NetherStar, 2)
+                .output(dust, ReinforcedCrystal, 20)
                 .buildAndRegister();
     }
 }

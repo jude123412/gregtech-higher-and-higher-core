@@ -30,7 +30,8 @@ public class GTHHOreDictionaryLoader {
                     Api.INSTANCE.definitions().blocks().quartzBlock().maybeBlock().get());
             OreDictionary.registerOre("blockFluix",
                     Api.INSTANCE.definitions().blocks().fluixBlock().maybeBlock().get());
-            OreDictionary.registerOre("blockSkystone", Api.INSTANCE.definitions().blocks().skyStoneBlock().maybeBlock().get());
+            OreDictionary.registerOre("blockSkystone",
+                    Api.INSTANCE.definitions().blocks().skyStoneBlock().maybeBlock().get());
         }
 
         if (CrazyAe.isModLoaded()) {

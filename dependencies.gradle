@@ -66,8 +66,8 @@ dependencies {
     // Avaritia
 
     // Applied Energistics 2
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:ae2-unofficial-extended-life-0.56.6-570458:5411078") // AE2 UEL 0.56.6
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:crazy-ae-0.3-1111042:5845065") // Crazy AE 0.56.6
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:ae2-unofficial-extended-life-0.56.6-570458:5411078") // AE2 UEL 0.56.6
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:crazy-ae-0.3-1111042:5845065") // Crazy AE 0.56.6
     // Applied Energistics 2
 
     // Thaumcraft

@@ -30,6 +30,7 @@ public class GTHHMaterials {
                 GENERATE_SPRING,
                 GENERATE_SPRING_SMALL,
                 GENERATE_RING,
+                GENERATE_ROUND,
                 GENERATE_ROTOR,
                 GENERATE_SMALL_GEAR,
                 GENERATE_FRAME,
@@ -55,8 +56,7 @@ public class GTHHMaterials {
                 EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES,
                 EXCLUDE_BLOCK_CRAFTING_RECIPES,
                 GENERATE_PLATE,
-                GENERATE_DENSE
-        ));
+                GENERATE_DENSE));
     }
 
     // Element Materials
@@ -118,9 +118,16 @@ public class GTHHMaterials {
 
     // Third Degree Materials
     public static Material Chronarium;
+    public static Material BlackPlutonium;
+    public static Material Bedrockium;
+    public static Material Quaintum;
+    public static Material ChronosSteel;
 
     // Forth Degree Materials
+    public static Material TemporallyConstrainedStarMatter;
     public static Material FluxedElectrum;
+    public static Material PrismaticVoidMatter;
+    public static Material FluxedAwakenedDraconium;
 
     // Mod Integration Materials
     // AE2
