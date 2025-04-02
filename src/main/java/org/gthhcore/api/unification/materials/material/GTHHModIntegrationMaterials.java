@@ -159,7 +159,6 @@ public class GTHHModIntegrationMaterials {
                 .components(Steel, 1, Silicon, 1)
                 .color(0x999999)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(32, 4, 1, false)
                 .build();
 
         EnergeticAlloy = new Material.Builder(getMetaItemId(), gregtechId("energetic_alloy"))
@@ -173,7 +172,7 @@ public class GTHHModIntegrationMaterials {
                 .components(Gold, 1, Redstone, 1, Glowstone, 1)
                 .color(0xFF7402)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(2048, 16, 6, false)
+                .cableProperties(V[MV], 4, 2, false)
                 .build();
 
         VibrantAlloy = new Material.Builder(getMetaItemId(), gregtechId("vibrant_alloy"))
@@ -187,7 +186,7 @@ public class GTHHModIntegrationMaterials {
                 .components(EnergeticAlloy, 1, EnderPearl, 1)
                 .color(0xBEFF1C)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(8192, 20, 8, false)
+                .cableProperties(V[EV], 8, 8, false)
                 .build();
 
         RedstoneAlloy = new Material.Builder(getMetaItemId(), gregtechId("redstone_alloy"))
@@ -201,7 +200,7 @@ public class GTHHModIntegrationMaterials {
                 .components(ElectricalSteel, 1, Redstone, 1, Silicon, 1)
                 .color(0xCC3030)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(128, 8, 2, false)
+                .cableProperties(32, 1, 0, false)
                 .build();
 
         ConductiveIron = new Material.Builder(getMetaItemId(), gregtechId("conductive_iron"))
@@ -215,7 +214,7 @@ public class GTHHModIntegrationMaterials {
                 .components(RedstoneAlloy, 1, Steel, 1, Redstone, 1)
                 .color(0xFFB4A5)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(512, 12, 4, false)
+                .cableProperties(32, 2, 1)
                 .build();
 
         PulsatingIron = new Material.Builder(getMetaItemId(), gregtechId("pulsating_iron"))
@@ -229,7 +228,7 @@ public class GTHHModIntegrationMaterials {
                 .components(EnderPearl, 1, Steel, 1)
                 .color(0x9AFFB1)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(8, 1, 1, false)
+                .cableProperties(8, 1, 0, false)
                 .build();
 
         PulsatingCrystal = new Material.Builder(getMetaItemId(), gregtechId("pulsating_crystal"))
@@ -291,6 +290,7 @@ public class GTHHModIntegrationMaterials {
                         .blastStats(VA[LV], 651))
                 .color(0xCCC3B1)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .cableProperties(V[ULV], 1, 1, false)
                 .build();
 
         CrystallineAlloy = new Material.Builder(getMetaItemId(), gregtechId("crystalline_alloy"))
@@ -304,7 +304,7 @@ public class GTHHModIntegrationMaterials {
                         .blastStats(VA[EV], 2872))
                 .color(0x91FFFF)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(32768, 24, 4, false)
+                .cableProperties(V[IV], 16, 32, false)
                 .build();
 
         MelodicAlloy = new Material.Builder(getMetaItemId(), gregtechId("melodic_alloy"))
@@ -318,7 +318,7 @@ public class GTHHModIntegrationMaterials {
                         .blastStats(VA[HV], 2490))
                 .color(0xB26EB2)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(131072, 28, 16, false)
+                .cableProperties(131072, 32, 128, false)
                 .build();
 
         CrystallinePinkSlime = new Material.Builder(getMetaItemId(), gregtechId("crystalline_pink_slime"))
@@ -332,7 +332,7 @@ public class GTHHModIntegrationMaterials {
                         .blastStats(VA[EV], 1100))
                 .color(0xFF99EF)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(524288, 32, 64, false)
+                .cableProperties(V[LuV], 24, 64, false)
                 .build();
 
         EnergeticSilver = new Material.Builder(getMetaItemId(), gregtechId("energetic_silver"))
@@ -346,6 +346,7 @@ public class GTHHModIntegrationMaterials {
                 .components(Silver, 1, Redstone, 1, Glowstone, 1)
                 .color(0x639ECC)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
+                .cableProperties(V[HV], 4, 8, false)
                 .build();
 
         VividAlloy = new Material.Builder(getMetaItemId(), gregtechId("vivid_alloy"))
@@ -373,7 +374,7 @@ public class GTHHModIntegrationMaterials {
                         .vacuumStats(VA[EV] * 2, 2400))
                 .color(0xDBFFFF)
                 .iconSet(GTHHMaterialIconSet.ENDERIOINGOT)
-                .cableProperties(2097152, 36, 256, false)
+                .cableProperties(V[MAX], 4, 0, false)
                 .build();
 
         VibrantCrystal = new Material.Builder(getMetaItemId(), gregtechId("vibrant_crystal"))

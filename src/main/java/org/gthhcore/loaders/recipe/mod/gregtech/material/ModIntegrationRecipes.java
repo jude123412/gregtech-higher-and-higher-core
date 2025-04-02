@@ -73,7 +73,7 @@ public class ModIntegrationRecipes {
 
         // Energetic Alloy
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[EV])
+                .duration(second * 45).EUt(VA[MV])
                 .input(dust, Gold)
                 .input(dust, Redstone)
                 .input(dust, Glowstone)
@@ -82,7 +82,7 @@ public class ModIntegrationRecipes {
         
         // Vibrant Alloy
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 60).EUt(VA[IV])
+                .duration(second * 60).EUt(VA[EV])
                 .input(dust, EnergeticAlloy)
                 .input(dust, EnderPearl)
                 .output(dust, VibrantAlloy, 2)
@@ -90,7 +90,7 @@ public class ModIntegrationRecipes {
 
         // Redstone Alloy
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 30).EUt(VA[MV])
+                .duration(second * 30).EUt(VA[LV])
                 .input(dust, ElectricalSteel)
                 .input(dust, Redstone)
                 .input(dust, Silicon)
@@ -99,7 +99,7 @@ public class ModIntegrationRecipes {
 
         // Conductive Iron
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 30).EUt(VA[HV])
+                .duration(second * 30).EUt(VA[LV])
                 .input(dust, RedstoneAlloy)
                 .input(dust, Steel)
                 .input(dust, Redstone)
@@ -108,7 +108,7 @@ public class ModIntegrationRecipes {
 
         // Pulsating Iron
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[ULV])
+                .duration(second * 15).EUt(VA[ULV])
                 .input(dust, EnderPearl)
                 .input(dust, Steel)
                 .output(dust, PulsatingIron)
@@ -148,7 +148,7 @@ public class ModIntegrationRecipes {
 
         // Crude Steel
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[LV])
+                .duration(second * 45).EUt(VA[ULV])
                 .input(dust, Clay)
                 .input(dust, QuartzSand)
                 .input(dust, Tin)
@@ -157,7 +157,7 @@ public class ModIntegrationRecipes {
 
         // Crystalline Alloy
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[EV])
+                .duration(second * 90).EUt(VA[IV])
                 .input(dust, Gold)
                 .input(dust, PulsatingCrystal)
                 .output(dust, CrystallineAlloy, 2)
@@ -165,7 +165,7 @@ public class ModIntegrationRecipes {
 
         // Melodic Alloy
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[EV])
+                .duration(second * 120).EUt(VA[ZPM])
                 .input(Items.CHORUS_FRUIT_POPPED)
                 .input(dust, EndSteel)
                 .output(dust, MelodicAlloy)
@@ -173,7 +173,7 @@ public class ModIntegrationRecipes {
 
         // Crystalline Pink Slime
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[EV])
+                .duration(second * 150).EUt(VA[LuV])
                 .input(dust, MelodicAlloy)
                 .input(dust, CrystallineAlloy)
                 .output(dust, CrystallinePinkSlime)
@@ -181,7 +181,7 @@ public class ModIntegrationRecipes {
 
         // Energetic Silver
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[EV])
+                .duration(second * 45).EUt(VA[MV])
                 .input(dust, Silver)
                 .input(dust, Redstone)
                 .input(dust, Glowstone)
@@ -190,7 +190,7 @@ public class ModIntegrationRecipes {
 
         // Vivid Alloy
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[EV])
+                .duration(second * 60).EUt(VA[HV])
                 .input(dust, EnergeticSilver)
                 .input(dust, EnderPearl)
                 .output(dust, VividAlloy, 2)
@@ -198,7 +198,7 @@ public class ModIntegrationRecipes {
 
         // Stellar Alloy
         MIXER_RECIPES.recipeBuilder()
-                .duration(second * 45).EUt(VA[EV])
+                .duration(second * 240).EUt(VA[UV])
                 .input(dust, VividAlloy)
                 .input(dust, VibrantAlloy)
                 .input(dust, CrystallinePinkSlime)
