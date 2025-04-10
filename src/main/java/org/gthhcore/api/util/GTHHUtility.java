@@ -3,6 +3,7 @@ package org.gthhcore.api.util;
 import java.util.Objects;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -28,14 +29,23 @@ public class GTHHUtility {
      *         You can view the String I'd's by pressing F3 + H
      */
     public static @NotNull ItemStack getItemStackFromString(String modId, String itemId, int amount, int metaId) {
-        return new ItemStack(
-                Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(modId, itemId))), amount,
-                metaId);
+        ResourceLocation location = new ResourceLocation(modId, itemId);
+        if(ForgeRegistries.ITEMS.containsKey(location)) {
+            return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), amount, metaId);
+        } else {
+            GTHHLog.logger.error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
+            return new ItemStack(Blocks.AIR);
+        }
     }
 
     public static @NotNull ItemStack getItemStackFromString(String modId, String itemId, int metaId) {
-        return new ItemStack(
-                Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(modId, itemId))), 1, metaId);
+        ResourceLocation location = new ResourceLocation(modId, itemId);
+        if(ForgeRegistries.ITEMS.containsKey(location)) {
+            return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), 1, metaId);
+        } else {
+            GTHHLog.logger.error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
+            return new ItemStack(Blocks.AIR);
+        }
     }
 
     /**
@@ -47,15 +57,23 @@ public class GTHHUtility {
      *         Useful in GTCEU Machines or anything that needs more than one Item in the recipe
      */
     public static @NotNull Item getItemFromString(String modId, String itemId, int metaId) {
-        return new ItemStack(
-                Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(modId, itemId))), 1, metaId)
-                        .getItem();
+        ResourceLocation location = new ResourceLocation(modId, itemId);
+        if(ForgeRegistries.ITEMS.containsKey(location)) {
+            return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), 1, metaId).getItem();
+        } else {
+            GTHHLog.logger.error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
+            return new ItemStack(Blocks.AIR).getItem();
+        }
     }
 
     public static @NotNull Item getItemFromString(String modId, String itemId) {
-        return new ItemStack(
-                Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(modId, itemId))), 1)
-                        .getItem();
+        ResourceLocation location = new ResourceLocation(modId, itemId);
+        if(ForgeRegistries.ITEMS.containsKey(location)) {
+            return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), 1).getItem();
+        } else {
+            GTHHLog.logger.error("Unable to find item from modId or itemId " + modId + ":" + itemId);
+            return new ItemStack(Blocks.AIR).getItem();
+        }
     }
 
     public static @NotNull Block getBlockFromString(String modId, String itemId) {
