@@ -2,8 +2,8 @@ package org.gthhcore.api.unification.materials.material;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.NO_SMELTING;
-import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+import static org.gthhcore.api.util.GTHHUtility.gthhId;
 
 import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
 import org.gthhcore.api.util.GTHHValues;
@@ -14,13 +14,12 @@ import gregtech.api.unification.material.properties.BlastProperty;
 
 public class GTHHForthDegreeMaterials {
 
-    private static int startId = 13000;
-    private static int endId = 13499;
+    private static int startId = 6000;
+    private static int endId = 6999;
 
     public static void register() {
-        // UXV -> MAX Materials
         TemporallyConstrainedStarMatter = new Material.Builder(getMetaItemId(),
-                gregtechId("temporally_constrained_star_matter"))
+                gthhId("temporally_constrained_star_matter"))
                         .dust()
                         .ore()
                         .ingot()
@@ -34,7 +33,7 @@ public class GTHHForthDegreeMaterials {
                         .iconSet(GTHHMaterialIconSet.TEMPORALLYCONSTRAINEDSTARMATTER)
                         .build();
 
-        FluxedElectrum = new Material.Builder(getMetaItemId(), gregtechId("fluxed_electrum"))
+        FluxedElectrum = new Material.Builder(getMetaItemId(), gthhId("fluxed_electrum"))
                 .dust()
                 .ore()
                 .ingot()
@@ -48,7 +47,7 @@ public class GTHHForthDegreeMaterials {
                 .iconSet(GTHHMaterialIconSet.FLUXED)
                 .build();
 
-        PrismaticVoidMatter = new Material.Builder(getMetaItemId(), gregtechId("prismatic_void_matter"))
+        PrismaticVoidMatter = new Material.Builder(getMetaItemId(), gthhId("prismatic_void_matter"))
                 .dust()
                 .ore()
                 .ingot()
@@ -62,7 +61,7 @@ public class GTHHForthDegreeMaterials {
                 .iconSet(GTHHMaterialIconSet.PRISMATIC)
                 .build();
 
-        FluxedAwakenedDraconium = new Material.Builder(getMetaItemId(), gregtechId("fluxed_awakened_draconium"))
+        FluxedAwakenedDraconium = new Material.Builder(getMetaItemId(), gthhId("fluxed_awakened_draconium"))
                 .dust()
                 .ore()
                 .ingot()

@@ -1,20 +1,20 @@
 package org.gthhcore.api.unification.materials.material;
 
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+import static org.gthhcore.api.util.GTHHUtility.gthhId;
 
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 
 public class GTHHNuclearMaterials {
 
-    private static int startId = 12500;
-    private static int endId = 12999;
+    private static int startId = 8000;
+    private static int endId = 8999;
 
     public static void register() {
-        EnrichedProtactinium = new Material.Builder(getMetaItemId(), gregtechId("enriched_protactinium"))
+        EnrichedProtactinium = new Material.Builder(getMetaItemId(), gthhId("enriched_protactinium"))
                 .dust()
                 .color(0x5E3F1F)
                 .flags(GENERATE_ROD_FUEL)
@@ -22,7 +22,7 @@ public class GTHHNuclearMaterials {
                 .components(Protactinium226, 5, Protactinium231, 3)
                 .build();
 
-        EnrichedUranium = new Material.Builder(getMetaItemId(), gregtechId("enriched_uranium"))
+        EnrichedUranium = new Material.Builder(getMetaItemId(), gthhId("enriched_uranium"))
                 .dust()
                 .color(0x007501)
                 .flags(GENERATE_ROD_FUEL)
@@ -30,7 +30,7 @@ public class GTHHNuclearMaterials {
                 .components(Uranium238, 5, Uranium235, 3)
                 .build();
 
-        EnrichedNeptunium = new Material.Builder(getMetaItemId(), gregtechId("enriched_neptunium"))
+        EnrichedNeptunium = new Material.Builder(getMetaItemId(), gthhId("enriched_neptunium"))
                 .dust()
                 .color(0x032142)
                 .flags(GENERATE_ROD_FUEL)
@@ -38,7 +38,7 @@ public class GTHHNuclearMaterials {
                 .components(Neptunium237, 5, Neptunium228, 3)
                 .build();
 
-        EnrichedPlutonium = new Material.Builder(getMetaItemId(), gregtechId("enriched_plutonium"))
+        EnrichedPlutonium = new Material.Builder(getMetaItemId(), gthhId("enriched_plutonium"))
                 .dust()
                 .color(0x960F0F)
                 .flags(GENERATE_ROD_FUEL)

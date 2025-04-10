@@ -37,6 +37,7 @@ import org.gthhcore.loaders.recipe.mod.gregtech.GTHHRecipeManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.unification.material.event.MaterialEvent;
+import gregtech.api.unification.material.event.MaterialRegistryEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 
@@ -90,7 +91,7 @@ public class CommonProxy {
     @SubscribeEvent
     public void postInit(FMLPostInitializationEvent event) {}
 
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerMaterials(MaterialEvent event) {
         GTHHLog.logger.info("Registering Materials...");
         GTHHMaterials.init();
@@ -119,6 +120,11 @@ public class CommonProxy {
         MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, ItemMaterialInfo.class));
 
         GTHHRecipeManager.load();
+    }
+
+    @SubscribeEvent
+    public static void createMaterialRegistry(MaterialRegistryEvent event) {
+        GregTechAPI.materialManager.createRegistry("gthhcore");
     }
 
     // Some Pre-Init Registry needs to happen Here

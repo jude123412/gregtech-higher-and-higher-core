@@ -2,6 +2,7 @@ package org.gthhcore.api.util;
 
 import java.util.Objects;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -55,5 +56,15 @@ public class GTHHUtility {
         return new ItemStack(
                 Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation(modId, itemId))), 1)
                         .getItem();
+    }
+
+    public static @NotNull Block getBlockFromString(String modId, String itemId) {
+        ResourceLocation location = new ResourceLocation(modId, itemId);
+        if (ForgeRegistries.BLOCKS.containsKey(location)) {
+            return Objects.requireNonNull(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(modId, itemId)));
+        } else {
+            GTHHLog.logger.error("Unable to find block with modId or itemId " + modId + ":" + itemId);
+            return Objects.requireNonNull(ForgeRegistries.BLOCKS.getValue(new ResourceLocation("minecraft", "air")));
+        }
     }
 }

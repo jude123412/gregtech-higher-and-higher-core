@@ -2,9 +2,9 @@ package org.gthhcore.api.unification.materials.material;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.NO_SMELTING;
-import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.GENERATE_COMPRESSED;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+import static org.gthhcore.api.util.GTHHUtility.gthhId;
 
 import org.gthhcore.api.util.GTHHValues;
 
@@ -15,12 +15,11 @@ import gregtech.api.unification.material.properties.BlastProperty;
 
 public class GTHHThirdDegreeMaterials {
 
-    private static int startId = 11500;
-    private static int endId = 11999;
+    private static int startId = 5000;
+    private static int endId = 5999;
 
     public static void register() {
-        // UHV -> UXV Materials
-        Chronarium = new Material.Builder(getMetaItemId(), gregtechId("chronarium"))
+        Chronarium = new Material.Builder(getMetaItemId(), gthhId("chronarium"))
                 .dust()
                 .ore()
                 .ingot()
@@ -29,7 +28,7 @@ public class GTHHThirdDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        BlackPlutonium = new Material.Builder(getMetaItemId(), gregtechId("black_plutonium"))
+        BlackPlutonium = new Material.Builder(getMetaItemId(), gthhId("black_plutonium"))
                 .dust()
                 .ore()
                 .ingot()
@@ -43,7 +42,7 @@ public class GTHHThirdDegreeMaterials {
                 .iconSet(MaterialIconSet.DULL)
                 .build();
 
-        Bedrockium = new Material.Builder(getMetaItemId(), gregtechId("bedrockium"))
+        Bedrockium = new Material.Builder(getMetaItemId(), gthhId("bedrockium"))
                 .dust()
                 .ore()
                 .ingot()
@@ -57,7 +56,7 @@ public class GTHHThirdDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        Quaintum = new Material.Builder(getMetaItemId(), gregtechId("quaintum"))
+        Quaintum = new Material.Builder(getMetaItemId(), gthhId("quaintum"))
                 .dust()
                 .ore()
                 .ingot()
@@ -66,7 +65,7 @@ public class GTHHThirdDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        ChronosSteel = new Material.Builder(getMetaItemId(), gregtechId("chronos_steel"))
+        ChronosSteel = new Material.Builder(getMetaItemId(), gthhId("chronos_steel"))
                 .dust()
                 .ingot()
                 .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)

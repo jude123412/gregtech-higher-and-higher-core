@@ -2,8 +2,8 @@ package org.gthhcore.api.unification.materials.material;
 
 public class GTHHFantasyMaterials {
 
-    private static int startId = 9499;
-    private static int endId = 9999;
+    private static int startId = 2000;
+    private static int endId = 2999;
 
     public static void register() {}
 

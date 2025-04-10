@@ -2,8 +2,6 @@ package org.gthhcore.common.items;
 
 import java.util.List;
 
-import org.gthhcore.Tags;
-
 import gregtech.api.items.metaitem.MetaItem;
 
 public final class GTHHMetaItems {
@@ -246,7 +244,7 @@ public final class GTHHMetaItems {
 
     public static void init() {
         // GTHH MetaItem Registry : Registers under GregTech Tab with a registry name of meta_item_2
-        GTHHMetaItem2 metaItem2 = new GTHHMetaItem2();
-        metaItem2.setRegistryName(Tags.MODID, "meta_item_0");
+        GTHHMetaItem metaItem2 = new GTHHMetaItem();
+        metaItem2.setRegistryName("meta_item");
     }
 }

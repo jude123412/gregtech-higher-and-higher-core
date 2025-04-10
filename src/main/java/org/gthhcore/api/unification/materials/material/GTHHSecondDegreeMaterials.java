@@ -3,8 +3,8 @@ package org.gthhcore.api.unification.materials.material;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+import static org.gthhcore.api.util.GTHHUtility.gthhId;
 
 import org.gthhcore.api.util.GTHHValues;
 
@@ -15,12 +15,11 @@ import gregtech.api.unification.material.properties.BlastProperty;
 
 public class GTHHSecondDegreeMaterials {
 
-    private static int startId = 10999;
-    private static int endId = 11499;
+    private static int startId = 4000;
+    private static int endId = 4999;
 
     public static void register() {
-        // IV -> UV Materials
-        SaltsCatalyst = new Material.Builder(getMetaItemId(), gregtechId("salts_catalyst"))
+        SaltsCatalyst = new Material.Builder(getMetaItemId(), gthhId("salts_catalyst"))
                 .dust()
                 .iconSet(MaterialIconSet.FINE)
                 .components(Salt, 1, RockSalt, 1, HSSS, 2)
@@ -28,7 +27,7 @@ public class GTHHSecondDegreeMaterials {
                 .build();
 
         // Found on Mercury T3
-        Mytryl = new Material.Builder(getMetaItemId(), gregtechId("mytryl"))
+        Mytryl = new Material.Builder(getMetaItemId(), gthhId("mytryl"))
                 .dust()
                 .ingot()
                 .ore()
@@ -43,7 +42,7 @@ public class GTHHSecondDegreeMaterials {
                 .iconSet(MaterialIconSet.DULL)
                 .build();
 
-        Tetrapech = new Material.Builder(getMetaItemId(), gregtechId("tetrapech"))
+        Tetrapech = new Material.Builder(getMetaItemId(), gthhId("tetrapech"))
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(2000))
@@ -57,7 +56,7 @@ public class GTHHSecondDegreeMaterials {
                 .build();
 
         // Found on Venus T3
-        CosmicCarbon = new Material.Builder(getMetaItemId(), gregtechId("cosmic_carbon"))
+        CosmicCarbon = new Material.Builder(getMetaItemId(), gthhId("cosmic_carbon"))
                 .dust()
                 .ingot()
                 .ore()
@@ -70,7 +69,7 @@ public class GTHHSecondDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        Oriharukon = new Material.Builder(getMetaItemId(), gregtechId("oriharukon"))
+        Oriharukon = new Material.Builder(getMetaItemId(), gthhId("oriharukon"))
                 .dust()
                 .ingot()
                 .ore()
@@ -83,7 +82,7 @@ public class GTHHSecondDegreeMaterials {
                 .iconSet(MaterialIconSet.ROUGH)
                 .build();
 
-        OriharukonArgentinium = new Material.Builder(getMetaItemId(), gregtechId("oriharukon_argentinium"))
+        OriharukonArgentinium = new Material.Builder(getMetaItemId(), gthhId("oriharukon_argentinium"))
                 .dust()
                 .ingot()
                 .ore()

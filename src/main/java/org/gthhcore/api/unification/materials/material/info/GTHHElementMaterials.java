@@ -2,9 +2,9 @@ package org.gthhcore.api.unification.materials.material.info;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.api.util.GTUtility.*;
 import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+import static org.gthhcore.api.util.GTHHUtility.*;
 
 import org.gthhcore.api.unification.GTHHElements;
 import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
@@ -17,11 +17,11 @@ import gregtech.api.unification.material.properties.ToolProperty;
 
 public class GTHHElementMaterials {
 
-    private static int startId = 9000;
-    private static int endId = 9499;
+    private static int startId = 0;
+    private static int endId = 999;
 
     public static void register() {
-        Multiversium = new Material.Builder(getMetaItemId(), gregtechId("multiversium"))
+        Multiversium = new Material.Builder(getMetaItemId(), gthhId("multiversium"))
                 .dust()
                 .ingot()
                 .blast(b -> b
@@ -36,7 +36,7 @@ public class GTHHElementMaterials {
                 .build();
 
         // Found on Mercury T3 (IV Tier)
-        Infernorite = new Material.Builder(getMetaItemId(), gregtechId("infernorite"))
+        Infernorite = new Material.Builder(getMetaItemId(), gthhId("infernorite"))
                 .dust()
                 .ingot()
                 .ore(true)
@@ -56,7 +56,7 @@ public class GTHHElementMaterials {
                 .build();
 
         // Found on Asteroids T3 (IV Tier)
-        Crynorium = new Material.Builder(getMetaItemId(), gregtechId("crynorium"))
+        Crynorium = new Material.Builder(getMetaItemId(), gthhId("crynorium"))
                 .dust()
                 .ingot()
                 .ore(true)
@@ -73,7 +73,7 @@ public class GTHHElementMaterials {
                 .color(0x0046FF)
                 .build();
 
-        ElectroMatter = new Material.Builder(getMetaItemId(), gregtechId("electro_matter"))
+        ElectroMatter = new Material.Builder(getMetaItemId(), gthhId("electro_matter"))
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(8000))
@@ -90,7 +90,7 @@ public class GTHHElementMaterials {
                 .color(0xFF99F6)
                 .build();
 
-        MissingError = new Material.Builder(getMetaItemId(), gregtechId("missing_error"))
+        MissingError = new Material.Builder(getMetaItemId(), gthhId("missing_error"))
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(8751))
@@ -107,28 +107,28 @@ public class GTHHElementMaterials {
                 .color(0xFF00C7)
                 .build();
 
-        Protactinium226 = new Material.Builder(getMetaItemId(), gregtechId("protactinium_226"))
+        Protactinium226 = new Material.Builder(getMetaItemId(), gthhId("protactinium_226"))
                 .dust()
                 .color(0xA78B6D)
                 .iconSet(MaterialIconSet.METALLIC)
                 .element(GTHHElements.Pa226)
                 .build();
 
-        Protactinium231 = new Material.Builder(getMetaItemId(), gregtechId("protactinium_231"))
+        Protactinium231 = new Material.Builder(getMetaItemId(), gthhId("protactinium_231"))
                 .dust()
                 .color(0xA57036)
                 .iconSet(MaterialIconSet.METALLIC)
                 .element(GTHHElements.Pa231)
                 .build();
 
-        Neptunium228 = new Material.Builder(getMetaItemId(), gregtechId("neptunium_228"))
+        Neptunium228 = new Material.Builder(getMetaItemId(), gthhId("neptunium_228"))
                 .dust()
                 .color(0x284D7B)
                 .iconSet(MaterialIconSet.METALLIC)
                 .element(GTHHElements.Np226)
                 .build();
 
-        Neptunium237 = new Material.Builder(getMetaItemId(), gregtechId("neptunium_237"))
+        Neptunium237 = new Material.Builder(getMetaItemId(), gthhId("neptunium_237"))
                 .dust()
                 .color(0x073B7A)
                 .iconSet(MaterialIconSet.METALLIC)

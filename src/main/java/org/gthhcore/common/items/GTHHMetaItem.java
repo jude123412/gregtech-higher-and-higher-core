@@ -1,6 +1,5 @@
 package org.gthhcore.common.items;
 
-import static org.gthhcore.api.util.GTHHMods.*;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
 import org.gthhcore.api.GTHHApi;
@@ -12,9 +11,9 @@ import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 
-public class GTHHMetaItem2 extends StandardMetaItem {
+public class GTHHMetaItem extends StandardMetaItem {
 
-    public GTHHMetaItem2() {
+    public GTHHMetaItem() {
         super();
     }
 

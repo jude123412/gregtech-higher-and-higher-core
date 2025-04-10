@@ -4,8 +4,8 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
-import static gregtech.api.util.GTUtility.gregtechId;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
+import static org.gthhcore.api.util.GTHHUtility.gthhId;
 
 import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
 
@@ -16,12 +16,11 @@ import gregtech.api.unification.material.properties.BlastProperty;
 
 public class GTHHFirstDegreeMaterials {
 
-    private static int startId = 10000;
-    private static int endId = 10499;
+    private static int startId = 3000;
+    private static int endId = 3999;
 
     public static void register() {
-        // LV -> EV Materials
-        Cryotheum = new Material.Builder(getMetaItemId(), gregtechId("cryotheum"))
+        Cryotheum = new Material.Builder(getMetaItemId(), gthhId("cryotheum"))
                 .dust()
                 .liquid(new FluidBuilder().temperature(393))
                 .components(Blaze, 2, Redstone, 1, Saltpeter, 1)
@@ -29,7 +28,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        Pyrotheum = new Material.Builder(getMetaItemId(), gregtechId("pyrotheum"))
+        Pyrotheum = new Material.Builder(getMetaItemId(), gthhId("pyrotheum"))
                 .dust()
                 .liquid(new FluidBuilder().temperature(1473))
                 .components(Blaze, 2, Redstone, 1, Sulfur, 1)
@@ -37,7 +36,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        MicaInsulator = new Material.Builder(getMetaItemId(), gregtechId("mica_insulator"))
+        MicaInsulator = new Material.Builder(getMetaItemId(), gthhId("mica_insulator"))
                 .polymer()
                 .dust()
                 .iconSet(FINE)
@@ -45,7 +44,7 @@ public class GTHHFirstDegreeMaterials {
                 .color(0xCC9B28)
                 .build();
 
-        Albite = new Material.Builder(getMetaItemId(), gregtechId("albite"))
+        Albite = new Material.Builder(getMetaItemId(), gthhId("albite"))
                 .dust()
                 .gem()
                 .ore()
@@ -54,7 +53,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(GTHHMaterialIconSet.ALBITE)
                 .build();
 
-        Anorthite = new Material.Builder(getMetaItemId(), gregtechId("Anorthite"))
+        Anorthite = new Material.Builder(getMetaItemId(), gthhId("Anorthite"))
                 .dust()
                 .gem()
                 .ore()
@@ -63,7 +62,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.RUBY)
                 .build();
 
-        Plagioclase = new Material.Builder(getMetaItemId(), gregtechId("plagioclase"))
+        Plagioclase = new Material.Builder(getMetaItemId(), gthhId("plagioclase"))
                 .dust()
                 .gem()
                 .ore()
@@ -72,7 +71,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(GTHHMaterialIconSet.PLAGIOCLASE)
                 .build();
 
-        Pyroxene = new Material.Builder(getMetaItemId(), gregtechId("pyroxene"))
+        Pyroxene = new Material.Builder(getMetaItemId(), gthhId("pyroxene"))
                 .dust()
                 .gem()
                 .ore()
@@ -81,7 +80,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.EMERALD)
                 .build();
 
-        Carbonate = new Material.Builder(getMetaItemId(), gregtechId("carbonate"))
+        Carbonate = new Material.Builder(getMetaItemId(), gthhId("carbonate"))
                 .dust()
                 .ore()
                 .components(Hydrogen, 2, Carbon, 1, Oxygen, 3)
@@ -89,7 +88,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        AmmoniatedSilicate = new Material.Builder(getMetaItemId(), gregtechId("ammoniated_silicate"))
+        AmmoniatedSilicate = new Material.Builder(getMetaItemId(), gthhId("ammoniated_silicate"))
                 .dust()
                 .gem()
                 .ore()
@@ -98,7 +97,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.QUARTZ)
                 .build();
 
-        PreciousMetals = new Material.Builder(getMetaItemId(), gregtechId("precious_metals"))
+        PreciousMetals = new Material.Builder(getMetaItemId(), gthhId("precious_metals"))
                 .dust()
                 .ingot()
                 .ore()
@@ -107,7 +106,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        Cryolite = new Material.Builder(getMetaItemId(), gregtechId("cryolite"))
+        Cryolite = new Material.Builder(getMetaItemId(), gthhId("cryolite"))
                 .dust()
                 .ore()
                 .addOreByproducts(Sodium, Aluminium, PreciousMetals)
@@ -116,7 +115,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        SolarGradeSilicon = new Material.Builder(getMetaItemId(), gregtechId("solar_grade_silicon"))
+        SolarGradeSilicon = new Material.Builder(getMetaItemId(), gthhId("solar_grade_silicon"))
                 .dust()
                 .ingot()
                 .ore()
@@ -129,7 +128,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        SilverGallium = new Material.Builder(getMetaItemId(), gregtechId("silver_gallium"))
+        SilverGallium = new Material.Builder(getMetaItemId(), gthhId("silver_gallium"))
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(2105))
@@ -142,7 +141,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
 
-        Tantaloper = new Material.Builder(getMetaItemId(), gregtechId("tantaloper"))
+        Tantaloper = new Material.Builder(getMetaItemId(), gthhId("tantaloper"))
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(1990))
@@ -154,7 +153,7 @@ public class GTHHFirstDegreeMaterials {
                 .color(0xc3b058)
                 .iconSet(MaterialIconSet.SHINY)
                 .build();
-        Zinvar = new Material.Builder(getMetaItemId(), gregtechId("zinvar"))
+        Zinvar = new Material.Builder(getMetaItemId(), gthhId("zinvar"))
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(1985))
@@ -167,7 +166,7 @@ public class GTHHFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.DULL)
                 .build();
 
-        SterlingPlatinum = new Material.Builder(getMetaItemId(), gregtechId("sterling_platinum"))
+        SterlingPlatinum = new Material.Builder(getMetaItemId(), gthhId("sterling_platinum"))
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(2234))

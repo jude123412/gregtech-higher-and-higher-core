@@ -243,16 +243,72 @@ public class GTHHMaterials {
     public static Material EnrichedLawrencium;
 
     public static void init() {
+        /*
+         * GT: Higher & Higher Material Registry
+         */
+
+        /*
+         * Ranges 0-999
+         * Any Material That is an Element Goes Here
+         */
         GTHHElementMaterials.register();
+
+        /*
+         * Ranges 1000-1999
+         * All Mod Integration Materials Go Here
+         */
         GTHHModIntegrationMaterials.register();
+
+        /*
+         * Ranges 2000-2999
+         * NOT USED YET
+         */
         GTHHFantasyMaterials.register();
+
+        /*
+         * Ranges 3000-3999
+         * LV -> EV Materials
+         */
         GTHHFirstDegreeMaterials.register();
+
+        /*
+         * Ranges 4000-4999
+         * IV -> UV Materials
+         */
         GTHHSecondDegreeMaterials.register();
+
+        /*
+         * Ranges 5000-5999
+         * UHV -> UXV Materials
+         */
         GTHHThirdDegreeMaterials.register();
+
+        /*
+         * Ranges 6000-6999
+         * UXV -> MAX Materials
+         */
         GTHHForthDegreeMaterials.register();
+
+        /*
+         * Ranges 7000-7999
+         * Any Single Fluid Materials Go Here
+         */
         GTHHFluidMaterials.register();
+
+        /*
+         * Ranges 8000-8999
+         * Nuclear Based Materials Go Here
+         */
         GTHHNuclearMaterials.register();
+
+        /*
+         * GT: Higher & Higher MaterialFlagAddition Registry
+         */
         GTHHMaterialFlagAddition.init();
+
+        /*
+         * GT: Higher & Higher OrePrefix Registry
+         */
         GTHHOrePrefix.init();
     }
 }
