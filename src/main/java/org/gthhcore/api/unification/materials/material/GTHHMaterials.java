@@ -122,6 +122,7 @@ public class GTHHMaterials {
     public static Material Bedrockium;
     public static Material Quaintum;
     public static Material ChronosSteel;
+    public static Material NeutroniumSteel;
 
     // Forth Degree Materials
     public static Material TemporallyConstrainedStarMatter;

@@ -23,7 +23,6 @@ public class JEIModule extends IntegrationSubmodule implements IModPlugin {
 
     @Override
     public void register(IModRegistry registry) {
-        String semiFluidMapId = GTValues.MODID + ":" + GTHHRecipeMaps.FISSION_RECIPES.getUnlocalizedName();
-        registry.addRecipeCatalyst(GTHHMetaTileEntities.FISSION_REACTOR.getStackForm(), semiFluidMapId);
+
     }
 }

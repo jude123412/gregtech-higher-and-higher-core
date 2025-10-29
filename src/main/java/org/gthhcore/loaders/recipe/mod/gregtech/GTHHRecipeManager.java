@@ -16,5 +16,6 @@ public class GTHHRecipeManager {
     public static void load() {
         GTHHRecipeHandlerList.register();
         GTHHModRecipeLoader.register();
+        GTHHMetaTileEntityLoader.register();
     }
 }

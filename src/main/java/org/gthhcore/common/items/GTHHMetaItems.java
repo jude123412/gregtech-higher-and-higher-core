@@ -244,7 +244,7 @@ public final class GTHHMetaItems {
 
     public static void init() {
         // GTHH MetaItem Registry : Registers under GregTech Tab with a registry name of meta_item_2
-        GTHHMetaItem metaItem2 = new GTHHMetaItem();
-        metaItem2.setRegistryName("meta_item");
+        GTHHMetaItem metaItem = new GTHHMetaItem();
+        metaItem.setRegistryName("meta_item");
     }
 }

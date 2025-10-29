@@ -32,14 +32,18 @@ import org.gthhcore.common.blocks.GTHHMetaBlocks;
 import org.gthhcore.common.items.GTHHMetaItems;
 import org.gthhcore.common.metatileentities.GTHHMetaTileEntities;
 import org.gthhcore.loaders.GTHHOreDictionaryLoader;
+import org.gthhcore.loaders.recipe.GTHHCraftingComponent;
 import org.gthhcore.loaders.recipe.mod.gregtech.GTHHRecipeManager;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.event.HighTierEvent;
+import gregtech.api.recipes.GTRecipeInputCache;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.MaterialRegistryEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 import gregtech.api.unification.stack.ItemMaterialInfo;
+import gregtech.common.ConfigHolder;
 
 @Mod.EventBusSubscriber(modid = Tags.MODID)
 public class CommonProxy {
@@ -76,6 +80,14 @@ public class CommonProxy {
         registry.register(createItemBlock(GTHH_BLOCK_WIRE_COIL, VariantItemBlock::new));
     }
 
+    @SubscribeEvent(priority = EventPriority.HIGH)
+    public static void initComponents(RegistryEvent.Register<IRecipe> event) {
+        GTHHLog.logger.info("Registering Machine Recipes...");
+        GTRecipeInputCache.enableCache();
+        GTHHCraftingComponent.initializeComponents();
+        MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, GTHHCraftingComponent.class));
+    }
+
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {
         ItemBlock itemBlock = producer.apply(block);
         itemBlock.setRegistryName(Objects.requireNonNull(block.getRegistryName()));
@@ -103,7 +115,7 @@ public class CommonProxy {
         GTHHStoneTypes.galacticraftOres();
     }
 
-    @SubscribeEvent(priority = EventPriority.LOW)
+    @SubscribeEvent
     public static void registerRecipesLow(RegistryEvent.Register<IRecipe> event) {
         GTHHLog.logger.info("Registering ore dictionary...");
         GTHHOreDictionaryLoader.init();
@@ -143,6 +155,17 @@ public class CommonProxy {
     public void onPreLoad() {}
 
     public void onLoad() {}
+
+    @SubscribeEvent(priority = EventPriority.HIGH)
+    public static void forcedHigherTiers(HighTierEvent event) {
+        // Force higher tier content, regardless of the config
+        event.enableHighTier();
+
+        ConfigHolder.machines.enableHighTierSolars = true;
+
+        // Force low quality gems
+        ConfigHolder.recipes.generateLowQualityGems = true;
+    }
 
     public void onPostLoad() {}
 

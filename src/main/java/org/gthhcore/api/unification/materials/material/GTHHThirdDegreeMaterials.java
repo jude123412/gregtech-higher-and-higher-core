@@ -26,6 +26,7 @@ public class GTHHThirdDegreeMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
                 .color(0x00417F)
                 .iconSet(MaterialIconSet.SHINY)
+                .cableProperties(V[UXV], 1, 2048)
                 .build();
 
         BlackPlutonium = new Material.Builder(getMetaItemId(), gthhId("black_plutonium"))
@@ -40,6 +41,7 @@ public class GTHHThirdDegreeMaterials {
                         .blastStats(VA[UEV], GTHHValues.offset(1200))
                         .vacuumStats(VA[UHV]))
                 .iconSet(MaterialIconSet.DULL)
+                .cableProperties(V[UEV], 1, 0)
                 .build();
 
         Bedrockium = new Material.Builder(getMetaItemId(), gthhId("bedrockium"))
@@ -51,9 +53,10 @@ public class GTHHThirdDegreeMaterials {
                 .color(0x191919)
                 .blast(b -> b
                         .temp(9000, BlastProperty.GasTier.LOW)
-                        .blastStats(VA[UEV], GTHHValues.offset(1800))
-                        .vacuumStats(VA[UHV]))
+                        .blastStats(VA[UIV], GTHHValues.offset(1800))
+                        .vacuumStats(VA[UEV]))
                 .iconSet(MaterialIconSet.SHINY)
+                .cableProperties(V[UIV], 1, 512)
                 .build();
 
         Quaintum = new Material.Builder(getMetaItemId(), gthhId("quaintum"))
@@ -63,6 +66,7 @@ public class GTHHThirdDegreeMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
                 .color(0x194119)
                 .iconSet(MaterialIconSet.SHINY)
+                .cableProperties(V[UIV], 16, 512)
                 .build();
 
         ChronosSteel = new Material.Builder(getMetaItemId(), gthhId("chronos_steel"))
@@ -71,6 +75,16 @@ public class GTHHThirdDegreeMaterials {
                 .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
                 .color(0x5B3F5B)
                 .iconSet(MaterialIconSet.METALLIC)
+                .cableProperties(V[UXV], 16, 2048)
+                .build();
+
+        NeutroniumSteel = new Material.Builder(getMetaItemId(), gthhId("neutronium_steel"))
+                .dust()
+                .ingot()
+                .flags(GENERATE_ALL_METAL, NO_SMELTING, GENERATE_COMPRESSED)
+                .color(0x8E8E8E)
+                .iconSet(MaterialIconSet.METALLIC)
+                .cableProperties(V[UHV], 2, 128)
                 .build();
     }
 

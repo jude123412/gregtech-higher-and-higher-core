@@ -30,20 +30,33 @@ public class GTHHUtility {
      */
     public static @NotNull ItemStack getItemStackFromString(String modId, String itemId, int amount, int metaId) {
         ResourceLocation location = new ResourceLocation(modId, itemId);
-        if(ForgeRegistries.ITEMS.containsKey(location)) {
+        if (ForgeRegistries.ITEMS.containsKey(location)) {
             return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), amount, metaId);
         } else {
-            GTHHLog.logger.error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
+            GTHHLog.logger
+                    .error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
             return new ItemStack(Blocks.AIR);
         }
     }
 
     public static @NotNull ItemStack getItemStackFromString(String modId, String itemId, int metaId) {
         ResourceLocation location = new ResourceLocation(modId, itemId);
-        if(ForgeRegistries.ITEMS.containsKey(location)) {
+        if (ForgeRegistries.ITEMS.containsKey(location)) {
             return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), 1, metaId);
         } else {
-            GTHHLog.logger.error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
+            GTHHLog.logger
+                    .error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
+            return new ItemStack(Blocks.AIR);
+        }
+    }
+
+    public static @NotNull ItemStack getItemStackFromString(String modId, String itemId) {
+        ResourceLocation location = new ResourceLocation(modId, itemId);
+        if (ForgeRegistries.ITEMS.containsKey(location)) {
+            return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), 1);
+        } else {
+            GTHHLog.logger
+                    .error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId);
             return new ItemStack(Blocks.AIR);
         }
     }
@@ -58,17 +71,18 @@ public class GTHHUtility {
      */
     public static @NotNull Item getItemFromString(String modId, String itemId, int metaId) {
         ResourceLocation location = new ResourceLocation(modId, itemId);
-        if(ForgeRegistries.ITEMS.containsKey(location)) {
+        if (ForgeRegistries.ITEMS.containsKey(location)) {
             return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), 1, metaId).getItem();
         } else {
-            GTHHLog.logger.error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
+            GTHHLog.logger
+                    .error("Unable to find item from modId, itemId or metaId " + modId + ":" + itemId + ":" + metaId);
             return new ItemStack(Blocks.AIR).getItem();
         }
     }
 
     public static @NotNull Item getItemFromString(String modId, String itemId) {
         ResourceLocation location = new ResourceLocation(modId, itemId);
-        if(ForgeRegistries.ITEMS.containsKey(location)) {
+        if (ForgeRegistries.ITEMS.containsKey(location)) {
             return new ItemStack(Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(location)), 1).getItem();
         } else {
             GTHHLog.logger.error("Unable to find item from modId or itemId " + modId + ":" + itemId);

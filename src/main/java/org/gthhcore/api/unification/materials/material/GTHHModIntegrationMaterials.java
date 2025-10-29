@@ -110,7 +110,7 @@ public class GTHHModIntegrationMaterials {
                 .flags(GENERATE_ALL_METAL)
                 .iconSet(GTHHMaterialIconSet.INFINITY)
                 .element(GTHHElements.Infinity)
-                .cableProperties(V[MAX], 8192, (int) V[ZPM])
+                .cableProperties(V[MAX], 8192, 0, true)
                 .build();
 
         // Draconic Evolution

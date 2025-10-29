@@ -32,7 +32,6 @@ public class GTHHMaterialRecipeHandler {
     static void register() {
         dust.addProcessingHandler(PropertyKey.BLAST, GTHHMaterialRecipeHandler::processEBFRecipe);
         dust.addProcessingHandler(PropertyKey.BLAST, GTHHMaterialRecipeHandler::processRawMaterial);
-        dust.addProcessingHandler(PropertyKey.DUST, GTHHMaterialRecipeHandler::processFuelRod);
 
         plate.addProcessingHandler(PropertyKey.DUST, GTHHMaterialRecipeHandler::processCompressed);
     }
@@ -449,61 +448,6 @@ public class GTHHMaterialRecipeHandler {
                     .EUt(energy)
                     .buildAndRegister();
 
-        }
-    }
-
-    static void processFuelRod(OrePrefix dustPrefix, Material material, DustProperty property) {
-        if (material.hasFlag(GTHHMaterialFlags.GENERATE_ROD_FUEL)) {
-            CANNER_RECIPES.recipeBuilder()
-                    .input(dustPrefix, material, 4)
-                    .input(FUEL_ROD)
-                    .output(rodFuelSingle, material)
-                    .duration(GTHHValues.second * 20)
-                    .EUt(VA[LV])
-                    .buildAndRegister();
-
-            ASSEMBLER_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 4).EUt(VA[LV])
-                    .input(rodFuelSingle, material, 2)
-                    .input(stickLong, Steel, 2)
-                    .output(rodFuelDual, material)
-                    .circuitMeta(2)
-                    .buildAndRegister();
-
-            ASSEMBLER_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 4).EUt(VA[LV])
-                    .input(rodFuelSingle, material, 2)
-                    .input(stickLong, Steel, 4)
-                    .output(rodFuelQuad, material)
-                    .circuitMeta(4)
-                    .buildAndRegister();
-
-            ASSEMBLER_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 4).EUt(VA[LV])
-                    .input(rodFuelDual, material, 2)
-                    .input(stickLong, Steel, 2)
-                    .output(rodFuelQuad, material)
-                    .circuitMeta(4)
-                    .buildAndRegister();
-
-            // Auto-generated Breeder Recipes
-            BREEDER_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 600).EUt(VA[LuV])
-                    .input(rodFuelSingle, material)
-                    .output(rodDepletedSingle, material)
-                    .buildAndRegister();
-
-            BREEDER_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 1200).EUt(VA[LuV])
-                    .input(rodFuelDual, material)
-                    .output(rodDepletedDual, material)
-                    .buildAndRegister();
-
-            BREEDER_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 2400).EUt(VA[LuV])
-                    .input(rodFuelQuad, material)
-                    .output(rodDepletedQuad, material)
-                    .buildAndRegister();
         }
     }
 
