@@ -7,6 +7,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static org.gthhcore.api.recipes.GTHHRecipeMaps.*;
 import static org.gthhcore.api.unification.ore.GTHHOrePrefix.*;
+import static org.gthhcore.api.util.GTHHValues.second;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
 import net.minecraft.item.ItemStack;
@@ -454,7 +455,7 @@ public class GTHHMaterialRecipeHandler {
     static void processCompressed(OrePrefix platePrefix, Material material, DustProperty property) {
         if (material.hasFlag(GTHHMaterialFlags.GENERATE_COMPRESSED) && material.hasProperty(PropertyKey.DUST)) {
             IMPLOSION_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 60).EUt(VA[LV])
+                    .duration(second(60)).EUt(VA[LV])
                     .circuitMeta(3)
                     .input(platePrefix, material, 3)
                     .output(compressed, material)
@@ -463,7 +464,7 @@ public class GTHHMaterialRecipeHandler {
                     .buildAndRegister();
 
             IMPLOSION_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 60).EUt(VA[LV])
+                    .duration(second(60)).EUt(VA[LV])
                     .circuitMeta(3)
                     .input(platePrefix, material, 3)
                     .output(compressed, material)
@@ -472,7 +473,7 @@ public class GTHHMaterialRecipeHandler {
                     .buildAndRegister();
 
             IMPLOSION_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 60).EUt(VA[LV])
+                    .duration(second(60)).EUt(VA[LV])
                     .circuitMeta(3)
                     .input(platePrefix, material, 3)
                     .output(compressed, material)
@@ -481,7 +482,7 @@ public class GTHHMaterialRecipeHandler {
                     .buildAndRegister();
 
             IMPLOSION_RECIPES.recipeBuilder()
-                    .duration(GTHHValues.second * 60).EUt(VA[LV])
+                    .duration(second(60)).EUt(VA[LV])
                     .circuitMeta(3)
                     .input(platePrefix, material, 3)
                     .output(compressed, material)

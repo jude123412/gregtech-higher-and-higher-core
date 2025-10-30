@@ -1,11 +1,13 @@
 package org.gthhcore.api.unification.material.materials;
 
+import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_FRAME;
 import static gregtech.api.unification.material.info.MaterialFlags.NO_SMELTING;
 import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.GENERATE_HOT;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.store.FluidStorageKey;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialFlag;
 import gregtech.api.unification.material.properties.*;
 
 public class GTHHMaterialFlagHelper {
@@ -91,6 +93,12 @@ public class GTHHMaterialFlagHelper {
     public static void setupIngotProperty(Material material) {
         if (material.getProperty(PropertyKey.INGOT) == null) {
             material.setProperty(PropertyKey.INGOT, new IngotProperty());
+        }
+    }
+
+    public static void setupMaterialFlag(Material[] materialArray, MaterialFlag flag) {
+        for (Material material : materialArray) {
+            material.addFlags(flag);
         }
     }
 }

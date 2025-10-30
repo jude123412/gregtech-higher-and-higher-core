@@ -13,10 +13,6 @@ public class GTHHMaterialFlags {
             .requireProps(PropertyKey.INGOT)
             .build();
 
-    public static final MaterialFlag GENERATE_ROD_FUEL = new MaterialFlag.Builder("generate_rod_fuel")
-            .requireProps(PropertyKey.DUST)
-            .build();
-
     public static final MaterialFlag GENERATE_COMPRESSED = new MaterialFlag.Builder("generate_compressed")
             .requireProps(PropertyKey.DUST)
             .build();

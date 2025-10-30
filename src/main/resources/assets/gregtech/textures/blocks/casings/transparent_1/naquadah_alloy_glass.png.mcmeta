@@ -1,0 +1,13 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type": "CTM",
+        "layer": "CUTOUT",
+        "textures": [
+           "gregtech:textures/blocks/casings/transparent_0/naquadah_alloy_glass"
+        ],
+        "extra": {
+            "connect_inside": true
+        }
+    }
+}

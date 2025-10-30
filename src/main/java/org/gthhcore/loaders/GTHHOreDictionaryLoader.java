@@ -11,9 +11,6 @@ import org.gthhcore.api.util.GTHHUtility;
 import appeng.core.Api;
 import appeng.items.materials.MaterialType;
 import dev.beecube31.crazyae2.core.CrazyAE;
-import gregtech.api.unification.OreDictUnifier;
-import gregtech.common.blocks.BlockGlassCasing;
-import gregtech.common.blocks.MetaBlocks;
 
 public class GTHHOreDictionaryLoader {
 
@@ -104,21 +101,6 @@ public class GTHHOreDictionaryLoader {
                 OreDictionary.registerOre("compressedPlatinum",
                         GTHHUtility.getItemStackFromString("extraplanets", "tier11_items", 6));
             }
-        }
-
-        // Glass Tiers
-        OreDictionary.registerOre("blockGlassTierHV",
-                OreDictUnifier.get("blockGlass"));
-
-        OreDictionary.registerOre("blockGlassTierEV",
-                MetaBlocks.TRANSPARENT_CASING.getItemVariant(
-                        BlockGlassCasing.CasingType.TEMPERED_GLASS));
-
-        if (Botania.isModLoaded()) {
-            OreDictionary.registerOre("blockGlassEV",
-                    GTHHUtility.getItemStackFromString("botania", "managlass"));
-            OreDictionary.registerOre("blockGlassIV",
-                    GTHHUtility.getItemStackFromString("botania", "elfglass"));
         }
     }
 }

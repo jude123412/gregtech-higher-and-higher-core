@@ -11,25 +11,39 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import org.gthhcore.Tags;
+import org.gthhcore.common.blocks.transparent.GlassCasing0;
+import org.gthhcore.common.blocks.transparent.GlassCasing1;
 
 public class GTHHMetaBlocks {
 
     private GTHHMetaBlocks() {}
 
-    public static GTHHMultiblockCasing GTHH_MULTIBLOCK_CASING;
-    public static GTHHBlockWireCoil GTHH_BLOCK_WIRE_COIL;
+    public static GTHHMultiblockCasing MULTIBLOCK_CASING_0;
+
+    public static GlassCasing0 TRANSPARENT_CASING_0;
+    public static GlassCasing1 TRANSPARENT_CASING_1;
+
+    public static GTHHBlockWireCoil WIRE_COIL_0;
 
     public static void init() {
-        GTHH_MULTIBLOCK_CASING = new GTHHMultiblockCasing();
-        GTHH_MULTIBLOCK_CASING.setRegistryName(Tags.MODID, "multiblock_casing_0");
+        MULTIBLOCK_CASING_0 = new GTHHMultiblockCasing();
+        MULTIBLOCK_CASING_0.setRegistryName(Tags.MODID, "multiblock_casing_0");
 
-        GTHH_BLOCK_WIRE_COIL = new GTHHBlockWireCoil();
-        GTHH_BLOCK_WIRE_COIL.setRegistryName(Tags.MODID, "wire_coil_0");
+        TRANSPARENT_CASING_0 = new GlassCasing0();
+        TRANSPARENT_CASING_0.setRegistryName("transparent_casing_0");
+
+        TRANSPARENT_CASING_1 = new GlassCasing1();
+        TRANSPARENT_CASING_1.setRegistryName("transparent_casing_1");
+
+        WIRE_COIL_0 = new GTHHBlockWireCoil();
+        WIRE_COIL_0.setRegistryName(Tags.MODID, "wire_coil_0");
     }
 
     public static void registerItemModels() {
-        registerItemModel(GTHH_MULTIBLOCK_CASING);
-        GTHH_BLOCK_WIRE_COIL.onModelRegister();
+        registerItemModel(MULTIBLOCK_CASING_0);
+
+        TRANSPARENT_CASING_0.onModelRegister();
+        WIRE_COIL_0.onModelRegister();
     }
 
     @SideOnly(Side.CLIENT)

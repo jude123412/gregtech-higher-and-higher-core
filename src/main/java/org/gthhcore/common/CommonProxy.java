@@ -38,7 +38,6 @@ import org.gthhcore.loaders.recipe.mod.gregtech.GTHHRecipeManager;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.event.HighTierEvent;
-import gregtech.api.recipes.GTRecipeInputCache;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.MaterialRegistryEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
@@ -63,11 +62,15 @@ public class CommonProxy {
         IForgeRegistry<Block> registry = event.getRegistry();
         GTHHMetaBlocks.init();
 
-        registry.register(GTHH_MULTIBLOCK_CASING);
-        registry.register(GTHH_BLOCK_WIRE_COIL);
+        registry.register(MULTIBLOCK_CASING_0);
+
+        registry.register(TRANSPARENT_CASING_0);
+        registry.register(TRANSPARENT_CASING_1);
+
+        registry.register(WIRE_COIL_0);
 
         for (GTHHBlockWireCoil.GTHHCoilType type : GTHHBlockWireCoil.GTHHCoilType.values()) {
-            HEATING_COILS.put(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getState(type), type);
+            HEATING_COILS.put(GTHHMetaBlocks.WIRE_COIL_0.getState(type), type);
         }
     }
 
@@ -76,16 +79,12 @@ public class CommonProxy {
         GTHHLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
 
-        registry.register(createItemBlock(GTHH_MULTIBLOCK_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GTHH_BLOCK_WIRE_COIL, VariantItemBlock::new));
-    }
+        registry.register(createItemBlock(MULTIBLOCK_CASING_0, VariantItemBlock::new));
 
-    @SubscribeEvent(priority = EventPriority.HIGH)
-    public static void initComponents(RegistryEvent.Register<IRecipe> event) {
-        GTHHLog.logger.info("Registering Machine Recipes...");
-        GTRecipeInputCache.enableCache();
-        GTHHCraftingComponent.initializeComponents();
-        MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, GTHHCraftingComponent.class));
+        registry.register(createItemBlock(TRANSPARENT_CASING_0, VariantItemBlock::new));
+        registry.register(createItemBlock(TRANSPARENT_CASING_1, VariantItemBlock::new));
+
+        registry.register(createItemBlock(WIRE_COIL_0, VariantItemBlock::new));
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {
@@ -115,15 +114,17 @@ public class CommonProxy {
         GTHHStoneTypes.galacticraftOres();
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerRecipesLow(RegistryEvent.Register<IRecipe> event) {
-        GTHHLog.logger.info("Registering ore dictionary...");
+        GTHHLog.logger.info("Registering ore dictionaries...");
         GTHHOreDictionaryLoader.init();
+
+        MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, GTHHOreDictionaryLoader.class));
 
         GTHHLog.logger.info("Registering early recipes...");
         MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, ItemMaterialInfo.class));
 
-        GTHHRecipeManager.preLoad();
+        GTHHRecipeManager.postLoad();
     }
 
     @SubscribeEvent
@@ -132,6 +133,16 @@ public class CommonProxy {
         MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, ItemMaterialInfo.class));
 
         GTHHRecipeManager.load();
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGH)
+    public static void initComponents(RegistryEvent.Register<IRecipe> event) {
+        GTHHLog.logger.info("Initializing Glass Tiers...");
+        GTHHCraftingComponent.initializeGlassTiers();
+
+        GTHHLog.logger.info("Registering Machine Recipes...");
+        GTHHCraftingComponent.initializeComponents();
+        MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, GTHHCraftingComponent.class));
     }
 
     @SubscribeEvent

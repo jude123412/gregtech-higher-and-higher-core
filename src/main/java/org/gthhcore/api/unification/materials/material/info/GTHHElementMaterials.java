@@ -28,9 +28,7 @@ public class GTHHElementMaterials {
                         .temp(10000, GasTier.LOW)
                         .blastStats(VA[UXV], 32000)
                         .vacuumStats(VA[UIV]))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW,
-                        GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING,
-                        GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
+                .flags(GENERATE_ALL_METAL)
                 .element(GTHHElements.Multiversium)
                 .color(0x000084)
                 .build();
@@ -61,9 +59,7 @@ public class GTHHElementMaterials {
                 .ingot()
                 .ore(true)
                 .liquid(new FluidBuilder().temperature(103))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW,
-                        GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING,
-                        GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
+                .flags(GENERATE_ALL_METAL)
                 .blast(b -> b
                         .temp(7015, GasTier.LOW)
                         .blastStats(VA[LuV], 2560)
@@ -77,9 +73,7 @@ public class GTHHElementMaterials {
                 .dust()
                 .ingot()
                 .liquid(new FluidBuilder().temperature(8000))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW,
-                        GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING,
-                        GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
+                .flags(GENERATE_ALL_METAL)
                 .blast(b -> b
                         .temp(11550, GasTier.LOW)
                         .blastStats(VA[UEV], 9950)
@@ -91,48 +85,7 @@ public class GTHHElementMaterials {
                 .build();
 
         MissingError = new Material.Builder(getMetaItemId(), gthhId("missing_error"))
-                .dust()
-                .ingot()
-                .liquid(new FluidBuilder().temperature(8751))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW,
-                        GENERATE_FRAME, GENERATE_GEAR, GENERATE_LONG_ROD, GENERATE_FOIL, GENERATE_RING, GENERATE_SPRING,
-                        GENERATE_SPRING_SMALL, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_ROTOR, GENERATE_ROUND)
-                .blast(b -> b
-                        .temp(8751, GasTier.LOW)
-                        .blastStats(VA[UEV], 9950)
-                        .vacuumStats(VA[UHV]))
-                .iconSet(GTHHMaterialIconSet.MISSINGERROR)
                 .element(GTHHElements.MissingError)
-                .cableProperties(V[UXV], 4, (int) V[ZPM])
-                .color(0xFF00C7)
-                .build();
-
-        Protactinium226 = new Material.Builder(getMetaItemId(), gthhId("protactinium_226"))
-                .dust()
-                .color(0xA78B6D)
-                .iconSet(MaterialIconSet.METALLIC)
-                .element(GTHHElements.Pa226)
-                .build();
-
-        Protactinium231 = new Material.Builder(getMetaItemId(), gthhId("protactinium_231"))
-                .dust()
-                .color(0xA57036)
-                .iconSet(MaterialIconSet.METALLIC)
-                .element(GTHHElements.Pa231)
-                .build();
-
-        Neptunium228 = new Material.Builder(getMetaItemId(), gthhId("neptunium_228"))
-                .dust()
-                .color(0x284D7B)
-                .iconSet(MaterialIconSet.METALLIC)
-                .element(GTHHElements.Np226)
-                .build();
-
-        Neptunium237 = new Material.Builder(getMetaItemId(), gthhId("neptunium_237"))
-                .dust()
-                .color(0x073B7A)
-                .iconSet(MaterialIconSet.METALLIC)
-                .element(GTHHElements.Np237)
                 .build();
     }
 

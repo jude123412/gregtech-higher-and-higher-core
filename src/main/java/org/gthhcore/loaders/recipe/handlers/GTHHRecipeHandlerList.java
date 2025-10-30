@@ -4,7 +4,7 @@ import static org.gthhcore.api.util.GTHHMods.*;
 
 public class GTHHRecipeHandlerList {
 
-    public static void registerEarly() {}
+    public static void registerLate() {}
 
     public static void register() {
         GTHHMaterialRecipeHandler.register();

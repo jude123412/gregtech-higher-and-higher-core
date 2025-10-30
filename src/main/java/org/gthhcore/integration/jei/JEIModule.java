@@ -1,8 +1,5 @@
 package org.gthhcore.integration.jei;
 
-import org.gthhcore.api.recipes.GTHHRecipeMaps;
-import org.gthhcore.common.metatileentities.GTHHMetaTileEntities;
-
 import gregtech.api.GTValues;
 import gregtech.api.modules.GregTechModule;
 import gregtech.api.util.Mods;
@@ -22,7 +19,5 @@ import mezz.jei.api.JEIPlugin;
 public class JEIModule extends IntegrationSubmodule implements IModPlugin {
 
     @Override
-    public void register(IModRegistry registry) {
-
-    }
+    public void register(IModRegistry registry) {}
 }

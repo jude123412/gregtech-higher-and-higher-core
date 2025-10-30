@@ -65,10 +65,6 @@ public class GTHHMaterials {
     public static Material Crynorium;
     public static Material ElectroMatter;
     public static Material MissingError;
-    public static Material Protactinium226;
-    public static Material Protactinium231;
-    public static Material Neptunium228;
-    public static Material Neptunium237;
 
     // Fluid Materials
     public static Material DirtyPreciousMetalSolution;
@@ -229,19 +225,6 @@ public class GTHHMaterials {
     public static Material DarkIron;
 
     // Nuclear Materials
-    public static Material EnrichedProtactinium;
-    public static Material EnrichedUranium;
-    public static Material EnrichedNeptunium;
-    public static Material EnrichedPlutonium;
-    public static Material EnrichedAmericium;
-    public static Material EnrichedCurium;
-    public static Material EnrichedBerkelium;
-    public static Material EnrichedCalifornium;
-    public static Material EnrichedEinsteinium;
-    public static Material EnrichedFermium;
-    public static Material EnrichedMendelevium;
-    public static Material EnrichedNobelium;
-    public static Material EnrichedLawrencium;
 
     public static void init() {
         /*

@@ -1,0 +1,34 @@
+{
+    "forge_marker": 1,
+        "variants": {
+        "active=false,variant=naquadah_alloy_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/naquadah_alloy_glass"
+            }
+        },
+        "active=true,variant=naquadah_alloy_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/naquadah_alloy_glass"
+            }
+        },
+        "active=false,variant=darmstadtium_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/darmstadtium_glass"
+            }
+        },
+        "active=true,variant=darmstadtium_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/darmstadtium_glass"
+            }
+        }
+        
+    }
+}

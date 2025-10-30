@@ -10,7 +10,9 @@ public class GTHHValues {
      * <p/>
      * S Is for Seconds.
      */
-    public static final int second = 20;
+    public static int second(int second) {
+        return second * 20;
+    }
 
     /**
      * For Offset Recipe Duration time Use O and supply a time in seconds
@@ -18,6 +20,6 @@ public class GTHHValues {
      * O Is for offset-Seconds. The offset is to make the recipe duration more random
      */
     public static int offset(int time) {
-        return (int) Math.round(160 * Math.sqrt(time * second));
+        return (int) Math.round(160 * Math.sqrt(time * second(time)));
     }
 }

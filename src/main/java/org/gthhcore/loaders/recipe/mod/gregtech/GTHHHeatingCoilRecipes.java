@@ -132,7 +132,7 @@ public class GTHHHeatingCoilRecipes {
                 .input(wireGtDouble, HSSS, 8)
                 .input(MICA_INSULATOR_FOIL, 48)
                 .fluidInputs(HSSG.getFluid(L))
-                .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.HSS_S))
+                .outputs(GTHHMetaBlocks.WIRE_COIL_0.getItemVariant(GTHHCoilType.HSS_S))
                 .buildAndRegister();
 
         // LuV
@@ -150,7 +150,7 @@ public class GTHHHeatingCoilRecipes {
                 .input(wireGtDouble, NaquadahAlloy, 8)
                 .input(MICA_INSULATOR_FOIL, 64)
                 .fluidInputs(Naquadah.getFluid(L))
-                .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.NAQUADAH_ALLOY))
+                .outputs(GTHHMetaBlocks.WIRE_COIL_0.getItemVariant(GTHHCoilType.NAQUADAH_ALLOY))
                 .buildAndRegister();
 
         // ZPM Coil
@@ -170,7 +170,7 @@ public class GTHHHeatingCoilRecipes {
                 .input(MICA_INSULATOR_FOIL, 64)
                 .input(MICA_INSULATOR_FOIL, 32)
                 .fluidInputs(Trinium.getFluid(L))
-                .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.AWAKENED_DRACONIUM))
+                .outputs(GTHHMetaBlocks.WIRE_COIL_0.getItemVariant(GTHHCoilType.AWAKENED_DRACONIUM))
                 .buildAndRegister();
 
         // UV Coil
@@ -195,7 +195,7 @@ public class GTHHHeatingCoilRecipes {
                 .fluidInputs(SolderingAlloy.getFluid(L * 32))
                 .fluidInputs(SlimeSolder.getFluid(L * 16))
                 .fluidInputs(Polybenzimidazole.getFluid(L * 8))
-                .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.INFINITY))
+                .outputs(GTHHMetaBlocks.WIRE_COIL_0.getItemVariant(GTHHCoilType.INFINITY))
                 .stationResearch(b -> b
                         .researchStack(MetaBlocks.WIRE_COIL.getItemVariant(CoilType.TRITANIUM))
                         .CWUt(2048)
@@ -203,55 +203,53 @@ public class GTHHHeatingCoilRecipes {
                 .EUt(VA[UHV]).duration(2000).buildAndRegister();
 
         // UEV Coil
-        if (EternalSingularity.isModLoaded()) {
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(circuit, MarkerMaterials.Tier.UEV, 1)
-                    .input(wireGtDouble, Infinity, 8)
-                    .input(screw, Infinity, 8)
-                    .input(plateDouble, Infinity, 8)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 1)
-                    .fluidInputs(Neutronium.getFluid(L * 64))
-                    .fluidInputs(ElectroMatter.getFluid(L * 16))
-                    .fluidInputs(Polybenzimidazole.getFluid(L * 16))
-                    .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.ETERNAL))
-                    .stationResearch(b -> b
-                            .researchStack(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.INFINITY))
-                            .CWUt(2048)
-                            .EUt(VA[UV]))
-                    .EUt(VA[UHV]).duration(2000).buildAndRegister();
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.UEV, 1)
+                .input(wireGtDouble, Infinity, 8)
+                .input(screw, Infinity, 8)
+                .input(plateDouble, Infinity, 8)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 1)
+                .fluidInputs(Neutronium.getFluid(L * 64))
+                .fluidInputs(ElectroMatter.getFluid(L * 16))
+                .fluidInputs(Polybenzimidazole.getFluid(L * 16))
+                .outputs(GTHHMetaBlocks.WIRE_COIL_0.getItemVariant(GTHHCoilType.ETERNAL))
+                .stationResearch(b -> b
+                        .researchStack(GTHHMetaBlocks.WIRE_COIL_0.getItemVariant(GTHHCoilType.INFINITY))
+                        .CWUt(2048)
+                        .EUt(VA[UV]))
+                .EUt(VA[UHV]).duration(2000).buildAndRegister();
 
-            // UIV Coil
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(circuit, MarkerMaterials.Tier.UIV, 1)
-                    .input(wireGtDouble, Infinity, 8)
-                    .input(screw, Infinity, 8)
-                    .input(plateDouble, Infinity, 8)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(MICA_INSULATOR_FOIL, 64)
-                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
-                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
-                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
-                    .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
-                    .fluidInputs(Neutronium.getFluid(L * 128))
-                    .fluidInputs(SolderingAlloy.getFluid(L * 64))
-                    .fluidInputs(ElectroMatter.getFluid(L * 32))
-                    .fluidInputs(Polybenzimidazole.getFluid(L * 32))
-                    .outputs(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.TEMPORAL))
-                    .stationResearch(b -> b
-                            .researchStack(GTHHMetaBlocks.GTHH_BLOCK_WIRE_COIL.getItemVariant(GTHHCoilType.ETERNAL))
-                            .CWUt(2048)
-                            .EUt(VA[UV]))
-                    .EUt(VA[UHV]).duration(2000).buildAndRegister();
-        }
+        // UIV Coil
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.UIV, 1)
+                .input(wireGtDouble, Infinity, 8)
+                .input(screw, Infinity, 8)
+                .input(plateDouble, Infinity, 8)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(MICA_INSULATOR_FOIL, 64)
+                .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
+                .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
+                .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
+                .input(GTHHUtility.getItemFromString("eternalsingularity", "eternal_singularity"), 4)
+                .fluidInputs(Neutronium.getFluid(L * 128))
+                .fluidInputs(SolderingAlloy.getFluid(L * 64))
+                .fluidInputs(ElectroMatter.getFluid(L * 32))
+                .fluidInputs(Polybenzimidazole.getFluid(L * 32))
+                .outputs(GTHHMetaBlocks.WIRE_COIL_0.getItemVariant(GTHHCoilType.TEMPORAL))
+                .stationResearch(b -> b
+                        .researchStack(GTHHMetaBlocks.WIRE_COIL_0.getItemVariant(GTHHCoilType.ETERNAL))
+                        .CWUt(2048)
+                        .EUt(VA[UV]))
+                .EUt(VA[UHV]).duration(2000).buildAndRegister();
     }
 }

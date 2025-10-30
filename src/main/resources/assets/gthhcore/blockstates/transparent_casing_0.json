@@ -1,0 +1,117 @@
+{
+    "forge_marker": 1,
+        "variants": {
+        "active=false,variant=bronze_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/bronze_glass"
+            }
+        },
+        "active=true,variant=bronze_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/bronze_glass"
+            }
+        },
+        "active=false,variant=wrought_iron_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/wrought_iron_glass"
+            }
+        },
+        "active=true,variant=wrought_iron_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/wrought_iron_glass"
+            }
+        },
+        "active=false,variant=steel_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/steel_glass"
+            }
+        },
+        "active=true,variant=steel_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/steel_glass"
+            }
+        },
+        "active=false,variant=aluminium_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/aluminium_glass"
+            }
+        },
+        "active=true,variant=aluminium_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/aluminium_glass"
+            }
+        },
+        "active=false,variant=stainless_steel_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/stainless_steel_glass"
+            }
+        },
+        "active=true,variant=stainless_steel_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/stainless_steel_glass"
+            }
+        },
+        "active=false,variant=titanium_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/titanium_glass"
+            }
+        },
+        "active=true,variant=titanium_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/titanium_glass"
+            }
+        },
+        "active=false,variant=tungstensteel_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/tungstensteel_glass"
+            }
+        },
+        "active=true,variant=tungstensteel_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/tungstensteel_glass"
+            }
+        },
+        "active=false,variant=rhodium_plated_palladium_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/rhodium_plated_palladium_glass"
+            }
+        },
+        "active=true,variant=rhodium_plated_palladium_glass": {
+            "model": "minecraft:cube_all",
+            "ambientocclusion": false,
+            "textures": {
+                "all": "gregtech:blocks/casings/transparent_0/rhodium_plated_palladium_glass"
+            }
+        }
+    }
+}

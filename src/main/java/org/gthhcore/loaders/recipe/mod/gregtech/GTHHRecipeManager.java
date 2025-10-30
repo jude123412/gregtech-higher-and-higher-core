@@ -7,15 +7,15 @@ public class GTHHRecipeManager {
 
     private GTHHRecipeManager() {}
 
-    public static void preLoad() {
-        GTHHMachineRecipeLoader.registerEarly();
-        GTHHModRecipeLoader.registerEarly();
-        GTHHRecipeHandlerList.registerEarly();
-    }
-
     public static void load() {
         GTHHRecipeHandlerList.register();
         GTHHModRecipeLoader.register();
         GTHHMetaTileEntityLoader.register();
+    }
+
+    public static void postLoad() {
+        GTHHMachineRecipeLoader.registerLate();
+        GTHHModRecipeLoader.registerLate();
+        GTHHRecipeHandlerList.registerLate();
     }
 }

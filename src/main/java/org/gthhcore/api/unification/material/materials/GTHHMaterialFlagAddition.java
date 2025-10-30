@@ -8,12 +8,16 @@ import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.*;
 import static org.gthhcore.api.unification.material.materials.GTHHMaterialFlagHelper.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 
+import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.info.MaterialFlag;
 import org.gthhcore.api.util.GTHHLog;
 import org.gthhcore.api.util.GTHHValues;
 
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
+
+import java.util.ArrayList;
 
 public class GTHHMaterialFlagAddition {
 
@@ -96,58 +100,70 @@ public class GTHHMaterialFlagAddition {
         orePropBasalticMineralSand.setOreByProducts(Basalt, Magnetite);
         orePropBasalticMineralSand.setSeparatedInto(PreciousMetals);
 
-        GTHHLog.logger.info("Changing Material Flags");
         // Material Flag Addition
-        Aluminium.addFlags(GENERATE_RAW);
-        Neutronium.addFlags(GENERATE_RAW);
+        GTHHLog.logger.info("Changing Material Flags");
         Oganesson.setMaterialIconSet(MaterialIconSet.FLUID);
+
         HSSS.setProperty(PropertyKey.WIRE, new WireProperties((int) V[ZPM], 4, 8));
 
-        // Fuel Rod Flags
-        Thorium.addFlags(GENERATE_ROD_FUEL);
-        Naquadah.addFlags(GENERATE_ROD_FUEL);
-        NaquadahEnriched.addFlags(GENERATE_ROD_FUEL);
-        Naquadria.addFlags(GENERATE_ROD_FUEL);
-        Americium.addFlags(GENERATE_ROD_FUEL);
-
-        // Compressed Flags
-        Copper.addFlags(GENERATE_COMPRESSED);
-        Tin.addFlags(GENERATE_COMPRESSED);
-        Aluminium.addFlags(GENERATE_COMPRESSED);
-        Steel.addFlags(GENERATE_COMPRESSED);
-        Bronze.addFlags(GENERATE_COMPRESSED);
-        Iron.addFlags(GENERATE_COMPRESSED);
-        Titanium.addFlags(GENERATE_COMPRESSED);
-        Mercury.addFlags(GENERATE_COMPRESSED);
-        Carbon.addFlags(GENERATE_COMPRESSED);
-        Palladium.addFlags(GENERATE_COMPRESSED);
-        Nickel.addFlags(GENERATE_COMPRESSED);
-        Magnesium.addFlags(GENERATE_COMPRESSED);
-        Zinc.addFlags(GENERATE_COMPRESSED);
-        Tungsten.addFlags(GENERATE_COMPRESSED);
-        Platinum.addFlags(GENERATE_COMPRESSED);
-        StainlessSteel.addFlags(GENERATE_COMPRESSED);
-        Titanium.addFlags(GENERATE_COMPRESSED);
-        TungstenSteel.addFlags(GENERATE_COMPRESSED);
-        RhodiumPlatedPalladium.addFlags(GENERATE_COMPRESSED);
-        Europium.addFlags(GENERATE_COMPRESSED);
-        Tritanium.addFlags(GENERATE_COMPRESSED);
-        NaquadahAlloy.addFlags(GENERATE_COMPRESSED);
-        Darmstadtium.addFlags(GENERATE_COMPRESSED);
-
-        // Plate
-        Iron.addFlags(GENERATE_DOUBLE_PLATE);
-        Magnesium.addFlags(GENERATE_DOUBLE_PLATE);
-        Palladium.addFlags(GENERATE_DOUBLE_PLATE);
-        Zinc.addFlags(GENERATE_DOUBLE_PLATE);
-        Mercury.addFlags(GENERATE_DOUBLE_PLATE);
-        Carbon.addFlags(GENERATE_DOUBLE_PLATE);
-
-        // No Smelting
-        Mercury.addFlags(NO_SMELTING);
-
+        // Raw
+        Material[] generateRaw = {
+            Aluminium,
+            Neutronium
+        };
+        // Compressed
+        Material[] generateCompressed = {
+                Copper,
+                Tin,
+                Aluminium,
+                Steel,
+                Bronze,
+                Iron,
+                Titanium,
+                Mercury,
+                Carbon,
+                Palladium,
+                Nickel,
+                Magnesium,
+                Zinc,
+                Tungsten,
+                Platinum,
+                StainlessSteel,
+                Titanium,
+                TungstenSteel,
+                RhodiumPlatedPalladium,
+                Europium,
+                Tritanium,
+                NaquadahAlloy,
+                Darmstadtium
+        };
+        // Double Plate
+        Material[] generateDoublePlate = {
+                Iron,
+                Magnesium,
+                Palladium,
+                Zinc,
+                Mercury,
+                Carbon
+        };
         // Fine Wire
-        BlueAlloy.addFlags(GENERATE_FINE_WIRE);
-        RoseGold.addFlags(GENERATE_FINE_WIRE);
+        Material[] generateFineWire = {
+                BlueAlloy,
+                RoseGold
+        };
+        // Frame
+        Material[] generateFrame = {
+                WroughtIron,
+                RhodiumPlatedPalladium
+        };
+        // No Smelting
+        Material[] noSmelting = {
+                Mercury
+        };
+        setupMaterialFlag(generateCompressed, GENERATE_COMPRESSED);
+        setupMaterialFlag(generateDoublePlate, GENERATE_DOUBLE_PLATE);
+        setupMaterialFlag(generateFineWire, GENERATE_FINE_WIRE);
+        setupMaterialFlag(generateFrame, GENERATE_FRAME);
+        setupMaterialFlag(noSmelting, NO_SMELTING);
     }
 }

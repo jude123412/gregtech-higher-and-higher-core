@@ -5,7 +5,7 @@ import org.gthhcore.loaders.recipe.mod.thaumcraft.CrucibleRecipes;
 
 public class GTHHModRecipeLoader {
 
-    public static void registerEarly() {
+    public static void registerLate() {
         // Thaumcraft Recipes
         CrucibleRecipes.init();
 
