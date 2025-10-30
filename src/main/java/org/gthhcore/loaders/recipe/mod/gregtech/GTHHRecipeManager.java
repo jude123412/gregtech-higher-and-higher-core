@@ -13,7 +13,7 @@ public class GTHHRecipeManager {
         GTHHMetaTileEntityLoader.register();
     }
 
-    public static void postLoad() {
+    public static void loadLate() {
         GTHHMachineRecipeLoader.registerLate();
         GTHHModRecipeLoader.registerLate();
         GTHHRecipeHandlerList.registerLate();

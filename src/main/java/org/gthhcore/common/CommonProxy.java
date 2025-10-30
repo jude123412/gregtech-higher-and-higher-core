@@ -124,7 +124,7 @@ public class CommonProxy {
         GTHHLog.logger.info("Registering early recipes...");
         MinecraftForge.EVENT_BUS.post(new GregTechAPI.RegisterEvent<>(null, ItemMaterialInfo.class));
 
-        GTHHRecipeManager.postLoad();
+        GTHHRecipeManager.loadLate();
     }
 
     @SubscribeEvent
@@ -147,6 +147,7 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void createMaterialRegistry(MaterialRegistryEvent event) {
+        GTHHLog.logger.info("Registering Material Event...");
         GregTechAPI.materialManager.createRegistry("gthhcore");
     }
 
