@@ -41,43 +41,11 @@ public class GTHHOrePrefix {
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreJupiter = new OrePrefix("oreJupiter", -1, null,
-            MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreSaturn = new OrePrefix("oreSaturn", -1, null,
-            MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreUranus = new OrePrefix("oreUranus", -1, null,
-            MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreNeptune = new OrePrefix("oreNeptune", -1, null,
-            MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
     public static final OrePrefix orePluto = new OrePrefix("orePluto", -1, null,
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreEris = new OrePrefix("oreEris", -1,
-            null, MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreKepler22B = new OrePrefix("oreKepler22B", -1, null,
-            MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreEuropa = new OrePrefix("oreEuropa", -1, null,
-            MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreIo = new OrePrefix("oreIo", -1, null,
-            MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreDeimos = new OrePrefix("oreDeimos", -1, null,
+    public static final OrePrefix oreHaumea = new OrePrefix("oreHaumea", -1, null,
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
@@ -85,11 +53,11 @@ public class GTHHOrePrefix {
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreTriton = new OrePrefix("oreTriton", -1, null,
+    public static final OrePrefix oreIo = new OrePrefix("oreIo", -1, null,
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreCallisto = new OrePrefix("oreCallisto", -1, null,
+    public static final OrePrefix oreEuropa = new OrePrefix("oreEuropa", -1, null,
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
@@ -97,7 +65,11 @@ public class GTHHOrePrefix {
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreRhea = new OrePrefix("oreRhea", -1, null,
+    public static final OrePrefix oreCallisto = new OrePrefix("oreCallisto", -1, null,
+            MaterialIconType.ore,
+            OrePrefix.Flags.ENABLE_UNIFICATION,
+            OrePrefix.Conditions.hasOreProperty);
+    public static final OrePrefix oreEnceladus = new OrePrefix("oreEnceladus", -1, null,
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
@@ -105,15 +77,11 @@ public class GTHHOrePrefix {
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreOberon = new OrePrefix("oreOberon", -1, null,
+    public static final OrePrefix oreMiranda = new OrePrefix("oreMiranda", -1, null,
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreTitania = new OrePrefix("oreTitania", -1, null,
-            MaterialIconType.ore,
-            OrePrefix.Flags.ENABLE_UNIFICATION,
-            OrePrefix.Conditions.hasOreProperty);
-    public static final OrePrefix oreIapetus = new OrePrefix("oreIapetus", -1, null,
+    public static final OrePrefix oreTriton = new OrePrefix("oreTriton", -1, null,
             MaterialIconType.ore,
             OrePrefix.Flags.ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty);
@@ -149,40 +117,39 @@ public class GTHHOrePrefix {
             mat -> mat.hasFlag(GENERATE_COMPRESSED));
 
     public static void init() {
-        oreMoon.addSecondaryMaterial(new MaterialStack(MoonStone, OrePrefix.dust.getMaterialAmount(MoonStone)));
-        oreMars.addSecondaryMaterial(new MaterialStack(MarsStone, OrePrefix.dust.getMaterialAmount(MarsStone)));
-        oreAsteroid.addSecondaryMaterial(
-                new MaterialStack(AsteroidStone, OrePrefix.dust.getMaterialAmount(AsteroidStone)));
-        oreVenus.addSecondaryMaterial(new MaterialStack(VenusStone, OrePrefix.dust.getMaterialAmount(VenusStone)));
-        oreMercury
-                .addSecondaryMaterial(new MaterialStack(MercuryStone, OrePrefix.dust.getMaterialAmount(MercuryStone)));
-        oreCeres.addSecondaryMaterial(new MaterialStack(CeresStone, OrePrefix.dust.getMaterialAmount(CeresStone)));
-        oreJupiter
-                .addSecondaryMaterial(new MaterialStack(JupiterStone, OrePrefix.dust.getMaterialAmount(JupiterStone)));
-        oreSaturn.addSecondaryMaterial(new MaterialStack(SaturnStone, OrePrefix.dust.getMaterialAmount(SaturnStone)));
-        oreUranus.addSecondaryMaterial(new MaterialStack(UranusStone, OrePrefix.dust.getMaterialAmount(UranusStone)));
-        oreNeptune
-                .addSecondaryMaterial(new MaterialStack(NeptuneStone, OrePrefix.dust.getMaterialAmount(NeptuneStone)));
-        orePluto.addSecondaryMaterial(new MaterialStack(PlutoStone, OrePrefix.dust.getMaterialAmount(PlutoStone)));
-        oreEris.addSecondaryMaterial(new MaterialStack(ErisStone, OrePrefix.dust.getMaterialAmount(ErisStone)));
-        oreKepler22B.addSecondaryMaterial(
-                new MaterialStack(Kepler22bStone, OrePrefix.dust.getMaterialAmount(Kepler22bStone)));
-        oreEuropa.addSecondaryMaterial(new MaterialStack(EuropaStone, OrePrefix.dust.getMaterialAmount(EuropaStone)));
-        oreIo.addSecondaryMaterial(new MaterialStack(IoStone, OrePrefix.dust.getMaterialAmount(IoStone)));
-        oreDeimos.addSecondaryMaterial(new MaterialStack(DeimosStone, OrePrefix.dust.getMaterialAmount(DeimosStone)));
-        orePhobos.addSecondaryMaterial(new MaterialStack(PhobosStone, OrePrefix.dust.getMaterialAmount(PhobosStone)));
-        oreTriton.addSecondaryMaterial(new MaterialStack(TritonStone, OrePrefix.dust.getMaterialAmount(TritonStone)));
-        oreCallisto.addSecondaryMaterial(
-                new MaterialStack(CallistoStone, OrePrefix.dust.getMaterialAmount(CallistoStone)));
-        oreGanymede.addSecondaryMaterial(
-                new MaterialStack(GanymedeStone, OrePrefix.dust.getMaterialAmount(GanymedeStone)));
-        oreRhea.addSecondaryMaterial(new MaterialStack(RheaStone, OrePrefix.dust.getMaterialAmount(RheaStone)));
-        oreTitan.addSecondaryMaterial(new MaterialStack(TitanStone, OrePrefix.dust.getMaterialAmount(TitanStone)));
-        oreOberon.addSecondaryMaterial(new MaterialStack(OberonStone, OrePrefix.dust.getMaterialAmount(OberonStone)));
-        oreTitania
-                .addSecondaryMaterial(new MaterialStack(TitaniaStone, OrePrefix.dust.getMaterialAmount(TitaniaStone)));
-        oreIapetus
-                .addSecondaryMaterial(new MaterialStack(IapetusStone, OrePrefix.dust.getMaterialAmount(IapetusStone)));
+        // Galacticraft Stone Types
+        if (GalacticraftCore.isModLoaded() || GalacticraftPlanets.isModLoaded()) {
+            oreMoon.addSecondaryMaterial(new MaterialStack(MoonStone, OrePrefix.dust.getMaterialAmount(MoonStone)));
+            oreMars.addSecondaryMaterial(new MaterialStack(MarsStone, OrePrefix.dust.getMaterialAmount(MarsStone)));
+            oreAsteroid.addSecondaryMaterial(
+                    new MaterialStack(AsteroidStone, OrePrefix.dust.getMaterialAmount(AsteroidStone)));
+            oreVenus.addSecondaryMaterial(new MaterialStack(VenusStone, OrePrefix.dust.getMaterialAmount(VenusStone)));
+        }
+        // Galaxy Space Stone Types
+        if (GalaxySpace.isModLoaded()) {
+            oreMercury.addSecondaryMaterial(
+                    new MaterialStack(MercuryStone, OrePrefix.dust.getMaterialAmount(MercuryStone)));
+            oreCeres.addSecondaryMaterial(new MaterialStack(CeresStone, OrePrefix.dust.getMaterialAmount(CeresStone)));
+            orePluto.addSecondaryMaterial(new MaterialStack(PlutoStone, OrePrefix.dust.getMaterialAmount(PlutoStone)));
+            oreHaumea.addSecondaryMaterial(
+                    new MaterialStack(HaumeaStone, OrePrefix.dust.getMaterialAmount(HaumeaStone)));
+            orePhobos.addSecondaryMaterial(
+                    new MaterialStack(PhobosStone, OrePrefix.dust.getMaterialAmount(PhobosStone)));
+            oreIo.addSecondaryMaterial(new MaterialStack(IoStone, OrePrefix.dust.getMaterialAmount(IoStone)));
+            oreEuropa.addSecondaryMaterial(
+                    new MaterialStack(EuropaStone, OrePrefix.dust.getMaterialAmount(EuropaStone)));
+            oreGanymede.addSecondaryMaterial(
+                    new MaterialStack(GanymedeStone, OrePrefix.dust.getMaterialAmount(GanymedeStone)));
+            oreCallisto.addSecondaryMaterial(
+                    new MaterialStack(CallistoStone, OrePrefix.dust.getMaterialAmount(CallistoStone)));
+            oreEnceladus.addSecondaryMaterial(
+                    new MaterialStack(EnceladusStone, OrePrefix.dust.getMaterialAmount(EnceladusStone)));
+            oreTitan.addSecondaryMaterial(new MaterialStack(TitanStone, OrePrefix.dust.getMaterialAmount(TitanStone)));
+            oreMiranda.addSecondaryMaterial(
+                    new MaterialStack(MirandaStone, OrePrefix.dust.getMaterialAmount(MirandaStone)));
+            oreTriton.addSecondaryMaterial(
+                    new MaterialStack(TritonStone, OrePrefix.dust.getMaterialAmount(TritonStone)));
+        }
 
         // Set Ignore Stuff
         cluster.setIgnored(Iron);
@@ -326,34 +293,17 @@ public class GTHHOrePrefix {
             ingot.setIgnored(MeteoricIron);
 
             block.setIgnored(MeteoricIron);
-        }
 
-        if (GalacticraftPlanets.isModLoaded()) {
-            stick.setIgnored(Desh);
-
-            ingot.setIgnored(Desh);
-
-            compressed.setIgnored(Desh);
-            compressed.setIgnored(Titanium);
-
-            block.setIgnored(Desh);
-        }
-
-        // Extra Planets
-        if (ExtraPlanets.isModLoaded()) {
-            ingot.setIgnored(Crystal);
-            ingot.setIgnored(DarkIron);
-
-            gem.setIgnored(WhiteGem);
-            gem.setIgnored(BlueGem);
-            gem.setIgnored(BlueDiamond);
-            gem.setIgnored(RedDiamond);
-            gem.setIgnored(PurpleDiamond);
-            gem.setIgnored(YellowDiamond);
-            gem.setIgnored(GreenDiamond);
-
-            block.setIgnored(Crystal);
-            block.setIgnored(DarkIron);
+            // if (GalacticraftPlanets.isModLoaded()) {
+            // stick.setIgnored(Desh);
+            //
+            // ingot.setIgnored(Desh);
+            //
+            // compressed.setIgnored(Desh);
+            // compressed.setIgnored(Titanium);
+            //
+            // block.setIgnored(Desh);
+            // }
         }
 
         // Thaumcraft

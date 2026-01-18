@@ -6,9 +6,20 @@ import net.minecraft.block.SoundType;
 
 import org.gthhcore.api.unification.materials.material.GTHHMaterials;
 
-import com.mjr.extraplanets.blocks.ExtraPlanets_Blocks;
-import com.mjr.extraplanets.blocks.planetAndMoonBlocks.*;
-
+import galaxyspace.core.GSBlocks;
+import galaxyspace.systems.SolarSystem.moons.callisto.blocks.CallistoBlocks;
+import galaxyspace.systems.SolarSystem.moons.enceladus.blocks.EnceladusBlocks;
+import galaxyspace.systems.SolarSystem.moons.europa.blocks.EuropaBlocks;
+import galaxyspace.systems.SolarSystem.moons.ganymede.blocks.GanymedeBlocks;
+import galaxyspace.systems.SolarSystem.moons.io.blocks.IoBlocks;
+import galaxyspace.systems.SolarSystem.moons.miranda.blocks.MirandaBlocks;
+import galaxyspace.systems.SolarSystem.moons.phobos.blocks.PhobosBlocks;
+import galaxyspace.systems.SolarSystem.moons.titan.blocks.TitanBlocks;
+import galaxyspace.systems.SolarSystem.moons.triton.blocks.TritonBlocks;
+import galaxyspace.systems.SolarSystem.planets.ceres.blocks.CeresBlocks;
+import galaxyspace.systems.SolarSystem.planets.haumea.blocks.HaumeaBlocks;
+import galaxyspace.systems.SolarSystem.planets.mercury.blocks.MercuryBlocks;
+import galaxyspace.systems.SolarSystem.planets.pluto.blocks.PlutoBlocks;
 import gregtech.api.unification.ore.StoneType;
 import micdoodle8.mods.galacticraft.core.GCBlocks;
 import micdoodle8.mods.galacticraft.core.blocks.BlockBasicMoon;
@@ -79,175 +90,116 @@ public class GTHHStoneTypes {
                     true);
         }
 
-        // Extra Planets Stones
-        // TODO, Properly Fix Extra Planet Ore Generation
-        if (ExtraPlanets.isModLoaded()) {
+        // Galaxy Space Stones
+        // TODO, Properly Fix Ore Generation
+        if (GalaxySpace.isModLoaded()) {
             StoneType MERCURY = new StoneType(getMetaItemId(), "mercury", SoundType.STONE, GTHHOrePrefix.oreMercury,
                     GTHHMaterials.MercuryStone,
-                    () -> ExtraPlanets_Blocks.MERCURY_BLOCKS.getDefaultState()
-                            .withProperty(BlockBasicMercury.BASIC_TYPE, BlockBasicMercury.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicMercury &&
-                            state.getValue(BlockBasicMercury.BASIC_TYPE) == BlockBasicMercury.EnumBlockBasic.STONE,
+                    () -> GSBlocks.MERCURY_BLOCKS.getDefaultState()
+                            .withProperty(MercuryBlocks.BASIC_TYPE, MercuryBlocks.EnumBlockMercury.STONE),
+                    state -> state.getBlock() instanceof MercuryBlocks &&
+                            state.getValue(MercuryBlocks.BASIC_TYPE) == MercuryBlocks.EnumBlockMercury.STONE,
                     true);
 
             StoneType CERES = new StoneType(getMetaItemId(), "ceres", SoundType.STONE, GTHHOrePrefix.oreCeres,
                     GTHHMaterials.CeresStone,
-                    () -> ExtraPlanets_Blocks.CERES_BLOCKS.getDefaultState().withProperty(BlockBasicCeres.BASIC_TYPE,
-                            BlockBasicCeres.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicCeres &&
-                            state.getValue(BlockBasicCeres.BASIC_TYPE) == BlockBasicCeres.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType JUPITER = new StoneType(getMetaItemId(), "jupiter", SoundType.STONE, GTHHOrePrefix.oreJupiter,
-                    GTHHMaterials.JupiterStone,
-                    () -> ExtraPlanets_Blocks.JUPITER_BLOCKS.getDefaultState()
-                            .withProperty(BlockBasicJupiter.BASIC_TYPE, BlockBasicJupiter.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicJupiter &&
-                            state.getValue(BlockBasicJupiter.BASIC_TYPE) == BlockBasicJupiter.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType SATURN = new StoneType(getMetaItemId(), "saturn", SoundType.STONE, GTHHOrePrefix.oreSaturn,
-                    GTHHMaterials.SaturnStone,
-                    () -> ExtraPlanets_Blocks.SATURN_BLOCKS.getDefaultState().withProperty(BlockBasicSaturn.BASIC_TYPE,
-                            BlockBasicSaturn.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicSaturn &&
-                            state.getValue(BlockBasicSaturn.BASIC_TYPE) == BlockBasicSaturn.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType URANUS = new StoneType(getMetaItemId(), "uranus", SoundType.STONE, GTHHOrePrefix.oreUranus,
-                    GTHHMaterials.UranusStone,
-                    () -> ExtraPlanets_Blocks.URANUS_BLOCKS.getDefaultState().withProperty(BlockBasicUranus.BASIC_TYPE,
-                            BlockBasicUranus.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicUranus &&
-                            state.getValue(BlockBasicUranus.BASIC_TYPE) == BlockBasicUranus.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType NEPTUNE = new StoneType(getMetaItemId(), "neptune", SoundType.STONE, GTHHOrePrefix.oreNeptune,
-                    GTHHMaterials.NeptuneStone,
-                    () -> ExtraPlanets_Blocks.NEPTUNE_BLOCKS.getDefaultState()
-                            .withProperty(BlockBasicNeptune.BASIC_TYPE, BlockBasicNeptune.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicNeptune &&
-                            state.getValue(BlockBasicNeptune.BASIC_TYPE) == BlockBasicNeptune.EnumBlockBasic.STONE,
+                    () -> GSBlocks.CERES_BLOCKS.getDefaultState()
+                            .withProperty(CeresBlocks.BASIC_TYPE, CeresBlocks.EnumCeresBlocks.CERES_SUBGRUNT),
+                    state -> state.getBlock() instanceof MercuryBlocks &&
+                            state.getValue(CeresBlocks.BASIC_TYPE) == CeresBlocks.EnumCeresBlocks.CERES_SUBGRUNT,
                     true);
 
             StoneType PLUTO = new StoneType(getMetaItemId(), "pluto", SoundType.STONE, GTHHOrePrefix.orePluto,
                     GTHHMaterials.PlutoStone,
-                    () -> ExtraPlanets_Blocks.PLUTO_BLOCKS.getDefaultState().withProperty(BlockBasicPluto.BASIC_TYPE,
-                            BlockBasicPluto.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicPluto &&
-                            state.getValue(BlockBasicPluto.BASIC_TYPE) == BlockBasicPluto.EnumBlockBasic.STONE,
+                    () -> GSBlocks.PLUTO_BLOCKS.getDefaultState()
+                            .withProperty(PlutoBlocks.BASIC_TYPE, PlutoBlocks.EnumPlutoBlocks.PLUTO_STONE),
+                    state -> state.getBlock() instanceof PlutoBlocks &&
+                            state.getValue(PlutoBlocks.BASIC_TYPE) == PlutoBlocks.EnumPlutoBlocks.PLUTO_STONE,
                     true);
 
-            StoneType ERIS = new StoneType(getMetaItemId(), "eris", SoundType.STONE, GTHHOrePrefix.oreEris,
-                    GTHHMaterials.ErisStone,
-                    () -> ExtraPlanets_Blocks.ERIS_BLOCKS.getDefaultState().withProperty(BlockBasicEris.BASIC_TYPE,
-                            BlockBasicEris.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicEris &&
-                            state.getValue(BlockBasicEris.BASIC_TYPE) == BlockBasicEris.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType KEPLER22B = new StoneType(getMetaItemId(), "kepler22b", SoundType.STONE,
-                    GTHHOrePrefix.oreKepler22B, GTHHMaterials.Kepler22bStone,
-                    () -> ExtraPlanets_Blocks.KEPLER22B_BLOCKS.getDefaultState()
-                            .withProperty(BlockBasicKepler22b.BASIC_TYPE, BlockBasicKepler22b.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicKepler22b &&
-                            state.getValue(BlockBasicKepler22b.BASIC_TYPE) == BlockBasicKepler22b.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType EUROPA = new StoneType(getMetaItemId(), "europa", SoundType.STONE, GTHHOrePrefix.oreEuropa,
-                    GTHHMaterials.EuropaStone,
-                    () -> ExtraPlanets_Blocks.EUROPA_BLOCKS.getDefaultState().withProperty(BlockBasicEuropa.BASIC_TYPE,
-                            BlockBasicEuropa.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicEuropa &&
-                            state.getValue(BlockBasicEuropa.BASIC_TYPE) == BlockBasicEuropa.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType IO = new StoneType(getMetaItemId(), "io", SoundType.STONE, GTHHOrePrefix.oreIo,
-                    GTHHMaterials.IoStone,
-                    () -> ExtraPlanets_Blocks.IO_BLOCKS.getDefaultState().withProperty(BlockBasicIo.BASIC_TYPE,
-                            BlockBasicIo.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicIo &&
-                            state.getValue(BlockBasicIo.BASIC_TYPE) == BlockBasicIo.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType DEIMOS = new StoneType(getMetaItemId(), "deimos", SoundType.STONE, GTHHOrePrefix.oreDeimos,
-                    GTHHMaterials.DeimosStone,
-                    () -> ExtraPlanets_Blocks.DEIMOS_BLOCKS.getDefaultState().withProperty(BlockBasicDeimos.BASIC_TYPE,
-                            BlockBasicDeimos.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicDeimos &&
-                            state.getValue(BlockBasicDeimos.BASIC_TYPE) == BlockBasicDeimos.EnumBlockBasic.STONE,
+            StoneType HAUMEA = new StoneType(getMetaItemId(), "haumea", SoundType.STONE, GTHHOrePrefix.oreHaumea,
+                    GTHHMaterials.HaumeaStone,
+                    () -> GSBlocks.HAUMEA_BLOCKS.getDefaultState()
+                            .withProperty(HaumeaBlocks.BASIC_TYPE, HaumeaBlocks.EnumHaumeaBlocks.STONE),
+                    state -> state.getBlock() instanceof HaumeaBlocks &&
+                            state.getValue(HaumeaBlocks.BASIC_TYPE) == HaumeaBlocks.EnumHaumeaBlocks.STONE,
                     true);
 
             StoneType PHOBOS = new StoneType(getMetaItemId(), "phobos", SoundType.STONE, GTHHOrePrefix.orePhobos,
                     GTHHMaterials.PhobosStone,
-                    () -> ExtraPlanets_Blocks.PHOBOS_BLOCKS.getDefaultState().withProperty(BlockBasicPhobos.BASIC_TYPE,
-                            BlockBasicPhobos.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicPhobos &&
-                            state.getValue(BlockBasicPhobos.BASIC_TYPE) == BlockBasicPhobos.EnumBlockBasic.STONE,
+                    () -> GSBlocks.PHOBOS_BLOCKS.getDefaultState()
+                            .withProperty(PhobosBlocks.BASIC_TYPE, PhobosBlocks.EnumPhobosBlocks.PHOBOS_STONE),
+                    state -> state.getBlock() instanceof PhobosBlocks &&
+                            state.getValue(PhobosBlocks.BASIC_TYPE) == PhobosBlocks.EnumPhobosBlocks.PHOBOS_STONE,
                     true);
 
-            StoneType TRITON = new StoneType(getMetaItemId(), "triton", SoundType.STONE, GTHHOrePrefix.oreTriton,
-                    GTHHMaterials.TritonStone,
-                    () -> ExtraPlanets_Blocks.TRITON_BLOCKS.getDefaultState().withProperty(BlockBasicTriton.BASIC_TYPE,
-                            BlockBasicTriton.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicTriton &&
-                            state.getValue(BlockBasicTriton.BASIC_TYPE) == BlockBasicTriton.EnumBlockBasic.STONE,
+            StoneType IO = new StoneType(getMetaItemId(), "io", SoundType.STONE, GTHHOrePrefix.oreIo,
+                    GTHHMaterials.IoStone,
+                    () -> GSBlocks.IO_BLOCKS.getDefaultState()
+                            .withProperty(IoBlocks.BASIC_TYPE, IoBlocks.EnumIoBlocks.IO_STONE),
+                    state -> state.getBlock() instanceof IoBlocks &&
+                            state.getValue(IoBlocks.BASIC_TYPE) == IoBlocks.EnumIoBlocks.IO_STONE,
                     true);
 
-            StoneType CALLISTO = new StoneType(getMetaItemId(), "callisto", SoundType.STONE, GTHHOrePrefix.oreCallisto,
-                    GTHHMaterials.CallistoStone,
-                    () -> ExtraPlanets_Blocks.CALLISTO_BLOCKS.getDefaultState()
-                            .withProperty(BlockBasicCallisto.BASIC_TYPE, BlockBasicCallisto.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicCallisto &&
-                            state.getValue(BlockBasicCallisto.BASIC_TYPE) == BlockBasicCallisto.EnumBlockBasic.STONE,
+            StoneType EUROPA = new StoneType(getMetaItemId(), "europa", SoundType.STONE, GTHHOrePrefix.oreEuropa,
+                    GTHHMaterials.EuropaStone,
+                    () -> GSBlocks.EUROPA_BLOCKS.getDefaultState()
+                            .withProperty(EuropaBlocks.BASIC_TYPE, EuropaBlocks.EnumEuropaBlocks.EUROPA_STONE),
+                    state -> state.getBlock() instanceof EuropaBlocks &&
+                            state.getValue(EuropaBlocks.BASIC_TYPE) == EuropaBlocks.EnumEuropaBlocks.EUROPA_STONE,
                     true);
 
             StoneType GANYMEDE = new StoneType(getMetaItemId(), "ganymede", SoundType.STONE, GTHHOrePrefix.oreGanymede,
                     GTHHMaterials.GanymedeStone,
-                    () -> ExtraPlanets_Blocks.GANYMEDE_BLOCKS.getDefaultState()
-                            .withProperty(BlockBasicGanymede.BASIC_TYPE, BlockBasicGanymede.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicGanymede &&
-                            state.getValue(BlockBasicGanymede.BASIC_TYPE) == BlockBasicGanymede.EnumBlockBasic.STONE,
+                    () -> GSBlocks.GANYMEDE_BLOCKS.getDefaultState()
+                            .withProperty(GanymedeBlocks.BASIC_TYPE, GanymedeBlocks.EnumGanymedeBlocks.GANYMEDE_STONE),
+                    state -> state.getBlock() instanceof GanymedeBlocks &&
+                            state.getValue(GanymedeBlocks.BASIC_TYPE) ==
+                                    GanymedeBlocks.EnumGanymedeBlocks.GANYMEDE_STONE,
                     true);
 
-            StoneType RHEA = new StoneType(getMetaItemId(), "rhea", SoundType.STONE, GTHHOrePrefix.oreRhea,
-                    GTHHMaterials.RheaStone,
-                    () -> ExtraPlanets_Blocks.RHEA_BLOCKS.getDefaultState().withProperty(BlockBasicRhea.BASIC_TYPE,
-                            BlockBasicRhea.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicRhea &&
-                            state.getValue(BlockBasicRhea.BASIC_TYPE) == BlockBasicRhea.EnumBlockBasic.STONE,
+            StoneType CALLISTO = new StoneType(getMetaItemId(), "callisto", SoundType.STONE, GTHHOrePrefix.oreCallisto,
+                    GTHHMaterials.CallistoStone,
+                    () -> GSBlocks.CALLISTO_BLOCKS.getDefaultState()
+                            .withProperty(CallistoBlocks.BASIC_TYPE, CallistoBlocks.EnumCallistoBlocks.CALLISTO_STONE),
+                    state -> state.getBlock() instanceof CallistoBlocks &&
+                            state.getValue(CallistoBlocks.BASIC_TYPE) ==
+                                    CallistoBlocks.EnumCallistoBlocks.CALLISTO_STONE,
+                    true);
+
+            StoneType ENCELADUS = new StoneType(getMetaItemId(), "enceladus", SoundType.STONE,
+                    GTHHOrePrefix.oreEnceladus,
+                    GTHHMaterials.EnceladusStone,
+                    () -> GSBlocks.ENCELADUS_BLOCKS.getDefaultState()
+                            .withProperty(EnceladusBlocks.BASIC_TYPE,
+                                    EnceladusBlocks.EnumEnceladusBlocks.ENCELADUS_SNOW),
+                    state -> state.getBlock() instanceof EnceladusBlocks &&
+                            state.getValue(EnceladusBlocks.BASIC_TYPE) ==
+                                    EnceladusBlocks.EnumEnceladusBlocks.ENCELADUS_SNOW,
                     true);
 
             StoneType TITAN = new StoneType(getMetaItemId(), "titan", SoundType.STONE, GTHHOrePrefix.oreTitan,
-                    GTHHMaterials.TitaniaStone,
-                    () -> ExtraPlanets_Blocks.TITAN_BLOCKS.getDefaultState().withProperty(BlockBasicTitan.BASIC_TYPE,
-                            BlockBasicTitan.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicTitan &&
-                            state.getValue(BlockBasicTitan.BASIC_TYPE) == BlockBasicTitan.EnumBlockBasic.STONE,
+                    GTHHMaterials.TitanStone,
+                    () -> GSBlocks.TITAN_BLOCKS.getDefaultState()
+                            .withProperty(TitanBlocks.BASIC_TYPE, TitanBlocks.EnumTitanBlocks.TITAN_STONE),
+                    state -> state.getBlock() instanceof TitanBlocks &&
+                            state.getValue(TitanBlocks.BASIC_TYPE) == TitanBlocks.EnumTitanBlocks.TITAN_STONE,
                     true);
 
-            StoneType OBERON = new StoneType(getMetaItemId(), "oberon", SoundType.STONE, GTHHOrePrefix.oreOberon,
-                    GTHHMaterials.OberonStone,
-                    () -> ExtraPlanets_Blocks.OBERON_BLOCKS.getDefaultState().withProperty(BlockBasicOberon.BASIC_TYPE,
-                            BlockBasicOberon.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicOberon &&
-                            state.getValue(BlockBasicOberon.BASIC_TYPE) == BlockBasicOberon.EnumBlockBasic.STONE,
+            StoneType MIRANDA = new StoneType(getMetaItemId(), "miranda", SoundType.STONE, GTHHOrePrefix.oreMiranda,
+                    GTHHMaterials.MirandaStone,
+                    () -> GSBlocks.MIRANDA_BLOCKS.getDefaultState()
+                            .withProperty(MirandaBlocks.BASIC_TYPE, MirandaBlocks.EnumMirandaBlocks.MIRANDA_STONE),
+                    state -> state.getBlock() instanceof MirandaBlocks &&
+                            state.getValue(MirandaBlocks.BASIC_TYPE) == MirandaBlocks.EnumMirandaBlocks.MIRANDA_STONE,
                     true);
 
-            StoneType TITANIA = new StoneType(getMetaItemId(), "titania", SoundType.STONE, GTHHOrePrefix.oreTitania,
-                    GTHHMaterials.TitaniaStone,
-                    () -> ExtraPlanets_Blocks.TITANIA_BLOCKS.getDefaultState()
-                            .withProperty(BlockBasicTitania.BASIC_TYPE, BlockBasicTitania.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicTitania &&
-                            state.getValue(BlockBasicTitania.BASIC_TYPE) == BlockBasicTitania.EnumBlockBasic.STONE,
-                    true);
-
-            StoneType IAPETUS = new StoneType(getMetaItemId(), "iapetus", SoundType.STONE, GTHHOrePrefix.oreIapetus,
-                    GTHHMaterials.IapetusStone,
-                    () -> ExtraPlanets_Blocks.IAPETUS_BLOCKS.getDefaultState()
-                            .withProperty(BlockBasicIapetus.BASIC_TYPE, BlockBasicIapetus.EnumBlockBasic.STONE),
-                    state -> state.getBlock() instanceof BlockBasicIapetus &&
-                            state.getValue(BlockBasicIapetus.BASIC_TYPE) == BlockBasicIapetus.EnumBlockBasic.STONE,
+            StoneType TRITON = new StoneType(getMetaItemId(), "triton", SoundType.STONE, GTHHOrePrefix.oreTriton,
+                    GTHHMaterials.TritonStone,
+                    () -> GSBlocks.TRITON_BLOCKS.getDefaultState()
+                            .withProperty(TritonBlocks.BASIC_TYPE, TritonBlocks.EnumTritonBlocks.TRITON_STONE),
+                    state -> state.getBlock() instanceof TritonBlocks &&
+                            state.getValue(TritonBlocks.BASIC_TYPE) == TritonBlocks.EnumTritonBlocks.TRITON_STONE,
                     true);
         }
     }

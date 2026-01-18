@@ -1,6 +1,5 @@
 package org.gthhcore.api.unification.material.materials;
 
-import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_FRAME;
 import static gregtech.api.unification.material.info.MaterialFlags.NO_SMELTING;
 import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.GENERATE_HOT;
 

@@ -14,7 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import org.gthhcore.api.unification.material.info.GTHHMaterialFlags;
-import org.gthhcore.api.util.GTHHValues;
 
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;

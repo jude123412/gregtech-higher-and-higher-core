@@ -1,8 +1,5 @@
 package org.gthhcore.loaders.recipe.mod.gregtech;
 
-import gregtech.api.unification.ore.OrePrefix;
-import org.gthhcore.common.blocks.transparent.GlassCasing0;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;

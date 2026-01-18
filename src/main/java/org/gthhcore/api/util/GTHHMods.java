@@ -21,7 +21,7 @@ public enum GTHHMods {
     EnderIoMachines(Names.ENDER_IO_MACHINES),
     GalacticraftCore(Names.GALACTICRAFT_CORE),
     GalacticraftPlanets(Names.GALACTICRAFT_PLANETS),
-    ExtraPlanets(Names.EXTRA_PLANETS);
+    GalaxySpace(Names.GALAXY_SPACE);
 
     public static class Names {
 
@@ -40,7 +40,7 @@ public enum GTHHMods {
         public static final String ENDER_IO_MACHINES = "enderiomachines";
         public static final String GALACTICRAFT_CORE = "galacticraftcore";
         public static final String GALACTICRAFT_PLANETS = "galacticraftplanets";
-        public static final String EXTRA_PLANETS = "extraplanets";
+        public static final String GALAXY_SPACE = "galaxyspace";
     }
 
     private final String ID;

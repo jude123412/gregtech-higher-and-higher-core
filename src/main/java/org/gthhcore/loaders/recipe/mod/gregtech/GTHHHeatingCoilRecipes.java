@@ -7,7 +7,6 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
-import static org.gthhcore.api.util.GTHHMods.EternalSingularity;
 import static org.gthhcore.common.items.GTHHMetaItems.*;
 
 import net.minecraft.item.ItemStack;

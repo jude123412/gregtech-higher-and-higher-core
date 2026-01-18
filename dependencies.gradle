@@ -40,7 +40,7 @@
 dependencies {
     // Hard Dependencies
     implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848") // CCL 3.2.3.358
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5519022-deobf-5519023-sources-5519024") // GTCEU 2.9.10
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5519022-deobf-5519023-sources-5519024") // GTCEU 2.8.10
     implementation rfg.deobf("curse.maven:groovy-script-1.2.0-hotfix-1-687577:5789690") // Groovy Script 1.2.0-hotfix-1
 
 
@@ -54,8 +54,18 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:astral-scorcery-1.12.2-1.10.27-241721:3044416") // Astral Scorcery 1.10.27
     compileOnly rfg.deobf("curse.maven:blood-magic-1.12.2-2.4.3-105-224791:2822288") // Blood Magic 2.4.3-105
     compileOnly rfg.deobf("curse.maven:logistics-pipes-0.10.4.29-105-232838:4007568") // Logistics Pipes 0.10.4.29
-    compileOnly rfg.deobf("curse.maven:galacticraft-4.0.6-564236:4671122") // Galacticraft 4.0.6
-    compileOnly rfg.deobf("curse.maven:extra-planets-0.8.0-241291:5339029") // Extra Planets 0.8.0
+    compileOnly rfg.deobf("curse.maven:galacticraft-4.0.6-564236:6364107") // Galacticraft 4.0.7
+    compileOnly rfg.deobf("curse.maven:galaxy-space-2.2.0-238770:7005609") // Galaxy Space 2.2.0
+
+    // Core mods needed for other Mods, Not a dependency
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:baubles-1.12-1.5.2-227083:2518667") // Baubles
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:guide-api-1.12-2.1.8-63-228832:2645992") // Guide API
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:mixin-booter-10.2-419286:5906634") // Mixin Booter 10.2
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:ctm-267602:2915363") // CTM 1.0.2.31
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:ore-dict-tips-252832:2545766") // OreDictTips 2.0.2
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:wanion-lib-2.91-253043:4623135") // Wanion Lib 2.91
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:redstone-flux-2.1.1.1-270789:2920436") // Redstone Flux 2.1.1.1
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:brandons-core-2.4.20.162-231382:3408276") // Brandons Core 2.4.20.162
 
     // Mod Dependencies
     // Uncomment any of these to test in-game
@@ -95,20 +105,10 @@ dependencies {
 //    runtimeOnlyNonPublishable rfg.deobf("curse.maven:draconic-evolution-2.3.28.354-223565:3431261") // Draconic Evolution 2.3.28.354
     // Draconic Evolution
 
-    // Galacticraft
-//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:galacticraft-4.0.6-564236:4671122") // Galacticraft 4.0.6
-//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:extra-planets-0.8.0-241291:5339029") // Extra Planets 0.8.0
-    // Galacticraft
 
-
-    // Core mods needed for other Mods, Not a dependency
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:baubles-1.12-1.5.2-227083:2518667") // Baubles
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:guide-api-1.12-2.1.8-63-228832:2645992") // Guide API
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:mixin-booter-10.2-419286:5906634") // Mixin Booter 10.2
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:ctm-267602:2915363") // CTM 1.0.2.31
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:ore-dict-tips-252832:2545766") // OreDictTips 2.0.2
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:wanion-lib-2.91-253043:4623135") // Wanion Lib 2.91
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:redstone-flux-2.1.1.1-270789:2920436") // Redstone Flux 2.1.1.1
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:brandons-core-2.4.20.162-231382:3408276") // Brandons Core 2.4.20.162
-    runtimeOnlyNonPublishable rfg.deobf("curse.maven:mjrlegends-lib-1.2.1-284331:3344068") // MJRLegends Lib 0.8.0
+    // Galacticraft
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:galacticraft-4.0.6-564236:6364107") // Galacticraft 4.0.7
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:galaxy-space-2.2.0-238770:7005609") // Galaxy Space 2.2.0
+//    runtimeOnlyNonPublishable rfg.deobf("curse.maven:asmodeus-core-1.0.5-303101:7180991") // Asmodeus Core 1.0.5
+    // Galacticraft
 }

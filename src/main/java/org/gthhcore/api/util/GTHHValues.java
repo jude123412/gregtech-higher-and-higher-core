@@ -5,6 +5,7 @@ import java.util.Random;
 public class GTHHValues {
 
     static Random random = new Random();
+
     /**
      * For Recipe Duration time Use S
      * <p/>

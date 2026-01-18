@@ -8,16 +8,13 @@ import static org.gthhcore.api.unification.material.info.GTHHMaterialFlags.*;
 import static org.gthhcore.api.unification.material.materials.GTHHMaterialFlagHelper.*;
 import static org.gthhcore.api.unification.materials.material.GTHHMaterials.*;
 
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.info.MaterialFlag;
 import org.gthhcore.api.util.GTHHLog;
 import org.gthhcore.api.util.GTHHValues;
 
 import gregtech.api.fluids.store.FluidStorageKeys;
+import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.*;
-
-import java.util.ArrayList;
 
 public class GTHHMaterialFlagAddition {
 
@@ -108,8 +105,8 @@ public class GTHHMaterialFlagAddition {
 
         // Raw
         Material[] generateRaw = {
-            Aluminium,
-            Neutronium
+                Aluminium,
+                Neutronium
         };
         // Compressed
         Material[] generateCompressed = {

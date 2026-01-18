@@ -11,7 +11,6 @@ import org.gthhcore.api.unification.materials.info.GTHHMaterialIconSet;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty.GasTier;
 import gregtech.api.unification.material.properties.ToolProperty;
 

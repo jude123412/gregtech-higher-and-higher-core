@@ -51,7 +51,7 @@ public class GTHHCraftingComponent extends CraftingComponent {
         }
 
         OreDictionary.registerOre("blockGlassHV", TRANSPARENT_CASING.getItemVariant(
-                        TEMPERED_GLASS));
+                TEMPERED_GLASS));
 
         OreDictionary.registerOre("blockGlassEV", TRANSPARENT_CASING.getItemVariant(LAMINATED_GLASS));
 

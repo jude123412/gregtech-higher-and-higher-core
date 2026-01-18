@@ -14,12 +14,12 @@ public class GTHHMachineRecipeLoader {
     }
 
     public static void registerChains() {
-         GTHHCircuitRecipes.init();
-         GTHHSlimeMediumRecipes.init();
-         GTHHMicaRecipes.init();
-         GTHHGemSlurryRecipes.init();
-         GTHHSolarGradeSiliconRecipes.init();
-         GTHHPreciousMetalsRecipes.init();
+        GTHHCircuitRecipes.init();
+        GTHHSlimeMediumRecipes.init();
+        GTHHMicaRecipes.init();
+        GTHHGemSlurryRecipes.init();
+        GTHHSolarGradeSiliconRecipes.init();
+        GTHHPreciousMetalsRecipes.init();
     }
 
     public static void registerRecipes() {
@@ -30,6 +30,6 @@ public class GTHHMachineRecipeLoader {
     }
 
     public static void registerMaterialRecipes() {
-         ModIntegrationRecipes.init();
+        ModIntegrationRecipes.init();
     }
 }
