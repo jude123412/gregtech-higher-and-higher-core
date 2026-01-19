@@ -421,68 +421,10 @@ gthhcore.material.fluxed_awakened_draconium=Fluxed Awakened Draconium
 # Forth Degree materials
 #
 # Mod Integration Materials
-# Ender IO
-gthhcore.material.electrical_steel=Electrical Steel
-gthhcore.material.energetic_alloy=Energetic Alloy
-gthhcore.material.vibrant_alloy=Vibrant Alloy
-gthhcore.material.redstone_alloy=Redstone Alloy
-gthhcore.material.conductive_iron=Conductive Iron
-gthhcore.material.pulsating_iron=Pulsating Iron
-gthhcore.material.dark_steel=Dark Steel
-gthhcore.material.soularium=Soularium
-gthhcore.material.end_steel=End Steel
-gthhcore.material.crude_steel=Crude Steel
-gthhcore.material.crystalline_alloy=Crystalline Alloy
-gthhcore.material.melodic_alloy=Melodic Alloy
-gthhcore.material.crystalline_pink_slime=Crystalline Pink Slime
-gthhcore.material.energetic_silver=Energetic Silver
-gthhcore.material.vivid_alloy=Vivid Alloy
-gthhcore.material.stellar_alloy=Stellar Alloy
-gthhcore.material.pulsating_crystal=Pulsating Crystal
-gthhcore.material.vibrant_crystal=Vibrant Crystal
-gthhcore.material.ender_crystal=Ender Crystal
-gthhcore.material.attractor_crystal=Enticing Crystal
-gthhcore.material.weather_crystal=Weather Crystal
-gthhcore.material.prescient_crystal=Prescient Crystal
-# Ender IO
-#
-# AE2
-gthhcore.material.certus=Certus Quartz Crystal
-gthhcore.material.charged_certus_quartz=Charged Certus Quartz Crystal
-gthhcore.material.fluix=Fluix Crystal
-gthhcore.material.fluix_pearl=Fluix Pearl
-gthhcore.material.skystone=Sky Stone
-gthhcore.material.fluixilized=Fluixilized Crystal
-# AE2
-#
-# Avaritia
-gthhcore.material.crystal_matrix=Crystal Matrix
-gthhcore.material.cosmic_neutronium=Cosmic Neutronium
-gthhcore.material.infinity_catalyst=Infinity Catalyst
-gthhcore.material.infinity=Infinity
-# Avaritia
-#
-# Botania
-gthhcore.material.manasteel=Manasteel
-gthhcore.material.terrasteel=Terrasteel
-gthhcore.material.elementium=Elementium
-gthhcore.material.gaia_spirit=Gaia Spirit
-gthhcore.material.mana_diamond=Mana Diamond
-gthhcore.material.mana_pearl=Mana Pearl
-# Botania
 #
 # Logistics Pipes
 gthhcore.material.sand_compound=Sand Compound
 # Logistics Pipes
-#
-# Galacticraft
-gthhcore.material.moon_stone=Moon Stone
-gthhcore.material.mars_stone=Mars Stone
-gthhcore.material.asteroid_stone=Asteroid Stone
-gthhcore.material.venus_stone=Venus Stone
-gthhcore.material.meteoric_iron=Meteoric Iron
-gthhcore.material.desh=Desh
-# Galacticraft
 #
 # Extra Planets
 gthhcore.material.mercury_stone=Mercury Stone
@@ -517,11 +459,6 @@ gthhcore.material.yellow_diamond=Yellow Diamond
 gthhcore.material.green_diamond=Green Diamond
 gthhcore.material.dark_iron=Dark Iron
 # Extra Planets
-#
-# Astra Sorcery
-gthhcore.material.astral_starmetal=Starmetal
-gthhcore.material.aquamarine=Aquamarine
-# Astra Sorcery
 #
 # Nuclear Materials
 gthhcore.material.enriched_protactinium=Enriched Protactinium
